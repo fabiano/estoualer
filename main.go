@@ -16,6 +16,12 @@ type App struct {
 }
 
 func (h App) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	if r.Method != "GET" {
+		w.WriteHeader(http.StatusMethodNotAllowed)
+
+		return
+	}
+
 	matches := regexp.MustCompile(`^\/(\d*)$`).FindStringSubmatch(r.URL.Path)
 
 	if len(matches) == 0 {
@@ -59,7 +65,15 @@ func main() {
 
 	http.Handle("/", App{Logger: logger, Bookshelf: b})
 
-	err := http.ListenAndServe(":34567", nil)
+	port := os.Getenv("PORT")
+
+	if port == "" {
+		port = "34567"
+	}
+
+	logger.Printf("Listening on port %s", port)
+
+	err := http.ListenAndServe(":"+port, nil)
 
 	if err != nil {
 		logger.Fatalf("Could not start server: %s", err)
