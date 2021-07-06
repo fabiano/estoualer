@@ -40,8 +40,8 @@ type ABookshelf interface {
 
 // Default bookshelf implementation. Reads the comic books from the Google Sheets spreadsheet.
 type Bookshelf struct {
-	APIKey        string // Google Clould Platform API Key
-	SpreadsheetId string // Spreadsheet identifier
+	APIKey        string // Google Clould Platform API Key.
+	SpreadsheetId string // Spreadsheet identifier.
 }
 
 // Gets all the shelved comic books for the desired year.
