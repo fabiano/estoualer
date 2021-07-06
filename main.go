@@ -10,22 +10,22 @@ import (
 	_ "github.com/joho/godotenv/autoload"
 )
 
-type App struct {
+type DefaultHandler struct {
 	Logger    *log.Logger
 	Bookshelf ABookshelf
 }
 
-func (h App) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+func (h DefaultHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "GET" {
 		w.WriteHeader(http.StatusMethodNotAllowed)
 
 		return
 	}
 
-	matches := regexp.MustCompile(`^\/(\d+)$`).FindStringSubmatch(r.URL.Path)
+	matches := regexp.MustCompile(`^\/(\d{4})$`).FindStringSubmatch(r.URL.Path)
 
 	if len(matches) == 0 {
-		w.WriteHeader(http.StatusBadRequest)
+		w.WriteHeader(http.StatusNotFound)
 
 		return
 	}
@@ -63,7 +63,7 @@ func main() {
 		SpreadsheetId: os.Getenv("QUADRINHOS_SPREADSHEET_ID"),
 	}
 
-	http.Handle("/", App{Logger: logger, Bookshelf: b})
+	http.Handle("/", DefaultHandler{Logger: logger, Bookshelf: b})
 
 	port := os.Getenv("PORT")
 

@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -23,91 +24,79 @@ func (b FakeBookshelf) Get(year int) ([]ComicBook, error) {
 	return arr, nil
 }
 
-func TestMethodNotAllowed(t *testing.T) {
-	server := httptest.NewServer(App{
+func TestDefaultHandler(t *testing.T) {
+	server := httptest.NewServer(DefaultHandler{
 		Logger:    log.New(os.Stdout, "test: ", log.LstdFlags),
 		Bookshelf: FakeBookshelf{},
 	})
 
 	defer server.Close()
 
-	for _, method := range []string{"OPTIONS", "HEAD", "POST", "PUT", "DELETE", "TRACE", "CONNECT"} {
-		req, err := http.NewRequest(method, server.URL, &bytes.Buffer{})
+	for _, method := range []string{http.MethodHead, http.MethodPost, http.MethodPut, http.MethodPatch, http.MethodDelete, http.MethodConnect, http.MethodOptions, http.MethodTrace} {
+		t.Run(fmt.Sprintf("%s method is not allowed", method), func(t *testing.T) {
+			req, err := http.NewRequest(method, server.URL, &bytes.Buffer{})
 
-		if err != nil {
-			t.Fatalf("Unexpected error: %s", err)
-		}
+			if err != nil {
+				t.Fatalf("Unexpected error: %s", err)
+			}
 
-		resp, err := http.DefaultClient.Do(req)
+			resp, err := http.DefaultClient.Do(req)
 
-		if err != nil {
-			t.Fatalf("Unexpected error: %s", err)
-		}
+			if err != nil {
+				t.Fatalf("Unexpected error: %s", err)
+			}
 
-		if resp.StatusCode != http.StatusMethodNotAllowed {
-			t.Errorf("Expected 405; got %d", resp.StatusCode)
-		}
+			if resp.StatusCode != http.StatusMethodNotAllowed {
+				t.Errorf("Expected 405; got %d", resp.StatusCode)
+			}
+		})
 	}
-}
 
-func TestBadRequest(t *testing.T) {
-	server := httptest.NewServer(App{
-		Logger:    log.New(os.Stdout, "test: ", log.LstdFlags),
-		Bookshelf: FakeBookshelf{},
+	for _, path := range []string{"/", "/foo", "/foo/bar", "/1", "/10", "/100"} {
+		t.Run(fmt.Sprintf("Path without a year (%s) returns a not found response", path), func(t *testing.T) {
+			resp, err := http.Get(server.URL + path)
+
+			if err != nil {
+				t.Fatalf("Unexpected error: %s", err)
+			}
+
+			if resp.StatusCode != http.StatusNotFound {
+				t.Errorf("Expected 404; got %d", resp.StatusCode)
+			}
+		})
+	}
+
+	t.Run("Path with a year (2021) returns a successful response", func(t *testing.T) {
+		resp, err := http.Get(server.URL + "/2021")
+
+		if err != nil {
+			t.Fatalf("Unexpected error: %s", err)
+		}
+
+		if resp.StatusCode != http.StatusOK {
+			t.Errorf("Expected 200; got %d", resp.StatusCode)
+		}
+
+		arr, err := FakeBookshelf{}.Get(2021)
+
+		if err != nil {
+			t.Fatalf("Unexpected error: %s", err)
+		}
+
+		expected, err := json.Marshal(arr)
+
+		if err != nil {
+			t.Fatalf("Unexpected error: %s", err)
+		}
+
+		actual, err := ioutil.ReadAll(resp.Body)
+
+		if err != nil {
+			t.Fatalf("Unexpected error: %s", err)
+		}
+
+		if string(actual) != string(expected) {
+			t.Errorf("Expected %s; got %s", expected, actual)
+		}
 	})
-
-	defer server.Close()
-
-	for _, path := range []string{"/", "/foo", "/foo/bar"} {
-		resp, err := http.Get(server.URL + path)
-
-		if err != nil {
-			t.Fatalf("Unexpected error: %s", err)
-		}
-
-		if resp.StatusCode != http.StatusBadRequest {
-			t.Errorf("Expected 400; got %d", resp.StatusCode)
-		}
-	}
-}
-
-func TestSuccess(t *testing.T) {
-	server := httptest.NewServer(App{
-		Logger:    log.New(os.Stdout, "test: ", log.LstdFlags),
-		Bookshelf: FakeBookshelf{},
-	})
-
-	defer server.Close()
-
-	resp, err := http.Get(server.URL + "/2021")
-
-	if err != nil {
-		t.Fatalf("Unexpected error: %s", err)
-	}
-
-	if resp.StatusCode != http.StatusOK {
-		t.Errorf("Expected 200; got %d", resp.StatusCode)
-	}
-
-	arr, err := FakeBookshelf{}.Get(2021)
-
-	if err != nil {
-		t.Fatalf("Unexpected error: %s", err)
-	}
-
-	expected, err := json.Marshal(arr)
-
-	if err != nil {
-		t.Fatalf("Unexpected error: %s", err)
-	}
-
-	actual, err := ioutil.ReadAll(resp.Body)
-
-	if err != nil {
-		t.Fatalf("Unexpected error: %s", err)
-	}
-
-	if string(actual) != string(expected) {
-		t.Errorf("Expected %s; got %s", expected, actual)
-	}
 }
