@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"errors"
 	"fmt"
 
 	"google.golang.org/api/option"
@@ -49,13 +48,13 @@ func (b Bookshelf) Get(year int) ([]ComicBook, error) {
 	svc, err := sheets.NewService(context.Background(), option.WithAPIKey(b.APIKey))
 
 	if err != nil {
-		return nil, errors.New(fmt.Sprintf("Unable to create sheets service: %v", err))
+		return nil, fmt.Errorf("unable to create sheets service: %w", err)
 	}
 
 	values, err := svc.Spreadsheets.Values.Get(b.SpreadsheetId, fmt.Sprintf("%d!A2:G", year)).Do()
 
 	if err != nil {
-		return nil, errors.New(fmt.Sprintf("Unable to get data from sheet: %v", err))
+		return nil, fmt.Errorf("unable to get data from sheet: %w", err)
 	}
 
 	arr := make([]ComicBook, len(values.Values))
