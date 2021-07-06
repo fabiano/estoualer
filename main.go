@@ -22,10 +22,10 @@ func (h App) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	matches := regexp.MustCompile(`^\/(\d*)$`).FindStringSubmatch(r.URL.Path)
+	matches := regexp.MustCompile(`^\/(\d+)$`).FindStringSubmatch(r.URL.Path)
 
 	if len(matches) == 0 {
-		w.WriteHeader(http.StatusNotFound)
+		w.WriteHeader(http.StatusBadRequest)
 
 		return
 	}
