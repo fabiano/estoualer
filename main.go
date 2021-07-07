@@ -17,16 +17,27 @@ type DefaultHandler struct {
 }
 
 func (h DefaultHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	if r.Method != "GET" {
-		w.WriteHeader(http.StatusMethodNotAllowed)
-
-		return
-	}
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
+	w.Header().Set("Access-Control-Allow-Headers", r.Header.Get("Access-Control-Request-Headers"))
+	w.Header().Set("Vary", "Origin")
 
 	matches := regexp.MustCompile(`^\/(\d{4})$`).FindStringSubmatch(r.URL.Path)
 
 	if len(matches) == 0 {
 		w.WriteHeader(http.StatusNotFound)
+
+		return
+	}
+
+	if r.Method == http.MethodOptions {
+		w.WriteHeader(http.StatusNoContent)
+
+		return
+	}
+
+	if r.Method != http.MethodGet {
+		w.WriteHeader(http.StatusMethodNotAllowed)
 
 		return
 	}
