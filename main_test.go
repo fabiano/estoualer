@@ -32,9 +32,9 @@ func TestDefaultHandler(t *testing.T) {
 
 	defer server.Close()
 
-	for _, method := range []string{http.MethodHead, http.MethodPost, http.MethodPut, http.MethodPatch, http.MethodDelete, http.MethodConnect, http.MethodOptions, http.MethodTrace} {
+	for _, method := range []string{http.MethodHead, http.MethodPost, http.MethodPut, http.MethodPatch, http.MethodDelete, http.MethodConnect, http.MethodTrace} {
 		t.Run(fmt.Sprintf("%s method is not allowed", method), func(t *testing.T) {
-			req, err := http.NewRequest(method, server.URL, &bytes.Buffer{})
+			req, err := http.NewRequest(method, server.URL+"/2021", &bytes.Buffer{})
 
 			if err != nil {
 				t.Fatalf("unexpected error: %s", err)
@@ -51,6 +51,42 @@ func TestDefaultHandler(t *testing.T) {
 			}
 		})
 	}
+
+	t.Run("Preflight request returns the correct status and headers", func(t *testing.T) {
+		req, err := http.NewRequest(http.MethodOptions, server.URL+"/2021", &bytes.Buffer{})
+
+		req.Header.Add("Access-Control-Request-Headers", "Content-Type")
+
+		if err != nil {
+			t.Fatalf("unexpected error: %s", err)
+		}
+
+		resp, err := http.DefaultClient.Do(req)
+
+		if err != nil {
+			t.Fatalf("unexpected error: %s", err)
+		}
+
+		if resp.StatusCode != http.StatusNoContent {
+			t.Errorf("expected 204; got %d", resp.StatusCode)
+		}
+
+		if v := resp.Header.Get("Access-Control-Allow-Origin"); v != "*" {
+			t.Errorf("expected allowed origin header equal to *; got %s", v)
+		}
+
+		if v := resp.Header.Get("Access-Control-Allow-Methods"); v != "GET, OPTIONS" {
+			t.Errorf("expected allowed methods header equal to GET, OPTIONS; got %s", v)
+		}
+
+		if v := resp.Header.Get("Access-Control-Allow-Headers"); v != "Content-Type" {
+			t.Errorf("expected allowed headers header equal to Content-Type ; got %s", v)
+		}
+
+		if v := resp.Header.Get("Vary"); v != "Origin" {
+			t.Errorf("expected Vary header equal to Origin; got %s", v)
+		}
+	})
 
 	for _, path := range []string{"/", "/foo", "/foo/bar", "/1", "/10", "/100"} {
 		t.Run(fmt.Sprintf("Path without a year (%s) returns a not found response", path), func(t *testing.T) {
@@ -97,6 +133,10 @@ func TestDefaultHandler(t *testing.T) {
 
 		if string(actual) != string(expected) {
 			t.Errorf("expected %s; got %s", expected, actual)
+		}
+
+		if v := resp.Header.Get("Content-Type"); v != "application/json" {
+			t.Errorf("expected Content-Type header equal to application/json; got %s", v)
 		}
 	})
 }
