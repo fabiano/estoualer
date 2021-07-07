@@ -8,7 +8,7 @@ import (
 	"google.golang.org/api/sheets/v4"
 )
 
-// Represents a shelved comic book.
+// ComicBook represents a shelved comic book.
 type ComicBook struct {
 	Date      NullableTime `json:"date"`      // Date the comic book was read.
 	Publisher string       `json:"publisher"` // Publisher of the comic book.
@@ -19,7 +19,7 @@ type ComicBook struct {
 	Link      string       `json:"link"`      // Link to the comic book.
 }
 
-// Creates a new comic book from the spreadsheet row data.
+// NewComicBook creates a new comic book from the spreadsheet row data.
 func NewComicBook(i []interface{}) ComicBook {
 	return ComicBook{
 		Date:      ToNullableTimeOrDefault(i[0]),
@@ -32,18 +32,18 @@ func NewComicBook(i []interface{}) ComicBook {
 	}
 }
 
-// Represents a bookshelf.
+// ABookshelf represents a bookshelf.
 type ABookshelf interface {
 	Get(year int) ([]ComicBook, error)
 }
 
-// Default bookshelf implementation. Reads the comic books from the Google Sheets spreadsheet.
+// Bookshelf is the default bookshelf implementation. Reads the comic books from the Google Sheets spreadsheet.
 type Bookshelf struct {
 	APIKey        string // Google Clould Platform API Key.
-	SpreadsheetId string // Spreadsheet identifier.
+	SpreadsheetID string // Spreadsheet identifier.
 }
 
-// Gets all the shelved comic books for the desired year.
+// Get returns all the shelved comic books for the desired year.
 func (b Bookshelf) Get(year int) ([]ComicBook, error) {
 	svc, err := sheets.NewService(context.Background(), option.WithAPIKey(b.APIKey))
 
@@ -51,7 +51,7 @@ func (b Bookshelf) Get(year int) ([]ComicBook, error) {
 		return nil, fmt.Errorf("unable to create sheets service: %w", err)
 	}
 
-	values, err := svc.Spreadsheets.Values.Get(b.SpreadsheetId, fmt.Sprintf("%d!A2:G", year)).Do()
+	values, err := svc.Spreadsheets.Values.Get(b.SpreadsheetID, fmt.Sprintf("%d!A2:G", year)).Do()
 
 	if err != nil {
 		return nil, fmt.Errorf("unable to get data from sheet: %w", err)

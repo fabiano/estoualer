@@ -37,17 +37,17 @@ func TestDefaultHandler(t *testing.T) {
 			req, err := http.NewRequest(method, server.URL, &bytes.Buffer{})
 
 			if err != nil {
-				t.Fatalf("Unexpected error: %s", err)
+				t.Fatalf("unexpected error: %s", err)
 			}
 
 			resp, err := http.DefaultClient.Do(req)
 
 			if err != nil {
-				t.Fatalf("Unexpected error: %s", err)
+				t.Fatalf("unexpected error: %s", err)
 			}
 
 			if resp.StatusCode != http.StatusMethodNotAllowed {
-				t.Errorf("Expected 405; got %d", resp.StatusCode)
+				t.Errorf("expected 405; got %d", resp.StatusCode)
 			}
 		})
 	}
@@ -57,11 +57,11 @@ func TestDefaultHandler(t *testing.T) {
 			resp, err := http.Get(server.URL + path)
 
 			if err != nil {
-				t.Fatalf("Unexpected error: %s", err)
+				t.Fatalf("unexpected error: %s", err)
 			}
 
 			if resp.StatusCode != http.StatusNotFound {
-				t.Errorf("Expected 404; got %d", resp.StatusCode)
+				t.Errorf("expected 404; got %d", resp.StatusCode)
 			}
 		})
 	}
@@ -70,33 +70,33 @@ func TestDefaultHandler(t *testing.T) {
 		resp, err := http.Get(server.URL + "/2021")
 
 		if err != nil {
-			t.Fatalf("Unexpected error: %s", err)
+			t.Fatalf("unexpected error: %s", err)
 		}
 
 		if resp.StatusCode != http.StatusOK {
-			t.Errorf("Expected 200; got %d", resp.StatusCode)
+			t.Errorf("expected 200; got %d", resp.StatusCode)
 		}
 
 		arr, err := FakeBookshelf{}.Get(2021)
 
 		if err != nil {
-			t.Fatalf("Unexpected error: %s", err)
+			t.Fatalf("unexpected error: %s", err)
 		}
 
 		expected, err := json.Marshal(arr)
 
 		if err != nil {
-			t.Fatalf("Unexpected error: %s", err)
+			t.Fatalf("unexpected error: %s", err)
 		}
 
 		actual, err := ioutil.ReadAll(resp.Body)
 
 		if err != nil {
-			t.Fatalf("Unexpected error: %s", err)
+			t.Fatalf("unexpected error: %s", err)
 		}
 
 		if string(actual) != string(expected) {
-			t.Errorf("Expected %s; got %s", expected, actual)
+			t.Errorf("expected %s; got %s", expected, actual)
 		}
 	})
 }

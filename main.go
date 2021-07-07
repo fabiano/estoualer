@@ -10,6 +10,7 @@ import (
 	_ "github.com/joho/godotenv/autoload"
 )
 
+// DefaultHandler handles all requests
 type DefaultHandler struct {
 	Logger    *log.Logger
 	Bookshelf ABookshelf
@@ -33,7 +34,7 @@ func (h DefaultHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	arr, err := h.Bookshelf.Get(ToIntOrDefault(matches[1]))
 
 	if err != nil {
-		h.Logger.Printf("Unable to get the spreadsheet rows: %v", err)
+		h.Logger.Printf("unable to get the spreadsheet rows: %v", err)
 
 		w.WriteHeader(http.StatusInternalServerError)
 
@@ -43,7 +44,7 @@ func (h DefaultHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	json, err := json.Marshal(arr)
 
 	if err != nil {
-		h.Logger.Printf("Unable to marshal: %v", err)
+		h.Logger.Printf("unable to marshal: %v", err)
 
 		w.WriteHeader(http.StatusInternalServerError)
 
@@ -52,7 +53,12 @@ func (h DefaultHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
-	w.Write(json)
+
+	_, err = w.Write(json)
+
+	if err != nil {
+		h.Logger.Printf("unable to write the data to the connection: %v", err)
+	}
 }
 
 func main() {
@@ -60,7 +66,7 @@ func main() {
 
 	b := Bookshelf{
 		APIKey:        os.Getenv("QUADRINHOS_API_KEY"),
-		SpreadsheetId: os.Getenv("QUADRINHOS_SPREADSHEET_ID"),
+		SpreadsheetID: os.Getenv("QUADRINHOS_SPREADSHEET_ID"),
 	}
 
 	http.Handle("/", DefaultHandler{Logger: logger, Bookshelf: b})
@@ -71,11 +77,11 @@ func main() {
 		port = "34567"
 	}
 
-	logger.Printf("Listening on port %s", port)
+	logger.Printf("listening on port %s", port)
 
 	err := http.ListenAndServe(":"+port, nil)
 
 	if err != nil {
-		logger.Fatalf("Could not start server: %s", err)
+		logger.Fatalf("could not start server: %s", err)
 	}
 }
