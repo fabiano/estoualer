@@ -3,6 +3,7 @@ name: CI
 on:
   push:
     branches: [ main ]
+
   pull_request:
     branches: [ main ]
 
@@ -20,6 +21,11 @@ jobs:
 
     - name: Build
       run: go build -v ./...
+
+    - name: Run golangci-lint
+      uses: golangci/golangci-lint-action@v2
+      with:
+        version: v1.41.1
 
     - name: Test
       run: go test -v ./...
