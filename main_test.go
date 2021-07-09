@@ -12,16 +12,16 @@ import (
 	"testing"
 )
 
+var comicBooks = []ComicBook{
+	{Publisher: "Marvel", Title: "Annihilation Omnibus", Pages: 880, Issues: 30, Format: "Capa dura"},
+	{Publisher: "Marvel", Title: "Annihilation: Conquest Omnibus", Pages: 872, Issues: 33, Format: "Capa dura"},
+}
+
 type FakeBookshelf struct {
 }
 
 func (b FakeBookshelf) Get(year int) ([]ComicBook, error) {
-	arr := []ComicBook{
-		{Publisher: "Marvel", Title: "Annihilation Omnibus", Pages: 880, Issues: 30, Format: "Capa dura"},
-		{Publisher: "Marvel", Title: "Annihilation: Conquest Omnibus", Pages: 872, Issues: 33, Format: "Capa dura"},
-	}
-
-	return arr, nil
+	return comicBooks, nil
 }
 
 func TestDefaultHandler(t *testing.T) {
@@ -55,6 +55,7 @@ func TestDefaultHandler(t *testing.T) {
 	t.Run("Preflight request returns the correct status and headers", func(t *testing.T) {
 		req, err := http.NewRequest(http.MethodOptions, server.URL+"/2021", &bytes.Buffer{})
 
+		req.Header.Add("Access-Control-Request-Method", "GET")
 		req.Header.Add("Access-Control-Request-Headers", "Content-Type")
 
 		if err != nil {
@@ -72,19 +73,19 @@ func TestDefaultHandler(t *testing.T) {
 		}
 
 		if v := resp.Header.Get("Access-Control-Allow-Origin"); v != "*" {
-			t.Errorf("expected allowed origin header equal to *; got %s", v)
+			t.Errorf("expected access-control-allow-origin header equal to *; got %s", v)
 		}
 
-		if v := resp.Header.Get("Access-Control-Allow-Methods"); v != "GET, OPTIONS" {
-			t.Errorf("expected allowed methods header equal to GET, OPTIONS; got %s", v)
+		if v := resp.Header.Get("Access-Control-Allow-Methods"); v != "GET" {
+			t.Errorf("expected access-control-allow-methods header equal to GET; got %s", v)
 		}
 
 		if v := resp.Header.Get("Access-Control-Allow-Headers"); v != "Content-Type" {
-			t.Errorf("expected allowed headers header equal to Content-Type ; got %s", v)
+			t.Errorf("expected access-control-allow-headers header equal to Content-Type ; got %s", v)
 		}
 
 		if v := resp.Header.Get("Vary"); v != "Origin" {
-			t.Errorf("expected Vary header equal to Origin; got %s", v)
+			t.Errorf("expected vary header equal to Origin; got %s", v)
 		}
 	})
 
@@ -102,7 +103,7 @@ func TestDefaultHandler(t *testing.T) {
 		})
 	}
 
-	t.Run("Path with a year (2021) returns a successful response", func(t *testing.T) {
+	t.Run("Path with a year returns a successful response", func(t *testing.T) {
 		resp, err := http.Get(server.URL + "/2021")
 
 		if err != nil {
@@ -113,23 +114,13 @@ func TestDefaultHandler(t *testing.T) {
 			t.Errorf("expected 200; got %d", resp.StatusCode)
 		}
 
-		arr, err := FakeBookshelf{}.Get(2021)
-
-		if err != nil {
-			t.Fatalf("unexpected error: %s", err)
-		}
-
-		expected, err := json.Marshal(arr)
-
-		if err != nil {
-			t.Fatalf("unexpected error: %s", err)
-		}
-
 		actual, err := ioutil.ReadAll(resp.Body)
 
 		if err != nil {
 			t.Fatalf("unexpected error: %s", err)
 		}
+
+		expected, _ := json.Marshal(comicBooks)
 
 		if string(actual) != string(expected) {
 			t.Errorf("expected %s; got %s", expected, actual)
