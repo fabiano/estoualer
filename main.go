@@ -17,11 +17,13 @@ type DefaultHandler struct {
 }
 
 func (h DefaultHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Access-Control-Allow-Origin", "*")
-	w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
-	w.Header().Set("Access-Control-Allow-Headers", r.Header.Get("Access-Control-Request-Headers"))
-	w.Header().Set("Vary", "Origin")
+	header := w.Header()
 
+	// Enable CORS everywhere
+	header.Set("Access-Control-Allow-Origin", "*")
+	header.Set("Vary", "Origin")
+
+	// Check the route pattern
 	matches := regexp.MustCompile(`^\/(\d{4})$`).FindStringSubmatch(r.URL.Path)
 
 	if len(matches) == 0 {
@@ -30,18 +32,27 @@ func (h DefaultHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Preflight request
 	if r.Method == http.MethodOptions {
+		header.Set("Access-Control-Allow-Methods", "GET")
+
+		if v := r.Header.Get("Access-Control-Request-Headers"); v != "" {
+			header.Set("Access-Control-Allow-Headers", v)
+		}
+
 		w.WriteHeader(http.StatusNoContent)
 
 		return
 	}
 
+	// Only get is supported
 	if r.Method != http.MethodGet {
 		w.WriteHeader(http.StatusMethodNotAllowed)
 
 		return
 	}
 
+	// Get the comic books from the bookshelf
 	arr, err := h.Bookshelf.Get(ToIntOrDefault(matches[1]))
 
 	if err != nil {
@@ -62,7 +73,8 @@ func (h DefaultHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.Header().Set("Content-Type", "application/json")
+	header.Set("Content-Type", "application/json")
+
 	w.WriteHeader(http.StatusOK)
 
 	_, err = w.Write(json)
