@@ -4,12 +4,12 @@ FROM golang:1.16-buster AS build
 
 WORKDIR /app
 
-COPY go.mod .
-COPY go.sum .
+COPY go.mod ./
+COPY go.sum ./
 
 RUN go mod download
 
-COPY *.go .
+COPY *.go ./
 
 RUN go build -v -o quadrinhos
 
