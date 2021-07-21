@@ -2,7 +2,7 @@
 
 Backend implementation for the [https://fabiano.rio.br/quadrinhos](https://fabiano.rio.br/quadrinhos) website.
 
-![CI](https://github.com/fabiano/quadrinhos/workflows/CI/badge.svg)
+[![CI](https://github.com/fabiano/quadrinhos/actions/workflows/ci.yml/badge.svg)](https://github.com/fabiano/quadrinhos/actions/workflows/ci.yml)
 
 ## Development
 
