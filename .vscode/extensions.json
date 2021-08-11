@@ -1,6 +1,6 @@
 {
-	"recommendations": [
-        "editorconfig.editorconfig",
-		"golang.go",
-	],
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "golang.go",
+  ],
 }
