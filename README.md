@@ -6,10 +6,10 @@ Backend implementation for the [https://fabiano.rio.br/quadrinhos](https://fabia
 
 ## Development
 
-- [Go 1.16 or newer](https://golang.org/doc/install)
+- [Go 1.17 or newer](https://golang.org/doc/install)
 - [golangci-lint](https://golangci-lint.run/usage/install/#linux-and-windows)
 - gcc `sudo apt install build-essential`
-- reflex `go get github.com/cespare/reflex`
+- reflex `go install github.com/cespare/reflex@latest`
 
 Once installed, run the command bellow to start the project and watch for changes.
 
