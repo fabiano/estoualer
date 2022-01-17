@@ -6,13 +6,7 @@ Backend implementation for the [https://fabiano.rio.br/quadrinhos](https://fabia
 
 ## Development
 
-- [Go 1.17 or newer](https://golang.org/doc/install)
-- [golangci-lint](https://golangci-lint.run/usage/install/#linux-and-windows)
-- gcc `sudo apt install build-essential`
-- reflex `go install github.com/cespare/reflex@latest`
-
-Once installed, run the command bellow to start the project and watch for changes.
-
-```bash
-reflex -c reflex.conf
-```
+- Install Docker
+- Install Visual Studio Code
+- Install the [Visual Studio Code Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension
+- Run the `Remote-Containers: Open Folder in Container...` command and select the repository local folder
