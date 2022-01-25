@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  quadrinhos:
+    image: quadrinhos/app:latest
+    container_name: quadrinhos-app
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: development
+    command:
+      /bin/sh -c "while sleep 1000; do :; done"
+    volumes:
+      - .:/app
+    ports:
+      - 34567:34567
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined

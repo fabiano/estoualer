@@ -13,3 +13,7 @@
 
 # Environment variable file
 .env
+
+# Air folders
+tmp
+testdata
