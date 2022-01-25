@@ -1,10 +1,10 @@
 root = "."
-testdata_dir = "/tmp/testdata"
-tmp_dir = "/tmp"
+testdata_dir = "testdata"
+tmp_dir = "tmp"
 
 [build]
-  bin = "/tmp/quadrinhos"
-  cmd = "go build -o /tmp/quadrinhos ."
+  bin = "./tmp/quadrinhos"
+  cmd = "go build -o ./tmp/quadrinhos ."
   delay = 1000
   exclude_dir = ["assets", "tmp", "vendor", "testdata"]
   exclude_file = []
