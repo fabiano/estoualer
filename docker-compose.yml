@@ -1,18 +1,31 @@
 version: "3.9"
 services:
-  quadrinhos:
-    image: quadrinhos/app:latest
-    container_name: quadrinhos-app
+  website:
+    image: quadrinhos/website:latest
+    container_name: quadrinhos-website
     build:
-      dockerfile: Dockerfile
-      context: .
+      context: ./website
       target: development
+    working_dir: /workspace/website
     command:
-      /bin/sh -c "while sleep 1000; do :; done"
+      npx http-server . --port 80
     volumes:
-      - .:/app
+      - .:/workspace:cached
     ports:
-      - 34567:34567
+      - 4201:80
+  api:
+    image: quadrinhos/api:latest
+    container_name: quadrinhos-api
+    build:
+      context: ./api
+      target: development
+    working_dir: /workspace/api
+    command:
+      air
+    volumes:
+      - .:/workspace:cached
+    ports:
+      - 4202:80
     cap_add:
       - SYS_PTRACE
     security_opt:

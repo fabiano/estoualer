@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Os gibis que li recentemente">
+  <title>Quadrinhos</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="icon" sizes="32x32" href="assets/icon-32x32.png">
+  <link rel="icon" sizes="16x16" href="assets/icon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <div class="progress"></div>
+  <div class="container">
+    <div class="header">
+      <nav class="stats" id="stats">
+        <div class="item clickable">
+          <p class="heading">Total</p>
+          <p class="value" id="stats-total">...</p>
+        </div>
+        <div class="item clickable">
+          <p class="heading">Em papel</p>
+          <p class="value" id="stats-paper">...</p>
+        </div>
+        <div class="item clickable">
+          <p class="heading">Digital</p>
+          <p class="value" id="stats-digital">...</p>
+        </div>
+        <div class="item clickable">
+          <p class="heading">No. de páginas</p>
+          <p class="value" id="stats-pages">...</p>
+        </div>
+        <div class="item clickable">
+          <p class="heading">No. de edições</p>
+          <p class="value" id="stats-issues">...</p>
+        </div>
+        <div class="item">
+          <p class="heading">Páginas por mês</p>
+          <p class="value" id="stats-pages-per-month">...</p>
+        </div>
+        <div class="item">
+          <p class="heading">Edições por mês</p>
+          <p class="value" id="stats-issues-per-month">...</p>
+        </div>
+      </nav>
+      <div class="chart" id="chart">
+      </div>
+    </div>
+  </div>
+  <hr class="separator">
+  <div class="container">
+    <div class="body">
+      <div class="cards" id="cards">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="history">
+      o que li em <a href="#2021">2021</a>, <a href="#2020">2020</a>, <a href="#2019">2019</a> e <a href="#2018">2018</a>
+    </div>
+    <div class="credits">
+      logo por <a href="https://www.freepik.com" title="Freepik">Freepik</a> em <a href="https://www.flaticon.com/free-icon/comic_626559" title="Flaticon">Flaticon</a>
+    </div>
+  </footer>
+  <template id="card">
+    <div class="card">
+      <div class="ribbon">Lendo</div>
+      <div>
+        <div class="number"></div>
+        <div class="date"></div>
+      </div>
+      <div>
+        <div class="title">
+          <a href=""></a>
+        </div>
+        <div class="publisher-and-format"></div>
+      </div>
+      <div>
+        <div class="pages-and-issues"></div>
+      </div>
+    </div>
+  </template>
+  <template id="data-serie">
+    <div class="data-serie">
+      <span class="label"></span>
+      <span class="value"></span>
+      <progress class="bar" value="0" max="0"></progress>
+    </div>
+  </template>
+  <script src="site.js"></script>
+</body>
+</html>

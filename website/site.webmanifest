@@ -1,0 +1,19 @@
+{
+  "name": "Quadrinhos",
+  "short_name": "Quadrinhos",
+  "theme_color": "#25c2ce",
+  "background_color": "#25c2ce",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "assets/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
