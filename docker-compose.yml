@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   website:
-    image: quadrinhos/website:latest
+    image: quadrinhos-website:latest
     container_name: quadrinhos-website
     build:
       context: ./website
@@ -14,7 +14,7 @@ services:
     ports:
       - 4201:80
   api:
-    image: quadrinhos/api:latest
+    image: quadrinhos-api:latest
     container_name: quadrinhos-api
     build:
       context: ./api
