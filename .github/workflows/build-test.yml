@@ -18,7 +18,7 @@ jobs:
         uses: golangci/golangci-lint-action@v2
         with:
           version: v1.41.1
-        working-directory: api
+          working-directory: api
 
       - name: Build
         run: go build -v ./...
