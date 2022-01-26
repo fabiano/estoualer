@@ -1,0 +1,8 @@
+{
+  "name": "Quadrinhos - website",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "website",
+  "workspaceFolder": "/workspace/website",
+  "extensions": [ "eamodio.gitlens", "editorconfig.editorconfig" ],
+  "shutdownAction": "none"
+}

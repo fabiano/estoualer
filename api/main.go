@@ -97,7 +97,7 @@ func main() {
 	port := os.Getenv("PORT")
 
 	if port == "" {
-		port = "34567"
+		port = "80"
 	}
 
 	logger.Printf("listening on port %s", port)

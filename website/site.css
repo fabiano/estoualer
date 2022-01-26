@@ -1,0 +1,317 @@
+/* variables */
+
+:root {
+  --text-color: #383838;
+  --link-color: #3273dc;
+  --primary-color: #4cdec9;
+}
+
+/* css reset from https://github.com/vladocar/CSS-Mini-Reset */
+
+html,body,div,form,fieldset,legend,label{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}th,td{text-align:left;vertical-align:top;}h1,h2,h3,h4,h5,h6,th,td,caption{font-weight:normal;}img{border:0;}
+
+/* structure */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: var(--text-color);
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.container {
+  margin: auto;
+  max-width: 1440px;
+}
+
+.header {
+  margin: 0 20px;
+}
+
+.header h1 {
+  font-size: 8.5rem;
+  font-weight: 400;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.separator {
+  background-color: #eee;
+  border: 0;
+  height: 1px;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.body {
+  margin: 0 20px;
+}
+
+.footer {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.footer .history {
+  margin-bottom: 10px;
+}
+
+/* progress */
+
+.progress {
+  animation-direction: alternate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-name: progress;
+  animation-timing-function: ease;
+  background-color: var(--primary-color);
+  display: none;
+  height: 5px;
+  width: 0;
+}
+
+@keyframes progress {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+body.is-loading .progress {
+  display: block;
+}
+
+/* stats */
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 60px;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.stats .item {
+  margin: 0 10px;
+  text-align: center;
+}
+
+.stats .item.clickable {
+  cursor: pointer;
+}
+
+.stats .item:nth-child(n+4) {
+  display: none;
+}
+
+.stats .item .heading {
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+}
+
+.stats .item .value {
+  font-size: 3.5rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .stats .item:nth-child(n+4) {
+    display: block;
+  }
+
+  .stats .item:nth-child(n+6) {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .stats .item:nth-child(n+6) {
+    display: block;
+  }
+}
+
+/* chart */
+
+.chart {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.chart .data-serie {
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.chart .data-serie:last-of-type {
+  margin: 0;
+}
+
+.chart .data-serie .label {
+  color: #fff;
+  font-size: 1.2rem;
+  height: 20px;
+  left: 15px;
+  letter-spacing: 0.1rem;
+  line-height: 20px;
+  position: absolute;
+  text-transform: uppercase;
+}
+
+.chart .data-serie .label::before {
+  background-color: #fff;
+  border-color: transparent var(--primary-color);
+  border-style: solid;
+  border-width: 10px 10px 10px 0;
+  box-sizing: border-box;
+  content: "";
+  height: 20px;
+  left: -15px;
+  position: absolute;
+}
+
+.chart .data-serie.is-zero .label::before {
+  border-color: transparent #eee;
+}
+
+.chart .data-serie .value {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  height: 20px;
+  line-height: 20px;
+  position: absolute;
+  right: 5px;
+}
+
+.chart .data-serie .bar {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  display: block;
+  height: 20px;
+  padding: 0;
+  width: 100%;
+}
+
+.chart .data-serie .bar::-moz-progress-bar {
+  background-color: var(--primary-color);
+}
+
+.chart .data-serie .bar::-webkit-progress-bar {
+  background-color: #eee;
+}
+
+.chart .data-serie .bar::-webkit-progress-value {
+  background-color: var(--primary-color);
+}
+
+/* cards */
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: -10px;
+}
+
+.cards .card {
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  height: 160px;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.cards .card.has-ribbon {
+  position: relative;
+  overflow: hidden;
+}
+
+.cards .card.has-ribbon .ribbon {
+  background-color: var(--primary-color);
+  color: #fff;
+  display: block;
+  font-size: 1.2rem;
+  height: 20px;
+  left: -10px;
+  letter-spacing: 0.1rem;
+  line-height: 20px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 50px;
+  transform-origin: left;
+  transform: rotate(-45deg);
+  width: 100px;
+}
+
+.cards .card .ribbon {
+  display: none;
+}
+
+.cards .card .number {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.cards .card .date {
+  font-size: 1.2rem;
+}
+
+.cards .card .title {
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  word-break: break-word;
+}
+
+.cards .card .publisher-and-format {
+  font-size: 1.2rem;
+}
+
+.cards .card .pages-and-issues {
+  font-size: 1.2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .cards .card {
+    width: calc(50% - 42px);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .cards .card {
+    width: calc(33.33333333333% - 42px);
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .cards .card {
+    width: calc(25% - 42px);
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .cards .card {
+    width: calc(20% - 42px);
+  }
+}
