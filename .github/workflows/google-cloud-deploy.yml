@@ -29,21 +29,21 @@ jobs:
 
       - name: Build & push the api docker image to the Artifact Registry repository
         run: |-
-          docker build --tag ${{ env.API_SERVICE_IMAGE_NAME }}:${{ GITHUB_SHA }} .
-          docker push ${{ env.API_SERVICE_IMAGE_NAME }}:${{ GITHUB_SHA }}
+          docker build --tag ${{ env.API_SERVICE_IMAGE_NAME }}:latest .
+          docker push ${{ env.API_SERVICE_IMAGE_NAME }}:latest
         working-directory: api
 
       - name: Build & push the website docker image to the Artifact Registry repository
         run: |-
-          docker build --tag ${{ env.WEBSITE_SERVICE_IMAGE_NAME }}:${{ GITHUB_SHA }} .
-          docker push ${{ env.WEBSITE_SERVICE_IMAGE_NAME }}:${{ GITHUB_SHA }}
+          docker build --tag ${{ env.WEBSITE_SERVICE_IMAGE_NAME }}:latest .
+          docker push ${{ env.WEBSITE_SERVICE_IMAGE_NAME }}:latest
         working-directory: website
 
       - name: Deploy the api docker image to Cloud Run
         uses: google-github-actions/deploy-cloudrun@v0.4.0
         with:
           service: ${{ env.API_SERVICE_NAME }}
-          image: ${{ env.API_SERVICE_IMAGE_NAME }}:${{ GITHUB_SHA }}
+          image: ${{ env.API_SERVICE_IMAGE_NAME }}:latest
           region: ${{ env.REGION }}
           env_vars: QUADRINHOS_API_KEY=${{ secrets.QUADRINHOS_API_KEY }},QUADRINHOS_SPREADSHEET_ID=${{ secrets.QUADRINHOS_SPREADSHEET_ID }}
 
@@ -51,5 +51,5 @@ jobs:
         uses: google-github-actions/deploy-cloudrun@v0.4.0
         with:
           service: ${{ env.WEBSITE_SERVICE_NAME }}
-          image: ${{ env.WEBSITE_SERVICE_IMAGE_NAME }}:${{ GITHUB_SHA }}
+          image: ${{ env.WEBSITE_SERVICE_IMAGE_NAME }}:latest
           region: ${{ env.REGION }}
