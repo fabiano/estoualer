@@ -8,7 +8,7 @@ services:
       target: development
     working_dir: /workspace/website
     command:
-      npx http-server . --port 80
+      npm exec --package=http-server -- http-server . --port 80
     volumes:
       - .:/workspace:cached
     ports:
