@@ -1,6 +1,6 @@
 # quadrinhos
 
-Backend implementation for the [https://fabiano.rio.br/quadrinhos](https://fabiano.rio.br/quadrinhos) website.
+Backend implementation for the [https://quadrinhos.dev](https://quadrinhos.dev) website.
 
 [![CI](https://github.com/fabiano/quadrinhos/actions/workflows/build-test.yml/badge.svg)](https://github.com/fabiano/quadrinhos/actions/workflows/build-test.yml.yml)
 
