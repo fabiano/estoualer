@@ -29,13 +29,13 @@ jobs:
 
       - name: Build and push the api image
         run: |-
-          docker build --tag ${{ env.API_SERVICE_IMAGE_NAME }}:latest .
+          DOCKER_BUILDKIT=1 docker build --tag ${{ env.API_SERVICE_IMAGE_NAME }}:latest .
           docker push ${{ env.API_SERVICE_IMAGE_NAME }}:latest
         working-directory: api
 
       - name: Build and push the website image
         run: |-
-          docker build --tag ${{ env.WEBSITE_SERVICE_IMAGE_NAME }}:latest .
+          DOCKER_BUILDKIT=1 docker build --tag ${{ env.WEBSITE_SERVICE_IMAGE_NAME }}:latest .
           docker push ${{ env.WEBSITE_SERVICE_IMAGE_NAME }}:latest
         working-directory: website
 
