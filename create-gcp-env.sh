@@ -1,5 +1,5 @@
 # Get the project id
-GCP_PROJECT_ID=(gcloud config get-value project)
+GCP_PROJECT_ID=$(gcloud config get-value project)
 
 # Set the variables
 GCP_REGION=us-west1
