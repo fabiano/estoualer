@@ -29,7 +29,11 @@ async function init() {
 async function get(year) {
   console.time("get");
 
-  const response = await fetch("https://api.quadrinhos.dev/" + year);
+  const url = window.location.hostname === "localhost"
+    ? "http://localhost:4202/"
+    : "https://api.quadrinhos.dev/"
+
+  const response = await fetch(url + year);
   const json = await response.json();
 
   console.timeEnd("get");
@@ -53,7 +57,6 @@ function transform(comicBooks) {
       pages: pages,
       issues: issues,
       format,
-      link,
     };
   });
 
@@ -120,7 +123,7 @@ function renderCards(comicBooks) {
   const fragment = document.createDocumentFragment();
   const template = document.getElementById("card");
 
-  for (const { number, date, publisher, title, pages, issues, format, link } of comicBooks) {
+  for (const { number, date, publisher, title, pages, issues, format } of comicBooks) {
     const card = template.content.cloneNode(true);
 
     if (date === null) {
@@ -129,7 +132,7 @@ function renderCards(comicBooks) {
 
     const cardNumber = card.querySelector(".number");
     const cardDate = card.querySelector(".date");
-    const cardTitle = card.querySelector(".title a");
+    const cardTitle = card.querySelector(".title");
     const cardPublisherAndFormat = card.querySelector(".publisher-and-format");
     const cardPageAndIssues = card.querySelector(".pages-and-issues");
 
@@ -139,7 +142,6 @@ function renderCards(comicBooks) {
         ? `${String(date.getUTCDate()).padStart(2, "0")}/${String(date.getUTCMonth() + 1).padStart(2, "0")}/${date.getUTCFullYear()}`
         : "...";
 
-    cardTitle.href = link;
     cardTitle.textContent = title;
     cardPublisherAndFormat.textContent = `${publisher} / ${format}`;
 

@@ -16,7 +16,6 @@ type ComicBook struct {
 	Pages     int          `json:"pages"`     // Number of pages of the comic book.
 	Issues    int          `json:"issues"`    // Number of issues of the comic book.
 	Format    string       `json:"format"`    // Format of the comic book.
-	Link      string       `json:"link"`      // Link to the comic book.
 }
 
 // NewComicBook creates a new comic book from the spreadsheet row data.
@@ -28,7 +27,6 @@ func NewComicBook(i []interface{}) ComicBook {
 		Pages:     ToIntOrDefault(i[3]),
 		Issues:    ToIntOrDefault(i[4]),
 		Format:    ToStringOrDefault(i[5]),
-		Link:      ToStringOrDefault(i[6]),
 	}
 }
 
