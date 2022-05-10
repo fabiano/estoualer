@@ -37,13 +37,14 @@ type ABookshelf interface {
 
 // Bookshelf is the default bookshelf implementation. Reads the comic books from the Google Sheets spreadsheet.
 type Bookshelf struct {
-	APIKey        string // Google Clould Platform API Key.
-	SpreadsheetID string // Spreadsheet identifier.
+	APIKey        string          // Google Clould Platform API Key.
+	SpreadsheetID string          // Spreadsheet identifier.
+	Context       context.Context // Context instance.
 }
 
 // Get returns all the shelved comic books for the desired year.
 func (b Bookshelf) Get(year int) ([]ComicBook, error) {
-	svc, err := sheets.NewService(context.Background(), option.WithAPIKey(b.APIKey))
+	svc, err := sheets.NewService(b.Context, option.WithAPIKey(b.APIKey))
 
 	if err != nil {
 		return nil, fmt.Errorf("unable to create sheets service: %w", err)

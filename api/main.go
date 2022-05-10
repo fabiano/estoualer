@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"encoding/json"
 	"log"
 	"net/http"
@@ -90,6 +91,7 @@ func main() {
 	b := Bookshelf{
 		APIKey:        os.Getenv("QUADRINHOS_API_KEY"),
 		SpreadsheetID: os.Getenv("QUADRINHOS_SPREADSHEET_ID"),
+		Context:       context.Background(),
 	}
 
 	http.Handle("/", DefaultHandler{Logger: logger, Bookshelf: b})
