@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"regexp"
+	"time"
 
 	_ "github.com/joho/godotenv/autoload"
 )
@@ -86,7 +87,7 @@ func (h DefaultHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	logger := log.New(os.Stdout, "quadrinhos: ", log.LstdFlags)
+	l := log.New(os.Stdout, "quadrinhos: ", log.LstdFlags)
 
 	b := Bookshelf{
 		APIKey:        os.Getenv("QUADRINHOS_API_KEY"),
@@ -94,7 +95,10 @@ func main() {
 		Context:       context.Background(),
 	}
 
-	http.Handle("/", DefaultHandler{Logger: logger, Bookshelf: b})
+	h := DefaultHandler{
+		Logger:    l,
+		Bookshelf: b,
+	}
 
 	port := os.Getenv("PORT")
 
@@ -102,11 +106,18 @@ func main() {
 		port = "80"
 	}
 
-	logger.Printf("listening on port %s", port)
+	s := http.Server{
+		Addr:         ":" + port,
+		Handler:      h,
+		ReadTimeout:  5 * time.Second,
+		WriteTimeout: 5 * time.Second,
+	}
 
-	err := http.ListenAndServe(":"+port, nil)
+	l.Printf("listening on port %s", port)
+
+	err := s.ListenAndServe()
 
 	if err != nil {
-		logger.Fatalf("could not start server: %s", err)
+		l.Fatalf("could not start server: %s", err)
 	}
 }
