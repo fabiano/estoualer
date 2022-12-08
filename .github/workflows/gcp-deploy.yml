@@ -16,10 +16,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Configure Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@v0.2.0
+        uses: google-github-actions/setup-gcloud@v1
         with:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
@@ -40,7 +40,7 @@ jobs:
         working-directory: website
 
       - name: Deploy the api
-        uses: google-github-actions/deploy-cloudrun@v0.4.0
+        uses: google-github-actions/deploy-cloudrun@v1
         with:
           service: ${{ env.API_SERVICE_NAME }}
           image: ${{ env.API_SERVICE_IMAGE_NAME }}:latest
@@ -48,7 +48,7 @@ jobs:
           env_vars: QUADRINHOS_API_KEY=${{ secrets.QUADRINHOS_API_KEY }},QUADRINHOS_SPREADSHEET_ID=${{ secrets.QUADRINHOS_SPREADSHEET_ID }}
 
       - name: Deploy the website
-        uses: google-github-actions/deploy-cloudrun@v0.4.0
+        uses: google-github-actions/deploy-cloudrun@v1
         with:
           service: ${{ env.WEBSITE_SERVICE_NAME }}
           image: ${{ env.WEBSITE_SERVICE_IMAGE_NAME }}:latest
