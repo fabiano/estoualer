@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"net/http/httptest"
@@ -114,7 +114,7 @@ func TestDefaultHandler(t *testing.T) {
 			t.Errorf("expected 200; got %d", resp.StatusCode)
 		}
 
-		actual, err := ioutil.ReadAll(resp.Body)
+		actual, err := io.ReadAll(resp.Body)
 
 		if err != nil {
 			t.Fatalf("unexpected error: %s", err)
