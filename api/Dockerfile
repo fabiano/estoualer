@@ -1,8 +1,3 @@
-# Use the devcontainer image for development and add the required tools
-FROM mcr.microsoft.com/vscode/devcontainers/go:1.19-buster AS development
-RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.50.1
-RUN curl -sSfL https://raw.githubusercontent.com/cosmtrek/air/master/install.sh | sh -s -- -b $(go env GOPATH)/bin
-
 # Restore the dependencies
 FROM golang:1.19-buster AS restore
 WORKDIR /app
