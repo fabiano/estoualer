@@ -1,8 +1,0 @@
-{
-  "name": "Quadrinhos - api",
-  "dockerComposeFile": "../docker-compose.yml",
-  "service": "api",
-  "workspaceFolder": "/workspace/api",
-  "extensions": [ "eamodio.gitlens", "editorconfig.editorconfig", "golang.Go" ],
-  "shutdownAction": "none"
-}
