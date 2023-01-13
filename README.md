@@ -2,7 +2,7 @@
 
 [https://quadrinhos.dev](https://quadrinhos.dev) website code.
 
-[![CI](https://github.com/fabiano/quadrinhos/actions/workflows/build-test.yml/badge.svg)](https://github.com/fabiano/quadrinhos/actions/workflows/build-test.yml.yml)
+[![CI](https://github.com/fabiano/quadrinhos/actions/workflows/build-test.yml/badge.svg)](https://github.com/fabiano/quadrinhos/actions/workflows/build-test.yml)
 
 ## Prerequisites
 
