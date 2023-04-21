@@ -20,7 +20,7 @@ var comicBooks = []ComicBook{
 type FakeBookshelf struct {
 }
 
-func (b FakeBookshelf) Get(year int) ([]ComicBook, error) {
+func (b FakeBookshelf) Get(year int) ([]ComicBook, error) { //revive:disable:unused-parameter
 	return comicBooks, nil
 }
 
