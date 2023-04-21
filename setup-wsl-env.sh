@@ -13,4 +13,4 @@ rm go1.20.3.linux-amd64.tar.gz
 export PATH=/usr/local/go/bin:$PATH
 
 # install golangci
-sudo curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.50.1
+sudo curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.52.2
