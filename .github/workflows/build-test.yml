@@ -13,6 +13,7 @@ jobs:
       - uses: actions/setup-go@v4
         with:
           go-version-file: api/go.mod
+          cache-dependency-path: api/go.sum
 
       - name: Run golangci-lint
         uses: golangci/golangci-lint-action@v3
