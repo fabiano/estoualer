@@ -1,0 +1,16 @@
+{
+  "name": "quadrinhos",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspace",
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "eamodio.gitlens",
+        "editorconfig.editorconfig",
+        "golang.go"
+      ]
+    }
+  }
+}
