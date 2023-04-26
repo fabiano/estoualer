@@ -4,10 +4,13 @@ services:
     image: nginx:alpine
     container_name: quadrinhos-website
     volumes:
-      - ./website/nginx.conf:/etc/nginx/conf.d/default.conf:cached,z
-      - ./website:/usr/share/nginx/html:cached,z
+      - ./website/nginx.conf:/etc/nginx/conf.d/default.conf:cached
+      - ./website:/usr/share/nginx/html:cached
     ports:
       - 4201:80
+    security_opt:
+      - seccomp:unconfined
+      - label:disable
   api:
     image: golang:1.20-buster
     container_name: quadrinhos-api
@@ -19,13 +22,14 @@ services:
         go install github.com/cosmtrek/air@latest
         air
     volumes:
-      - ./api:/workspace:cached,z
+      - ./api:/workspace:cached
     ports:
       - 4202:80
     cap_add:
       - SYS_PTRACE
     security_opt:
       - seccomp:unconfined
+      - label:disable
   devcontainer:
     image: golang:1.20-buster
     container_name: quadrinhos-devcontainer
@@ -37,8 +41,9 @@ services:
         curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin latest
         while sleep 1000; do :; done
     volumes:
-      - .:/workspace:cached,z
+      - .:/workspace:cached
     cap_add:
       - SYS_PTRACE
     security_opt:
       - seccomp:unconfined
+      - label:disable
