@@ -1,5 +1,5 @@
 # Restore the dependencies
-FROM golang:1.20-buster AS restore
+FROM golang:1.21.1-bookworm AS restore
 WORKDIR /app
 COPY go.mod ./
 COPY go.sum ./
