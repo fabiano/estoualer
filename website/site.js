@@ -167,10 +167,10 @@ function renderChart(comicBooks, reducer) {
     .reduce((acc, comicBook) => {
       const month = MONTHS[comicBook.date.getUTCMonth()];
 
-      acc[month] = (acc[month] || 0) + reducer(comicBook);
+      acc[month] = acc[month] + reducer(comicBook);
 
       return acc;
-    }, {});
+    }, MONTHS.reduce((acc, v) => ({ ...acc, [v]: 0 }), {}));
 
   const highest = Object
     .values(data)
