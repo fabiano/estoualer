@@ -2,8 +2,8 @@
   "name": "quadrinhos",
   "dockerComposeFile": "./docker-compose.yml",
   "service": "devcontainer",
-  "workspaceFolder": "/workspace",
-  "shutdownAction": "stopCompose",
+  "workspaceFolder": "/src",
+  "shutdownAction": "none",
   "customizations": {
     "vscode": {
       "extensions": [
