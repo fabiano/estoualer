@@ -187,7 +187,7 @@ body.is-loading .progress {
 }
 
 .chart .data-serie.is-zero .label::before {
-  border-color: transparent #eee;
+  border-color: transparent #e6e6e6;
 }
 
 .chart .data-serie .value {
@@ -215,7 +215,7 @@ body.is-loading .progress {
 }
 
 .chart .data-serie .bar::-webkit-progress-bar {
-  background-color: #eee;
+  background-color: #e6e6e6;
 }
 
 .chart .data-serie .bar::-webkit-progress-value {
