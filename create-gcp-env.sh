@@ -35,8 +35,7 @@ docker push ${WEBSITE_SERVICE_IMAGE_NAME}:latest
 gcloud run deploy ${API_SERVICE_NAME} \
   --image ${API_SERVICE_IMAGE_NAME}:latest \
   --region ${GCP_REGION} \
-  --allow-unauthenticated \
-  --set-env-vars QUADRINHOS_API_KEY=${QUADRINHOS_API_KEY},QUADRINHOS_SPREADSHEET_ID=${QUADRINHOS_SPREADSHEET_ID}
+  --allow-unauthenticated
 
 gcloud run deploy ${WEBSITE_SERVICE_NAME} \
   --image ${WEBSITE_SERVICE_IMAGE_NAME}:latest \
