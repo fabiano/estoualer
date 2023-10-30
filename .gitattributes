@@ -8,3 +8,7 @@ go.sum text eol=lf
 # Force dotfiles to keep LF endings
 dotfiles-bashrc text eol=lf
 dotfiles-starship text eol=lf
+
+# Force scripts to keep LF endings
+create-gcp-env.sh text eol=lf
+create-gcp-ga-sa.sh text eol=lf

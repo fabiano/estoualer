@@ -26,11 +26,11 @@ services:
       dockerfile: devcontainer.dockerfile
     container_name: estoualer-website
     working_dir: /src/website
-    command: npx serve --listen 80
+    command: npx serve --listen 8080
     volumes:
       - .:/src:cached
     ports:
-      - 4201:80
+      - 4201:8080
     security_opt:
       - seccomp:unconfined
       - label:disable
@@ -44,7 +44,7 @@ services:
     volumes:
       - .:/src:cached
     ports:
-      - 4202:80
+      - 4202:8080
     cap_add:
       - SYS_PTRACE
     security_opt:
