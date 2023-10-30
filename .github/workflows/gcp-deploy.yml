@@ -47,7 +47,6 @@ jobs:
           service: ${{ env.API_SERVICE_NAME }}
           image: ${{ env.API_SERVICE_IMAGE_NAME }}:latest
           region: ${{ env.GCP_REGION }}
-          env_vars: QUADRINHOS_API_KEY=${{ secrets.QUADRINHOS_API_KEY }},QUADRINHOS_SPREADSHEET_ID=${{ secrets.QUADRINHOS_SPREADSHEET_ID }}
 
       - name: Deploy the website
         uses: google-github-actions/deploy-cloudrun@v1
