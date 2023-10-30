@@ -8,8 +8,10 @@ ENV NODEPATH /home/${USER_NAME}/node
 ENV NODEVERSION 20.6.1
 ENV PATH ${GOPATH}/bin:${NODEPATH}/bin:${PATH}
 RUN export DEBIAN_FRONTEND=noninteractive && \
+    echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
+    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - && \
     apt-get update && \
-    apt-get install -yq bash-completion bat exa fzf && \
+    apt-get install -yq bash-completion bat exa fzf google-cloud-cli && \
     curl -sS https://starship.rs/install.sh | sh -s -- -y
 RUN mkdir -p ${GOPATH} && \
     curl -fsSLO https://go.dev/dl/go${GOVERSION}.linux-amd64.tar.gz && \
