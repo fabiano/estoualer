@@ -31,7 +31,7 @@ async function get(year) {
 
   const url = window.location.hostname === "localhost"
     ? "http://localhost:4202/"
-    : "https://api.quadrinhos.dev/"
+    : "https://api.estoualer.dev/"
 
   const response = await fetch(url + year);
   const json = await response.json();

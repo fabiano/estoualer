@@ -1,4 +1,4 @@
-module fabiano.rio.br/quadrinhos
+module estoualer.dev
 
 go 1.21.1
 

@@ -1,5 +1,5 @@
 {
-  "name": "quadrinhos",
+  "name": "estoualer",
   "dockerComposeFile": "./docker-compose.yml",
   "service": "devcontainer",
   "workspaceFolder": "/src",

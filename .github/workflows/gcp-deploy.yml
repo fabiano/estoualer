@@ -5,10 +5,10 @@ on: workflow_dispatch
 env:
   GCP_REGION: us-west1
   GCP_ARTIFACT_REGISTRY_DOCKER_HOST: us-west1-docker.pkg.dev
-  API_SERVICE_NAME: quadrinhos-api
-  API_SERVICE_IMAGE_NAME: us-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/docker/quadrinhos-api
-  WEBSITE_SERVICE_NAME: quadrinhos-website
-  WEBSITE_SERVICE_IMAGE_NAME: us-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/docker/quadrinhos-website
+  API_SERVICE_NAME: estoualer-api
+  API_SERVICE_IMAGE_NAME: us-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/docker/estoualer-api
+  WEBSITE_SERVICE_NAME: estoualer-website
+  WEBSITE_SERVICE_IMAGE_NAME: us-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/docker/estoualer-website
 
 jobs:
   main:
