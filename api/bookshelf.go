@@ -1,14 +1,12 @@
 package main
 
 import (
-	"context"
 	"fmt"
 
-	"google.golang.org/api/option"
-	"google.golang.org/api/sheets/v4"
+	"github.com/xuri/excelize/v2"
 )
 
-// ComicBook represents a shelved comic book.
+// ComicBook represents a comic book.
 type ComicBook struct {
 	Date      NullableTime `json:"date"`      // Date the comic book was read.
 	Publisher string       `json:"publisher"` // Publisher of the comic book.
@@ -19,7 +17,7 @@ type ComicBook struct {
 }
 
 // NewComicBook creates a new comic book from the spreadsheet row data.
-func NewComicBook(i []interface{}) ComicBook {
+func NewComicBook(i []string) ComicBook {
 	return ComicBook{
 		Date:      ToNullableTimeOrDefault(i[0]),
 		Publisher: ToStringOrDefault(i[1]),
@@ -35,31 +33,37 @@ type ABookshelf interface {
 	Get(year int) ([]ComicBook, error)
 }
 
-// Bookshelf is the default bookshelf implementation. Reads the comic books from the Google Sheets spreadsheet.
+// Bookshelf is the default bookshelf implementation. Reads the comics and books from the spreadsheet.
 type Bookshelf struct {
-	APIKey        string          // Google Clould Platform API Key.
-	SpreadsheetID string          // Spreadsheet identifier.
-	Context       context.Context // Context instance.
+	FileName string // Spreadsheet file name.
 }
 
-// Get returns all the shelved comic books for the desired year.
+// Get returns all the comic books for the desired year.
 func (b Bookshelf) Get(year int) ([]ComicBook, error) {
-	svc, err := sheets.NewService(b.Context, option.WithAPIKey(b.APIKey))
+	f, err := excelize.OpenFile(b.FileName)
 
 	if err != nil {
-		return nil, fmt.Errorf("unable to create sheets service: %w", err)
+		return nil, fmt.Errorf("unable to open the spreadsheet: %w", err)
 	}
 
-	values, err := svc.Spreadsheets.Values.Get(b.SpreadsheetID, fmt.Sprintf("%d!A2:G", year)).Do()
+	rows, err := f.GetRows("Quadrinhos")
 
 	if err != nil {
-		return nil, fmt.Errorf("unable to get data from sheet: %w", err)
+		return nil, fmt.Errorf("unable to read the comics sheet: %w", err)
 	}
 
-	arr := make([]ComicBook, len(values.Values))
+	arr := make([]ComicBook, 0, 128)
 
-	for i, v := range values.Values {
-		arr[i] = NewComicBook(v)
+	for i, row := range rows {
+		if i == 0 {
+			continue
+		}
+
+		comicBook := NewComicBook(row)
+
+		if comicBook.Date.HasValue && comicBook.Date.Value.Year() == year {
+			arr = append(arr, NewComicBook(row))
+		}
 	}
 
 	return arr, nil

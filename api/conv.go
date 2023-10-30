@@ -29,7 +29,7 @@ func ToNullableTimeOrDefault(i interface{}) NullableTime {
 		return NullableTime{}
 	}
 
-	value, err := time.Parse("02/01/2006", s)
+	value, err := time.Parse("01-02-06", s)
 
 	if err != nil {
 		return NullableTime{}

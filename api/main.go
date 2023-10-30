@@ -2,11 +2,11 @@
 package main
 
 import (
-	"context"
 	"encoding/json"
 	"log"
 	"net/http"
 	"os"
+	"path/filepath"
 	"regexp"
 	"time"
 
@@ -89,11 +89,14 @@ func (h DefaultHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	l := log.New(os.Stdout, "quadrinhos: ", log.LstdFlags)
+	abs, err := filepath.Abs(os.Args[1])
+
+	if err != nil {
+		l.Fatalf("could not open file: %s", err)
+	}
 
 	b := Bookshelf{
-		APIKey:        os.Getenv("QUADRINHOS_API_KEY"),
-		SpreadsheetID: os.Getenv("QUADRINHOS_SPREADSHEET_ID"),
-		Context:       context.Background(),
+		FileName: abs,
 	}
 
 	h := DefaultHandler{
@@ -116,7 +119,7 @@ func main() {
 
 	l.Printf("listening on port %s", port)
 
-	err := s.ListenAndServe()
+	err = s.ListenAndServe()
 
 	if err != nil {
 		l.Fatalf("could not start server: %s", err)
