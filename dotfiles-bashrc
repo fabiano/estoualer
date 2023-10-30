@@ -5,6 +5,7 @@ source /etc/profile.d/bash_completion.sh
 alias ..="cd .."
 alias ~="cd ~"
 alias ls="exa"
+alias ll="exa --long --header --git"
 alias cat="batcat"
 alias g="git"
 
