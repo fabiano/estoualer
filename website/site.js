@@ -91,16 +91,16 @@ function renderStats(comicBooks) {
   statsTotal.addEventListener("click", () => renderChart(data, () => 1));
 
   statsPaper.textContent = data
-    .filter(comicBook => comicBook.format !== "Digital")
+    .filter(comicBook => comicBook.format !== "eBook")
     .length;
 
-  statsPaper.addEventListener("click", () => renderChart(data, comicBook => comicBook.format !== "Digital" ? 1 : 0));
+  statsPaper.addEventListener("click", () => renderChart(data, comicBook => comicBook.format !== "eBook" ? 1 : 0));
 
   statsDigital.textContent = data
-    .filter(comicBook => comicBook.format === "Digital")
+    .filter(comicBook => comicBook.format === "eBook")
     .length;
 
-  statsDigital.addEventListener("click", () => renderChart(data, comicBook => comicBook.format === "Digital" ? 1 : 0));
+  statsDigital.addEventListener("click", () => renderChart(data, comicBook => comicBook.format === "eBook" ? 1 : 0));
 
   const totalOfPages = data.reduce((acc, comicBook) => acc + comicBook.pages, 0);
   const totalOfIssues = data.reduce((acc, comicBook) => acc + comicBook.issues, 0);
