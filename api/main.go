@@ -88,7 +88,7 @@ func (h DefaultHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	l := log.New(os.Stdout, "quadrinhos: ", log.LstdFlags)
+	l := log.New(os.Stdout, "estoualer: ", log.LstdFlags)
 	abs, err := filepath.Abs(os.Args[1])
 
 	if err != nil {

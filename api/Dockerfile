@@ -9,11 +9,11 @@ RUN go mod download
 FROM restore AS build
 WORKDIR /app
 COPY *.go ./
-RUN go build -buildvcs=false -v -o quadrinhos
+RUN go build -buildvcs=false -v -o estoualer
 
 # Copy the binary and set it as entrypoint
 FROM gcr.io/distroless/base-debian10
-COPY --from=build /app/quadrinhos /app/quadrinhos
+COPY --from=build /app/estoualer /app/estoualer
 EXPOSE 80
 USER nonroot:nonroot
-ENTRYPOINT ["/app/quadrinhos"]
+ENTRYPOINT ["/app/estoualer"]

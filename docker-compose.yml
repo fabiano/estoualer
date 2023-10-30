@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: devcontainer.dockerfile
-    container_name: quadrinhos-devcontainer
+    container_name: estoualer-devcontainer
     working_dir: /src
     command:
       - sh
@@ -24,7 +24,7 @@ services:
     build:
       context: .
       dockerfile: devcontainer.dockerfile
-    container_name: quadrinhos-website
+    container_name: estoualer-website
     working_dir: /src/website
     command: npx serve --listen 80
     volumes:
@@ -38,7 +38,7 @@ services:
     build:
       context: .
       dockerfile: devcontainer.dockerfile
-    container_name: quadrinhos-api
+    container_name: estoualer-api
     working_dir: /src/api
     command: air
     volumes:
@@ -53,4 +53,4 @@ services:
 
 networks:
   default:
-    name: quadrinhos-network
+    name: estoualer-network
