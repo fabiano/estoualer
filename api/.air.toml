@@ -5,7 +5,7 @@ testdata_dir = ".testdata_dir"
 [build]
   cmd = "go build -buildvcs=false -o .tmp/estoualer ."
   bin = ".tmp/estoualer"
-  args_bin = ["../estoualer.xlsx"]
+  args_bin = ["estoualer.xlsx"]
   delay = 1000
   exclude_dir = [".tmp", ".testdata"]
   exclude_file = []

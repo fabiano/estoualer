@@ -14,7 +14,7 @@ RUN go build -buildvcs=false -v -o estoualer
 # Copy the binary and the spreadsheet and set it as entrypoint
 FROM gcr.io/distroless/base-debian10
 COPY --from=build /app/estoualer /app/estoualer
-COPY ../estoualer.xlsx /app/estoualer.xlsx
+COPY estoualer.xlsx /app/estoualer.xlsx
 EXPOSE 80
 USER nonroot:nonroot
 ENTRYPOINT ["/app/estoualer", "/app/estoualer.xlsx"]
