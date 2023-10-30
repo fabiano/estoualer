@@ -1,4 +1,5 @@
 version: "3.9"
+
 services:
   devcontainer:
     build:
@@ -20,24 +21,28 @@ services:
       - seccomp:unconfined
       - label:disable
   website:
-    image: quadrinhos-devcontainer
+    build:
+      context: .
+      dockerfile: devcontainer.dockerfile
     container_name: quadrinhos-website
-    working_dir: /src
+    working_dir: /src/website
     command: npx serve --listen 80
     volumes:
-      - ./website:/src:cached
+      - .:/src:cached
     ports:
       - 4201:80
     security_opt:
       - seccomp:unconfined
       - label:disable
   api:
-    image: quadrinhos-devcontainer
+    build:
+      context: .
+      dockerfile: devcontainer.dockerfile
     container_name: quadrinhos-api
-    working_dir: /src
+    working_dir: /src/api
     command: air
     volumes:
-      - ./api:/src:cached
+      - .:/src:cached
     ports:
       - 4202:80
     cap_add:
