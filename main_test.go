@@ -24,7 +24,7 @@ func (b FakeBookshelf) Get(year int) ([]ComicBook, error) { //revive:disable:unu
 	return comicBooks, nil
 }
 
-func TestGetComicBooks(t *testing.T) {
+func TestGetBookshelf(t *testing.T) {
 	server := httptest.NewServer(GetBookshelf{
 		Logger:    log.New(os.Stdout, "test: ", log.LstdFlags),
 		Bookshelf: FakeBookshelf{},
