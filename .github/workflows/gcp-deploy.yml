@@ -5,8 +5,6 @@ on: workflow_dispatch
 env:
   GCP_REGION: us-west1
   GCP_ARTIFACT_REGISTRY_DOCKER_HOST: us-west1-docker.pkg.dev
-  API_SERVICE_NAME: estoualer-api
-  API_SERVICE_IMAGE_NAME: us-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/docker/estoualer-api
   WEBSITE_SERVICE_NAME: estoualer-website
   WEBSITE_SERVICE_IMAGE_NAME: us-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/docker/estoualer-website
 
@@ -29,26 +27,13 @@ jobs:
       - name: Configure Docker
         run: gcloud auth configure-docker ${{ env.GCP_ARTIFACT_REGISTRY_DOCKER_HOST }}
 
-      - name: Build and push the api image
-        run: |-
-          DOCKER_BUILDKIT=1 docker build --tag ${{ env.API_SERVICE_IMAGE_NAME }}:latest .
-          docker push ${{ env.API_SERVICE_IMAGE_NAME }}:latest
-        working-directory: api
-
-      - name: Build and push the website image
+      - name: Build and push the docker image
         run: |-
           DOCKER_BUILDKIT=1 docker build --tag ${{ env.WEBSITE_SERVICE_IMAGE_NAME }}:latest .
           docker push ${{ env.WEBSITE_SERVICE_IMAGE_NAME }}:latest
-        working-directory: website
+        working-directory: .
 
-      - name: Deploy the api
-        uses: google-github-actions/deploy-cloudrun@v1
-        with:
-          service: ${{ env.API_SERVICE_NAME }}
-          image: ${{ env.API_SERVICE_IMAGE_NAME }}:latest
-          region: ${{ env.GCP_REGION }}
-
-      - name: Deploy the website
+      - name: Deploy the docker image
         uses: google-github-actions/deploy-cloudrun@v1
         with:
           service: ${{ env.WEBSITE_SERVICE_NAME }}

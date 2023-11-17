@@ -11,5 +11,8 @@
         "golang.go"
       ]
     }
-  }
+  },
+  "remoteUser": "nonroot",
+  "forwardPorts": [
+  ]
 }
