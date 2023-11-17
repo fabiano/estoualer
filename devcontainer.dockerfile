@@ -4,9 +4,7 @@ ENV USER_UID 1000
 ENV USER_NAME nonroot
 ENV GOPATH /home/${USER_NAME}/go
 ENV GOVERSION 1.21.1
-ENV NODEPATH /home/${USER_NAME}/node
-ENV NODEVERSION 20.6.1
-ENV PATH ${GOPATH}/bin:${NODEPATH}/bin:${PATH}
+ENV PATH ${GOPATH}/bin:${PATH}
 RUN export DEBIAN_FRONTEND=noninteractive && \
     echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
     curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - && \
@@ -19,10 +17,6 @@ RUN mkdir -p ${GOPATH} && \
     rm go${GOVERSION}.linux-amd64.tar.gz
 RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin latest
 RUN curl -sSfL https://raw.githubusercontent.com/cosmtrek/air/master/install.sh | sh -s -- -b $(go env GOPATH)/bin latest
-RUN mkdir -p ${NODEPATH} && \
-    curl -fsSLO https://nodejs.org/dist/v${NODEVERSION}/node-v${NODEVERSION}-linux-x64.tar.gz && \
-    tar -xzf node-v${NODEVERSION}-linux-x64.tar.gz -C ${NODEPATH} --strip-components 1 --no-same-owner && \
-    rm node-v${NODEVERSION}-linux-x64.tar.gz
 RUN addgroup --gid ${USER_GID} ${USER_NAME} && \
     adduser --uid ${USER_UID} --gid ${USER_GID} --shell /bin/bash ${USER_NAME}
 COPY dotfiles-bashrc /home/${USER_NAME}/.bashrc

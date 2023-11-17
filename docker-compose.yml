@@ -15,36 +15,8 @@ services:
         while sleep 1000; do :; done
     volumes:
       - .:/src:cached
-    cap_add:
-      - SYS_PTRACE
-    security_opt:
-      - seccomp:unconfined
-      - label:disable
-  website:
-    build:
-      context: .
-      dockerfile: devcontainer.dockerfile
-    container_name: estoualer-website
-    working_dir: /src/website
-    command: npx serve --listen 8080
-    volumes:
-      - .:/src:cached
     ports:
       - 4201:8080
-    security_opt:
-      - seccomp:unconfined
-      - label:disable
-  api:
-    build:
-      context: .
-      dockerfile: devcontainer.dockerfile
-    container_name: estoualer-api
-    working_dir: /src/api
-    command: air
-    volumes:
-      - .:/src:cached
-    ports:
-      - 4202:8080
     cap_add:
       - SYS_PTRACE
     security_opt:

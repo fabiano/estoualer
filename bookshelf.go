@@ -33,12 +33,12 @@ type ABookshelf interface {
 	Get(year int) ([]ComicBook, error)
 }
 
-// Bookshelf is the default bookshelf implementation. Reads the comics and books from the spreadsheet.
+// Bookshelf is the default bookshelf implementation. Reads the comics from the spreadsheet.
 type Bookshelf struct {
 	FileName string // Spreadsheet file name.
 }
 
-// Get returns all the comic books for the desired year.
+// Get returns all the comic books for the requested year.
 func (b Bookshelf) Get(year int) ([]ComicBook, error) {
 	f, err := excelize.OpenFile(b.FileName)
 

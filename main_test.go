@@ -24,8 +24,8 @@ func (b FakeBookshelf) Get(year int) ([]ComicBook, error) { //revive:disable:unu
 	return comicBooks, nil
 }
 
-func TestDefaultHandler(t *testing.T) {
-	server := httptest.NewServer(DefaultHandler{
+func TestGetComicBooks(t *testing.T) {
+	server := httptest.NewServer(GetBookshelf{
 		Logger:    log.New(os.Stdout, "test: ", log.LstdFlags),
 		Bookshelf: FakeBookshelf{},
 	})
@@ -34,7 +34,7 @@ func TestDefaultHandler(t *testing.T) {
 
 	for _, method := range []string{http.MethodHead, http.MethodPost, http.MethodPut, http.MethodPatch, http.MethodDelete, http.MethodConnect, http.MethodTrace} {
 		t.Run(fmt.Sprintf("%s method is not allowed", method), func(t *testing.T) {
-			req, err := http.NewRequest(method, server.URL+"/2021", &bytes.Buffer{})
+			req, err := http.NewRequest(method, server.URL+"/bookshelf/2021", &bytes.Buffer{})
 
 			if err != nil {
 				t.Fatalf("unexpected error: %s", err)
@@ -53,7 +53,7 @@ func TestDefaultHandler(t *testing.T) {
 	}
 
 	t.Run("Preflight request returns the correct status and headers", func(t *testing.T) {
-		req, err := http.NewRequest(http.MethodOptions, server.URL+"/2021", &bytes.Buffer{})
+		req, err := http.NewRequest(http.MethodOptions, server.URL+"/bookshelf/2021", &bytes.Buffer{})
 
 		req.Header.Add("Access-Control-Request-Method", "GET")
 		req.Header.Add("Access-Control-Request-Headers", "Content-Type")
@@ -89,7 +89,7 @@ func TestDefaultHandler(t *testing.T) {
 		}
 	})
 
-	for _, path := range []string{"/", "/foo", "/foo/bar", "/1", "/10", "/100"} {
+	for _, path := range []string{"/bookshelf", "/bookshelf/foo", "/bookshelf/foo/bar", "/bookshelf/1", "/bookshelf/10", "/bookshelf/100"} {
 		t.Run(fmt.Sprintf("Path without a year (%s) returns a not found response", path), func(t *testing.T) {
 			resp, err := http.Get(server.URL + path)
 
@@ -104,7 +104,7 @@ func TestDefaultHandler(t *testing.T) {
 	}
 
 	t.Run("Path with a year returns a successful response", func(t *testing.T) {
-		resp, err := http.Get(server.URL + "/2021")
+		resp, err := http.Get(server.URL + "/bookshelf/2021")
 
 		if err != nil {
 			t.Fatalf("unexpected error: %s", err)

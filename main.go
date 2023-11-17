@@ -9,17 +9,56 @@ import (
 	"path/filepath"
 	"regexp"
 	"time"
-
-	_ "github.com/joho/godotenv/autoload"
 )
 
-// DefaultHandler handles all requests
-type DefaultHandler struct {
+func main() {
+	l := log.New(os.Stdout, "estoualer: ", log.LstdFlags)
+
+	if len(os.Args) <= 1 {
+		l.Fatalf("usage: estoualer [spreadsheet file]")
+	}
+
+	abs, err := filepath.Abs(os.Args[1])
+
+	if err != nil {
+		l.Fatalf("could not find the spreadsheet file: %s", err)
+	}
+
+	b := Bookshelf{
+		FileName: abs,
+	}
+
+	http.Handle("/", http.FileServer(http.Dir("./assets")))
+	http.Handle("/bookshelf/", GetBookshelf{Logger: l, Bookshelf: b})
+
+	port := os.Getenv("PORT")
+
+	if port == "" {
+		port = "8080"
+	}
+
+	s := http.Server{
+		Addr:         ":" + port,
+		ReadTimeout:  5 * time.Second,
+		WriteTimeout: 5 * time.Second,
+	}
+
+	l.Printf("listening on port %s", port)
+
+	err = s.ListenAndServe()
+
+	if err != nil {
+		l.Fatalf("could not start the server: %s", err)
+	}
+}
+
+// GetBookshelf returns all the comic books for the requested year.
+type GetBookshelf struct {
 	Logger    *log.Logger
 	Bookshelf ABookshelf
 }
 
-func (h DefaultHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+func (h GetBookshelf) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	header := w.Header()
 
 	// Enable CORS everywhere
@@ -27,7 +66,7 @@ func (h DefaultHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	header.Set("Vary", "Origin")
 
 	// Check the route pattern
-	matches := regexp.MustCompile(`^\/(\d{4})$`).FindStringSubmatch(r.URL.Path)
+	matches := regexp.MustCompile(`^\/bookshelf\/(\d{4})$`).FindStringSubmatch(r.URL.Path)
 
 	if len(matches) == 0 {
 		w.WriteHeader(http.StatusNotFound)
@@ -84,44 +123,5 @@ func (h DefaultHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
 		h.Logger.Printf("unable to write the data to the connection: %v", err)
-	}
-}
-
-func main() {
-	l := log.New(os.Stdout, "estoualer: ", log.LstdFlags)
-	abs, err := filepath.Abs(os.Args[1])
-
-	if err != nil {
-		l.Fatalf("could not open file: %s", err)
-	}
-
-	b := Bookshelf{
-		FileName: abs,
-	}
-
-	h := DefaultHandler{
-		Logger:    l,
-		Bookshelf: b,
-	}
-
-	port := os.Getenv("PORT")
-
-	if port == "" {
-		port = "8080"
-	}
-
-	s := http.Server{
-		Addr:         ":" + port,
-		Handler:      h,
-		ReadTimeout:  5 * time.Second,
-		WriteTimeout: 5 * time.Second,
-	}
-
-	l.Printf("listening on port %s", port)
-
-	err = s.ListenAndServe()
-
-	if err != nil {
-		l.Fatalf("could not start server: %s", err)
 	}
 }
