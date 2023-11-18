@@ -1,7 +1,19 @@
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
+using Google.Cloud.Diagnostics.Common;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Logging.ClearProviders();
+
+if (builder.Environment.IsProduction())
+{
+    builder.Logging.AddGoogle();
+}
+else
+{
+  builder.Logging.AddConsole();
+}
 
 builder.Services.AddSingleton(Bookshelf.Create("EstouALer.xlsx"));
 
