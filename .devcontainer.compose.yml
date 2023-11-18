@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  devcontainer:
+    build:
+      context: .
+      dockerfile: .devcontainer.dockerfile
+    image: estoualer-devcontainer
+    container_name: estoualer-devcontainer
+    working_dir: /src
+    command:
+      - sh
+      - -c
+      - |
+        echo "Developers, developers, developers!"
+        while sleep 1000; do :; done
+    volumes:
+      - .:/src:cached
+    ports:
+      - 4201:4201
+    security_opt:
+      - seccomp:unconfined
+      - label:disable
+
+networks:
+  default:
+    name: estoualer-network

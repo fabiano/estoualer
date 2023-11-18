@@ -1,6 +1,6 @@
 {
   "recommendations": [
     "editorconfig.editorconfig",
-    "golang.go"
+    "ms-vscode-remote.remote-containers"
   ],
 }

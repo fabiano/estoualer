@@ -1,21 +1,13 @@
-# restore the dependencies
-FROM golang:1.21.1-bookworm AS restore
-WORKDIR /app
-COPY go.mod ./
-COPY go.sum ./
-RUN go mod download
+FROM mcr.microsoft.com/dotnet/sdk:8.0-bookworm-slim AS build
+WORKDIR /src
+COPY *.sln .
+COPY *.csproj .
+RUN dotnet restore EstouALer.csproj
+COPY . .
+RUN dotnet publish EstouALer.csproj --configuration Release --output /app --no-restore
 
-# build the application
-FROM restore AS build
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-bookworm-slim
 WORKDIR /app
-COPY *.go ./
-RUN go build -buildvcs=false -v -o estoualer
-
-# run the application
-FROM gcr.io/distroless/base-debian12
-COPY --from=build /app/estoualer /app/estoualer
-COPY assets /app/assets
-COPY estoualer.xlsx /app/estoualer.xlsx
-USER nonroot:nonroot
-WORKDIR /app
-ENTRYPOINT ["./estoualer", "estoualer.xlsx"]
+COPY --from=build /app .
+COPY EstouALer.xlsx .
+ENTRYPOINT ["dotnet", "EstouALer.dll"]

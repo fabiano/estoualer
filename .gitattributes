@@ -1,10 +1,5 @@
 * text=auto
 
-# Force Go files to keep LF endings
-*.go text eol=lf
-go.mod text eol=lf
-go.sum text eol=lf
-
 # Force dotfiles to keep LF endings
 dotfiles-bashrc text eol=lf
 dotfiles-starship text eol=lf

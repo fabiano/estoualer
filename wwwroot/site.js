@@ -40,19 +40,11 @@ async function get(year) {
 function transform(comicBooks) {
   console.time("transform");
 
-  const arr = comicBooks.map((comicBook, index) => {
-    const {
-      date, publisher, title, pages, issues, format
-     } = comicBook;
-
+  const arr = comicBooks.map(comicBook => {
     return {
-      number: index + 1,
-      date: date ? new Date(date) : null,
-      publisher,
-      title,
-      pages: pages,
-      issues: issues,
-      format,
+      ...comicBook,
+
+      date: new Date(comicBook.date),
     };
   });
 
@@ -90,7 +82,7 @@ function renderStats(comicBooks) {
     .filter(comicBook => comicBook.format !== "eBook")
     .length;
 
-  statsPaper.addEventListener("click", () => renderChart(data, comicBook => comicBook.format !== "eBook" ? 1 : 0));
+  statsPaper.addEventListener("click", () => renderChart(data, comicBook => comicBook.format === "eBook" ? 0 : 1));
 
   statsDigital.textContent = data
     .filter(comicBook => comicBook.format === "eBook")
