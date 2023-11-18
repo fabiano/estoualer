@@ -2,7 +2,7 @@
 
 [https://estoualer.dev](https://estoualer.dev) website code.
 
-[![CI](https://github.com/fabiano/estoualer/actions/workflows/build-test.yml/badge.svg)](https://github.com/fabiano/estoualer/actions/workflows/build-test.yml)
+[![CI](https://github.com/fabiano/estoualer/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/fabiano/estoualer/actions/workflowscontinuous-integration.yml)
 
 ## Prerequisites
 
