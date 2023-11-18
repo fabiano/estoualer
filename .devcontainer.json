@@ -1,6 +1,6 @@
 {
   "name": "estoualer",
-  "dockerComposeFile": "./docker-compose.yml",
+  "dockerComposeFile": ".devcontainer.compose.yml",
   "service": "devcontainer",
   "workspaceFolder": "/src",
   "shutdownAction": "none",
@@ -8,11 +8,10 @@
     "vscode": {
       "extensions": [
         "editorconfig.editorconfig",
-        "golang.go"
+        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.csharp"
       ]
     }
   },
-  "remoteUser": "nonroot",
-  "forwardPorts": [
-  ]
+  "remoteUser": "nonroot"
 }
