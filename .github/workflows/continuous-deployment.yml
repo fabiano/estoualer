@@ -1,0 +1,44 @@
+name: Continuous deployment
+
+on:
+  workflow_run:
+    workflows: [Continuous integration]
+    types:
+      - completed
+
+env:
+  GCP_REGION: us-west1
+  GCP_ARTIFACT_REGISTRY_DOCKER_HOST: us-west1-docker.pkg.dev
+  WEBSITE_SERVICE_NAME: estoualer-website
+  WEBSITE_SERVICE_IMAGE_NAME: us-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/docker/estoualer-website
+
+jobs:
+  main:
+    name: Main
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+
+      - name: Configure Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+
+      - name: Configure Docker
+        run: gcloud auth configure-docker ${{ env.GCP_ARTIFACT_REGISTRY_DOCKER_HOST }}
+
+      - name: Build and push the docker image
+        run: |-
+          DOCKER_BUILDKIT=1 docker build --tag ${{ env.WEBSITE_SERVICE_IMAGE_NAME }}:latest .
+          docker push ${{ env.WEBSITE_SERVICE_IMAGE_NAME }}:latest
+
+      - name: Deploy the docker image
+        uses: google-github-actions/deploy-cloudrun@v1
+        with:
+          service: ${{ env.WEBSITE_SERVICE_NAME }}
+          image: ${{ env.WEBSITE_SERVICE_IMAGE_NAME }}:latest
+          region: ${{ env.GCP_REGION }}
