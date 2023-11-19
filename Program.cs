@@ -141,7 +141,7 @@ class Bookshelf(List<ComicBook> comicBooks)
 /// <summary>
 /// Represents a comic book.
 /// </summary>
-/// <param name="Number">Date the comic book was read.</param>
+/// <param name="Number">Position of the comic book in the bookshelf.</param>
 /// <param name="Date">Date the comic book was read.</param>
 /// <param name="Publisher">Publisher of the comic book.</param>
 /// <param name="Title">Title of the comic book.</param>
