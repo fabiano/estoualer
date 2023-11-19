@@ -10,8 +10,10 @@ ENV USER_NAME nonroot
 ENV PATH ${PATH}:${DOTNET_ROOT}
 ENV PATH ${PATH}:${DOTNET_ROOT}/tools
 RUN export DEBIAN_FRONTEND=noninteractive && \
+    echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
+    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - && \
     apt-get update && \
-    apt-get install -yq bash-completion bat exa fzf && \
+    apt-get install -yq bash-completion bat exa fzf google-cloud-cli && \
     curl -sS https://starship.rs/install.sh | sh -s -- -y
 RUN mkdir -p ${DOTNET_ROOT} && \
     curl -fsSLO https://dotnetcli.azureedge.net/dotnet/Sdk/${DOTNET_SDK_VERSION}/dotnet-sdk-${DOTNET_SDK_VERSION}-linux-x64.tar.gz && \
