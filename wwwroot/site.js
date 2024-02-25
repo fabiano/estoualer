@@ -77,11 +77,11 @@ function renderCards(items) {
 
   for (const { date, publisher, title, length, format } of items) {
     const $card = $template.content.cloneNode(true);
-    const $number = $card.querySelector(".number")
-    const $date = $card.querySelector(".date")
-    const $title = $card.querySelector(".title")
-    const $publisherFormat = $card.querySelector(".publisher-and-format")
-    const $length = $card.querySelector(".length")
+    const $number = $card.querySelector(".number");
+    const $date = $card.querySelector(".date");
+    const $title = $card.querySelector(".title");
+    const $publisherFormat = $card.querySelector(".publisher-and-format");
+    const $length = $card.querySelector(".length");
 
     $number.textContent = `#${i}`;
     $date.textContent = date.split("-").reverse().join("/");
