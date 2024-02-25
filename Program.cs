@@ -1,5 +1,3 @@
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
@@ -18,7 +16,6 @@ else
     builder.Logging.AddConsole();
 }
 
-builder.Services.ConfigureHttpJsonOptions(options => options.SerializerOptions.Converters.Add(new ILengthConverter()));
 builder.Services.AddSingleton(Bookshelf.Create("EstouALer.xlsx"));
 
 var app = builder.Build();
@@ -44,11 +41,11 @@ app.Run(port is not null
 /// </summary>
 /// <param name="comicBooks">The comic books.</param>
 /// <param name="books">The books.</param>
-class Bookshelf(List<ComicBook> comicBooks, List<Book> books)
+class Bookshelf(List<BookshelfItem> comicBooks, List<BookshelfItem> books)
 {
     private readonly Dictionary<int, List<BookshelfItem>> cache = new List<BookshelfItem>()
-        .Concat(comicBooks.Select(BookshelfItem.Create))
-        .Concat(books.Select(BookshelfItem.Create))
+        .Concat(comicBooks)
+        .Concat(books)
         .OrderBy(item => item.Date)
         .GroupBy(
             key => key.Date.Year,
@@ -82,7 +79,7 @@ class Bookshelf(List<ComicBook> comicBooks, List<Book> books)
         return new(comicBooks, books);
     }
 
-    private static List<ComicBook> GetComicBooks(
+    private static List<BookshelfItem> GetComicBooks(
         WorkbookPart workbookPart,
         SharedStringTable sharedStringTable)
     {
@@ -99,11 +96,14 @@ class Bookshelf(List<ComicBook> comicBooks, List<Book> books)
             .Descendants<Row>()
             .Skip(1);
 
-        var comicBooks = new List<ComicBook>();
+        var comicBooks = new List<BookshelfItem>();
 
         foreach (var row in rows)
         {
-            var comicBook = new ComicBook();
+            var comicBook = new BookshelfItem
+            {
+                Type = "ComicBook",
+            };
 
             foreach (var cell in row.Elements<Cell>())
             {
@@ -132,12 +132,12 @@ class Bookshelf(List<ComicBook> comicBooks, List<Book> books)
 
                 if (cellReference.StartsWith('E'))
                 {
-                    comicBook = comicBook with { Pages = int.Parse(cellInnerText) };
+                    comicBook = comicBook with { Length = comicBook.Length with { Pages = int.Parse(cellInnerText) } };
                 }
 
                 if (cellReference.StartsWith('F'))
                 {
-                    comicBook = comicBook with { Issues = int.Parse(cellInnerText) };
+                    comicBook = comicBook with { Length = comicBook.Length with { Issues = int.Parse(cellInnerText) } };
                 }
             }
 
@@ -147,7 +147,7 @@ class Bookshelf(List<ComicBook> comicBooks, List<Book> books)
         return comicBooks;
     }
 
-    private static List<Book> GetBooks(
+    private static List<BookshelfItem> GetBooks(
         WorkbookPart workbookPart,
         SharedStringTable sharedStringTable)
     {
@@ -164,11 +164,14 @@ class Bookshelf(List<ComicBook> comicBooks, List<Book> books)
             .Descendants<Row>()
             .Skip(1);
 
-        var books = new List<Book>();
+        var books = new List<BookshelfItem>();
 
         foreach (var row in rows)
         {
-            var book = new Book();
+            var book = new BookshelfItem
+            {
+                Type = "Book",
+            };
 
             foreach (var cell in row.Elements<Cell>())
             {
@@ -202,7 +205,7 @@ class Bookshelf(List<ComicBook> comicBooks, List<Book> books)
 
                 if (cellReference.StartsWith('F'))
                 {
-                    book = book with { Length = cellInnerText };
+                    book = book with { Length = Length.Parse(cellInnerText) };
                 }
             }
 
@@ -212,40 +215,6 @@ class Bookshelf(List<ComicBook> comicBooks, List<Book> books)
         return books;
     }
 }
-
-/// <summary>
-/// Represents a comic book.
-/// </summary>
-/// <param name="Date">Date the comic book was read.</param>
-/// <param name="Publisher">Publisher of the comic book.</param>
-/// <param name="Title">Title of the comic book.</param>
-/// <param name="Pages">Number of pages of the comic book.</param>
-/// <param name="Issues">Number of issues of the comic book.</param>
-/// <param name="Format">Format of the comic book.</param>
-readonly record struct ComicBook(
-    DateOnly Date,
-    string Publisher,
-    string Title,
-    int Pages,
-    int Issues,
-    string Format);
-
-/// <summary>
-/// Represents a book.
-/// </summary>
-/// <param name="Date">Date the book was read.</param>
-/// <param name="Publisher">Publisher of the book.</param>
-/// <param name="Title">Title of the book.</param>
-/// <param name="Author">Author of the book.</param>
-/// <param name="Length">Length of the book.</param>
-/// <param name="Format">Format of the book.</param>
-readonly record struct Book(
-    DateOnly Date,
-    string Publisher,
-    string Title,
-    string Author,
-    string Length,
-    string Format);
 
 /// <summary>
 /// Represents a bookshelf item.
@@ -263,30 +232,27 @@ readonly record struct BookshelfItem(
     string Publisher,
     string Title,
     string Author,
-    ILength Length,
-    string Format)
+    Length Length,
+    string Format);
+
+/// <summary>
+/// Represents a bookshelf item length.
+/// </summary>
+/// <param name="Pages">Number of pages.</param>
+/// <param name="Issues">Number of issues.</param>
+/// <param name="Hours">Number of hours.</param>
+/// <param name="Minutes">Number of minutes.</param>
+readonly record struct Length(int Pages, int Issues, int Hours, int Minutes)
 {
-    public static BookshelfItem Create(ComicBook comicBook) => new(
-        "ComicBook",
-        comicBook.Date,
-        comicBook.Publisher,
-        comicBook.Title,
-        string.Empty,
-        new ComicBookLength(comicBook.Pages, comicBook.Issues),
-        comicBook.Format);
-
-    public static BookshelfItem Create(Book book) => new(
-        "Book",
-        book.Date,
-        book.Publisher,
-        book.Title,
-        book.Author,
-        ParseLength(book.Length),
-        book.Format);
-
-    static ILength ParseLength(string value)
+    /// <summary>
+    /// Parses the value to a <see cref="Length"/>.
+    /// </summary>
+    /// <param name="value">The value to parse.</param>
+    /// <returns>An instance of <see cref="Length"/>.</returns>
+    /// <exception cref="InvalidOperationException"></exception>
+    public static Length Parse(string value)
     {
-        var pattern = @"^(?<Hours>\d+)h (?<Minutes>\d+)m|(?<Hours>\d+)h|(?<Minutes>\d+)m|(?<Pages>\d+)$";
+        var pattern = @"^(?<Pages>\d+)|(?<Hours>\d+)h (?<Minutes>\d+)m|(?<Hours>\d+)h|(?<Minutes>\d+)m$";
         var re = new Regex(pattern, RegexOptions.Compiled);
         var match = re.Match(value);
 
@@ -295,59 +261,27 @@ readonly record struct BookshelfItem(
             throw new InvalidOperationException($"{value} is not in a recognizable format.");
         }
 
+        var length = new Length();
+        var pages = match.Groups["Pages"]?.Value;
         var hours = match.Groups["Hours"]?.Value;
         var minutes = match.Groups["Minutes"]?.Value;
-        var pages = match.Groups["Pages"]?.Value;
 
-        if (!string.IsNullOrEmpty(hours) || !string.IsNullOrEmpty(minutes))
+        if (!string.IsNullOrEmpty(pages))
         {
-            return new AudioBookLength(hours ?? string.Empty, minutes ?? string.Empty);
+            length = length with { Pages = int.Parse(pages) };
         }
 
-        return new BookLength(pages ?? string.Empty);
-    }
-}
+        if (!string.IsNullOrEmpty(hours))
+        {
+            length = length with { Hours = int.Parse(hours) };
+        }
 
-/// <summary>
-/// Represents a bookshelf item length.
-/// </summary>
-partial interface ILength;
+        if (!string.IsNullOrEmpty(minutes))
+        {
+            length = length with { Minutes = int.Parse(minutes) };
+        }
 
-/// <summary>
-/// Represents a book length.
-/// </summary>
-/// <param name="Pages">Number of pages.</param>
-readonly record struct BookLength(string Pages) : ILength;
-
-/// <summary>
-/// Represents an audiobook length.
-/// </summary>
-/// <param name="Hours">Number of hours.</param>
-/// <param name="Minutes">Number of minutes.</param>
-readonly record struct AudioBookLength(string Hours, string Minutes) : ILength;
-
-/// <summary>
-/// Represents a comicbook length.
-/// </summary>
-/// <param name="Pages">Number of pages.</param>
-/// <param name="Issues">Number of issues.</param>
-readonly record struct ComicBookLength(int Pages, int Issues) : ILength;
-
-/// <summary>
-/// Length JSON converter.
-/// </summary>
-class ILengthConverter : JsonConverter<ILength>
-{
-    public override ILength? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-    {
-        throw new NotImplementedException();
-    }
-
-    public override void Write(Utf8JsonWriter writer, ILength value, JsonSerializerOptions options)
-    {
-        var type = value.GetType();
-
-        JsonSerializer.Serialize(writer, value, type, options);
+        return length;
     }
 }
 
