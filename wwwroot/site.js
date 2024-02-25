@@ -52,14 +52,14 @@ function renderStats(items) {
   const $stats = document.getElementById("stats");
   const $total = $stats.querySelector(".total > .value");
   const $books = $stats.querySelector(".books > .value");
-  const $comibooks = $stats.querySelector(".comibooks > .value");
+  const $comicbooks = $stats.querySelector(".comicbooks > .value");
   const $paper = $stats.querySelector(".paper > .value");
   const $audio = $stats.querySelector(".audio > .value");
   const $ebook = $stats.querySelector(".ebook > .value");
 
   $total.textContent = items.length;
   $books.textContent = items.filter(item => item.type === "Book").length;
-  $comibooks.textContent = items.filter(item => item.type === "ComicBook").length;
+  $comicbooks.textContent = items.filter(item => item.type === "ComicBook").length;
   $paper.textContent = items.filter(item => item.format !== "eBook" && item.format !== "Audiolivro").length;
   $audio.textContent = items.filter(item => item.format === "Audiolivro").length;
   $ebook.textContent = items.filter(item => item.format === "eBook").length;
