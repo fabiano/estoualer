@@ -3,7 +3,7 @@
 :root {
   --text-color: #383838;
   --link-color: #3273dc;
-  --primary-color: #4cdec9;
+  --primary-color: #77b3d4;
 }
 
 /* css reset from https://github.com/vladocar/CSS-Mini-Reset */
@@ -147,81 +147,6 @@ body.is-loading .progress {
   }
 }
 
-/* chart */
-
-.chart {
-  margin-top: 20px;
-  width: 100%;
-}
-
-.chart .data-serie {
-  margin-bottom: 5px;
-  position: relative;
-}
-
-.chart .data-serie:last-of-type {
-  margin: 0;
-}
-
-.chart .data-serie .label {
-  color: #fff;
-  font-size: 1.2rem;
-  height: 20px;
-  left: 15px;
-  letter-spacing: 0.1rem;
-  line-height: 20px;
-  position: absolute;
-  text-transform: uppercase;
-}
-
-.chart .data-serie .label::before {
-  background-color: #fff;
-  border-color: transparent var(--primary-color);
-  border-style: solid;
-  border-width: 10px 10px 10px 0;
-  box-sizing: border-box;
-  content: "";
-  height: 20px;
-  left: -15px;
-  position: absolute;
-}
-
-.chart .data-serie.is-zero .label::before {
-  border-color: transparent #e6e6e6;
-}
-
-.chart .data-serie .value {
-  color: var(--text-color);
-  font-size: 1.2rem;
-  height: 20px;
-  line-height: 20px;
-  position: absolute;
-  right: 5px;
-}
-
-.chart .data-serie .bar {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  border: none;
-  display: block;
-  height: 20px;
-  padding: 0;
-  width: 100%;
-}
-
-.chart .data-serie .bar::-moz-progress-bar {
-  background-color: var(--primary-color);
-}
-
-.chart .data-serie .bar::-webkit-progress-bar {
-  background-color: #e6e6e6;
-}
-
-.chart .data-serie .bar::-webkit-progress-value {
-  background-color: var(--primary-color);
-}
-
 /* cards */
 
 .cards {
@@ -288,7 +213,7 @@ body.is-loading .progress {
   font-size: 1.2rem;
 }
 
-.cards .card .pages-and-issues {
+.cards .card .length {
   font-size: 1.2rem;
 }
 
