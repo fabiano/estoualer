@@ -6,20 +6,11 @@
 
 ## Prerequisites
 
-- Docker/Podman
-- Visual Studio Code
-- [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+- [.NET SDK 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 
 ## Working on the project
 
-- Build the services: `docker compose -f .\.devcontainer.compose.yml build`
-- Start the services: `docker compose -f .\.devcontainer.compose.yml up`
-- Open Visual Studio Code
-- Run the `Dev Containers: Open Folder in Container...` command and select the repository folder
-- (Optional) Start the project: `docker compose -f .\.devcontainer.compose.yml exec devcontainer bash -c "dotnet run"`
+- Install .NET SDK 8: `winget install --exact --id Microsoft.DotNet.SDK.8`
+- Build the project: `dotnet build`
+- (Optional) Start the project: `dotnet run`
 - (Optional) Open http://localhost:4201
-
-## Troubleshooting
-
-- Stop and remove the containers: `docker compose -f .\.devcontainer.compose.yml down`
-- Remove the volume added by the Dev Containers extension: `docker volume remove vscode`
