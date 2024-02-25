@@ -137,16 +137,12 @@ body.is-loading .progress {
   width: 1px;
 }
 
-.stats .item:nth-child(n+4) {
+.stats :nth-child(n+4) {
   display: none;
 }
 
 @media only screen and (min-width: 1366px) {
-  .stats .item:nth-child(n+4) {
-    display: block;
-  }
-
-  .stats .separator {
+  .stats :nth-child(n+4) {
     display: block;
   }
 }
