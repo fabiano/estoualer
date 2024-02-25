@@ -1,8 +1,8 @@
 {
   "name": "Estou a ler",
   "short_name": "Estou a ler",
-  "theme_color": "#25c2ce",
-  "background_color": "#25c2ce",
+  "theme_color": "#77b3d4",
+  "background_color": "#77b3d4",
   "display": "standalone",
   "icons": [
     {
