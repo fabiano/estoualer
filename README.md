@@ -18,5 +18,5 @@
 - Install C# Dev Kit extension: `code --install-extension ms-dotnettools.csdevkit`
 - Restore the dependencies: `dotnet restore`
 - Build the project: `dotnet build`
-- (Optional) Start the project: `dotnet run`
+- (Optional) Start the project: `dotnet watch run`
 - (Optional) Open http://localhost:4201
