@@ -252,7 +252,7 @@ readonly record struct Length(int Pages, int Issues, int Hours, int Minutes)
     /// <exception cref="InvalidOperationException"></exception>
     public static Length Parse(string value)
     {
-        var pattern = @"^(?<Pages>\d+)|(?<Hours>\d+)h (?<Minutes>\d+)m|(?<Hours>\d+)h|(?<Minutes>\d+)m$";
+        var pattern = @"^(?<Pages>\d+)$|^((?<Hours>\d+?)h)?\s{0,1}((?<Minutes>\d+?)m)?$";
         var re = new Regex(pattern, RegexOptions.Compiled);
         var match = re.Match(value);
 
