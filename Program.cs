@@ -110,7 +110,7 @@ class Bookshelf(List<BookshelfItem> comicBooks, List<BookshelfItem> books)
                 var cellReference = cell.CellReference!.Value!;
                 var cellInnerText = cell.GetInnerText(sharedStringTable);
 
-                if (cellReference.StartsWith('A'))
+                if (cellReference.StartsWith('A') && !string.IsNullOrEmpty(cellInnerText))
                 {
                     comicBook = comicBook with { Date = DateOnly.FromDateTime(DateTime.FromOADate(double.Parse(cellInnerText))) };
                 }
@@ -178,7 +178,7 @@ class Bookshelf(List<BookshelfItem> comicBooks, List<BookshelfItem> books)
                 var cellReference = cell.CellReference!.Value!;
                 var cellInnerText = cell.GetInnerText(sharedStringTable);
 
-                if (cellReference.StartsWith('A'))
+                if (cellReference.StartsWith('A') && !string.IsNullOrEmpty(cellInnerText))
                 {
                     book = book with { Date = DateOnly.FromDateTime(DateTime.FromOADate(double.Parse(cellInnerText))) };
                 }
