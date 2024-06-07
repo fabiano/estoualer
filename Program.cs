@@ -1,7 +1,6 @@
 using System.Text.RegularExpressions;
-using DocumentFormat.OpenXml.Packaging;
-using DocumentFormat.OpenXml.Spreadsheet;
 using Google.Cloud.Diagnostics.Common;
+using Microsoft.Data.Sqlite;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +15,7 @@ else
     builder.Logging.AddConsole();
 }
 
-builder.Services.AddSingleton(Bookshelf.Create("EstouALer.xlsx"));
+builder.Services.AddSingleton(Bookshelf.Create("Bookshelf.db"));
 
 var app = builder.Build();
 
@@ -62,84 +61,47 @@ class Bookshelf(List<BookshelfItem> comicBooks, List<BookshelfItem> books)
     /// <summary>
     /// Creates a bookshelf from the spreadsheet.
     /// </summary>
-    /// <param name="path">The path and file name of the spreadsheet.</param>
+    /// <param name="path">The path and file name of the database.</param>
     /// <returns>A <see cref="Bookshelf"/> instance.</returns>
     public static Bookshelf Create(string path)
     {
-        var document = SpreadsheetDocument.Open(path, false);
-        var workbookPart = document.WorkbookPart!;
+        using var connection = new SqliteConnection($"Data Source={path};Mode=ReadOnly");
 
-        var sharedStringTable = workbookPart
-            .SharedStringTablePart!
-            .SharedStringTable;
+        connection.Open();
 
-        var comicBooks = GetComicBooks(workbookPart, sharedStringTable);
-        var books = GetBooks(workbookPart, sharedStringTable);
+        var comicBooks = GetComicBooks(connection);
+        var books = GetBooks(connection);
 
         return new(comicBooks, books);
     }
 
-    private static List<BookshelfItem> GetComicBooks(
-        WorkbookPart workbookPart,
-        SharedStringTable sharedStringTable)
+    private static List<BookshelfItem> GetComicBooks(SqliteConnection connection)
     {
-        var sheetId = workbookPart
-            .Workbook
-            .Descendants<Sheet>()
-            .Single(sheet => sheet.Name == "Quadrinhos")
-            .Id;
+        var command = connection.CreateCommand();
 
-        var worksheetPart = (WorksheetPart)workbookPart.GetPartById(sheetId!);
+        command.CommandText =
+        @"
+            SELECT Date, Publisher, Title, Format, Pages, Issues
+            FROM ComicBook
+            ORDER BY Date, Title
+        ";
 
-        var rows = worksheetPart
-            .Worksheet
-            .Descendants<Row>()
-            .Skip(1);
+        using var reader = command.ExecuteReader();
 
         var comicBooks = new List<BookshelfItem>();
 
-        foreach (var row in rows)
+        while (reader.Read())
         {
             var comicBook = new BookshelfItem
             {
                 Type = "ComicBook",
+                Date =  DateOnly.ParseExact(reader.GetString(0), "yyyy-MM-dd"),
+                Publisher = reader.GetString(1),
+                Title = reader.GetString(2),
+                Format = reader.GetString(3),
+                Pages = reader.GetInt32(4),
+                Issues = reader.GetInt32(5),
             };
-
-            foreach (var cell in row.Elements<Cell>())
-            {
-                var cellReference = cell.CellReference!.Value!;
-                var cellInnerText = cell.GetInnerText(sharedStringTable);
-
-                if (cellReference.StartsWith('A') && !string.IsNullOrEmpty(cellInnerText))
-                {
-                    comicBook = comicBook with { Date = DateOnly.FromDateTime(DateTime.FromOADate(double.Parse(cellInnerText))) };
-                }
-
-                if (cellReference.StartsWith('B'))
-                {
-                    comicBook = comicBook with { Publisher = cellInnerText };
-                }
-
-                if (cellReference.StartsWith('C'))
-                {
-                    comicBook = comicBook with { Title = cellInnerText };
-                }
-
-                if (cellReference.StartsWith('D'))
-                {
-                    comicBook = comicBook with { Format = cellInnerText };
-                }
-
-                if (cellReference.StartsWith('E'))
-                {
-                    comicBook = comicBook with { Length = comicBook.Length with { Pages = int.Parse(cellInnerText) } };
-                }
-
-                if (cellReference.StartsWith('F'))
-                {
-                    comicBook = comicBook with { Length = comicBook.Length with { Issues = int.Parse(cellInnerText) } };
-                }
-            }
 
             comicBooks.Add(comicBook);
         }
@@ -147,67 +109,33 @@ class Bookshelf(List<BookshelfItem> comicBooks, List<BookshelfItem> books)
         return comicBooks;
     }
 
-    private static List<BookshelfItem> GetBooks(
-        WorkbookPart workbookPart,
-        SharedStringTable sharedStringTable)
+    private static List<BookshelfItem> GetBooks(SqliteConnection connection)
     {
-        var sheetId = workbookPart
-            .Workbook
-            .Descendants<Sheet>()
-            .Single(sheet => sheet.Name == "Livros")
-            .Id;
+        var command = connection.CreateCommand();
 
-        var worksheetPart = (WorksheetPart)workbookPart.GetPartById(sheetId!);
+        command.CommandText =
+        @"
+            SELECT Date, Publisher, Title, Format, Pages, Duration
+            FROM Book
+            ORDER BY Date, Title
+        ";
 
-        var rows = worksheetPart
-            .Worksheet
-            .Descendants<Row>()
-            .Skip(1);
+        using var reader = command.ExecuteReader();
 
         var books = new List<BookshelfItem>();
 
-        foreach (var row in rows)
+        while (reader.Read())
         {
             var book = new BookshelfItem
             {
                 Type = "Book",
+                Date = DateOnly.ParseExact(reader.GetString(0), "yyyy-MM-dd"),
+                Publisher = reader.GetString(1),
+                Title = reader.GetString(2),
+                Format = reader.GetString(3),
+                Pages = reader.GetInt32(4),
+                Duration = Duration.Parse(reader.GetString(5)),
             };
-
-            foreach (var cell in row.Elements<Cell>())
-            {
-                var cellReference = cell.CellReference!.Value!;
-                var cellInnerText = cell.GetInnerText(sharedStringTable);
-
-                if (cellReference.StartsWith('A') && !string.IsNullOrEmpty(cellInnerText))
-                {
-                    book = book with { Date = DateOnly.FromDateTime(DateTime.FromOADate(double.Parse(cellInnerText))) };
-                }
-
-                if (cellReference.StartsWith('B'))
-                {
-                    book = book with { Publisher = cellInnerText };
-                }
-
-                if (cellReference.StartsWith('C'))
-                {
-                    book = book with { Title = cellInnerText };
-                }
-
-                if (cellReference.StartsWith('D'))
-                {
-                    book = book with { Author = cellInnerText };
-                }
-
-                if (cellReference.StartsWith('E'))
-                {
-                    book = book with { Format = cellInnerText };
-                }
-
-                if (cellReference.StartsWith('F'))
-                {
-                    book = book with { Length = Length.Parse(cellInnerText) };
-                }
-            }
 
             books.Add(book);
         }
@@ -223,36 +151,36 @@ class Bookshelf(List<BookshelfItem> comicBooks, List<BookshelfItem> books)
 /// <param name="Date">Date the item was read.</param>
 /// <param name="Publisher">Publisher of the item.</param>
 /// <param name="Title">Title of the item.</param>
-/// <param name="Author">Author of the item.</param>
-/// <param name="Length">Length of the item.</param>
 /// <param name="Format">Format of the item.</param>
+/// <param name="Pages">Number of pages of the item.</param>
+/// <param name="Issues">Number of issues of the item.</param>
+/// <param name="Duration">Duration of the item.</param>
 readonly record struct BookshelfItem(
     string Type,
     DateOnly Date,
     string Publisher,
     string Title,
-    string Author,
-    Length Length,
-    string Format);
+    string Format,
+    int Pages,
+    int Issues,
+    Duration Duration);
 
 /// <summary>
-/// Represents a bookshelf item length.
+/// Represents an audio book duration.
 /// </summary>
-/// <param name="Pages">Number of pages.</param>
-/// <param name="Issues">Number of issues.</param>
 /// <param name="Hours">Number of hours.</param>
 /// <param name="Minutes">Number of minutes.</param>
-readonly record struct Length(int Pages, int Issues, int Hours, int Minutes)
+readonly record struct Duration(int Hours, int Minutes)
 {
     /// <summary>
-    /// Parses the value to a <see cref="Length"/>.
+    /// Parses the value to a <see cref="Duration"/>.
     /// </summary>
     /// <param name="value">The value to parse.</param>
-    /// <returns>An instance of <see cref="Length"/>.</returns>
+    /// <returns>An instance of <see cref="Duration"/>.</returns>
     /// <exception cref="InvalidOperationException"></exception>
-    public static Length Parse(string value)
+    public static Duration Parse(string value)
     {
-        var pattern = @"^(?<Pages>\d+)$|^((?<Hours>\d+?)h)?\s{0,1}((?<Minutes>\d+?)m)?$";
+        var pattern = @"^((?<Hours>\d+?)h)?\s{0,1}((?<Minutes>\d+?)m)?$";
         var re = new Regex(pattern, RegexOptions.Compiled);
         var match = re.Match(value);
 
@@ -261,48 +189,20 @@ readonly record struct Length(int Pages, int Issues, int Hours, int Minutes)
             throw new InvalidOperationException($"{value} is not in a recognizable format.");
         }
 
-        var length = new Length();
-        var pages = match.Groups["Pages"]?.Value;
+        var duration = new Duration();
         var hours = match.Groups["Hours"]?.Value;
         var minutes = match.Groups["Minutes"]?.Value;
 
-        if (!string.IsNullOrEmpty(pages))
-        {
-            length = length with { Pages = int.Parse(pages) };
-        }
-
         if (!string.IsNullOrEmpty(hours))
         {
-            length = length with { Hours = int.Parse(hours) };
+            duration = duration with { Hours = int.Parse(hours) };
         }
 
         if (!string.IsNullOrEmpty(minutes))
         {
-            length = length with { Minutes = int.Parse(minutes) };
+            duration = duration with { Minutes = int.Parse(minutes) };
         }
 
-        return length;
-    }
-}
-
-static class Extensions
-{
-    public static string GetInnerText(this Cell cell, SharedStringTable sharedStringTable)
-    {
-        var innerText = cell.InnerText;
-
-        if (cell.DataType == null)
-        {
-            return innerText;
-        }
-
-        if (cell.DataType == CellValues.SharedString)
-        {
-            var sharedString = sharedStringTable.ElementAt(int.Parse(innerText));
-
-            return sharedString.InnerText;
-        }
-
-        return innerText;
+        return duration;
     }
 }

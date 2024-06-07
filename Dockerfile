@@ -9,5 +9,5 @@ RUN dotnet publish EstouALer.csproj --configuration Release --output /app --no-r
 FROM mcr.microsoft.com/dotnet/aspnet:8.0-bookworm-slim
 WORKDIR /app
 COPY --from=build /app .
-COPY EstouALer.xlsx .
+COPY Bookshelf.db .
 ENTRYPOINT ["dotnet", "EstouALer.dll"]
