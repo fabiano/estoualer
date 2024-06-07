@@ -75,7 +75,7 @@ function renderCards(items) {
 
   let i = 1;
 
-  for (const { date, publisher, title, length, format } of items) {
+  for (const { date, publisher, title, format, pages, issues, duration } of items) {
     const $card = $template.content.cloneNode(true);
     const $number = $card.querySelector(".number");
     const $date = $card.querySelector(".date");
@@ -88,7 +88,7 @@ function renderCards(items) {
     $title.textContent = title;
     $publisherFormat.textContent = `${publisher} / ${format}`;
 
-    const { pages, issues, hours, minutes } = length;
+    const { hours, minutes } = duration;
 
     if (pages > 0 && issues > 1) {
       $length.textContent = `${pages} páginas e ${issues} edições`;
