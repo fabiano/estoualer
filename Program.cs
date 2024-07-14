@@ -170,8 +170,11 @@ readonly record struct BookshelfItem(
 /// </summary>
 /// <param name="Hours">Number of hours.</param>
 /// <param name="Minutes">Number of minutes.</param>
-readonly record struct Duration(int Hours, int Minutes)
+readonly partial record struct Duration(int Hours, int Minutes)
 {
+    [GeneratedRegex(@"^((?<Hours>\d+?)h)?\s{0,1}((?<Minutes>\d+?)m)?$")]
+    private static partial Regex CreateDurationRegex();
+
     /// <summary>
     /// Parses the value to a <see cref="Duration"/>.
     /// </summary>
@@ -180,9 +183,7 @@ readonly record struct Duration(int Hours, int Minutes)
     /// <exception cref="InvalidOperationException"></exception>
     public static Duration Parse(string value)
     {
-        var pattern = @"^((?<Hours>\d+?)h)?\s{0,1}((?<Minutes>\d+?)m)?$";
-        var re = new Regex(pattern, RegexOptions.Compiled);
-        var match = re.Match(value);
+        var match = CreateDurationRegex().Match(value);
 
         if (!match.Success)
         {
