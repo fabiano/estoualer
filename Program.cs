@@ -1,7 +1,3 @@
-using System.Text.RegularExpressions;
-using Google.Cloud.Diagnostics.Common;
-using Microsoft.Data.Sqlite;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Logging.ClearProviders();
