@@ -79,7 +79,7 @@ class Bookshelf(List<BookshelfItem> comicBooks, List<BookshelfItem> books)
         @"
             SELECT Date, Publisher, Title, Format, Pages, Issues
             FROM ComicBook
-            ORDER BY Date, Title
+            ORDER BY Id
         ";
 
         using var reader = command.ExecuteReader();
@@ -113,7 +113,7 @@ class Bookshelf(List<BookshelfItem> comicBooks, List<BookshelfItem> books)
         @"
             SELECT Date, Publisher, Title, Format, Pages, Duration
             FROM Book
-            ORDER BY Date, Title
+            ORDER BY Id
         ";
 
         using var reader = command.ExecuteReader();
