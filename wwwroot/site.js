@@ -41,7 +41,8 @@ function render(items) {
   console.time("render");
 
   renderStats(items);
-  renderCards(items);
+  renderCards(document.getElementById("books"), items.filter(item => item.type === "Book"));
+  renderCards(document.getElementById("comicbooks"), items.filter(item => item.type === "ComicBook"));
 
   console.timeEnd("render");
 }
@@ -67,7 +68,7 @@ function renderStats(items) {
   console.timeEnd("render stats");
 }
 
-function renderCards(items) {
+function renderCards($parent, items) {
   console.time("render cards");
 
   const $fragment = document.createDocumentFragment();
@@ -107,9 +108,7 @@ function renderCards(items) {
     i++;
   }
 
-  const $cards = document.getElementById("cards");
-
-  $cards.replaceChildren($fragment);
+  $parent.replaceChildren($fragment);
 
   console.timeEnd("render cards");
 }
