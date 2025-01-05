@@ -1,0 +1,136 @@
+﻿@page "{year:int?}"
+@model EstouALer.Pages.IndexModel
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Os livros e gibis que li em @Model.Year.">
+  <title>Estou a ler</title>
+  <link rel="shortcut icon" href="icon.ico">
+  <link rel="icon" sizes="16x16" href="icon-16.png">
+  <link rel="icon" sizes="20x20" href="icon-20.png">
+  <link rel="icon" sizes="24x24" href="icon-24.png">
+  <link rel="icon" sizes="32x32" href="icon-32.png">
+  <link rel="icon" sizes="48x48" href="icon-48.png">
+  <link rel="icon" sizes="64x64" href="icon-64.png">
+  <link rel="icon" sizes="128x128" href="icon-128.png">
+  <link rel="icon" sizes="256x256" href="icon-256.png">
+  <link rel="icon" sizes="512x512" href="icon-512.png">
+  <link rel="icon" sizes="1024x1024" href="icon-1024.png">
+  <link rel="icon" sizes="2048x2048" href="icon-2048.png">
+  <link rel="icon" sizes="4096x4096" href="icon-4096.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="site.css">
+</head>
+
+<body>
+  <div class="progress"></div>
+  <div class="container">
+    <div class="header">
+      <h1>Estou a ler</h1>
+      <div class="stats" id="stats">
+        <div class="item total">
+          <p class="heading">Total</p>
+          <p class="value">@Model.Stats.Total</p>
+        </div>
+        <div class="item books">
+          <p class="heading">Livros</p>
+          <p class="value">@Model.Stats.Books</p>
+        </div>
+        <div class="item comicbooks">
+          <p class="heading">Gibis</p>
+          <p class="value">@Model.Stats.ComicBooks</p>
+        </div>
+        <hr class="separator">
+        <div class="item paper">
+          <p class="heading">Em papel</p>
+          <p class="value">@Model.Stats.Paper</p>
+        </div>
+        <div class="item audio">
+          <p class="heading">Em áudio</p>
+          <p class="value">@Model.Stats.Audio</p>
+        </div>
+        <div class="item ebook">
+          <p class="heading">eBook</p>
+          <p class="value">@Model.Stats.eBook</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="separator">
+  <div class="container">
+    <div class="body">
+      <h2>Livros</h2>
+      <div class="cards" id="books">
+        @for (var i = 0; i < Model.Books.Count; i++)
+        {
+          var book = Model.Books[i];
+
+          var length = book switch
+          {
+            { Pages: > 0 } => $"{book.Pages} páginas",
+            { Duration.Hours: > 0, Duration.Minutes: > 0 } => $"{book.Duration.Hours} horas e {book.Duration.Minutes} minutos",
+            { Duration.Hours: > 0 } => $"{book.Duration.Hours} horas",
+            { Duration.Minutes: > 0 } => $"{book.Duration.Minutes} minutos",
+            _ => string.Empty,
+          };
+
+          <div class="card">
+            <div>
+              <div class="number">@(Model.Books.Count - i)</div>
+              <div class="date">@book.Date.ToString("dd/MM/yyyy")</div>
+            </div>
+            <div>
+              <div class="title">@book.Title</div>
+              <div class="publisher-and-format">@book.Publisher / @book.Format</div>
+            </div>
+            <div>
+              <div class="length">@length</div>
+            </div>
+          </div>
+        }
+      </div>
+      <h2>Gibis</h2>
+      <div class="cards" id="comicbooks">
+        @for (var i = 0; i < Model.ComicBooks.Count; i++)
+        {
+          var comicBook = Model.ComicBooks[i];
+
+          var length = comicBook switch
+          {
+            { Pages: > 0, Issues: > 1 } => $"{comicBook.Pages} páginas e {comicBook.Issues} edições",
+            { Pages: > 0 } => $"{comicBook.Pages} páginas",
+            _ => string.Empty,
+          };
+
+          <div class="card">
+            <div>
+              <div class="number">@(Model.ComicBooks.Count - i)</div>
+              <div class="date">@comicBook.Date</div>
+            </div>
+            <div>
+              <div class="title">@comicBook.Title</div>
+              <div class="publisher-and-format">@comicBook.Publisher / @comicBook.Format</div>
+            </div>
+            <div>
+              <div class="length">@length</div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="history">
+      o que li em <a href="/2025">2025</a>, <a href="/2024">2024</a>, <a href="/2023">2023</a>, <a href="/2022">2022</a>, <a href="/2021">2021</a>, <a href="/2020">2020</a>, <a href="/2019">2019</a> e <a href="/2018">2018</a>
+    </div>
+    <div class="credits">
+      ícone por <a href="https://www.iconfinder.com/sudheepb">sudheep b</a> em <a href="https://www.iconfinder.com/icons/4879874/book_education_learning_study_icon" title="Iconfinder">Iconfinder</a>
+    </div>
+  </footer>
+</body>
+
+</html>
