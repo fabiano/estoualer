@@ -1,14 +1,23 @@
 {
+  "id": "estoualer",
   "name": "Estou a ler",
   "short_name": "Estou a ler",
-  "theme_color": "#77b3d4",
-  "background_color": "#77b3d4",
+  "start_url": "/?source=pwa",
+  "theme_color": "#383838",
+  "background_color": "#ffffff",
   "display": "standalone",
   "icons": [
-    {
-      "src": "icon.svg",
-      "sizes": "192x192",
-      "type": "any"
-    }
+    { "src": "/icon-16.png", "sizes": "16x16", "type": "image/png" },
+    { "src": "/icon-20.png", "sizes": "20x20", "type": "image/png" },
+    { "src": "/icon-24.png", "sizes": "24x24", "type": "image/png" },
+    { "src": "/icon-32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/icon-48.png", "sizes": "48x48", "type": "image/png" },
+    { "src": "/icon-64.png", "sizes": "64x64", "type": "image/png" },
+    { "src": "/icon-128.png", "sizes": "128x128", "type": "image/png" },
+    { "src": "/icon-256.png", "sizes": "256x256", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-1024.png", "sizes": "1024x1024", "type": "image/png" },
+    { "src": "/icon-2048.png", "sizes": "2048x2048", "type": "image/png" },
+    { "src": "/icon-4096.png", "sizes": "4096x4096", "type": "image/png" }
   ]
 }
