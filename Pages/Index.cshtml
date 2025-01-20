@@ -63,64 +63,70 @@
   <hr class="separator">
   <div class="container">
     <div class="body">
-      <h2>Livros</h2>
-      <div class="cards" id="books">
-        @for (var i = 0; i < Model.Books.Count; i++)
-        {
-          var book = Model.Books[i];
-
-          var length = book switch
+      @if (Model.Books.Count > 0)
+      {
+        <h2>Livros</h2>
+        <div class="cards" id="books">
+          @for (var i = 0; i < Model.Books.Count; i++)
           {
-            { Pages: > 0 } => $"{book.Pages} páginas",
-            { Duration.Hours: > 0, Duration.Minutes: > 0 } => $"{book.Duration.Hours} horas e {book.Duration.Minutes} minutos",
-            { Duration.Hours: > 0 } => $"{book.Duration.Hours} horas",
-            { Duration.Minutes: > 0 } => $"{book.Duration.Minutes} minutos",
-            _ => string.Empty,
-          };
+            var book = Model.Books[i];
 
-          <div class="card">
-            <div>
-              <div class="number">@(Model.Books.Count - i)</div>
-              <div class="date">@book.Date.ToString("dd/MM/yyyy")</div>
-            </div>
-            <div>
-              <div class="title">@book.Title</div>
-              <div class="publisher-and-format">@book.Publisher / @book.Format</div>
-            </div>
-            <div>
-              <div class="length">@length</div>
-            </div>
-          </div>
-        }
-      </div>
-      <h2>Gibis</h2>
-      <div class="cards" id="comicbooks">
-        @for (var i = 0; i < Model.ComicBooks.Count; i++)
-        {
-          var comicBook = Model.ComicBooks[i];
+            var length = book switch
+            {
+              { Pages: > 0 } => $"{book.Pages} páginas",
+              { Duration.Hours: > 0, Duration.Minutes: > 0 } => $"{book.Duration.Hours} horas e {book.Duration.Minutes} minutos",
+              { Duration.Hours: > 0 } => $"{book.Duration.Hours} horas",
+              { Duration.Minutes: > 0 } => $"{book.Duration.Minutes} minutos",
+              _ => string.Empty,
+            };
 
-          var length = comicBook switch
+            <div class="card">
+              <div>
+                <div class="number">@(Model.Books.Count - i)</div>
+                <div class="date">@book.Date.ToString("dd/MM/yyyy")</div>
+              </div>
+              <div>
+                <div class="title">@book.Title</div>
+                <div class="publisher-and-format">@book.Publisher / @book.Format</div>
+              </div>
+              <div>
+                <div class="length">@length</div>
+              </div>
+            </div>
+          }
+        </div>
+      }
+      @if (Model.ComicBooks.Count > 0)
+      {
+        <h2>Gibis</h2>
+        <div class="cards" id="comicbooks">
+          @for (var i = 0; i < Model.ComicBooks.Count; i++)
           {
-            { Pages: > 0, Issues: > 1 } => $"{comicBook.Pages} páginas e {comicBook.Issues} edições",
-            { Pages: > 0 } => $"{comicBook.Pages} páginas",
-            _ => string.Empty,
-          };
+            var comicBook = Model.ComicBooks[i];
 
-          <div class="card">
-            <div>
-              <div class="number">@(Model.ComicBooks.Count - i)</div>
-              <div class="date">@comicBook.Date</div>
+            var length = comicBook switch
+            {
+              { Pages: > 0, Issues: > 1 } => $"{comicBook.Pages} páginas e {comicBook.Issues} edições",
+              { Pages: > 0 } => $"{comicBook.Pages} páginas",
+              _ => string.Empty,
+            };
+
+            <div class="card">
+              <div>
+                <div class="number">@(Model.ComicBooks.Count - i)</div>
+                <div class="date">@comicBook.Date.ToString("dd/MM/yyyy")</div>
+              </div>
+              <div>
+                <div class="title">@comicBook.Title</div>
+                <div class="publisher-and-format">@comicBook.Publisher / @comicBook.Format</div>
+              </div>
+              <div>
+                <div class="length">@length</div>
+              </div>
             </div>
-            <div>
-              <div class="title">@comicBook.Title</div>
-              <div class="publisher-and-format">@comicBook.Publisher / @comicBook.Format</div>
-            </div>
-            <div>
-              <div class="length">@length</div>
-            </div>
-          </div>
-        }
-      </div>
+          }
+        </div>
+      }
     </div>
   </div>
   <footer class="footer">
