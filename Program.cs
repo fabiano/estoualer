@@ -12,7 +12,17 @@ else
 }
 
 builder.Services.AddRazorPages();
-builder.Services.AddSingleton<IBookshelf>(SqliteBookshelf.Create("Bookshelf.db"));
+
+var databasePath = "Bookshelf.db";
+
+if (builder.Environment.IsProduction())
+{
+    builder.Services.AddSingleton<IBookshelf>(SqliteBookshelf.Create(databasePath));
+}
+else
+{
+    builder.Services.AddScoped<IBookshelf>(_ => SqliteBookshelf.Create(databasePath));
+}
 
 var app = builder.Build();
 
