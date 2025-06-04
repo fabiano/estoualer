@@ -7,10 +7,8 @@ on:
       - completed
 
 env:
-  GCP_REGION: us-west1
-  GCP_ARTIFACT_REGISTRY_DOCKER_HOST: us-west1-docker.pkg.dev
-  WEBSITE_SERVICE_NAME: estoualer-website
-  WEBSITE_SERVICE_IMAGE_NAME: us-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/docker/estoualer-website
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   main:
@@ -18,27 +16,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Authenticate to Google Cloud
-        uses: google-github-actions/auth@v1
+      - name: Log in to the container registry
+        uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
         with:
-          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Configure Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@v1
-
-      - name: Configure Docker
-        run: gcloud auth configure-docker ${{ env.GCP_ARTIFACT_REGISTRY_DOCKER_HOST }}
-
-      - name: Build and push the docker image
-        run: |-
-          DOCKER_BUILDKIT=1 docker build --tag ${{ env.WEBSITE_SERVICE_IMAGE_NAME }}:latest .
-          docker push ${{ env.WEBSITE_SERVICE_IMAGE_NAME }}:latest
-
-      - name: Deploy the docker image
-        uses: google-github-actions/deploy-cloudrun@v1
+      - name: Build and push docker image
+        id: push
+        uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
         with:
-          service: ${{ env.WEBSITE_SERVICE_NAME }}
-          image: ${{ env.WEBSITE_SERVICE_IMAGE_NAME }}:latest
-          region: ${{ env.GCP_REGION }}
+          context: .
+          push: true
+          tags: latest
+
+      - name: Generate artifact attestation
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
+          subject-digest: ${{ steps.push.outputs.digest }}
+          push-to-registry: true
