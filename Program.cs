@@ -9,11 +9,11 @@ var databasePath = "Bookshelf.db";
 
 if (builder.Environment.IsProduction())
 {
-    builder.Services.AddSingleton<IBookshelf>(SqliteBookshelf.Create(databasePath));
+    builder.Services.AddSingleton(Bookshelf.Create(databasePath));
 }
 else
 {
-    builder.Services.AddScoped<IBookshelf>(_ => SqliteBookshelf.Create(databasePath));
+    builder.Services.AddScoped(_ => Bookshelf.Create(databasePath));
 }
 
 var app = builder.Build();

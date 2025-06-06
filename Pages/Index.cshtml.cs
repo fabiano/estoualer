@@ -1,6 +1,6 @@
 namespace EstouALer.Pages;
 
-public class IndexModel(IBookshelf bookshelf) : PageModel
+public class IndexModel(Bookshelf bookshelf) : PageModel
 {
     public int Year { get; set; }
 
