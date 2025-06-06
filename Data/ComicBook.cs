@@ -1,4 +1,4 @@
-namespace EstouALer.Domain;
+namespace EstouALer.Data;
 
 /// <summary>
 /// Represents a comic book.

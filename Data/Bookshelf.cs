@@ -1,36 +1,32 @@
-namespace EstouALer.Infra;
+namespace EstouALer.Data;
 
 /// <summary>
 /// Represents a bookshelf.
 /// </summary>
 /// <param name="books">The books.</param>
 /// <param name="comicBooks">The comic books.</param>
-class SqliteBookshelf(List<Book> books, List<ComicBook> comicBooks) : IBookshelf
+public class Bookshelf(List<Book> books, List<ComicBook> comicBooks)
 {
     /// <summary>
     /// Returns the books read in the provided year.
     /// </summary>
     /// <param name="year">The year.</param>
     /// <returns>List of books</returns>
-    public List<Book> GetBooks(int year) => books
-        .Where(book => book.Date.Year == year)
-        .ToList();
+    public List<Book> GetBooks(int year) => [.. books.Where(book => book.Date.Year == year)];
 
     /// <summary>
     /// Returns the comic books read in the provided year.
     /// </summary>
     /// <param name="year">The year.</param>
     /// <returns>List of comic books.</returns>
-    public List<ComicBook> GetComicBooks(int year) => comicBooks
-        .Where(comicBook => comicBook.Date.Year == year)
-        .ToList();
+    public List<ComicBook> GetComicBooks(int year) => [.. comicBooks.Where(comicBook => comicBook.Date.Year == year)];
 
     /// <summary>
     /// Creates a bookshelf from the Sqlite database.
     /// </summary>
     /// <param name="path">The path and file name of the database.</param>
-    /// <returns>A <see cref="SqliteBookshelf"/> instance.</returns>
-    public static SqliteBookshelf Create(string path)
+    /// <returns>A <see cref="Bookshelf"/> instance.</returns>
+    public static Bookshelf Create(string path)
     {
         using var connection = new SqliteConnection($"Data Source={path};Mode=ReadOnly");
 
