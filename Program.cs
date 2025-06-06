@@ -1,15 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Logging.ClearProviders();
-
-if (builder.Environment.IsProduction())
-{
-    builder.Logging.AddGoogle();
-}
-else
-{
-    builder.Logging.AddConsole();
-}
+builder.Logging.AddConsole();
 
 builder.Services.AddRazorPages();
 
