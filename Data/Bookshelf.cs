@@ -11,7 +11,7 @@ public class Bookshelf(List<Book> books, List<ComicBook> comicBooks)
     /// Returns the books read in the provided year.
     /// </summary>
     /// <param name="year">The year.</param>
-    /// <returns>List of books</returns>
+    /// <returns>List of books.</returns>
     public List<Book> GetBooks(int year) => [.. books.Where(book => book.Date.Year == year)];
 
     /// <summary>
