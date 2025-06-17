@@ -150,7 +150,7 @@ body.is-loading .progress {
   display: none;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
   .stats :nth-child(n+4) {
     display: block;
   }
