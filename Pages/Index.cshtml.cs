@@ -1,8 +1,11 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace EstouALer.Pages;
 
 public class IndexModel(Bookshelf bookshelf) : PageModel
 {
-    public int Year { get; set; }
+    [BindProperty(SupportsGet = true)]
+    public string? Q { get; set; }
 
     public Statistics Stats { get; set; } = new();
 
@@ -10,16 +13,78 @@ public class IndexModel(Bookshelf bookshelf) : PageModel
 
     public List<ComicBook> ComicBooks { get; set; } = [];
 
-    public void OnGet(int? year)
+    public void OnGet()
     {
-        var theYear = year ?? DateTime.UtcNow.Year;
-        var books = bookshelf.GetBooks(theYear);
-        var comicBooks = bookshelf.GetComicBooks(theYear);
+        if (string.IsNullOrWhiteSpace(Q))
+        {
+            Q = $"ano: {DateTime.Now.Year}";
+        }
+        else
+        {
+            Q = Q
+                .Trim()
+                .ToLowerInvariant();
+        }
 
-        Year = theYear;
+        var (booksPredicate, comicBooksPredicate) = GetPredicates();
+        var books = bookshelf.GetBooks(booksPredicate);
+        var comicBooks = bookshelf.GetComicBooks(comicBooksPredicate);
+
         Stats = GenerateStatistics(books, comicBooks);
         Books = books;
         ComicBooks = comicBooks;
+    }
+
+    private (Func<Book, bool>, Func<ComicBook, bool>) GetPredicates()
+    {
+        Func<Book, bool> booksPredicate;
+        Func<ComicBook, bool> comicBooksPredicate;
+
+        switch (Q)
+        {
+            case string s when s.StartsWith("ano:") && s.Length > 4 && int.TryParse(s[4..], out var year):
+                booksPredicate = book => book.Date.Year == year;
+                comicBooksPredicate = comicBook => comicBook.Date.Year == year;
+
+                break;
+
+            case string s when s.StartsWith("editora:") && s.Length > 8:
+                var publisher = s[8..].Trim();
+
+                booksPredicate = book => book.Publisher.Contains(publisher, StringComparison.OrdinalIgnoreCase);
+                comicBooksPredicate = comicBook => comicBook.Publisher.Contains(publisher, StringComparison.OrdinalIgnoreCase);
+
+                break;
+
+            case string s when s.StartsWith("titulo:") && s.Length > 7:
+                var title = s[7..].Trim();
+
+                booksPredicate = book => book.Title.Contains(title, StringComparison.OrdinalIgnoreCase);
+                comicBooksPredicate = comicBook => comicBook.Title.Contains(title, StringComparison.OrdinalIgnoreCase);
+
+                break;
+
+            case string s when s.StartsWith("autor:") && s.Length > 6:
+                var author = s[6..].Trim();
+
+                booksPredicate = book => book.Author.Contains(author, StringComparison.OrdinalIgnoreCase);
+                comicBooksPredicate = comicBook => false;
+
+                break;
+
+            default:
+                booksPredicate = book =>
+                    book.Title.Contains(Q!, StringComparison.OrdinalIgnoreCase) ||
+                    book.Publisher.Contains(Q!, StringComparison.OrdinalIgnoreCase);
+
+                comicBooksPredicate = comicBook =>
+                    comicBook.Title.Contains(Q!, StringComparison.OrdinalIgnoreCase) ||
+                    comicBook.Publisher.Contains(Q!, StringComparison.OrdinalIgnoreCase);
+
+                break;
+        }
+
+        return (booksPredicate, comicBooksPredicate);
     }
 
     private static Statistics GenerateStatistics(List<Book> books, List<ComicBook> comicBooks)
