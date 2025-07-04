@@ -6,6 +6,7 @@ namespace EstouALer.Data;
 /// <param name="Date">Date the book was read.</param>
 /// <param name="Publisher">Publisher of the book.</param>
 /// <param name="Title">Title of the book.</param>
+/// <param name="Author">Author of the book.</param>
 /// <param name="Format">Format of the book.</param>
 /// <param name="Pages">Number of pages of the book.</param>
 /// <param name="Duration">Duration of the book.</param>
@@ -13,6 +14,7 @@ public readonly record struct Book(
     DateOnly Date,
     string Publisher,
     string Title,
+    string Author,
     string Format,
     int Pages,
     Duration Duration);

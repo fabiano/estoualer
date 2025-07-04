@@ -1,5 +1,6 @@
-﻿@page "{year:int?}"
+﻿@page
 @model EstouALer.Pages.IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -7,7 +8,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Os livros e gibis que li em @Model.Year.">
+  <meta name="description" content="Os livros e gibis que li.">
   <title>Estou a ler</title>
   <link rel="shortcut icon" href="icon.ico">
   <link rel="icon" sizes="16x16" href="icon-16.png">
@@ -62,6 +63,9 @@
   </div>
   <hr class="separator">
   <div class="container">
+    <form method="get" class="search">
+      <input id="q" name="q" value="@Model.Q" placeholder="ano: @DateTime.Now.Year ou autor: carla madeira ou titulo: a natureza da mordida">
+    </form>
     <div class="body">
       @if (Model.Books.Count > 0)
       {
@@ -131,7 +135,18 @@
   </div>
   <footer class="footer">
     <div class="history">
-      o que li em <a href="/2025">2025</a>, <a href="/2024">2024</a>, <a href="/2023">2023</a>, <a href="/2022">2022</a>, <a href="/2021">2021</a>, <a href="/2020">2020</a>, <a href="/2019">2019</a> e <a href="/2018">2018</a>
+      o que li em
+      <ul>
+        @{
+          var startYear = 2013;
+          var currentYear = DateTime.Now.Year;
+
+          for (var year = startYear; year <= currentYear; year++)
+          {
+              <li><a asp-page="Index" asp-route-q="ano: @year">@year</a></li>
+          }
+        }
+      </ul>
     </div>
     <div class="credits">
       ícone por <a href="https://www.iconfinder.com/sudheepb">sudheep b</a> em <a href="https://www.iconfinder.com/icons/4879874/book_education_learning_study_icon" title="Iconfinder">Iconfinder</a>

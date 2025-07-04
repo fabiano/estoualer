@@ -8,18 +8,18 @@ namespace EstouALer.Data;
 public class Bookshelf(List<Book> books, List<ComicBook> comicBooks)
 {
     /// <summary>
-    /// Returns the books read in the provided year.
+    /// Returns the books that match the provided predicate.
     /// </summary>
-    /// <param name="year">The year.</param>
+    /// <param name="predicate">The search predicate.</param>
     /// <returns>List of books.</returns>
-    public List<Book> GetBooks(int year) => [.. books.Where(book => book.Date.Year == year)];
+    public List<Book> GetBooks(Func<Book, bool> predicate) => [.. books.Where(predicate)];
 
     /// <summary>
-    /// Returns the comic books read in the provided year.
+    /// Returns the comic books that match the provided predicate.
     /// </summary>
-    /// <param name="year">The year.</param>
+    /// <param name="predicate">The search predicate.</param>
     /// <returns>List of comic books.</returns>
-    public List<ComicBook> GetComicBooks(int year) => [.. comicBooks.Where(comicBook => comicBook.Date.Year == year)];
+    public List<ComicBook> GetComicBooks(Func<ComicBook, bool> predicate) => [.. comicBooks.Where(predicate)];
 
     /// <summary>
     /// Creates a bookshelf from the Sqlite database.
@@ -44,7 +44,7 @@ public class Bookshelf(List<Book> books, List<ComicBook> comicBooks)
 
         command.CommandText =
         @"
-            SELECT Date, Publisher, Title, Format, Pages, Duration
+            SELECT Date, Publisher, Title, Author, Format, Pages, Duration
             FROM Book
             ORDER BY Id DESC
         ";
@@ -60,9 +60,10 @@ public class Bookshelf(List<Book> books, List<ComicBook> comicBooks)
                 Date = DateOnly.ParseExact(reader.GetString(0), "yyyy-MM-dd"),
                 Publisher = reader.GetString(1),
                 Title = reader.GetString(2),
-                Format = reader.GetString(3),
-                Pages = reader.GetInt32(4),
-                Duration = Duration.Parse(reader.GetString(5)),
+                Author = reader.GetString(3),
+                Format = reader.GetString(4),
+                Pages = reader.GetInt32(5),
+                Duration = Duration.Parse(reader.GetString(6)),
             };
 
             books.Add(book);
