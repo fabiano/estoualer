@@ -63,10 +63,10 @@
   </div>
   <hr class="separator">
   <div class="container">
-    <form method="get" class="search">
-      <input id="q" name="q" value="@Model.Q" placeholder="ano: @DateTime.Now.Year ou autor: carla madeira ou titulo: a natureza da mordida">
-    </form>
     <div class="body">
+      <form method="get" class="search">
+        <input id="q" name="q" value="@Model.Q" placeholder="ano: @DateTime.Now.Year ou autor: carla madeira ou titulo: a natureza da mordida">
+      </form>
       @if (Model.Books.Count > 0)
       {
         <h2>Livros</h2>

@@ -156,8 +156,8 @@ body.is-loading .progress {
 
 .search input {
   border: solid 1px #eee;
+  box-sizing: border-box;
   font-size: 1.6rem;
-  margin: 0 20px;
   padding: 10px;
   width: 100%;
 }
