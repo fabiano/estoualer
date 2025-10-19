@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
-
 namespace EstouALer.Pages;
 
 public class IndexModel(Bookshelf bookshelf) : PageModel
