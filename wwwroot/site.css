@@ -1,9 +1,22 @@
 /* variables */
 
 :root {
-  --text-color: #383838;
-  --link-color: #3273dc;
-  --primary-color: #77b3d4;
+  --theme-bg-color: #fff;
+  --theme-fg-color: #383838;
+  --theme-border-color: #eee;
+  --theme-focus-ring-color: #ccc;
+  --theme-link-color: #3273dc;
+  --theme-primary-color: #77b3d4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-bg-color: #000;
+    --theme-fg-color: #7d7d7d;
+    --theme-border-color: #1b1b1b;
+    --theme-focus-ring-color: #2e2e2e;
+    --theme-link-color: #133771;
+  }
 }
 
 /* css reset from https://github.com/vladocar/CSS-Mini-Reset */
@@ -17,7 +30,8 @@ html {
 }
 
 body {
-  color: var(--text-color);
+  background-color: var(--theme-bg-color);
+  color: var(--theme-fg-color);
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.6rem;
 }
@@ -32,7 +46,7 @@ h6 {
 }
 
 a {
-  color: var(--link-color);
+  color: var(--theme-link-color);
   text-decoration: none;
 }
 
@@ -56,7 +70,7 @@ a {
 }
 
 .separator {
-  background-color: #eee;
+  background-color: var(--theme-border-color);
   border: 0;
   height: 1px;
   margin: 20px 0;
@@ -80,7 +94,7 @@ a {
   animation-iteration-count: infinite;
   animation-name: progress;
   animation-timing-function: ease;
-  background-color: var(--primary-color);
+  background-color: var(--theme-primary-color);
   display: none;
   height: 5px;
   width: 0;
@@ -133,7 +147,7 @@ body.is-loading .progress {
 }
 
 .stats .separator {
-  background-color: #eee;
+  background-color: var(--theme-border-color);
   border: 0;
   display: none;
   height: 30px;
@@ -155,11 +169,18 @@ body.is-loading .progress {
 /* search */
 
 .search input {
-  border: solid 1px #eee;
+  background-color: var(--theme-bg-color);
+  border: 1px solid var(--theme-border-color);
   box-sizing: border-box;
+  color: var(--theme-fg-color);
   font-size: 1.6rem;
   padding: 10px;
   width: 100%;
+}
+
+.search input:focus {
+  border: 1px solid var(--theme-focus-ring-color);
+  outline: none;
 }
 
 /* cards */
@@ -172,7 +193,7 @@ body.is-loading .progress {
 }
 
 .cards .card {
-  border: 1px solid #eee;
+  border: 1px solid var(--theme-border-color);
   display: flex;
   flex-direction: column;
   height: 160px;
@@ -189,7 +210,7 @@ body.is-loading .progress {
 }
 
 .cards .card.has-ribbon .ribbon {
-  background-color: var(--primary-color);
+  background-color: var(--theme-primary-color);
   color: #fff;
   display: block;
   font-size: 1.2rem;
@@ -285,7 +306,7 @@ body.is-loading .progress {
 }
 
 .history li+li::before {
-  color: #bbb;
+  color: var(--theme-fg-color);
   content: " • ";
   font-size: 1.2rem;
 }
