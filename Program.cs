@@ -5,7 +5,7 @@ builder.Logging.AddConsole();
 
 builder.Services.AddRazorPages();
 
-var databasePath = "Bookshelf.db";
+const string databasePath = "Bookshelf.db";
 
 if (builder.Environment.IsProduction())
 {

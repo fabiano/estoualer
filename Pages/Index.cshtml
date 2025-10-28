@@ -78,7 +78,7 @@
             var length = book switch
             {
               { Pages: > 0 } => $"{book.Pages} páginas",
-              { Duration.Hours: > 0, Duration.Minutes: > 0 } => $"{book.Duration.Hours} horas e {book.Duration.Minutes} minutos",
+              { Duration: { Hours: > 0, Minutes: > 0 } } => $"{book.Duration.Hours} horas e {book.Duration.Minutes} minutos",
               { Duration.Hours: > 0 } => $"{book.Duration.Hours} horas",
               { Duration.Minutes: > 0 } => $"{book.Duration.Minutes} minutos",
               _ => string.Empty,
@@ -138,7 +138,7 @@
       o que li em
       <ul>
         @{
-          var startYear = 2013;
+          const int startYear = 2013;
           var currentYear = DateTime.Now.Year;
 
           for (var year = startYear; year <= currentYear; year++)

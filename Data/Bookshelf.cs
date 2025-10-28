@@ -35,7 +35,7 @@ public class Bookshelf(List<Book> books, List<ComicBook> comicBooks)
         var books = GetBooks(connection);
         var comicBooks = GetComicBooks(connection);
 
-        return new(books, comicBooks);
+        return new Bookshelf(books, comicBooks);
     }
 
     private static List<Book> GetBooks(SqliteConnection connection)
@@ -43,11 +43,11 @@ public class Bookshelf(List<Book> books, List<ComicBook> comicBooks)
         var command = connection.CreateCommand();
 
         command.CommandText =
-        @"
+            """
             SELECT Date, Publisher, Title, Author, Format, Pages, Duration
             FROM Book
             ORDER BY Id DESC
-        ";
+            """;
 
         using var reader = command.ExecuteReader();
 
@@ -77,11 +77,11 @@ public class Bookshelf(List<Book> books, List<ComicBook> comicBooks)
         var command = connection.CreateCommand();
 
         command.CommandText =
-        @"
+            """
             SELECT Date, Publisher, Title, Format, Pages, Issues
             FROM ComicBook
             ORDER BY Id DESC
-        ";
+            """;
 
         using var reader = command.ExecuteReader();
 

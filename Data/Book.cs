@@ -20,7 +20,7 @@ public readonly record struct Book(
     Duration Duration);
 
 /// <summary>
-/// Represents an audio book duration.
+/// Represents an audiobook duration.
 /// </summary>
 /// <param name="Hours">Number of hours.</param>
 /// <param name="Minutes">Number of minutes.</param>

@@ -40,13 +40,13 @@ public class IndexModel(Bookshelf bookshelf) : PageModel
 
         switch (Q)
         {
-            case string s when s.StartsWith("ano:") && s.Length > 4 && int.TryParse(s[4..], out var year):
+            case { } s when s.StartsWith("ano:") && s.Length > 4 && int.TryParse(s[4..], out var year):
                 booksPredicate = book => book.Date.Year == year;
                 comicBooksPredicate = comicBook => comicBook.Date.Year == year;
 
                 break;
 
-            case string s when s.StartsWith("editora:") && s.Length > 8:
+            case { } s when s.StartsWith("editora:") && s.Length > 8:
                 var publisher = s[8..].Trim();
 
                 booksPredicate = book => book.Publisher.Contains(publisher, StringComparison.OrdinalIgnoreCase);
@@ -54,7 +54,7 @@ public class IndexModel(Bookshelf bookshelf) : PageModel
 
                 break;
 
-            case string s when s.StartsWith("titulo:") && s.Length > 7:
+            case { } s when s.StartsWith("titulo:") && s.Length > 7:
                 var title = s[7..].Trim();
 
                 booksPredicate = book => book.Title.Contains(title, StringComparison.OrdinalIgnoreCase);
@@ -62,7 +62,7 @@ public class IndexModel(Bookshelf bookshelf) : PageModel
 
                 break;
 
-            case string s when s.StartsWith("autor:") && s.Length > 6:
+            case { } s when s.StartsWith("autor:") && s.Length > 6:
                 var author = s[6..].Trim();
 
                 booksPredicate = book => book.Author.Contains(author, StringComparison.OrdinalIgnoreCase);
@@ -87,18 +87,18 @@ public class IndexModel(Bookshelf bookshelf) : PageModel
 
     private static Statistics GenerateStatistics(List<Book> books, List<ComicBook> comicBooks)
     {
-        bool isPaper(string format) => format == "Capa comum" || format == "Capa dura";
-        bool isAudio(string format) => format == "Audiolivro";
-        bool isEBook(string format) => format == "eBook";
-
-        return new(
+        return new Statistics(
             Total: books.Count + comicBooks.Count,
             Books: books.Count,
             ComicBooks: comicBooks.Count,
-            Paper: books.Count(book => isPaper(book.Format)) + comicBooks.Count(comicBook => isPaper(comicBook.Format)),
-            Audio: books.Count(book => isAudio(book.Format)) + comicBooks.Count(comicBook => isAudio(comicBook.Format)),
-            eBook: books.Count(book => isEBook(book.Format)) + comicBooks.Count(comicBook => isEBook(comicBook.Format))
+            Paper: books.Count(book => IsPaper(book.Format)) + comicBooks.Count(comicBook => IsPaper(comicBook.Format)),
+            Audio: books.Count(book => IsAudio(book.Format)) + comicBooks.Count(comicBook => IsAudio(comicBook.Format)),
+            eBook: books.Count(book => IsEBook(book.Format)) + comicBooks.Count(comicBook => IsEBook(comicBook.Format))
         );
+
+        bool IsEBook(string format) => format is "eBook";
+        bool IsAudio(string format) => format is "Audiolivro";
+        bool IsPaper(string format) => format is "Capa comum" or "Capa dura";
     }
 
     public record Statistics(
