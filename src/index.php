@@ -1,7 +1,7 @@
 <?php
 
 $today = getdate();
-$q = trim($_GET["q"]);
+$q = trim($_GET["q"] ?? "");
 
 if (strlen($q) == 0) {
     $q = "ano: " . $today["year"];
@@ -102,8 +102,8 @@ $stats = generate_statistics($books, $comicBooks);
                                         $minutes = 0;
 
                                         if (preg_match("/^((?<Hours>\d+?)h)?\s{0,1}((?<Minutes>\d+?)m)?$/", $duration, $matches) == 1) {
-                                            $hours = $matches["Hours"];
-                                            $minutes = $matches["Minutes"];
+                                            $hours = $matches["Hours"] ?? 0;
+                                            $minutes = $matches["Minutes"] ?? 0;
                                         }
 
                                         echo match (true) {
