@@ -3,19 +3,22 @@
 :root {
   --theme-bg-color: #fff;
   --theme-fg-color: #383838;
+  --theme-primary-color: #3273dc;
   --theme-border-color: #eee;
   --theme-focus-ring-color: #ccc;
-  --theme-link-color: #3273dc;
-  --theme-primary-color: #77b3d4;
+  --theme-ribbon-bg-color: #3273dc;
+  --theme-ribbon-fg-color: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --theme-bg-color: #000;
     --theme-fg-color: #7d7d7d;
+    --theme-primary-color: #133771;
     --theme-border-color: #1b1b1b;
     --theme-focus-ring-color: #2e2e2e;
-    --theme-link-color: #133771;
+    --theme-ribbon-bg-color: #2e2e2e;
+    --theme-ribbon-fg-color: #7d7d7d;
   }
 }
 
@@ -46,7 +49,7 @@ h6 {
 }
 
 a {
-  color: var(--theme-link-color);
+  color: var(--theme-primary-color);
   text-decoration: none;
 }
 
@@ -210,8 +213,8 @@ body.is-loading .progress {
 }
 
 .cards .card.has-ribbon .ribbon {
-  background-color: var(--theme-primary-color);
-  color: #fff;
+  background-color: var(--theme-ribbon-bg-color);
+  color: var(--theme-ribbon-fg-color);
   display: block;
   font-size: 1.2rem;
   height: 20px;
