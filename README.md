@@ -12,5 +12,5 @@
 
 ## Working on the project
 
-- Start the project: `php -S 0.0.0.0:4201 -t src`
+- Start the project: `php -S 0.0.0.0:4201 -t src -c php.ini`
 - Open http://localhost:4201
