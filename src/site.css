@@ -243,13 +243,28 @@ body.is-loading .progress {
 }
 
 .cards .card .title {
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
   margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   text-transform: uppercase;
   word-break: break-word;
 }
 
 .cards .card .publisher-and-format {
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
   font-size: 1.2rem;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
 }
 
 .cards .card .length {
@@ -263,12 +278,6 @@ body.is-loading .progress {
 }
 
 @media only screen and (min-width: 1024px) {
-  .cards .card {
-    width: calc(33.33333333333% - 42px);
-  }
-}
-
-@media only screen and (min-width: 1366px) {
   .cards .card {
     width: calc(25% - 42px);
   }
