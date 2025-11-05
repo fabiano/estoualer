@@ -188,7 +188,7 @@ function get_books($db, $q) {
     switch (true) {
         case str_starts_with($q, "ano:") and strlen($q) > 4:
             $conditions[] = "Date LIKE :year";
-            $parameters[":year"] = trim(substr($q, 5)) . "%";
+            $parameters[":year"] = trim(substr($q, 4)) . "%";
 
             break;
 
@@ -241,7 +241,7 @@ function get_comicbooks($db, $q) {
     switch (true) {
         case str_starts_with($q, "ano:") and strlen($q) > 4:
             $conditions[] = "Date LIKE :year";
-            $parameters[":year"] = trim(substr($q, 5)) . "%";
+            $parameters[":year"] = trim(substr($q, 4)) . "%";
 
             break;
 
