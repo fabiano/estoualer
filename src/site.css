@@ -207,6 +207,16 @@ body.is-loading .progress {
   width: 100%;
 }
 
+@media (hover: hover) {
+  .cards .card {
+    transition: transform 300ms ease-in-out;
+  }
+
+  .cards .card:hover {
+    transform: translateY(-5px);
+  }
+}
+
 .cards .card.has-ribbon {
   position: relative;
   overflow: hidden;
