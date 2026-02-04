@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: fabiano/estoualer
     container_name: estoualer
     restart: unless-stopped
     ports:
