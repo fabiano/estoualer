@@ -1,0 +1,14 @@
+services:
+  estoualer:
+    image: estoualer
+    container_name: estoualer
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "4201:80"
+
+networks:
+  default:
+    name: estoualer
