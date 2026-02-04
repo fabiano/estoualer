@@ -2,8 +2,6 @@
 
 [https://estoualer.dev](https://estoualer.dev) website code.
 
-[![Continuous deployment](https://github.com/fabiano/estoualer/actions/workflows/continuous-deployment.yml/badge.svg)](https://github.com/fabiano/estoualer/actions/workflows/continuous-deployment.yml)
-
 ## Prerequisites
 
 - [PHP 8.4.14](https://www.php.net/downloads.php)
