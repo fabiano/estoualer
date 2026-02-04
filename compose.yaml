@@ -1,6 +1,5 @@
 services:
   estoualer:
-    image: estoualer
     container_name: estoualer
     build:
       context: .
