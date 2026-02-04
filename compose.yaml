@@ -1,9 +1,10 @@
 services:
   estoualer:
-    container_name: estoualer
     build:
       context: .
       dockerfile: Dockerfile
+    image: fabiano/estoualer
+    container_name: estoualer
     restart: unless-stopped
     ports:
       - "4201:80"
