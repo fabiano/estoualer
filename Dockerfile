@@ -1,4 +1,4 @@
-FROM php:8.4.14-apache
+FROM php:8.5.2-apache
 
 # Use the default production configuration
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
