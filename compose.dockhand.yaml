@@ -1,13 +1,13 @@
 services:
   estoualer:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: fabiano/estoualer
+    image: php:8.5.2-apache
     container_name: estoualer
     restart: unless-stopped
     ports:
       - 4201:80
+    volumes:
+      - ./src:/var/www/html:z
+      - ./php.ini-production:/usr/local/etc/php/php.ini:z
 
 networks:
   default:
