@@ -6,8 +6,8 @@ services:
     ports:
       - 4201:80
     volumes:
-      - ./src:/var/www/html:z
-      - ./php.ini-production:/usr/local/etc/php/php.ini:z
+      - ./src:/var/www/html:ro,z
+      - ./php.ini-production:/usr/local/etc/php/php.ini:ro,z
 
 networks:
   default:
