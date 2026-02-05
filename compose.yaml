@@ -7,7 +7,7 @@ services:
     container_name: estoualer
     restart: unless-stopped
     ports:
-      - "4201:80"
+      - 4201:80
 
 networks:
   default:
