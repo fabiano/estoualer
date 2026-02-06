@@ -10,5 +10,5 @@
 
 ## Working on the project
 
-- Start the project: `php -S 0.0.0.0:4201 -t src -c php.ini-development` or `podman compose up`
+- Start the project: `php -S 0.0.0.0:4201 -t src -c php.ini-development`
 - Open http://localhost:4201
