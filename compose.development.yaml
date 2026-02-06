@@ -7,7 +7,7 @@ services:
       - 4201:80
     volumes:
       - ./src:/var/www/html:ro,z
-      - ./php.ini-production:/usr/local/etc/php/php.ini:ro,z
+      - ./php.ini-development:/usr/local/etc/php/php.ini:ro,z
 
 networks:
   default:
