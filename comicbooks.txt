@@ -12498,6 +12498,6 @@ Publisher = A Seita
      Date = 2026-02-13
 Publisher = Marvel
     Title = Scarlet Witch & Quicksilver (2024) #1
-   Format = Capa dura
+   Format = eBook
     Pages = 40
    Issues = 1
