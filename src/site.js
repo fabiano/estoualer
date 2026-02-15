@@ -1,3 +1,5 @@
+const offlineClassName = "is-offline";
+
 window.addEventListener('load', async () => {
   try {
     await navigator.serviceWorker.register('/service-worker.js');
@@ -8,14 +10,14 @@ window.addEventListener('load', async () => {
   }
 
   if (!navigator.onLine) {
-    document.body.classList.add("is-offline");
+    document.body.classList.add(offlineClassName);
   }
 });
 
 window.addEventListener('online', () => {
-  document.body.classList.remove("is-offline");
+  document.body.classList.remove(offlineClassName);
 });
 
 window.addEventListener('offline', () => {
-  document.body.classList.add("is-offline");
+  document.body.classList.add(offlineClassName);
 });
