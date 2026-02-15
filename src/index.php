@@ -173,6 +173,7 @@ $stats = generate_statistics($books, $comicBooks);
             ícone por <a href="https://www.iconfinder.com/sudheepb">sudheep b</a> em <a href="https://www.iconfinder.com/icons/4879874/book_education_learning_study_icon" title="Iconfinder">Iconfinder</a>
         </div>
     </footer>
+    <script type="text/javascript" src="site.js"></script>
 </body>
 
 </html>
