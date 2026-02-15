@@ -332,3 +332,15 @@ body.is-loading .progress {
   content: " • ";
   font-size: 1.2rem;
 }
+
+/* offline */
+
+.is-offline {
+  .search {
+    display: none;
+  }
+
+  .history {
+    display: none;
+  }
+}
