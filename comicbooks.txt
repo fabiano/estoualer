@@ -12501,3 +12501,20 @@ Publisher = Marvel
    Format = eBook
     Pages = 40
    Issues = 1
+
+       Id = 1567
+     Date = 2026-02-15
+Publisher = Marvel
+    Title = Fantastic Four (2022-) #19
+   Format = eBook
+    Pages = 28
+   Issues = 1
+
+       Id = 1568
+     Date = 2026-02-17
+Publisher = Image
+    Title = Hinges Vol. 1: Clockwork City
+   Format = eBook
+    Pages = 112
+   Issues = 1
+
