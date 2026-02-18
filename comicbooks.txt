@@ -12517,4 +12517,3 @@ Publisher = Image
    Format = eBook
     Pages = 112
    Issues = 1
-
