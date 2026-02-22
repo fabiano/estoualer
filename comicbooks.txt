@@ -12517,3 +12517,12 @@ Publisher = Image
    Format = eBook
     Pages = 112
    Issues = 1
+
+       Id = 1569
+     Date = 2026-02-22
+Publisher = Ala dos Livros
+    Title = O Abismo do Esquecimento
+   Format = Capa dura
+    Pages = 304
+   Issues = 1
+
