@@ -12526,3 +12526,19 @@ Publisher = Ala dos Livros
     Pages = 304
    Issues = 1
 
+       Id = 1570
+     Date = 2026-02-22
+Publisher = Image
+    Title = Norroway Book 1: The Black Bull of Norroway
+   Format = eBook
+    Pages = 224
+   Issues = 1
+
+       Id = 1571
+     Date = 2026-02-22
+Publisher = Image
+    Title = Norroway Book 2: The Queen on the High Mountain: The Queen of the High Mountain
+   Format = eBook
+    Pages = 232
+   Issues = 1
+
