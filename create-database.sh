@@ -37,13 +37,13 @@ input=books.txt
 output=$(mktemp)
 
 awk '
-  BEGIN { OFS=";"; }
+  BEGIN { OFS=";"; i=1 }
   NF==0 { print_row(); delete row; next; }
   END { print_row(); }
 
   function print_row() {
-   if (row["id"]) {
-      print row["id"],
+   if (row["date"]) {
+      print i++,
             row["date"],
             row["publisher"],
             row["title"],
@@ -76,13 +76,13 @@ input=comicbooks.txt
 output=$(mktemp)
 
 awk '
-  BEGIN { OFS=";"; }
+  BEGIN { OFS=";"; i=1; }
   NF==0 { print_row(); delete row; next; }
   END { print_row(); }
 
   function print_row() {
-    if (row["id"]) {
-      print row["id"],
+    if (row["date"]) {
+      print i++,
             row["date"],
             row["publisher"],
             row["title"],

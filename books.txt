@@ -1,4 +1,3 @@
-       Id = 1
      Date = 2013-12-22
 Publisher =
     Title = The Foundation Trilogy (Foundation #1-3)
@@ -8,7 +7,6 @@ Publisher =
  Duration = 0m
    Rating = 4
 
-       Id = 2
      Date = 2014-01-10
 Publisher = Nova Fronteira
     Title = Morte Súbita
@@ -18,7 +16,6 @@ Publisher = Nova Fronteira
  Duration = 0m
    Rating = 3
 
-       Id = 3
      Date = 2014-01-13
 Publisher = Record
     Title = 1356
@@ -28,7 +25,6 @@ Publisher = Record
  Duration = 0m
    Rating = 3
 
-       Id = 4
      Date = 2014-03-16
 Publisher = Permuted Press
     Title = Ex-Heroes (Ex-Heroes #1)
@@ -38,7 +34,6 @@ Publisher = Permuted Press
  Duration = 0m
    Rating = 2
 
-       Id = 5
      Date = 2014-03-22
 Publisher = Globo Livros
     Title = Crônicas Marcianas
@@ -48,7 +43,6 @@ Publisher = Globo Livros
  Duration = 0m
    Rating = 5
 
-       Id = 6
      Date = 2014-03-26
 Publisher = Scholastic Press
     Title = Mockingjay (The Hunger Games #3)
@@ -58,7 +52,6 @@ Publisher = Scholastic Press
  Duration = 0m
    Rating = 3
 
-       Id = 7
      Date = 2014-05-15
 Publisher = Zahar
     Title = Aventuras de Alice no País das Maravilhas & Através do espelho (Clássicos Zahar)
@@ -68,7 +61,6 @@ Publisher = Zahar
  Duration = 0m
    Rating = 2
 
-       Id = 8
      Date = 2014-05-21
 Publisher = Globo Livros
     Title = Fahrenheit 451
@@ -78,7 +70,6 @@ Publisher = Globo Livros
  Duration = 0m
    Rating = 4
 
-       Id = 9
      Date = 2014-05-29
 Publisher = Arqueiro
     Title = A Tribo
@@ -88,7 +79,6 @@ Publisher = Arqueiro
  Duration = 0m
    Rating = 3
 
-       Id = 10
      Date = 2014-07-17
 Publisher = Intrínseca
     Title = Como Tudo Começou (Homeland #1)
@@ -98,7 +88,6 @@ Publisher = Intrínseca
  Duration = 0m
    Rating = 3
 
-       Id = 11
      Date = 2014-07-18
 Publisher = Headline
     Title = Bloodchild
@@ -108,7 +97,6 @@ Publisher = Headline
  Duration = 0m
    Rating = 3
 
-       Id = 12
      Date = 2014-08-19
 Publisher = Intrínseca
     Title = O Rei de Amarelo
@@ -118,7 +106,6 @@ Publisher = Intrínseca
  Duration = 0m
    Rating = 4
 
-       Id = 13
      Date = 2014-09-24
 Publisher = Planeta Literário
     Title = O mistério da cripta amaldiçoada
@@ -128,7 +115,6 @@ Publisher = Planeta Literário
  Duration = 0m
    Rating = 4
 
-       Id = 14
      Date = 2014-09-28
 Publisher = Smashwords Edition
     Title = A Igreja Vermelha
@@ -138,7 +124,6 @@ Publisher = Smashwords Edition
  Duration = 0m
    Rating = 2
 
-       Id = 15
      Date = 2014-10-13
 Publisher = Syncfusion
     Title = ASP.NET Web API Succinctly
@@ -148,7 +133,6 @@ Publisher = Syncfusion
  Duration = 0m
    Rating = 2
 
-       Id = 16
      Date = 2014-10-20
 Publisher = Aleph
     Title = Laranja Mecânica
@@ -158,7 +142,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 4
 
-       Id = 17
      Date = 2014-12-14
 Publisher = Biblioteca Azul
     Title = A cidade inteira dorme e outros contos breves
@@ -168,7 +151,6 @@ Publisher = Biblioteca Azul
  Duration = 0m
    Rating = 5
 
-       Id = 18
      Date = 2014-12-27
 Publisher = Record
     Title = O Rei do Inverno (As Crônicas de Artur #1)
@@ -178,7 +160,6 @@ Publisher = Record
  Duration = 0m
    Rating = 4
 
-       Id = 19
      Date = 2014-12-31
 Publisher = Record
     Title = O Inimigo de Deus (As Crônicas de Arthur #2)
@@ -188,7 +169,6 @@ Publisher = Record
  Duration = 0m
    Rating = 4
 
-       Id = 20
      Date = 2015-01-06
 Publisher = Record
     Title = Excalibur (As Crônicas de Artur #3)
@@ -198,7 +178,6 @@ Publisher = Record
  Duration = 0m
    Rating = 4
 
-       Id = 21
      Date = 2015-01-24
 Publisher = Ridan Publishing
     Title = The Forever War
@@ -208,7 +187,6 @@ Publisher = Ridan Publishing
  Duration = 0m
    Rating = 3
 
-       Id = 22
      Date = 2015-01-25
 Publisher = LeYa
     Title = Sobrevivente
@@ -218,7 +196,6 @@ Publisher = LeYa
  Duration = 0m
    Rating = 2
 
-       Id = 23
      Date = 2015-01-31
 Publisher = Longe
     Title = Chéri à Paris - Um brasileiro na terra do fromage
@@ -228,7 +205,6 @@ Publisher = Longe
  Duration = 0m
    Rating = 3
 
-       Id = 24
      Date = 2015-02-16
 Publisher = LeYa
     Title = O Cavaleiro dos Sete Reinos (The Tales of Dunk and Egg #1-3)
@@ -238,7 +214,6 @@ Publisher = LeYa
  Duration = 0m
    Rating = 2
 
-       Id = 25
      Date = 2015-03-13
 Publisher = Penguin
     Title = Extremely Loud and Incredibly Close
@@ -248,7 +223,6 @@ Publisher = Penguin
  Duration = 0m
    Rating = 3
 
-       Id = 26
      Date = 2015-04-23
 Publisher = Record
     Title = Azincourt
@@ -258,7 +232,6 @@ Publisher = Record
  Duration = 0m
    Rating = 2
 
-       Id = 27
      Date = 2015-04-25
 Publisher = Arqueiro
     Title = Perdido em Marte
@@ -268,7 +241,6 @@ Publisher = Arqueiro
  Duration = 0m
    Rating = 5
 
-       Id = 28
      Date = 2015-04-26
 Publisher = Intrínseca
     Title = Minha Breve História
@@ -278,7 +250,6 @@ Publisher = Intrínseca
  Duration = 0m
    Rating = 3
 
-       Id = 29
      Date = 2015-06-03
 Publisher = Broad Reach Publishing
     Title = Wool (Silo #1)
@@ -288,7 +259,6 @@ Publisher = Broad Reach Publishing
  Duration = 0m
    Rating = 4
 
-       Id = 30
      Date = 2015-06-12
 Publisher = Globo Livros
     Title = 1808
@@ -298,7 +268,6 @@ Publisher = Globo Livros
  Duration = 0m
    Rating = 5
 
-       Id = 31
      Date = 2015-06-27
 Publisher = Intrínseca
     Title = Aniquilação (Comando Sul #1)
@@ -308,7 +277,6 @@ Publisher = Intrínseca
  Duration = 0m
    Rating = 1
 
-       Id = 32
      Date = 2015-08-04
 Publisher = Syncfusion
     Title = F# Succinctly
@@ -318,7 +286,6 @@ Publisher = Syncfusion
  Duration = 0m
    Rating = 2
 
-       Id = 33
      Date = 2015-08-22
 Publisher = Tor
     Title = Old Man's War (Old Man's War #1)
@@ -328,7 +295,6 @@ Publisher = Tor
  Duration = 0m
    Rating = 4
 
-       Id = 34
      Date = 2015-08-25
 Publisher =
     Title = Robots of the World! Arise!
@@ -338,7 +304,6 @@ Publisher =
  Duration = 0m
    Rating = 3
 
-       Id = 35
      Date = 2015-08-31
 Publisher = Syncfusion
     Title = Data Structures Succinctly Part 1
@@ -348,7 +313,6 @@ Publisher = Syncfusion
  Duration = 0m
    Rating = 3
 
-       Id = 36
      Date = 2015-09-01
 Publisher = Syncfusion
     Title = Data Structures Succinctly Part 2
@@ -358,7 +322,6 @@ Publisher = Syncfusion
  Duration = 0m
    Rating = 3
 
-       Id = 37
      Date = 2015-09-28
 Publisher = Hedra
     Title = Contos clássicos de vampiro
@@ -368,7 +331,6 @@ Publisher = Hedra
  Duration = 0m
    Rating = 4
 
-       Id = 38
      Date = 2015-10-31
 Publisher =
     Title = Dark Beyond the Stars: A Space Opera Anthology
@@ -378,7 +340,6 @@ Publisher =
  Duration = 0m
    Rating = 3
 
-       Id = 39
      Date = 2015-11-10
 Publisher = Aleph
     Title = A Mão Esquerda da Escuridão
@@ -388,7 +349,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 4
 
-       Id = 40
      Date = 2015-11-15
 Publisher = Broad Reach Publishing
     Title = Beacon 23
@@ -398,7 +358,6 @@ Publisher = Broad Reach Publishing
  Duration = 0m
    Rating = 2
 
-       Id = 41
      Date = 2015-11-16
 Publisher = LeYa
     Title = Clube da Luta
@@ -408,7 +367,6 @@ Publisher = LeYa
  Duration = 0m
    Rating = 2
 
-       Id = 42
      Date = 2015-12-17
 Publisher = 47North
     Title = Off to Be the Wizard (Magic 2.0 #1)
@@ -418,7 +376,6 @@ Publisher = 47North
  Duration = 0m
    Rating = 2
 
-       Id = 43
      Date = 2015-12-27
 Publisher = Intrínseca
     Title = Os filhos de Anansi
@@ -428,7 +385,6 @@ Publisher = Intrínseca
  Duration = 0m
    Rating = 2
 
-       Id = 44
      Date = 2016-01-24
 Publisher = Aleph
     Title = Eu, Robô (Robot #0.1)
@@ -438,7 +394,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 4
 
-       Id = 45
      Date = 2016-02-12
 Publisher = LeYa
     Title = Jogador Nº 1
@@ -448,7 +403,6 @@ Publisher = LeYa
  Duration = 0m
    Rating = 3
 
-       Id = 46
      Date = 2016-04-06
 Publisher = Intrínseca
     Title = Caixa de Pássaros
@@ -458,7 +412,6 @@ Publisher = Intrínseca
  Duration = 0m
    Rating = 2
 
-       Id = 47
      Date = 2016-04-24
 Publisher = Cosac Naify
     Title = A Contadora de Filmes
@@ -468,7 +421,6 @@ Publisher = Cosac Naify
  Duration = 0m
    Rating = 3
 
-       Id = 48
      Date = 2016-04-30
 Publisher = Cosac Naify
     Title = Bonsai
@@ -478,7 +430,6 @@ Publisher = Cosac Naify
  Duration = 0m
    Rating = 2
 
-       Id = 49
      Date = 2016-06-05
 Publisher = Record
     Title = O Guerreiro Pagão (Crônicas Saxonicas #7)
@@ -488,7 +439,6 @@ Publisher = Record
  Duration = 0m
    Rating = 4
 
-       Id = 50
      Date = 2016-06-11
 Publisher = Record
     Title = O trono vazio (Crônicas Saxonicas #8)
@@ -498,7 +448,6 @@ Publisher = Record
  Duration = 0m
    Rating = 4
 
-       Id = 51
      Date = 2016-07-09
 Publisher = Cosac Naify
     Title = Formas de voltar para casa
@@ -508,7 +457,6 @@ Publisher = Cosac Naify
  Duration = 0m
    Rating = 4
 
-       Id = 52
      Date = 2016-07-17
 Publisher = Cosac Naify
     Title = A vida privada das árvores
@@ -518,7 +466,6 @@ Publisher = Cosac Naify
  Duration = 0m
    Rating = 4
 
-       Id = 53
      Date = 2016-09-27
 Publisher = Broad Reach Publishing
     Title = Shift (Silo #2)
@@ -528,7 +475,6 @@ Publisher = Broad Reach Publishing
  Duration = 0m
    Rating = 2
 
-       Id = 54
      Date = 2016-10-02
 Publisher = Aleph
     Title = Encontro com Rama
@@ -538,7 +484,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 5
 
-       Id = 55
      Date = 2016-10-09
 Publisher = Casa do Código
     Title = Desconstruindo a Web: As tecnologias por trás de uma requisição
@@ -548,7 +493,6 @@ Publisher = Casa do Código
  Duration = 0m
    Rating = 3
 
-       Id = 56
      Date = 2016-11-03
 Publisher = Aleph
     Title = O Homem do Castelo Alto
@@ -558,7 +502,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 4
 
-       Id = 57
      Date = 2016-11-20
 Publisher = Aleph
     Title = O Fim da Infância
@@ -568,7 +511,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 5
 
-       Id = 58
      Date = 2016-12-31
 Publisher = Hedra
     Title = Os melhores contos de H.P. Lovecraft
@@ -578,7 +520,6 @@ Publisher = Hedra
  Duration = 0m
    Rating = 5
 
-       Id = 59
      Date = 2017-01-15
 Publisher = LeYa
     Title = ARMADA
@@ -588,7 +529,6 @@ Publisher = LeYa
  Duration = 0m
    Rating = 2
 
-       Id = 60
      Date = 2017-01-21
 Publisher = Globo Livros
     Title = Piratas no Brasil: As incríveis histórias dos ladrões dos mares que pilharam nosso litoral
@@ -598,7 +538,6 @@ Publisher = Globo Livros
  Duration = 0m
    Rating = 3
 
-       Id = 61
      Date = 2017-01-21
 Publisher = Record
     Title = Guerreiros da Tempestade (Crônicas Saxônicas #9)
@@ -608,7 +547,6 @@ Publisher = Record
  Duration = 0m
    Rating = 5
 
-       Id = 62
      Date = 2017-01-28
 Publisher = LeYa
     Title = O aprendiz de assassino
@@ -618,7 +556,6 @@ Publisher = LeYa
  Duration = 0m
    Rating = 4
 
-       Id = 63
      Date = 2017-02-19
 Publisher = Broad Reach Publishing
     Title = Dust (Silo #3)
@@ -628,7 +565,6 @@ Publisher = Broad Reach Publishing
  Duration = 0m
    Rating = 3
 
-       Id = 64
      Date = 2017-02-25
 Publisher = Aleph
     Title = Androides Sonham Com Ovelhas Elétricas?
@@ -638,7 +574,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 4
 
-       Id = 65
      Date = 2017-03-03
 Publisher = Casa do Código
     Title = Amazon AWS: Descomplicando a computação na nuvem
@@ -648,7 +583,6 @@ Publisher = Casa do Código
  Duration = 0m
    Rating = 4
 
-       Id = 66
      Date = 2017-03-06
 Publisher = Cosac Naify
     Title = Meus Documentos
@@ -658,7 +592,6 @@ Publisher = Cosac Naify
  Duration = 0m
    Rating = 5
 
-       Id = 67
      Date = 2017-03-19
 Publisher = Tor
     Title = Binti (Binti #1)
@@ -668,7 +601,6 @@ Publisher = Tor
  Duration = 0m
    Rating = 3
 
-       Id = 68
      Date = 2017-03-28
 Publisher = Tor
     Title = The Fortress at the End of Time
@@ -678,7 +610,6 @@ Publisher = Tor
  Duration = 0m
    Rating = 3
 
-       Id = 69
      Date = 2017-04-04
 Publisher = Aleph
     Title = 2001: Uma odisseia no espaço
@@ -688,7 +619,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 5
 
-       Id = 70
      Date = 2017-07-08
 Publisher = Fantástica Rocco
     Title = As Águas-Vivas Não Sabem de Si
@@ -698,7 +628,6 @@ Publisher = Fantástica Rocco
  Duration = 0m
    Rating = 5
 
-       Id = 71
      Date = 2017-07-17
 Publisher = Tor
     Title = Home (Binti #2)
@@ -708,7 +637,6 @@ Publisher = Tor
  Duration = 0m
    Rating = 4
 
-       Id = 72
      Date = 2017-08-18
 Publisher = Farrar, Straus and Giroux
     Title = A Wrinkle in Time (Time Quintet #1)
@@ -718,7 +646,6 @@ Publisher = Farrar, Straus and Giroux
  Duration = 0m
    Rating = 3
 
-       Id = 73
      Date = 2017-08-27
 Publisher = Casa do Código
     Title = OCaml: Programação funcional na prática
@@ -728,7 +655,6 @@ Publisher = Casa do Código
  Duration = 0m
    Rating = 3
 
-       Id = 74
      Date = 2017-09-01
 Publisher = Aleph
     Title = Fundação (Fundação #1)
@@ -738,7 +664,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 5
 
-       Id = 75
      Date = 2017-09-22
 Publisher = Aleph
     Title = Fundação e Império (Fundação #2)
@@ -748,7 +673,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 4
 
-       Id = 76
      Date = 2017-09-30
 Publisher = Aleph
     Title = Segunda Fundação (Fundação #3)
@@ -758,7 +682,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 4
 
-       Id = 77
      Date = 2017-11-13
 Publisher = Aleph
     Title = Limites da Fundação (Fundação #4)
@@ -768,7 +691,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 5
 
-       Id = 78
      Date = 2017-11-18
 Publisher = Aleph
     Title = Fundação e Terra (Fundação #5)
@@ -778,7 +700,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 5
 
-       Id = 79
      Date = 2017-12-20
 Publisher = Circlet Press, Inc.
     Title = The Stars Change
@@ -788,7 +709,6 @@ Publisher = Circlet Press, Inc.
  Duration = 0m
    Rating = 3
 
-       Id = 80
      Date = 2017-12-23
 Publisher = Record
     Title = O Portador do Fogo (Crônicas Saxônicas #10)
@@ -798,7 +718,6 @@ Publisher = Record
  Duration = 0m
    Rating = 5
 
-       Id = 81
      Date = 2017-12-25
 Publisher = Draco
     Title = Tempos de fúria: Contos de ficção científica
@@ -808,7 +727,6 @@ Publisher = Draco
  Duration = 0m
    Rating = 3
 
-       Id = 82
      Date = 2017-12-31
 Publisher = Gateway
     Title = The Lathe of Heaven
@@ -818,7 +736,6 @@ Publisher = Gateway
  Duration = 0m
    Rating = 4
 
-       Id = 83
      Date = 2018-01-05
 Publisher = Casa do Código
     Title = Elixir: Do zero à concorrência
@@ -828,7 +745,6 @@ Publisher = Casa do Código
  Duration = 0m
    Rating = 3
 
-       Id = 84
      Date = 2018-01-12
 Publisher = Beacon Press
     Title = Kindred
@@ -838,7 +754,6 @@ Publisher = Beacon Press
  Duration = 0m
    Rating = 4
 
-       Id = 85
      Date = 2018-02-03
 Publisher = Tor
     Title = The Night Masquerade (Binti #3)
@@ -848,7 +763,6 @@ Publisher = Tor
  Duration = 0m
    Rating = 3
 
-       Id = 86
      Date = 2018-03-12
 Publisher = Red Wombat Tea Company
     Title = Summer in Orcus
@@ -858,7 +772,6 @@ Publisher = Red Wombat Tea Company
  Duration = 0m
    Rating = 5
 
-       Id = 87
      Date = 2018-04-05
 Publisher = Hodder & Stoughton
     Title = The Long Way to a Small, Angry Planet (Wayfarers #1)
@@ -868,7 +781,6 @@ Publisher = Hodder & Stoughton
  Duration = 0m
    Rating = 5
 
-       Id = 88
      Date = 2018-04-16
 Publisher = Tor
     Title = The Burning Light
@@ -878,7 +790,6 @@ Publisher = Tor
  Duration = 0m
    Rating = 2
 
-       Id = 89
      Date = 2018-04-22
 Publisher = Civilização Brasileira
     Title = Bestiário
@@ -888,7 +799,6 @@ Publisher = Civilização Brasileira
  Duration = 0m
    Rating = 2
 
-       Id = 90
      Date = 2018-05-08
 Publisher = Aleph
     Title = Prelúdio à Fundação (Fundação #6)
@@ -898,7 +808,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 3
 
-       Id = 91
      Date = 2018-07-22
 Publisher = Cosac Naify
     Title = A Desumanização
@@ -908,7 +817,6 @@ Publisher = Cosac Naify
  Duration = 0m
    Rating = 4
 
-       Id = 92
      Date = 2018-07-27
 Publisher = Aleph
     Title = Origens da Fundação (Fundação #7)
@@ -918,7 +826,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 3
 
-       Id = 93
      Date = 2018-07-29
 Publisher = Tor
     Title = Redshirts
@@ -928,7 +835,6 @@ Publisher = Tor
  Duration = 0m
    Rating = 5
 
-       Id = 94
      Date = 2018-08-04
 Publisher = Macmillan
     Title = The Ghost Brigades (Old Man's War #2)
@@ -938,7 +844,6 @@ Publisher = Macmillan
  Duration = 0m
    Rating = 4
 
-       Id = 95
      Date = 2018-08-05
 Publisher = Tor
     Title = The Last Colony (Old Man's War #3)
@@ -948,7 +853,6 @@ Publisher = Tor
  Duration = 0m
    Rating = 4
 
-       Id = 96
      Date = 2018-08-07
 Publisher = Argonautas
     Title = A Ascensão de Cthulhu
@@ -958,7 +862,6 @@ Publisher = Argonautas
  Duration = 0m
    Rating = 4
 
-       Id = 97
      Date = 2018-08-12
 Publisher = Aleph
     Title = As Fontes do Paraíso
@@ -968,7 +871,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 5
 
-       Id = 98
      Date = 2018-09-06
 Publisher = Record
     Title = O forte
@@ -978,7 +880,6 @@ Publisher = Record
  Duration = 0m
    Rating = 2
 
-       Id = 99
      Date = 2018-09-10
 Publisher = Tor
     Title = All Systems Red (The Murderbot Diaries #1)
@@ -988,7 +889,6 @@ Publisher = Tor
  Duration = 0m
    Rating = 4
 
-       Id = 100
      Date = 2018-09-30
 Publisher = Packt Publishing
     Title = Learning JavaScript Data Structures and Algorithms
@@ -998,7 +898,6 @@ Publisher = Packt Publishing
  Duration = 0m
    Rating = 3
 
-       Id = 101
      Date = 2018-10-13
 Publisher = 47North
     Title = Spell or High Water (Magic 2.0 #2)
@@ -1008,7 +907,6 @@ Publisher = 47North
  Duration = 0m
    Rating = 4
 
-       Id = 102
      Date = 2018-10-14
 Publisher = Pragmatic Bookshelf
     Title = Reactive Programming with RxJS: Untangle Your Asynchronous JavaScript Code
@@ -1018,7 +916,6 @@ Publisher = Pragmatic Bookshelf
  Duration = 0m
    Rating = 3
 
-       Id = 103
      Date = 2018-11-08
 Publisher = Aleph
     Title = Os despossuídos
@@ -1028,7 +925,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 5
 
-       Id = 104
      Date = 2018-12-08
 Publisher = Rocco Digital
     Title = O Conto da Aia
@@ -1038,7 +934,6 @@ Publisher = Rocco Digital
  Duration = 0m
    Rating = 5
 
-       Id = 105
      Date = 2018-12-14
 Publisher = Aleph
     Title = Nós
@@ -1048,7 +943,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 4
 
-       Id = 106
      Date = 2018-12-15
 Publisher = HarperAudio
     Title = Hidden Figures: The Untold Story of the African American Women Who Helped Win the Space Race
@@ -1058,7 +952,6 @@ Publisher = HarperAudio
  Duration = 10h 47m
    Rating = 3
 
-       Id = 107
      Date = 2019-01-30
 Publisher = HarperAudio
     Title = Norse Mythology
@@ -1068,7 +961,6 @@ Publisher = HarperAudio
  Duration = 6h 29m
    Rating = 3
 
-       Id = 108
      Date = 2019-03-09
 Publisher = Manning
     Title = C# in Depth, Fourth Edition
@@ -1078,7 +970,6 @@ Publisher = Manning
  Duration = 0m
    Rating = 4
 
-       Id = 109
      Date = 2019-03-31
 Publisher = Intrínseca
     Title = História da sua vida e outros contos
@@ -1088,7 +979,6 @@ Publisher = Intrínseca
  Duration = 0m
    Rating = 4
 
-       Id = 110
      Date = 2019-04-06
 Publisher = Aleph
     Title = As Cavernas de Aço (Robot #1)
@@ -1098,7 +988,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 4
 
-       Id = 111
      Date = 2019-04-08
 Publisher = Aleph
     Title = O Sol Desvelado (Robot #2)
@@ -1108,7 +997,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 4
 
-       Id = 112
      Date = 2019-04-17
 Publisher = Aleph
     Title = Os Robôs da Alvorada (Robot #3)
@@ -1118,7 +1006,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 3
 
-       Id = 113
      Date = 2019-04-22
 Publisher = Manning
     Title = Learn Azure in a Month of Lunches
@@ -1128,7 +1015,6 @@ Publisher = Manning
  Duration = 0m
    Rating = 3
 
-       Id = 114
      Date = 2019-05-19
 Publisher = Addison-Wesley Professional
     Title = Nosql Distilled: A Brief Guide to the Emerging World of Polyglot Persistence
@@ -1138,7 +1024,6 @@ Publisher = Addison-Wesley Professional
  Duration = 0m
    Rating = 4
 
-       Id = 115
      Date = 2019-06-22
 Publisher = Addison-Wesley Professional
     Title = Growing Object-Oriented Software Guided by Tests
@@ -1148,7 +1033,6 @@ Publisher = Addison-Wesley Professional
  Duration = 0m
    Rating = 2
 
-       Id = 116
      Date = 2019-07-05
 Publisher = Simon & Schuster Audio
     Title = The Light Brigade
@@ -1158,7 +1042,6 @@ Publisher = Simon & Schuster Audio
  Duration = 10h 22m
    Rating = 3
 
-       Id = 117
      Date = 2019-08-04
 Publisher = Suma
     Title = O problema dos três corpos (Remembrance of Earth's Past #1)
@@ -1168,7 +1051,6 @@ Publisher = Suma
  Duration = 0m
    Rating = 5
 
-       Id = 118
      Date = 2019-08-06
 Publisher =
     Title = Sermão aos bezerros
@@ -1178,7 +1060,6 @@ Publisher =
  Duration = 0m
    Rating = 5
 
-       Id = 119
      Date = 2019-08-11
 Publisher = Suma
     Title = A Floresta Sombria (Remembrance of Earth's Past #2)
@@ -1188,7 +1069,6 @@ Publisher = Suma
  Duration = 0m
    Rating = 5
 
-       Id = 120
      Date = 2019-08-17
 Publisher = Tantor Audio
     Title = The Stars Are Legion
@@ -1198,7 +1078,6 @@ Publisher = Tantor Audio
  Duration = 11h 49m
    Rating = 3
 
-       Id = 121
      Date = 2019-08-27
 Publisher = Suma
     Title = O Fim da Morte (Remembrance of Earth’s Past #3)
@@ -1208,7 +1087,6 @@ Publisher = Suma
  Duration = 0m
    Rating = 5
 
-       Id = 122
      Date = 2019-10-06
 Publisher =
     Title = Desaparição
@@ -1218,7 +1096,6 @@ Publisher =
  Duration = 0m
    Rating = 2
 
-       Id = 123
      Date = 2019-10-30
 Publisher = HarperAudio
     Title = Neverwhere
@@ -1228,7 +1105,6 @@ Publisher = HarperAudio
  Duration = 13h 48m
    Rating = 3
 
-       Id = 124
      Date = 2019-11-02
 Publisher = Audible
     Title = The Dispatcher
@@ -1238,7 +1114,6 @@ Publisher = Audible
  Duration = 2h 18m
    Rating = 2
 
-       Id = 125
      Date = 2019-11-06
 Publisher = Audible
     Title = Alien: Out of the Shadows (Canonical Alien trilogy #1)
@@ -1248,7 +1123,6 @@ Publisher = Audible
  Duration = 9h 25m
    Rating = 3
 
-       Id = 126
      Date = 2019-11-23
 Publisher = Head of Zeus
     Title = The Wandering Earth
@@ -1258,7 +1132,6 @@ Publisher = Head of Zeus
  Duration = 0m
    Rating = 4
 
-       Id = 127
      Date = 2019-11-28
 Publisher = Record
     Title = A guerra do lobo (Crônicas Saxônicas #11)
@@ -1268,7 +1141,6 @@ Publisher = Record
  Duration = 0m
    Rating = 5
 
-       Id = 128
      Date = 2019-12-04
 Publisher = HarperCollins Publishers Limited
     Title = Semiosis (Semiosis Duology #1)
@@ -1278,7 +1150,6 @@ Publisher = HarperCollins Publishers Limited
  Duration = 14h 46m
    Rating = 3
 
-       Id = 129
      Date = 2019-12-21
 Publisher = Geração Editorial
     Title = Holocausto brasileiro
@@ -1288,7 +1159,6 @@ Publisher = Geração Editorial
  Duration = 0m
    Rating = 5
 
-       Id = 130
      Date = 2019-12-22
 Publisher = Open Road Media
     Title = Dawn (Xenogenesis #1)
@@ -1298,7 +1168,6 @@ Publisher = Open Road Media
  Duration = 0m
    Rating = 4
 
-       Id = 131
      Date = 2019-12-24
 Publisher = Macmillan Audio
     Title = Children of Blood and Bone (Legacy of Orïsha #1)
@@ -1308,7 +1177,6 @@ Publisher = Macmillan Audio
  Duration = 17h 44m
    Rating = 3
 
-       Id = 132
      Date = 2019-12-28
 Publisher = Open Road Media
     Title = Bloodchild and Other Stories
@@ -1318,7 +1186,6 @@ Publisher = Open Road Media
  Duration = 0m
    Rating = 5
 
-       Id = 133
      Date = 2019-12-29
 Publisher = Editora 34
     Title = A Caverna
@@ -1328,7 +1195,6 @@ Publisher = Editora 34
  Duration = 0m
    Rating = 2
 
-       Id = 134
      Date = 2019-12-29
 Publisher = Boitempo Editorial
     Title = Um conto de Natal
@@ -1338,7 +1204,6 @@ Publisher = Boitempo Editorial
  Duration = 0m
    Rating = 1
 
-       Id = 135
      Date = 2020-01-05
 Publisher = O'Reilly Media
     Title = Building Microservices: Designing Fine-Grained Systems
@@ -1348,7 +1213,6 @@ Publisher = O'Reilly Media
  Duration = 0m
    Rating = 3
 
-       Id = 136
      Date = 2020-01-11
 Publisher = 47North
     Title = An Unwelcome Quest (Magic 2.0 #3)
@@ -1358,7 +1222,6 @@ Publisher = 47North
  Duration = 0m
    Rating = 3
 
-       Id = 137
      Date = 2020-02-09
 Publisher = Aleph
     Title = Justiça ancilar (Imperial Radch #1)
@@ -1368,7 +1231,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 2
 
-       Id = 138
      Date = 2020-02-24
 Publisher = Brilliance Audio
     Title = The Name of the Wind (The Kingkiller Chronicle #1)
@@ -1378,7 +1240,6 @@ Publisher = Brilliance Audio
  Duration = 27h 55m
    Rating = 3
 
-       Id = 139
      Date = 2020-02-27
 Publisher = O'Reilly Media
     Title = Monolith to Microservices: Sustaining Productivity While Detangling the System
@@ -1388,7 +1249,6 @@ Publisher = O'Reilly Media
  Duration = 0m
    Rating = 2
 
-       Id = 140
      Date = 2020-02-28
 Publisher = Recorded Books
     Title = Artificial Condition (The Murderbot Diaries #2)
@@ -1398,7 +1258,6 @@ Publisher = Recorded Books
  Duration = 3h 21m
    Rating = 2
 
-       Id = 141
      Date = 2020-03-03
 Publisher = Recorded Books
     Title = Rogue Protocol (The Murderbot Diaries #3)
@@ -1408,7 +1267,6 @@ Publisher = Recorded Books
  Duration = 3h 46m
    Rating = 2
 
-       Id = 142
      Date = 2020-03-24
 Publisher = Audible
     Title = Sourdough
@@ -1418,7 +1276,6 @@ Publisher = Audible
  Duration = 6h 47m
    Rating = 3
 
-       Id = 143
      Date = 2020-05-07
 Publisher = Suma
     Title = O tempo desconjuntado
@@ -1428,7 +1285,6 @@ Publisher = Suma
  Duration = 0m
    Rating = 4
 
-       Id = 144
      Date = 2020-05-14
 Publisher = Aleph
     Title = Ubik
@@ -1438,7 +1294,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 3
 
-       Id = 145
      Date = 2020-05-24
 Publisher = Record
     Title = O Condenado
@@ -1448,7 +1303,6 @@ Publisher = Record
  Duration = 0m
    Rating = 2
 
-       Id = 146
      Date = 2020-06-22
 Publisher = Ben Watson
     Title = Writing High-Performance .NET Code
@@ -1458,7 +1312,6 @@ Publisher = Ben Watson
  Duration = 0m
    Rating = 4
 
-       Id = 147
      Date = 2020-08-10
 Publisher = Pottermore Publishing
     Title = The Tales of Beedle the Bard
@@ -1468,7 +1321,6 @@ Publisher = Pottermore Publishing
  Duration = 1h 35m
    Rating = 3
 
-       Id = 148
      Date = 2020-08-30
 Publisher = Companhia das Letras
     Title = Racismo e fascismo & O corpo escravizado e o corpo negro
@@ -1478,7 +1330,6 @@ Publisher = Companhia das Letras
  Duration = 0m
    Rating = 5
 
-       Id = 149
      Date = 2020-09-30
 Publisher = Orbit
     Title = Rosewater (The Wormwood Trilogy #1)
@@ -1488,7 +1339,6 @@ Publisher = Orbit
  Duration = 0m
    Rating = 2
 
-       Id = 150
      Date = 2020-10-09
 Publisher = Audible
     Title = We Are Legion (We Are Bob) (Bobiverse #1)
@@ -1498,7 +1348,6 @@ Publisher = Audible
  Duration = 9h 56m
    Rating = 4
 
-       Id = 151
      Date = 2020-11-01
 Publisher = Sphere
     Title = 52 Times Britain was a Bellend: The History You Didn’t Get Taught At School
@@ -1508,7 +1357,6 @@ Publisher = Sphere
  Duration = 0m
    Rating = 4
 
-       Id = 152
      Date = 2020-12-05
 Publisher = Aleph
     Title = Poeira Lunar
@@ -1518,7 +1366,6 @@ Publisher = Aleph
  Duration = 0m
    Rating = 3
 
-       Id = 153
      Date = 2020-12-12
 Publisher = Jo Fletcher Books
     Title = This is How You Lose the Time War
@@ -1528,7 +1375,6 @@ Publisher = Jo Fletcher Books
  Duration = 0m
    Rating = 1
 
-       Id = 154
      Date = 2020-12-17
 Publisher = Companhia das Letras
     Title = O olho mais azul
@@ -1538,7 +1384,6 @@ Publisher = Companhia das Letras
  Duration = 0m
    Rating = 2
 
-       Id = 155
      Date = 2020-12-18
 Publisher = Planeta
     Title = Tudo Nela Brilha e Queima: Poemas de Luta e Amor
@@ -1548,7 +1393,6 @@ Publisher = Planeta
  Duration = 0m
    Rating = 4
 
-       Id = 156
      Date = 2020-12-19
 Publisher = LeYa
     Title = Eu destilo melanina e mel
@@ -1558,7 +1402,6 @@ Publisher = LeYa
  Duration = 0m
    Rating = 4
 
-       Id = 157
      Date = 2020-12-19
 Publisher = Biblioteca Azul
     Title = O paraíso são os outros
@@ -1568,7 +1411,6 @@ Publisher = Biblioteca Azul
  Duration = 0m
    Rating = 4
 
-       Id = 158
      Date = 2020-12-26
 Publisher = Record
     Title = A espada dos reis (Crônicas Saxônicas #12)
@@ -1578,7 +1420,6 @@ Publisher = Record
  Duration = 0m
    Rating = 5
 
-       Id = 159
      Date = 2020-12-28
 Publisher = Planeta
     Title = Jamais peço desculpas por me derramar
@@ -1588,7 +1429,6 @@ Publisher = Planeta
  Duration = 0m
    Rating = 3
 
-       Id = 160
      Date = 2021-01-03
 Publisher = Audible
     Title = For We Are Many (Bobiverse #2)
@@ -1598,7 +1438,6 @@ Publisher = Audible
  Duration = 8h 59m
    Rating = 5
 
-       Id = 161
      Date = 2021-01-09
 Publisher = Audible
     Title = All These Worlds (Bobiverse #3)
@@ -1608,7 +1447,6 @@ Publisher = Audible
  Duration = 7h 56m
    Rating = 5
 
-       Id = 162
      Date = 2021-01-14
 Publisher = Audible
     Title = The Science of Sci-Fi: From Warp Speed to Interstellar Travel
@@ -1618,7 +1456,6 @@ Publisher = Audible
  Duration = 3h 59m
    Rating = 3
 
-       Id = 163
      Date = 2021-01-28
 Publisher = Hodder & Stoughton
     Title = A Closed and Common Orbit (Wayfarers #2)
@@ -1628,7 +1465,6 @@ Publisher = Hodder & Stoughton
  Duration = 13h 4m
    Rating = 2
 
-       Id = 164
      Date = 2021-01-31
 Publisher = Audible
     Title = Pile of Bones (The Legends of the First Empire #0.5)
@@ -1638,7 +1474,6 @@ Publisher = Audible
  Duration = 1h 45m
    Rating = 2
 
-       Id = 165
      Date = 2021-02-01
 Publisher = Audible
     Title = A Mind of Her Own
@@ -1648,7 +1483,6 @@ Publisher = Audible
  Duration = 1h 15m
    Rating = 2
 
-       Id = 166
      Date = 2021-02-06
 Publisher = Audible
     Title = The Messengers
@@ -1658,7 +1492,6 @@ Publisher = Audible
  Duration = 1h 20m
    Rating = 1
 
-       Id = 167
      Date = 2021-02-09
 Publisher = Audible
     Title = Beezer
@@ -1668,7 +1501,6 @@ Publisher = Audible
  Duration = 2h 8m
    Rating = 1
 
-       Id = 168
      Date = 2021-02-13
 Publisher = Audible
     Title = Have a Nice Day
@@ -1678,7 +1510,6 @@ Publisher = Audible
  Duration = 1h 46m
    Rating = 3
 
-       Id = 169
      Date = 2021-02-21
 Publisher = Addison-Wesley Professional
     Title = Implementing Domain-Driven Design
@@ -1688,7 +1519,6 @@ Publisher = Addison-Wesley Professional
  Duration = 0m
    Rating = 3
 
-       Id = 170
      Date = 2021-03-21
 Publisher = Yaknyam Press
     Title = A Philosophy of Software Design
@@ -1698,7 +1528,6 @@ Publisher = Yaknyam Press
  Duration = 0m
    Rating = 3
 
-       Id = 171
      Date = 2021-03-24
 Publisher = Hodder & Stoughton
     Title = Record of a Spaceborn Few (Wayfarers #3)
@@ -1708,7 +1537,6 @@ Publisher = Hodder & Stoughton
  Duration = 13h 6m
    Rating = 2
 
-       Id = 172
      Date = 2021-03-27
 Publisher = Companhia das Letras
     Title = O Amanhã Não Está à Venda
@@ -1718,7 +1546,6 @@ Publisher = Companhia das Letras
  Duration = 0m
    Rating = 4
 
-       Id = 173
      Date = 2021-03-30
 Publisher = Companhia das Letras
     Title = O que é fascismo?: E outros ensaios
@@ -1728,7 +1555,6 @@ Publisher = Companhia das Letras
  Duration = 0m
    Rating = 3
 
-       Id = 174
      Date = 2021-05-14
 Publisher = Alfaguara
     Title = Marrom e Amarelo
@@ -1738,7 +1564,6 @@ Publisher = Alfaguara
  Duration = 0m
    Rating = 5
 
-       Id = 175
      Date = 2021-05-18
 Publisher = Objetiva
     Title = Entre o mundo e eu
@@ -1748,7 +1573,6 @@ Publisher = Objetiva
  Duration = 0m
    Rating = 5
 
-       Id = 176
      Date = 2021-05-26
 Publisher = Alfaguara
     Title = Redemoinho em dia quente
@@ -1758,7 +1582,6 @@ Publisher = Alfaguara
  Duration = 0m
    Rating = 3
 
-       Id = 177
      Date = 2021-09-16
 Publisher = Byte Code LLC
     Title = System Design Interview – An Insider's Guide
@@ -1768,7 +1591,6 @@ Publisher = Byte Code LLC
  Duration = 0m
    Rating = 3
 
-       Id = 178
      Date = 2021-10-01
 Publisher = Orion Publishing Group Limited
     Title = The Wise Man's Fear (The Kingkiller Chronicle #2)
@@ -1778,7 +1600,6 @@ Publisher = Orion Publishing Group Limited
  Duration = 42h 49m
    Rating = 3
 
-       Id = 179
      Date = 2021-10-15
 Publisher = O'Reilly Media
     Title = Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems
@@ -1788,7 +1609,6 @@ Publisher = O'Reilly Media
  Duration = 0m
    Rating = 4
 
-       Id = 180
      Date = 2021-10-18
 Publisher = Audible
     Title = The Sandman
@@ -1798,7 +1618,6 @@ Publisher = Audible
  Duration = 11h 2m
    Rating = 4
 
-       Id = 181
      Date = 2021-10-25
 Publisher = O'Reilly Media
     Title = Concurrency in C# Cookbook: Asynchronous, Parallel, and Multithreaded Programming
@@ -1808,7 +1627,6 @@ Publisher = O'Reilly Media
  Duration = 0m
    Rating = 3
 
-       Id = 182
      Date = 2021-10-29
 Publisher = Record
     Title = O senhor da guerra (Crônicas Saxônicas #13)
@@ -1818,7 +1636,6 @@ Publisher = Record
  Duration = 0m
    Rating = 5
 
-       Id = 183
      Date = 2021-11-07
 Publisher = Biblioteca Azul
     Title = o nosso reino
@@ -1828,7 +1645,6 @@ Publisher = Biblioteca Azul
  Duration = 0m
    Rating = 1
 
-       Id = 184
      Date = 2021-11-14
 Publisher = Random House Audio
     Title = Inferno (Robert Langdon #4)
@@ -1838,7 +1654,6 @@ Publisher = Random House Audio
  Duration = 17h 12m
    Rating = 2
 
-       Id = 185
      Date = 2021-11-15
 Publisher = Amazon Original Stories
     Title = The Black Pages
@@ -1848,7 +1663,6 @@ Publisher = Amazon Original Stories
  Duration = 6h 32m
    Rating = 1
 
-       Id = 186
      Date = 2021-11-17
 Publisher = Amazon Original Stories
     Title = The Visit
@@ -1858,7 +1672,6 @@ Publisher = Amazon Original Stories
  Duration = 50m
    Rating = 5
 
-       Id = 187
      Date = 2021-11-17
 Publisher = Amazon Original Stories
     Title = 2043...A Merman I Should Turn to Be
@@ -1868,7 +1681,6 @@ Publisher = Amazon Original Stories
  Duration = 1h 16m
    Rating = 1
 
-       Id = 188
      Date = 2021-11-21
 Publisher = Amazon Original Stories
     Title = These Alien Skies
@@ -1878,7 +1690,6 @@ Publisher = Amazon Original Stories
  Duration = 1h 12m
    Rating = 2
 
-       Id = 189
      Date = 2021-11-30
 Publisher = Companhia das Letras
     Title = Pequena coreografia do adeus
@@ -1888,7 +1699,6 @@ Publisher = Companhia das Letras
  Duration = 0m
    Rating = 5
 
-       Id = 190
      Date = 2021-12-01
 Publisher = Amazon Original Stories
     Title = We Travel the Spaceways
@@ -1898,7 +1708,6 @@ Publisher = Amazon Original Stories
  Duration = 1h 1m
    Rating = 4
 
-       Id = 191
      Date = 2021-12-04
 Publisher = Brilliance Audio
     Title = The Cleaners
@@ -1908,7 +1717,6 @@ Publisher = Brilliance Audio
  Duration = 53m
    Rating = 2
 
-       Id = 192
      Date = 2021-12-05
 Publisher = Companhia das Letras
     Title = Na berma de nenhuma estrada e outros contos
@@ -1918,7 +1726,6 @@ Publisher = Companhia das Letras
  Duration = 0m
    Rating = 4
 
-       Id = 193
      Date = 2021-12-08
 Publisher = Companhia das Letras
     Title = O avesso da pele
@@ -1928,7 +1735,6 @@ Publisher = Companhia das Letras
  Duration = 0m
    Rating = 5
 
-       Id = 194
      Date = 2021-12-09
 Publisher = Brilliance Audio
     Title = The Prince and the Troll
@@ -1938,7 +1744,6 @@ Publisher = Brilliance Audio
  Duration = 46m
    Rating = 4
 
-       Id = 195
      Date = 2021-12-12
 Publisher = Brilliance Audio
     Title = Hazel and Gray
@@ -1948,7 +1753,6 @@ Publisher = Brilliance Audio
  Duration = 59m
    Rating = 2
 
-       Id = 196
      Date = 2021-12-15
 Publisher = Brilliance Audio
     Title = The Wickeds
@@ -1958,7 +1762,6 @@ Publisher = Brilliance Audio
  Duration = 52m
    Rating = 2
 
-       Id = 197
      Date = 2021-12-23
 Publisher = Brilliance Audio
     Title = The Princess Game
@@ -1968,7 +1771,6 @@ Publisher = Brilliance Audio
  Duration = 1h 14m
    Rating = 1
 
-       Id = 198
      Date = 2021-12-26
 Publisher = Companhia das Letras
     Title = As sobras de ontem
@@ -1978,7 +1780,6 @@ Publisher = Companhia das Letras
  Duration = 0m
    Rating = 4
 
-       Id = 199
      Date = 2021-12-27
 Publisher = Intrínseca
     Title = Expiração
@@ -1988,7 +1789,6 @@ Publisher = Intrínseca
  Duration = 0m
    Rating = 4
 
-       Id = 200
      Date = 2021-12-31
 Publisher = Companhia das Letras
     Title = Metrópole à beira-mar: O Rio moderno dos anos 20
@@ -1998,7 +1798,6 @@ Publisher = Companhia das Letras
  Duration = 0m
    Rating = 4
 
-       Id = 201
      Date = 2021-12-31
 Publisher = Pan Macmillan Audio
     Title = Under the Whispering Door
@@ -2008,7 +1807,6 @@ Publisher = Pan Macmillan Audio
  Duration = 14h 54m
    Rating = 5
 
-       Id = 202
      Date = 2022-01-03
 Publisher = Macmillan Audio
     Title = Remote Control
@@ -2018,7 +1816,6 @@ Publisher = Macmillan Audio
  Duration = 4h
    Rating = 1
 
-       Id = 203
      Date = 2022-01-09
 Publisher = W. F. Howes Audio
     Title = Of Ants and Dinosaurs
@@ -2028,7 +1825,6 @@ Publisher = W. F. Howes Audio
  Duration = 6h 10m
    Rating = 4
 
-       Id = 204
      Date = 2022-01-15
 Publisher = Companhia das Letras
     Title = O som do rugido da onça
@@ -2038,7 +1834,6 @@ Publisher = Companhia das Letras
  Duration = 0m
    Rating = 4
 
-       Id = 205
      Date = 2022-01-26
 Publisher = Simon & Schuster Audio
     Title = The Hidden Girl and Other Stories
@@ -2048,7 +1843,6 @@ Publisher = Simon & Schuster Audio
  Duration = 14h
    Rating = 4
 
-       Id = 206
      Date = 2022-01-29
 Publisher = Macmillan Audio
     Title = A Psalm for the Wild-Built
@@ -2058,7 +1852,6 @@ Publisher = Macmillan Audio
  Duration = 4h
    Rating = 4
 
-       Id = 207
      Date = 2022-02-02
 Publisher = HighBridge Audio
     Title = The Bear
@@ -2068,7 +1861,6 @@ Publisher = HighBridge Audio
  Duration = 4h
    Rating = 5
 
-       Id = 208
      Date = 2022-02-10
 Publisher = O'Reilly Media
     Title = Fundamentals of Software Architecture: An Engineering Approach
@@ -2078,7 +1870,6 @@ Publisher = O'Reilly Media
  Duration = 0m
    Rating = 4
 
-       Id = 209
      Date = 2022-02-13
 Publisher = Alfaguara
     Title = Os beneditinos
@@ -2088,7 +1879,6 @@ Publisher = Alfaguara
  Duration = 0m
    Rating = 5
 
-       Id = 210
      Date = 2022-02-14
 Publisher = HarperCollins UK Audio
     Title = The Hunt for Red October
@@ -2098,7 +1888,6 @@ Publisher = HarperCollins UK Audio
  Duration = 17h
    Rating = 5
 
-       Id = 211
      Date = 2022-02-24
 Publisher = Pan Macmillan Audio
     Title = Recursion
@@ -2108,7 +1897,6 @@ Publisher = Pan Macmillan Audio
  Duration = 10h
    Rating = 5
 
-       Id = 212
      Date = 2022-02-26
 Publisher = Rocco Digital
     Title = Cidades afundam em dias normais
@@ -2118,7 +1906,6 @@ Publisher = Rocco Digital
  Duration = 0m
    Rating = 5
 
-       Id = 213
      Date = 2022-02-27
 Publisher = Record
     Title = Tudo é rio
@@ -2128,7 +1915,6 @@ Publisher = Record
  Duration = 0m
    Rating = 5
 
-       Id = 214
      Date = 2022-03-16
 Publisher = Novel Audio
     Title = Buying Time
@@ -2138,7 +1924,6 @@ Publisher = Novel Audio
  Duration = 9h 40m
    Rating = 1
 
-       Id = 215
      Date = 2022-03-19
 Publisher = Companhia das Letras
     Title = Baixo Explendor
@@ -2148,7 +1933,6 @@ Publisher = Companhia das Letras
  Duration = 0m
    Rating = 5
 
-       Id = 216
      Date = 2022-04-03
 Publisher = W. F. Howes Audio
     Title = Hold Up The Sky
@@ -2158,7 +1942,6 @@ Publisher = W. F. Howes Audio
  Duration = 14h
    Rating = 4
 
-       Id = 217
      Date = 2022-04-03
 Publisher = Biblioteca Azul
     Title = Homens imprudentemente poéticos
@@ -2168,7 +1951,6 @@ Publisher = Biblioteca Azul
  Duration = 0m
    Rating = 3
 
-       Id = 218
      Date = 2022-04-10
 Publisher = Pan Macmillan Audio
     Title = The Hitchhiker's Guide to the Galaxy: 42nd Anniversary Edition
@@ -2178,7 +1960,6 @@ Publisher = Pan Macmillan Audio
  Duration = 5h
    Rating = 5
 
-       Id = 219
      Date = 2022-04-15
 Publisher = Recorded Books Audio
     Title = The Forever War
@@ -2188,7 +1969,6 @@ Publisher = Recorded Books Audio
  Duration = 9h
    Rating = 5
 
-       Id = 220
      Date = 2022-04-24
 Publisher = Pan Macmillan Audio
     Title = The Restaurant at the End of the Universe
@@ -2198,7 +1978,6 @@ Publisher = Pan Macmillan Audio
  Duration = 5h
    Rating = 4
 
-       Id = 221
      Date = 2022-05-08
 Publisher = Pan Macmillan Audio
     Title = The House in the Cerulean Sea
@@ -2208,7 +1987,6 @@ Publisher = Pan Macmillan Audio
  Duration = 12h
    Rating = 5
 
-       Id = 222
      Date = 2022-05-10
 Publisher = O'Reilly Media
     Title = Learning Go: An Idiomatic Approach to Real-World Go Programming
@@ -2218,7 +1996,6 @@ Publisher = O'Reilly Media
  Duration = 0m
    Rating = 4
 
-       Id = 223
      Date = 2022-05-20
 Publisher = Biblioteca Azul
     Title = Prazer em queimar: histórias de Fahrenheit 451
@@ -2228,7 +2005,6 @@ Publisher = Biblioteca Azul
  Duration = 0m
    Rating = 4
 
-       Id = 224
      Date = 2022-05-21
 Publisher = Pan Macmillan Audio
     Title = Life, the Universe and Everything
@@ -2238,7 +2014,6 @@ Publisher = Pan Macmillan Audio
  Duration = 5h
    Rating = 3
 
-       Id = 225
      Date = 2022-06-30
 Publisher = O'Reilly Media
     Title = Building Evolutionary Architectures
@@ -2248,7 +2023,6 @@ Publisher = O'Reilly Media
  Duration = 0m
    Rating = 2
 
-       Id = 226
      Date = 2022-07-25
 Publisher = Simon & Schuster Audio
     Title = The Paper Menagerie and Other Stories
@@ -2258,7 +2032,6 @@ Publisher = Simon & Schuster Audio
  Duration = 15h
    Rating = 3
 
-       Id = 227
      Date = 2022-08-04
 Publisher = Companhia das Letras
     Title = Eu receberia as piores notícias dos seus lindos lábios
@@ -2268,7 +2041,6 @@ Publisher = Companhia das Letras
  Duration = 0m
    Rating = 5
 
-       Id = 228
      Date = 2022-08-24
 Publisher = Pan Macmillan Audio
     Title = So Long, and Thanks for All the Fish
@@ -2278,7 +2050,6 @@ Publisher = Pan Macmillan Audio
  Duration = 4h
    Rating = 3
 
-       Id = 229
      Date = 2022-09-10
 Publisher = Todavia
     Title = Torto arado
@@ -2288,7 +2059,6 @@ Publisher = Todavia
  Duration = 0m
    Rating = 5
 
-       Id = 230
      Date = 2022-09-12
 Publisher = Pan Macmillan Audio
     Title = Mostly Harmless
@@ -2298,7 +2068,6 @@ Publisher = Pan Macmillan Audio
  Duration = 6h
    Rating = 4
 
-       Id = 231
      Date = 2022-12-08
 Publisher = HarperCollins UK Audio
     Title = Fellowship of the Ring, The (The Lord of the Rings, Book 1)
@@ -2308,7 +2077,6 @@ Publisher = HarperCollins UK Audio
  Duration = 22h
    Rating = 5
 
-       Id = 232
      Date = 2022-12-21
 Publisher = HarperCollins UK Audio
     Title = Magician’s Nephew, The (The Chronicles of Narnia, Book 1)
@@ -2318,7 +2086,6 @@ Publisher = HarperCollins UK Audio
  Duration = 3h
    Rating = 3
 
-       Id = 233
      Date = 2022-12-31
 Publisher = Pallas Audio
     Title = Becos da Memória
@@ -2328,7 +2095,6 @@ Publisher = Pallas Audio
  Duration = 6h
    Rating = 5
 
-       Id = 234
      Date = 2022-12-31
 Publisher = Malê Audio
     Title = Poemas da recordação e outros movimentos
@@ -2338,7 +2104,6 @@ Publisher = Malê Audio
  Duration = 1h
    Rating = 2
 
-       Id = 235
      Date = 2023-01-06
 Publisher = Record
     Title = O arqueiro - A busca do Graal - vol. 1
@@ -2348,7 +2113,6 @@ Publisher = Record
  Duration = 0m
    Rating = 5
 
-       Id = 236
      Date = 2023-01-24
 Publisher = HarperCollins UK Audio
     Title = Lion, the Witch and the Wardrobe, The (The Chronicles of Narnia, Book 2)
@@ -2358,7 +2122,6 @@ Publisher = HarperCollins UK Audio
  Duration = 4h
    Rating = 2
 
-       Id = 237
      Date = 2023-01-31
 Publisher = Companhia das Letras
     Title = Os tais caquinhos
@@ -2368,7 +2131,6 @@ Publisher = Companhia das Letras
  Duration = 0m
    Rating = 5
 
-       Id = 238
      Date = 2023-03-11
 Publisher = W. F. Howes Audio
     Title = The Supernova Era
@@ -2378,7 +2140,6 @@ Publisher = W. F. Howes Audio
  Duration = 14h 15m
    Rating = 2
 
-       Id = 239
      Date = 2023-03-23
 Publisher = O'Reilly Media
     Title = Effective TypeScript
@@ -2388,7 +2149,6 @@ Publisher = O'Reilly Media
  Duration = 0m
    Rating = 3
 
-       Id = 240
      Date = 2023-03-28
 Publisher =
     Title = 99 Bottles of OOP - 2nd Edition
@@ -2398,7 +2158,6 @@ Publisher =
  Duration = 0m
    Rating = 4
 
-       Id = 241
      Date = 2023-05-13
 Publisher = W. F. Howes Audio
     Title = Ball Lightning
@@ -2408,7 +2167,6 @@ Publisher = W. F. Howes Audio
  Duration = 12h
    Rating = 5
 
-       Id = 242
      Date = 2023-06-11
 Publisher = Recorded Books Audio
     Title = Forever Peace
@@ -2418,7 +2176,6 @@ Publisher = Recorded Books Audio
  Duration = 12h
    Rating = 1
 
-       Id = 243
      Date = 2023-07-22
 Publisher = Amazon Original Stories
     Title = Slow Time Between the Stars
@@ -2428,7 +2185,6 @@ Publisher = Amazon Original Stories
  Duration = 0m
    Rating = 5
 
-       Id = 244
      Date = 2023-08-05
 Publisher = Amazon Original Stories
     Title = Just Out of Jupiter's Reach
@@ -2438,7 +2194,6 @@ Publisher = Amazon Original Stories
  Duration = 0m
    Rating = 2
 
-       Id = 245
      Date = 2023-08-12
 Publisher = Record
     Title = O andarilho (Vol.2 A busca do Graal)
@@ -2448,7 +2203,6 @@ Publisher = Record
  Duration = 0m
    Rating = 5
 
-       Id = 246
      Date = 2023-08-26
 Publisher = Record
     Title = O herege (Vol.3 A busca do Graal)
@@ -2458,7 +2212,6 @@ Publisher = Record
  Duration = 0m
    Rating = 5
 
-       Id = 247
      Date = 2023-09-01
 Publisher = HarperCollins UK Audio
     Title = Two Towers, The (The Lord of the Rings, Book 2)
@@ -2468,7 +2221,6 @@ Publisher = HarperCollins UK Audio
  Duration = 20h
    Rating = 5
 
-       Id = 248
      Date = 2023-09-02
 Publisher = Macmillan Audio
     Title = Ajax Penumbra 1969
@@ -2478,7 +2230,6 @@ Publisher = Macmillan Audio
  Duration = 1h
    Rating = 3
 
-       Id = 249
      Date = 2023-09-17
 Publisher = Macmillan Audio
     Title = A Prayer for the Crown-Shy: A Monk and Robot Book
@@ -2488,7 +2239,6 @@ Publisher = Macmillan Audio
  Duration = 3h
    Rating = 5
 
-       Id = 250
      Date = 2023-09-27
 Publisher = Macmillan Audio
     Title = The Suitcase Clone
@@ -2498,7 +2248,6 @@ Publisher = Macmillan Audio
  Duration = 2h
    Rating = 4
 
-       Id = 251
      Date = 2023-10-07
 Publisher = White Hart Fiction Audio
     Title = The Left Hand of Dog: An extremely silly tale of alien abduction
@@ -2508,7 +2257,6 @@ Publisher = White Hart Fiction Audio
  Duration = 5h
    Rating = 1
 
-       Id = 252
      Date = 2023-10-31
 Publisher =
     Title = Poemas de Circunstância
@@ -2518,7 +2266,6 @@ Publisher =
  Duration = 0m
    Rating = 3
 
-       Id = 253
      Date = 2023-11-02
 Publisher = Harlequin Audio
     Title = Before the Coffee Gets Cold: A Novel
@@ -2528,7 +2275,6 @@ Publisher = Harlequin Audio
  Duration = 6h
    Rating = 4
 
-       Id = 254
      Date = 2023-12-05
 Publisher = HarperAudio
     Title = Sapiens: A Brief History of Humankind
@@ -2538,7 +2284,6 @@ Publisher = HarperAudio
  Duration = 15h
    Rating = 4
 
-       Id = 255
      Date = 2024-01-05
 Publisher = Marshall & Brainerd
     Title = Just Enough Software Architecture: A Risk-Driven Approach
@@ -2548,7 +2293,6 @@ Publisher = Marshall & Brainerd
  Duration = 0m
    Rating = 4
 
-       Id = 256
      Date = 2024-03-15
 Publisher = HarperAudio
     Title = Homo Deus: A Brief History of Tomorrow
@@ -2558,7 +2302,6 @@ Publisher = HarperAudio
  Duration = 14h
    Rating = 5
 
-       Id = 257
      Date = 2024-03-20
 Publisher = L&PM Editores
     Title = As veias abertas da América Latina
@@ -2568,7 +2311,6 @@ Publisher = L&PM Editores
  Duration = 0m
    Rating = 5
 
-       Id = 258
      Date = 2024-04-12
 Publisher = Tor Books
     Title = The Way of Kings (The Stormlight Archive, Book 1)
@@ -2578,7 +2320,6 @@ Publisher = Tor Books
  Duration = 0m
    Rating = 5
 
-       Id = 259
      Date = 2024-04-13
 Publisher = Recorded Books, Inc.
     Title = Forever Free
@@ -2588,7 +2329,6 @@ Publisher = Recorded Books, Inc.
  Duration = 6h
    Rating = 4
 
-       Id = 260
      Date = 2024-04-15
 Publisher = Morro Branco
     Title = Floresta é o nome do mundo
@@ -2598,7 +2338,6 @@ Publisher = Morro Branco
  Duration = 0m
    Rating = 4
 
-       Id = 261
      Date = 2024-04-30
 Publisher = Companhia das Letras
     Title = Flores azuis
@@ -2608,7 +2347,6 @@ Publisher = Companhia das Letras
  Duration = 0m
    Rating = 5
 
-       Id = 262
      Date = 2024-04-30
 Publisher = O'Reilly Media
     Title = Building Micro-Frontends
@@ -2618,7 +2356,6 @@ Publisher = O'Reilly Media
  Duration = 0m
    Rating = 4
 
-       Id = 263
      Date = 2024-06-08
 Publisher = Record
     Title = Véspera
@@ -2628,7 +2365,6 @@ Publisher = Record
  Duration = 0m
    Rating = 5
 
-       Id = 264
      Date = 2024-06-13
 Publisher = HarperAudio
     Title = The Long Earth: A Novel
@@ -2638,7 +2374,6 @@ Publisher = HarperAudio
  Duration = 11h
    Rating = 5
 
-       Id = 265
      Date = 2024-06-30
 Publisher = Companhia das Letras
     Title = A cabeça do santo
@@ -2648,7 +2383,6 @@ Publisher = Companhia das Letras
  Duration = 0m
    Rating = 5
 
-       Id = 266
      Date = 2024-07-10
 Publisher = O'Reilly Media
     Title = Building Evolutionary Architectures, 2nd Edition
@@ -2658,7 +2392,6 @@ Publisher = O'Reilly Media
  Duration = 0m
    Rating = 3
 
-       Id = 267
      Date = 2024-08-05
 Publisher = Principis
     Title = Contos de fadas dos Irmãos Grimm (Clássicos da literatura mundial)
@@ -2668,7 +2401,6 @@ Publisher = Principis
  Duration = 0m
    Rating = 2
 
-       Id = 268
      Date = 2024-09-03
 Publisher = W. F. Howes Ltd
     Title = Notes from Deep Time: A Journey Through Our Past and Future Worlds
@@ -2678,7 +2410,6 @@ Publisher = W. F. Howes Ltd
  Duration = 9h
    Rating = 4
 
-       Id = 269
      Date = 2024-09-19
 Publisher = HarperAudio
     Title = The Hidden World of the Fox
@@ -2688,7 +2419,6 @@ Publisher = HarperAudio
  Duration = 5h
    Rating = 4
 
-       Id = 270
      Date = 2024-09-28
 Publisher = HarperCollins Brasil
     Title = A psicologia financeira: lições atemporais sobre fortuna, ganância e felicidade
@@ -2698,7 +2428,6 @@ Publisher = HarperCollins Brasil
  Duration = 6h
    Rating = 5
 
-       Id = 271
      Date = 2024-10-01
 Publisher = Companhia das Letras
     Title = Terra sonâmbula
@@ -2708,7 +2437,6 @@ Publisher = Companhia das Letras
  Duration = 0m
    Rating = 4
 
-       Id = 272
      Date = 2024-10-09
 Publisher = Pan Macmillan
     Title = Same as Ever: Timeless Lessons on Risk, Opportunity and Living a Good Life
@@ -2718,7 +2446,6 @@ Publisher = Pan Macmillan
  Duration = 5h
    Rating = 3
 
-       Id = 273
      Date = 2024-10-15
 Publisher = Alma dos Livros
     Title = Princípios para Investir com Sucesso
@@ -2728,7 +2455,6 @@ Publisher = Alma dos Livros
  Duration = 0m
    Rating = 4
 
-       Id = 274
      Date = 2024-10-21
 Publisher = HarperAudio
     Title = The Wind's Twelve Quarters: Stories
@@ -2738,7 +2464,6 @@ Publisher = HarperAudio
  Duration = 11h
    Rating = 3
 
-       Id = 275
      Date = 2024-11-13
 Publisher = Spotify Audiobooks
     Title = The Fabric of Civilization: How Textiles Made the World
@@ -2748,7 +2473,6 @@ Publisher = Spotify Audiobooks
  Duration = 9h
    Rating = 3
 
-       Id = 276
      Date = 2024-12-10
 Publisher = Wiley
     Title = The Little Book of Common Sense Investing: The Only Way to Guarantee Your Fair Share of Stock Market Returns
@@ -2758,7 +2482,6 @@ Publisher = Wiley
  Duration = 0m
    Rating = 5
 
-       Id = 277
      Date = 2024-12-29
 Publisher = Manning
     Title = Architecture Modernization: Socio-technical alignment of software, strategy, and structure
@@ -2768,7 +2491,6 @@ Publisher = Manning
  Duration = 0m
    Rating = 4
 
-       Id = 278
      Date = 2025-02-19
 Publisher = Macmillan Audio
     Title = In the Lives of Puppets
@@ -2778,7 +2500,6 @@ Publisher = Macmillan Audio
  Duration = 15h 22m
    Rating = 5
 
-       Id = 279
      Date = 2025-02-23
 Publisher = jlcollinsnh.com
     Title = The Simple Path to Wealth: Your road map to financial independence and a rich, free life
@@ -2788,7 +2509,6 @@ Publisher = jlcollinsnh.com
  Duration = 0m
    Rating = 4
 
-       Id = 280
      Date = 2025-03-03
 Publisher = Record
     Title = A natureza da mordida
@@ -2798,7 +2518,6 @@ Publisher = Record
  Duration = 0m
    Rating = 5
 
-       Id = 281
      Date = 2025-03-07
 Publisher = O'Reilly Media
     Title = Software Architecture: The Hard Parts: Modern Trade-Off Analyses for Distributed Architectures
@@ -2808,7 +2527,6 @@ Publisher = O'Reilly Media
  Duration = 0m
    Rating = 5
 
-       Id = 282
      Date = 2025-05-04
 Publisher = Biblioteca Azul
     Title = O progresso do amor
@@ -2818,7 +2536,6 @@ Publisher = Biblioteca Azul
  Duration = 0m
    Rating = 3
 
-       Id = 283
      Date = 2025-05-19
 Publisher = Audible Originals
     Title = Heaven's River (Bobiverse #4)
@@ -2828,7 +2545,6 @@ Publisher = Audible Originals
  Duration = 16h 57m
    Rating = 5
 
-       Id = 284
      Date = 2025-06-03
 Publisher = Addison-Wesley Professional
     Title = Domain-Driven Design Distilled
@@ -2838,7 +2554,6 @@ Publisher = Addison-Wesley Professional
  Duration = 0m
    Rating = 4
 
-       Id = 285
      Date = 2025-06-10
 Publisher = Audible Originals
     Title = Not Till We Are Lost (Bobiverse #5)
@@ -2848,7 +2563,6 @@ Publisher = Audible Originals
  Duration = 11h 41m
    Rating = 5
 
-       Id = 286
      Date = 2025-07-15
 Publisher = Biblioteca Azul
     Title = O apocalipse dos trabalhadores
@@ -2858,7 +2572,6 @@ Publisher = Biblioteca Azul
  Duration = 0m
    Rating = 3
 
-       Id = 287
      Date = 2025-07-20
 Publisher = Império Galáctico
     Title = Pedra no Céu: Qualquer planeta é a Terra para aqueles que nele vive
@@ -2868,7 +2581,6 @@ Publisher = Império Galáctico
  Duration = 0m
    Rating = 2
 
-       Id = 288
      Date = 2025-09-22
 Publisher = Editora Aleph
     Title = Solaris
@@ -2878,7 +2590,6 @@ Publisher = Editora Aleph
  Duration = 0m
    Rating = 4
 
-       Id = 289
      Date = 2025-09-30
 Publisher = Editora Aleph
     Title = Tropas estelares
@@ -2888,7 +2599,6 @@ Publisher = Editora Aleph
  Duration = 0m
    Rating = 4
 
-       Id = 290
      Date = 2025-10-19
 Publisher = Podium Audio
     Title = Heretical Fishing: A Cozy Guide to Annoying the Cults, Outsmarting the Fish, and Alienating Oneself
@@ -2898,7 +2608,6 @@ Publisher = Podium Audio
  Duration = 23h 56m
    Rating = 5
 
-       Id = 291
      Date = 2025-10-26
 Publisher = Storey Publishing, LLC
     Title = The Universe in Verse
@@ -2908,7 +2617,6 @@ Publisher = Storey Publishing, LLC
  Duration = 1h 28m
    Rating = 3
 
-       Id = 292
      Date = 2025-12-09
 Publisher = Padrões Culturais
     Title = A terra que um homem precisa
@@ -2918,7 +2626,6 @@ Publisher = Padrões Culturais
  Duration = 0m
    Rating = 4
 
-       Id = 293
      Date = 2025-12-13
 Publisher = O'Reilly Media
     Title = The Software Architect Elevator: Redefining the Architect's Role in the Digital Enterprise
@@ -2928,7 +2635,6 @@ Publisher = O'Reilly Media
  Duration = 0m
    Rating = 3
 
-       Id = 294
      Date = 2025-12-14
 Publisher = Leanpub
     Title = Understand Your Domain First: An Introduction to Event Storming and Domain-Driven Design
@@ -2938,7 +2644,6 @@ Publisher = Leanpub
  Duration = 0m
    Rating = 4
 
-       Id = 295
      Date = 2025-12-24
 Publisher = Editora Aleph
     Title = Realidades Adaptadas
@@ -2948,7 +2653,6 @@ Publisher = Editora Aleph
  Duration = 0m
    Rating = 4
 
-       Id = 296
      Date = 2026-01-03
 Publisher = Editora Aleph
     Title = O Fim da Eternidade
@@ -2958,7 +2662,6 @@ Publisher = Editora Aleph
  Duration = 0m
    Rating = 4
 
-       Id = 297
      Date = 2026-01-17
 Publisher = Random House Audio
     Title = Daisy Jones & The Six
@@ -2968,7 +2671,6 @@ Publisher = Random House Audio
  Duration = 9h 3m
    Rating = 2
 
-       Id = 298
      Date = 2026-01-18
 Publisher = Editora Aleph
     Title = Os próprios deuses
@@ -2978,7 +2680,6 @@ Publisher = Editora Aleph
  Duration = 0m
    Rating = 4
 
-       Id = 299
      Date = 2026-01-25
 Publisher = Recorded Books
     Title = Livesuit
@@ -2988,7 +2689,6 @@ Publisher = Recorded Books
  Duration = 2h 43m
    Rating = 2
 
-       Id = 300
      Date = 2026-01-30
 Publisher = Macmillan Audio
     Title = Reduce! Reuse! Recycle!
