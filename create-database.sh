@@ -42,15 +42,17 @@ awk '
   END { print_row(); }
 
   function print_row() {
-    print row["id"],
-          row["date"],
-          row["publisher"],
-          row["title"],
-          row["author"],
-          row["format"],
-          row["pages"],
-          row["duration"],
-          row["rating"];
+   if (row["id"]) {
+      print row["id"],
+            row["date"],
+            row["publisher"],
+            row["title"],
+            row["author"],
+            row["format"],
+            row["pages"],
+            row["duration"],
+            row["rating"];
+    }
   }
 
   /^[[:space:]]*([A-Za-z_]+)[[:space:]]*=[[:space:]]*(.*)/ {
@@ -79,13 +81,15 @@ awk '
   END { print_row(); }
 
   function print_row() {
-    print row["id"],
-          row["date"],
-          row["publisher"],
-          row["title"],
-          row["format"],
-          row["pages"],
-          row["issues"];
+    if (row["id"]) {
+      print row["id"],
+            row["date"],
+            row["publisher"],
+            row["title"],
+            row["format"],
+            row["pages"],
+            row["issues"];
+    }
   }
 
   /^[[:space:]]*([A-Za-z_]+)[[:space:]]*=[[:space:]]*(.*)/ {
@@ -103,3 +107,4 @@ sqlite3 $database <<EOF
 .import $output ComicBook
 
 EOF
+
