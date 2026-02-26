@@ -10974,3 +10974,10 @@ Publisher = Image
     Pages = 232
    Issues = 1
 
+     Date = 2026-02-25
+Publisher = Edições Asa
+    Title = Astérix na Lusitânia
+   Format = Capa dura
+    Pages = 48
+   Issues = 1
+
