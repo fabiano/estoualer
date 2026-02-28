@@ -11043,3 +11043,59 @@ Publisher = Marvel
     Pages = 32
    Issues = 1
 
+     Date = 2026-02-28
+Publisher = Marvel
+    Title = Ultimate Spider-Man (2024) #15
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-02-28
+Publisher = Marvel
+    Title = Ultimate Spider-Man (2024) #16
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-03-01
+Publisher = Marvel
+    Title = Ultimate Spider-Man (2024) #17
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-03-01
+Publisher = Marvel
+    Title = Ultimate Spider-Man (2024) #18
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-03-01
+Publisher = Marvel
+    Title = Ultimate Spider-Man (2024) #19
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-03-01
+Publisher = Marvel
+    Title = Ultimate Spider-Man (2024) #20
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-03-01
+Publisher = Marvel
+    Title = Ultimate Spider-Man (2024) #21
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-03-01
+Publisher = Marvel
+    Title = Ultimate Spider-Man (2024) #22
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
