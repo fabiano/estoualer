@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if [ $# -eq 0 ]; then
+  echo "Usage: create-database.sh [File]"
+  exit 1
+fi
+
 database=$1
 
 # recreate the tables
