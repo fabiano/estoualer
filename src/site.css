@@ -152,20 +152,21 @@ body.is-loading .progress {
 .stats .separator {
   background-color: var(--theme-border-color);
   border: 0;
-  display: none;
   height: 30px;
   margin: 0;
   padding: 0;
   width: 1px;
 }
 
-.stats :nth-child(n+4) {
-  display: none;
+@media only screen and (max-width: 768px) {
+  .stats :nth-child(n+4) {
+    display: none;
+  }
 }
 
-@media only screen and (min-width: 768px) {
-  .stats :nth-child(n+4) {
-    display: block;
+@media only screen and (max-width: 1080px) {
+  .stats :nth-child(n+7) {
+    display: none;
   }
 }
 
