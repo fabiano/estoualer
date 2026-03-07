@@ -7,7 +7,7 @@ Publisher = Martins Fontes
  Duration = 0m
    Rating = 5
 
-    Date = 1970-01-01
+     Date = 1970-01-01
 Publisher = Martins Fontes
     Title = As Duas Torres (O Senhor dos Anéis #1)
    Author = J. R. R. Tolkien
@@ -16,7 +16,7 @@ Publisher = Martins Fontes
  Duration = 0m
    Rating = 5
 
-    Date = 1970-01-01
+     Date = 1970-01-01
 Publisher = Martins Fontes
     Title = O Retorno do Rei (O Senhor dos Anéis #1)
    Author = J. R. R. Tolkien
@@ -25,7 +25,16 @@ Publisher = Martins Fontes
  Duration = 0m
    Rating = 5
 
-    Date = 1970-01-01
+     Date = 1970-01-01
+Publisher = Martins Fontes
+    Title = O Hobbit
+   Author = J. R. R. Tolkien
+   Format = Capa comum
+    Pages = 297
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
 Publisher = Objetiva
     Title = A bússola de ouro
    Author = Philip Pullman
