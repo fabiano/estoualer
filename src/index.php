@@ -1,5 +1,7 @@
 <?php
 
+const DURATION_REGEX = "/^((?<Hours>\d+?)h)?\s{0,1}((?<Minutes>\d+?)m)?$/";
+
 $today = getdate();
 $q = trim($_GET["q"] ?? "");
 
@@ -9,8 +11,8 @@ if (strlen($q) == 0) {
 
 $db = new SQLite3("Bookshelf.db");
 $books = get_books($db, $q);
-$comicBooks = get_comicbooks($db, $q);
-$stats = generate_statistics($books, $comicBooks);
+$comicbooks = get_comicbooks($db, $q);
+$stats = generate_statistics($books, $comicbooks);
 
 ?>
 
@@ -101,7 +103,7 @@ $stats = generate_statistics($books, $comicBooks);
                                         $hours = 0;
                                         $minutes = 0;
 
-                                        if (preg_match("/^((?<Hours>\d+?)h)?\s{0,1}((?<Minutes>\d+?)m)?$/", $duration, $matches) == 1) {
+                                        if (preg_match(DURATION_REGEX, $duration, $matches) == 1) {
                                             $hours = $matches["Hours"] ?? 0;
                                             $minutes = $matches["Minutes"] ?? 0;
                                         }
@@ -127,22 +129,22 @@ $stats = generate_statistics($books, $comicBooks);
             <?php if ($stats["ComicBooks"] > 0) { ?>
                 <h2>Gibis</h2>
                 <div class="cards" id="comicbooks">
-                    <?php while ($comicBook = $comicBooks->fetchArray()) { ?>
+                    <?php while ($comicbook = $comicbooks->fetchArray()) { ?>
                         <div class="card">
                             <div>
                                 <div class="number"><?php echo $stats["ComicBooks"]-- ?></div>
-                                <div class="date"><?php echo DateTime::createFromFormat("Y-m-d", $comicBook["Date"])->format("d/m/Y") ?></div>
+                                <div class="date"><?php echo DateTime::createFromFormat("Y-m-d", $comicbook["Date"])->format("d/m/Y") ?></div>
                             </div>
                             <div>
-                                <div class="title"><?php echo $comicBook["Title"] ?></div>
-                                <div class="publisher-and-format"><?php echo $comicBook["Publisher"] ?> / <?php echo $comicBook["Format"] ?></div>
+                                <div class="title"><?php echo $comicbook["Title"] ?></div>
+                                <div class="publisher-and-format"><?php echo $comicbook["Publisher"] ?> / <?php echo $comicbook["Format"] ?></div>
                             </div>
                             <div>
                                 <div class="length">
                                     <?php
 
-                                        $pages = $comicBook["Pages"];
-                                        $issues = $comicBook["Issues"];
+                                        $pages = $comicbook["Pages"];
+                                        $issues = $comicbook["Issues"];
 
                                         echo match (true) {
                                             $pages > 1 and $issues > 1 => $pages . " páginas e " . $issues . " edições",
@@ -280,7 +282,7 @@ function get_comicbooks($db, $q) {
     return $statement->execute();
 }
 
-function generate_statistics($books, $comicBooks) {
+function generate_statistics($books, $comicbooks) {
     $stats = [
         "Total" => 0,
         "Books" => 0,
@@ -291,25 +293,23 @@ function generate_statistics($books, $comicBooks) {
     ];
 
     while ($row = $books->fetchArray()) {
+        $format_key = get_key_for_format($row["Format"]);
+
         $stats["Total"] += 1;
         $stats["Books"] += 1;
-
-        $key = get_key_for_format($row["Format"]);
-
-        $stats[$key] += 1;
+        $stats[$format_key] += 1;
     }
 
-    while ($row = $comicBooks->fetchArray()) {
+    while ($row = $comicbooks->fetchArray()) {
+        $format_key = get_key_for_format($row["Format"]);
+
         $stats["Total"] += 1;
         $stats["ComicBooks"] += 1;
-
-        $key = get_key_for_format($row["Format"]);
-
-        $stats[$key] += 1;
+        $stats[$format_key] += 1;
     }
 
     $books->reset();
-    $comicBooks->reset();
+    $comicbooks->reset();
 
     return $stats;
 }
