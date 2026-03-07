@@ -11107,3 +11107,10 @@ Publisher = Marvel
     Pages = 32
    Issues = 1
 
+     Date = 2026-03-07
+Publisher = Iguana
+    Title = Corpo de Cristo
+   Format = Capa comum
+    Pages = 184
+   Issues = 1
+
