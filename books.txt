@@ -1,3 +1,336 @@
+     Date = 1970-01-01
+Publisher = Martins Fontes
+    Title = A Sociedade do Anel (O Senhor dos Anéis #1)
+   Author = J. R. R. Tolkien
+   Format = Capa comum
+    Pages = 450
+ Duration = 0m
+   Rating = 5
+
+    Date = 1970-01-01
+Publisher = Martins Fontes
+    Title = As Duas Torres (O Senhor dos Anéis #1)
+   Author = J. R. R. Tolkien
+   Format = Capa comum
+    Pages = 380
+ Duration = 0m
+   Rating = 5
+
+    Date = 1970-01-01
+Publisher = Martins Fontes
+    Title = O Retorno do Rei (O Senhor dos Anéis #1)
+   Author = J. R. R. Tolkien
+   Format = Capa comum
+    Pages = 450
+ Duration = 0m
+   Rating = 5
+
+    Date = 1970-01-01
+Publisher = Objetiva
+    Title = A bússola de ouro
+   Author = Philip Pullman
+   Format = Capa comum
+    Pages = 417
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Objetiva
+    Title = A faca sutil
+   Author = Philip Pullman
+   Format = Capa comum
+    Pages = 300
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Objetiva
+    Title = A luneta âmbar
+   Author = Philip Pullman
+   Format = Capa comum
+    Pages = 526
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Rocco
+    Title = Harry Potter e a Pedra Filosofal
+   Author = J. K. Rowling
+   Format = Capa comum
+    Pages = 264
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Rocco
+    Title = Harry Potter e a Câmara Secreta
+   Author = J. K. Rowling
+   Format = Capa comum
+    Pages = 288
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Rocco
+    Title = Harry Potter e o Prisioneiro de Azkaban
+   Author = J. K. Rowling
+   Format = Capa comum
+    Pages = 348
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Rocco
+    Title = Harry Potter e o Cálice de Fogo
+   Author = J. K. Rowling
+   Format = Capa comum
+    Pages = 0
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Rocco
+    Title = Harry Potter e a Ordem da Fênix
+   Author = J. K. Rowling
+   Format = Capa comum
+    Pages = 704
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Rocco
+    Title = Harry Potter e o Enigma do Príncipe
+   Author = J. K. Rowling
+   Format = Capa comum
+    Pages = 512
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Rocco
+    Title = Harry Potter e as Relíquias da Morte
+   Author = J. K. Rowling
+   Format = Capa comum
+    Pages = 592
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Pearson
+    Title = Clean Code: A Handbook of Agile Software Craftsmanship
+   Author = Martin Robert C.
+   Format = eBook
+    Pages = 431
+ Duration = 0m
+   Rating = 4
+
+     Date = 1970-01-01
+Publisher = O'Reilly Media
+    Title = Programming WCF Services: Mastering WCF and the Azure AppFabric Service Bus
+   Author = Juval Lowy
+   Format = eBook
+    Pages = 908
+ Duration = 0m
+   Rating = 2
+
+     Date = 1970-01-01
+Publisher = Crown Currency
+    Title = Rework
+   Author = Jason Fried, David Heinemeier Hansson
+   Format = eBook
+    Pages = 224
+ Duration = 0m
+   Rating = 4
+
+     Date = 1970-01-01
+Publisher = Scholastic Press
+    Title = The Hunger Games (The Hunger Games #1)
+   Author = Suzanne Collins
+   Format = eBook
+    Pages = 387
+ Duration = 0m
+   Rating = 3
+
+     Date = 1970-01-01
+Publisher = Scholastic Press
+    Title = Catching Fire (The Hunger Games #2)
+   Author = Suzanne Collins
+   Format = eBook
+    Pages = 472
+ Duration = 0m
+   Rating = 3
+
+     Date = 1970-01-01
+Publisher = No Starch Press
+    Title = Eloquent JavaScript: A Modern Introduction to Programming
+   Author = Marijn Haverbeke
+   Format = eBook
+    Pages = 452
+ Duration = 0m
+   Rating = 4
+
+     Date = 1970-01-01
+Publisher = Dava Enterprises
+    Title = Dust
+   Author = Arthur Slade
+   Format = eBook
+    Pages = 152
+ Duration = 0m
+   Rating = 3
+
+     Date = 1970-01-01
+Publisher = CreateSpace Independent Publishing Platform
+    Title = Realms of the Red Rabbit (Realms of the Red Rabbit series, Book 1)
+   Author = Laura Eno
+   Format = eBook
+    Pages = 338
+ Duration = 0m
+   Rating = 2
+
+     Date = 1970-01-01
+Publisher = Addison-Wesley Professional
+    Title = The Pragmatic Programmer: From Journeyman to Master
+   Author = Andrew Hunt, David Thomas
+   Format = eBook
+    Pages = 352
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Gateway
+    Title = I Am Legend: The chilling horror masterpiece that you won’t be able to put down (S.F. MASTERWORKS Book 43)
+   Author = Richard Matheson
+   Format = eBook
+    Pages = 175
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Suma
+    Title = A Guerra dos Tronos (As crônicas de gelo e fogo #1)
+   Author = George R.R. Martin
+   Format = Capa comum
+    Pages = 592
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Suma
+    Title = A fúria dos reis (As crônicas de gelo e fogo #2)
+   Author = George R.R. Martin
+   Format = Capa comum
+    Pages = 648
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Suma
+    Title = A tormenta de espadas (As crônicas de gelo e fogo #3)
+   Author = George R.R. Martin
+   Format = Capa comum
+    Pages = 832
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Suma
+    Title = O Festim dos Corvos (As crônicas de gelo e fogo #4)
+   Author = George R.R. Martin
+   Format = Capa comum
+    Pages = 608
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Suma
+    Title = A dança dos dragões (As crônicas de gelo e fogo #5)
+   Author = George R.R. Martin
+   Format = eBook
+    Pages = 824
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Record
+    Title = O último reino (Crônicas Saxônicas #1)
+   Author = Bernard Cornwell
+   Format = Capa comum
+    Pages = 436
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Record
+    Title = O cavaleiro da morte (Crônicas Saxônicas #2)
+   Author = Bernard Cornwell
+   Format = Capa comum
+    Pages = 466
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Record
+    Title = Os senhores do norte (Crônicas Saxônicas #3)
+   Author = Bernard Cornwell
+   Format = Capa comum
+    Pages = 411
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Record
+    Title = A canção da espada (Crônicas Saxônicas #4)
+   Author = Bernard Cornwell
+   Format = Capa comum
+    Pages = 412
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Record
+    Title = Terra em chamas (Crônicas Saxônicas #5)
+   Author = Bernard Cornwell
+   Format = Capa comum
+    Pages = 451
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Record
+    Title = Morte dos reis (Crônicas Saxônicas #6)
+   Author = Bernard Cornwell
+   Format = eBook
+    Pages = 439
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Editora Novo Conceito
+    Title = A livraria 24 horas do Mr. Penumbra
+   Author = Robin Sloan
+   Format = eBook
+    Pages = 293
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Intrínseca
+    Title = O oceano no fim do caminho
+   Author = Neil Gaiman
+   Format = eBook
+    Pages = 216
+ Duration = 0m
+   Rating = 5
+
+     Date = 1970-01-01
+Publisher = Verus
+    Title = A batalha do Apocalipse
+   Author = Eduardo Spohr
+   Format = eBook
+    Pages = 822
+ Duration = 0m
+   Rating = 2
+
      Date = 2013-12-22
 Publisher =
     Title = The Foundation Trilogy (Foundation #1-3)
@@ -29,7 +362,7 @@ Publisher = Record
 Publisher = Permuted Press
     Title = Ex-Heroes (Ex-Heroes #1)
    Author = Peter Clines
-   Format = Capa comum
+   Format = eBook
     Pages = 274
  Duration = 0m
    Rating = 2
@@ -432,7 +765,7 @@ Publisher = Cosac Naify
 
      Date = 2016-06-05
 Publisher = Record
-    Title = O Guerreiro Pagão (Crônicas Saxonicas #7)
+    Title = O Guerreiro Pagão (Crônicas Saxônicas #7)
    Author = Bernard Cornwell
    Format = eBook
     Pages = 344
@@ -441,7 +774,7 @@ Publisher = Record
 
      Date = 2016-06-11
 Publisher = Record
-    Title = O trono vazio (Crônicas Saxonicas #8)
+    Title = O trono vazio (Crônicas Saxônicas #8)
    Author = Bernard Cornwell
    Format = eBook
     Pages = 336
@@ -1819,7 +2152,7 @@ Publisher = Macmillan Audio
      Date = 2022-01-09
 Publisher = W. F. Howes Audio
     Title = Of Ants and Dinosaurs
-   Author = Cixin Liu
+   Author = Liu Cixin
    Format = Audiolivro
     Pages = 0
  Duration = 6h 10m
@@ -1936,7 +2269,7 @@ Publisher = Companhia das Letras
      Date = 2022-04-03
 Publisher = W. F. Howes Audio
     Title = Hold Up The Sky
-   Author = Cixin Liu
+   Author = Liu Cixin
    Format = Audiolivro
     Pages = 0
  Duration = 14h
@@ -2134,7 +2467,7 @@ Publisher = Companhia das Letras
      Date = 2023-03-11
 Publisher = W. F. Howes Audio
     Title = The Supernova Era
-   Author = Cixin Liu
+   Author = Liu Cixin
    Format = Audiolivro
     Pages = 0
  Duration = 14h 15m
@@ -2161,7 +2494,7 @@ Publisher =
      Date = 2023-05-13
 Publisher = W. F. Howes Audio
     Title = Ball Lightning
-   Author = Cixin Liu
+   Author = Liu Cixin
    Format = Audiolivro
     Pages = 0
  Duration = 12h
