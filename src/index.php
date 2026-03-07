@@ -166,6 +166,7 @@ $stats = generate_statistics($books, $comicbooks);
         <div class="history">
             o que li em
             <ul>
+                <li><a href="?q=ano: 1970">1970</a></li>
                 <?php for ($i = 2013; $i <= $today["year"]; $i++) { ?>
                     <li><a href="?q=ano: <?php echo $i ?>"><?php echo $i ?></a></li>
                 <?php } ?>
