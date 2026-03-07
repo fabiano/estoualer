@@ -3983,7 +3983,7 @@ Publisher = Nemo
 
      Date = 2021-05-05
 Publisher = Zarabatana
-    Title = Pyongyang. Uma Viagem a Coreia do Norte
+    Title = Pyongyang - Uma viagem à Coreia do Norte
    Format = Capa comum
     Pages = 192
    Issues = 1
