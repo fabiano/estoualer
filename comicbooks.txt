@@ -11114,3 +11114,10 @@ Publisher = Iguana
     Pages = 184
    Issues = 1
 
+     Date = 2026-03-07
+Publisher = Fábula
+    Title = O Jardim Secreto
+   Format = Capa comum
+    Pages = 192
+   Issues = 1
+
