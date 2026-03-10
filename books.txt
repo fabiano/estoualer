@@ -3040,3 +3040,12 @@ Publisher = Macmillan Audio
  Duration = 1h 27m
    Rating = 5
 
+     Date = 2026-03-08
+Publisher = Audible Originals
+    Title = Fight and Flight (Magic 2.0 #4)
+   Author = Scott Meyer
+   Format = Audiolivro
+    Pages = 0
+ Duration = 10h 26m
+   Rating = 4
+
