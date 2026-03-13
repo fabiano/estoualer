@@ -1,0 +1,19 @@
+name: Continuous deployment
+on: push
+
+jobs:
+  continuous-deployment:
+    name: Continuous deployment
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v6
+
+      - name: Build and push the docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: estoualer:latest
+
