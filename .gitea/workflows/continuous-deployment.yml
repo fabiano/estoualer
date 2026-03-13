@@ -10,10 +10,6 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v6
 
-      - name: Build and push the docker image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          push: true
-          tags: estoualer:latest
+      - name: Build and start the container
+        run: docker compose up --build --force-recreate --remove-orphans --detach
 
