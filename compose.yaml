@@ -6,8 +6,11 @@ services:
     image: fabiano/estoualer
     container_name: estoualer
     restart: unless-stopped
-    ports:
-      - 4201:80
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.gitea.rule=Host(`estoualer.a.algumasideias.com.br`)"
+      - "traefik.http.routers.gitea.entrypoints=web"
+      - "traefik.http.services.gitea.loadbalancer.server.port=80"
 
 networks:
   default:
