@@ -11121,3 +11121,10 @@ Publisher = Fábula
     Pages = 192
    Issues = 1
 
+     Date = 2026-03-17
+Publisher = Iguana
+    Title = Céleste e Proust
+   Format = Capa dura
+    Pages = 256
+   Issues = 1
+
