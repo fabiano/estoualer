@@ -11128,3 +11128,10 @@ Publisher = Iguana
     Pages = 256
    Issues = 1
 
+     Date = 2026-03-22
+Publisher = Devir
+    Title = Maltempo
+   Format = Capa dura
+    Pages = 186
+   Issues = 1
+
