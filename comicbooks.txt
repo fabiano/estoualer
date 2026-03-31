@@ -10682,7 +10682,7 @@ Publisher = Marvel
 
      Date = 2026-01-30
 Publisher = Marvel
-    Title = Ultimate Spider-Man (2024) #6
+    Title = Ultimate Spider-Man (2024-) #6
    Format = eBook
     Pages = 32
    Issues = 1
@@ -10990,112 +10990,112 @@ Publisher = Marvel
 
      Date = 2026-02-28
 Publisher = Marvel
-    Title = Ultimate Spider-Man (2024) #7
+    Title = Ultimate Spider-Man (2024-) #7
    Format = eBook
     Pages = 28
    Issues = 1
 
      Date = 2026-02-28
 Publisher = Marvel
-    Title = Ultimate Spider-Man (2024) #8
+    Title = Ultimate Spider-Man (2024-) #8
    Format = eBook
     Pages = 32
    Issues = 1
 
      Date = 2026-02-28
 Publisher = Marvel
-    Title = Ultimate Spider-Man (2024) #9
+    Title = Ultimate Spider-Man (2024-) #9
    Format = eBook
     Pages = 32
    Issues = 1
 
      Date = 2026-02-28
 Publisher = Marvel
-    Title = Ultimate Spider-Man (2024) #10
+    Title = Ultimate Spider-Man (2024-) #10
    Format = eBook
     Pages = 32
    Issues = 1
 
      Date = 2026-02-28
 Publisher = Marvel
-    Title = Ultimate Spider-Man (2024) #11
+    Title = Ultimate Spider-Man (2024-) #11
    Format = eBook
     Pages = 32
    Issues = 1
 
      Date = 2026-02-28
 Publisher = Marvel
-    Title = Ultimate Spider-Man (2024) #12
+    Title = Ultimate Spider-Man (2024-) #12
    Format = eBook
     Pages = 32
    Issues = 1
 
      Date = 2026-02-28
 Publisher = Marvel
-    Title = Ultimate Spider-Man (2024) #13
+    Title = Ultimate Spider-Man (2024-) #13
    Format = eBook
     Pages = 32
    Issues = 1
 
      Date = 2026-02-28
 Publisher = Marvel
-    Title = Ultimate Spider-Man (2024) #14
+    Title = Ultimate Spider-Man (2024-) #14
    Format = eBook
     Pages = 32
    Issues = 1
 
      Date = 2026-02-28
 Publisher = Marvel
-    Title = Ultimate Spider-Man (2024) #15
+    Title = Ultimate Spider-Man (2024-) #15
    Format = eBook
     Pages = 32
    Issues = 1
 
      Date = 2026-02-28
 Publisher = Marvel
-    Title = Ultimate Spider-Man (2024) #16
+    Title = Ultimate Spider-Man (2024-) #16
    Format = eBook
     Pages = 32
    Issues = 1
 
      Date = 2026-03-01
 Publisher = Marvel
-    Title = Ultimate Spider-Man (2024) #17
+    Title = Ultimate Spider-Man (2024-) #17
    Format = eBook
     Pages = 32
    Issues = 1
 
      Date = 2026-03-01
 Publisher = Marvel
-    Title = Ultimate Spider-Man (2024) #18
+    Title = Ultimate Spider-Man (2024-) #18
    Format = eBook
     Pages = 32
    Issues = 1
 
      Date = 2026-03-01
 Publisher = Marvel
-    Title = Ultimate Spider-Man (2024) #19
+    Title = Ultimate Spider-Man (2024-) #19
    Format = eBook
     Pages = 32
    Issues = 1
 
      Date = 2026-03-01
 Publisher = Marvel
-    Title = Ultimate Spider-Man (2024) #20
+    Title = Ultimate Spider-Man (2024-) #20
    Format = eBook
     Pages = 32
    Issues = 1
 
      Date = 2026-03-01
 Publisher = Marvel
-    Title = Ultimate Spider-Man (2024) #21
+    Title = Ultimate Spider-Man (2024-) #21
    Format = eBook
     Pages = 32
    Issues = 1
 
      Date = 2026-03-01
 Publisher = Marvel
-    Title = Ultimate Spider-Man (2024) #22
+    Title = Ultimate Spider-Man (2024-) #22
    Format = eBook
     Pages = 32
    Issues = 1
@@ -11140,5 +11140,12 @@ Publisher = Fantagraphics
     Title = Perla La Loca: The Love & Rockets Library - Locas Book 3
    Format = eBook
     Pages = 290
+   Issues = 1
+
+     Date = 2026-03-30
+Publisher = Marvel
+    Title = Ultimate Spider-Man (2024-) #23
+   Format = eBook
+    Pages = 40
    Issues = 1
 
