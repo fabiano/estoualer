@@ -11149,3 +11149,94 @@ Publisher = Marvel
     Pages = 40
    Issues = 1
 
+     Date = 2026-04-07
+Publisher = Marvel
+    Title = Ultimates (2024-) #19
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-04-07
+Publisher = Marvel
+    Title = Scarlet Witch & Quicksilver (2024) #2
+   Format = eBook
+    Pages = 28
+   Issues = 1
+
+     Date = 2026-04-07
+Publisher = Marvel
+    Title = Scarlet Witch & Quicksilver (2024) #3
+   Format = eBook
+    Pages = 28
+   Issues = 1
+
+     Date = 2026-04-07
+Publisher = Marvel
+    Title = Scarlet Witch & Quicksilver (2024) #4
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-04-11
+Publisher = Marvel
+    Title = Ultimate Universe: One Year In (2024) #1
+   Format = eBook
+    Pages = 40
+   Issues = 1
+
+     Date = 2026-04-11
+Publisher = Marvel
+    Title = Ultimate Universe: Two Years In (2025) #1
+   Format = eBook
+    Pages = 40
+   Issues = 1
+
+     Date = 2026-04-11
+Publisher = Marvel
+    Title = Ultimate Endgame (2025-2026) #1
+   Format = eBook
+    Pages = 40
+   Issues = 1
+
+     Date = 2026-04-11
+Publisher = Marvel
+    Title = Fantastic Four (2022-) #20
+   Format = eBook
+    Pages = 28
+   Issues = 1
+
+     Date = 2026-04-11
+Publisher = Marvel
+    Title = Infernal Hulk (2025-) #2
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-04-11
+Publisher = Marvel
+    Title = Avengers Twilight (2024) #1
+   Format = eBook
+    Pages = 48
+   Issues = 1
+
+     Date = 2026-04-11
+Publisher = Marvel
+    Title = Avengers Twilight (2024) #2
+   Format = eBook
+    Pages = 40
+   Issues = 1
+
+     Date = 2026-04-11
+Publisher = Marvel
+    Title = Avengers Twilight (2024) #3
+   Format = eBook
+    Pages = 40
+   Issues = 1
+
+     Date = 2026-04-11
+Publisher = Marvel
+    Title = Avengers Twilight (2024) #4
+   Format = eBook
+    Pages = 36
+   Issues = 1
+
