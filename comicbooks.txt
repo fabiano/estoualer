@@ -11240,3 +11240,24 @@ Publisher = Marvel
     Pages = 36
    Issues = 1
 
+     Date = 2026-04-13
+Publisher = Marvel
+    Title = Avengers Twilight (2024) #5
+   Format = eBook
+    Pages = 40
+   Issues = 1
+
+     Date = 2026-04-13
+Publisher = Marvel
+    Title = Avengers Twilight (2024) #6
+   Format = eBook
+    Pages = 36
+   Issues = 1
+
+     Date = 2026-04-15
+Publisher = Marvel
+    Title = Immortal Thor (2023-2025) #1
+   Format = eBook
+    Pages = 39
+   Issues = 1
+
