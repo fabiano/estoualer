@@ -11261,3 +11261,45 @@ Publisher = Marvel
     Pages = 39
    Issues = 1
 
+     Date = 2026-04-18
+Publisher = Marvel
+    Title = Astonishing X-Men #1
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-04-18
+Publisher = Marvel
+    Title = Astonishing X-Men #2
+   Format = eBook
+    Pages = 36
+   Issues = 1
+
+     Date = 2026-04-18
+Publisher = Marvel
+    Title = Astonishing X-Men #3
+   Format = eBook
+    Pages = 40
+   Issues = 1
+
+     Date = 2026-04-18
+Publisher = Marvel
+    Title = Astonishing X-Men #4
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-04-21
+Publisher = Marvel
+    Title = Ultimates (2024-) #20
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-04-21
+Publisher = Marvel
+    Title = Astonishing X-Men #5
+   Format = eBook
+    Pages = 36
+   Issues = 1
+
