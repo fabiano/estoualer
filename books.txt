@@ -3049,3 +3049,12 @@ Publisher = Audible Originals
  Duration = 10h 26m
    Rating = 4
 
+     Date = 2026-04-23
+Publisher = O'Reilly Media
+    Title = Learning Domain-Driven Design: Aligning Software Architecture and Business Strategy
+   Author = Vlad Khononov
+   Format = eBook
+    Pages = 544
+ Duration = 0m
+   Rating = 4
+
