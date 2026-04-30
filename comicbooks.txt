@@ -11303,3 +11303,17 @@ Publisher = Marvel
     Pages = 36
    Issues = 1
 
+     Date = 2026-04-29
+Publisher = Edições Asa
+    Title = Ulysse & Cyrano
+   Format = Capa dura
+    Pages = 184
+   Issues = 1
+
+     Date = 2026-04-30
+Publisher = Levoir
+    Title = Valentina
+   Format = Capa dura
+    Pages = 176
+   Issues = 1
+
