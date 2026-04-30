@@ -11317,3 +11317,10 @@ Publisher = Levoir
     Pages = 176
    Issues = 1
 
+     Date = 2026-04-30
+Publisher = Edições Asa
+    Title = Duas Raparigas Nuas
+   Format = Capa dura
+    Pages = 200
+   Issues = 1
+
