@@ -11324,3 +11324,10 @@ Publisher = Edições Asa
     Pages = 200
    Issues = 1
 
+     Date = 2026-05-02
+Publisher = Ala dos Livros
+    Title = Longe
+   Format = Capa dura
+    Pages = 144
+   Issues = 1
+
