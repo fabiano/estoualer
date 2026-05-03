@@ -11331,3 +11331,31 @@ Publisher = Ala dos Livros
     Pages = 144
    Issues = 1
 
+     Date = 2026-05-02
+Publisher = Edições Asa
+    Title = Os Cabelos de Édith
+   Format = Capa dura
+    Pages = 168
+   Issues = 1
+
+     Date = 2026-05-02
+Publisher = Devir
+    Title = O Gosto do Cloro
+   Format = Capa dura
+    Pages = 144
+   Issues = 1
+
+     Date = 2026-05-03
+Publisher = Marvel
+    Title = Rogue (2026) #1
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-05-02
+Publisher = Edições Asa
+    Title = Um Livro Esquecido num Banco
+   Format = Capa dura
+    Pages = 112
+   Issues = 1
+
