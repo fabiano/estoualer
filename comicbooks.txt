@@ -11256,7 +11256,7 @@ Publisher = Marvel
 
      Date = 2026-04-15
 Publisher = Marvel
-    Title = Immortal Thor (2023-2025) #1
+    Title = The Immortal Thor (2023-2025) #1
    Format = eBook
     Pages = 39
    Issues = 1
@@ -11357,5 +11357,117 @@ Publisher = Edições Asa
     Title = Um Livro Esquecido num Banco
    Format = Capa dura
     Pages = 112
+   Issues = 1
+
+     Date = 2026-05-09
+Publisher = Marvel
+    Title = Infernal Hulk (2025-) #3
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-05-09
+Publisher = Marvel
+    Title = Astonishing X-Men #6
+   Format = eBook
+    Pages = 40
+   Issues = 1
+
+     Date = 2026-05-09
+Publisher = Marvel
+    Title = Astonishing X-Men #7
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-05-09
+Publisher = Marvel
+    Title = Astonishing X-Men #8
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-05-09
+Publisher = Marvel
+    Title = Astonishing X-Men #9
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-05-09
+Publisher = Marvel
+    Title = Astonishing X-Men #10
+   Format = eBook
+    Pages = 40
+   Issues = 1
+
+     Date = 2026-05-09
+Publisher = Marvel
+    Title = Astonishing X-Men #11
+   Format = eBook
+    Pages = 36
+   Issues = 1
+
+     Date = 2026-05-09
+Publisher = Marvel
+    Title = Astonishing X-Men #12
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-05-09
+Publisher = Marvel
+    Title = Uncanny X-Men (2024-) #22
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-05-09
+Publisher = Marvel
+    Title = X-Men (2024-) #23
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-05-09
+Publisher = Marvel
+    Title = X-Men (2024-) #24
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-05-09
+Publisher = Marvel
+    Title = The Immortal Thor (2023-2025) #2
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-05-09
+Publisher = Marvel
+    Title = The Immortal Thor (2023-2025) #3
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-05-10
+Publisher = Levoir
+    Title = Bordados
+   Format = Capa dura
+    Pages = 144
+   Issues = 1
+
+     Date = 2026-05-11
+Publisher = Marvel
+    Title = Ultimate Endgame (2025-2026) #2
+   Format = eBook
+    Pages = 40
+   Issues = 1
+
+     Date = 2026-05-11
+Publisher = Marvel
+    Title = Uncanny X-Men (2024-) #23
+   Format = eBook
+    Pages = 32
    Issues = 1
 
