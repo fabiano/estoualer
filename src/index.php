@@ -185,7 +185,7 @@ $stats = generate_statistics($books, $comicbooks);
 
 $db->close();
 
-function get_books($db, $q) {
+function get_books(SQLite3 $db, string $q): SQLite3Result {
     $conditions = [];
     $parameters = [];
 
@@ -238,7 +238,7 @@ function get_books($db, $q) {
     return $statement->execute();
 }
 
-function get_comicbooks($db, $q) {
+function get_comicbooks(SQLite3 $db, string $q): SQLite3Result {
     $conditions = [];
     $parameters = [];
 
@@ -283,7 +283,7 @@ function get_comicbooks($db, $q) {
     return $statement->execute();
 }
 
-function generate_statistics($books, $comicbooks) {
+function generate_statistics(SQLite3Result $books, SQLite3Result $comicbooks): array {
     $stats = [
         "Total" => 0,
         "Books" => 0,
@@ -315,7 +315,7 @@ function generate_statistics($books, $comicbooks) {
     return $stats;
 }
 
-function get_key_for_format($format) {
+function get_key_for_format(string $format): string {
     return match ($format) {
         "Capa comum", "Capa dura" => "Paper",
         "Audiolivro" => "Audio",
