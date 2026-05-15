@@ -11471,3 +11471,10 @@ Publisher = Marvel
     Pages = 32
    Issues = 1
 
+     Date = 2026-05-13
+Publisher = Devir
+    Title = Kiki de Montparnasse
+   Format = eBook
+    Pages = 406
+   Issues = 1
+
