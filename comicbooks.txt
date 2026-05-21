@@ -11478,3 +11478,45 @@ Publisher = Devir
     Pages = 406
    Issues = 1
 
+     Date = 2026-05-16
+Publisher = Marvel
+    Title = The Immortal Thor (2023-2025) #4
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-05-17
+Publisher = Marvel
+    Title = Planet She-Hulk (2025-) #1
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-05-17
+Publisher = Marvel
+    Title = Planet She-Hulk (2025-) #2
+   Format = eBook
+    Pages = 28
+   Issues = 1
+
+     Date = 2026-05-17
+Publisher = Marvel
+    Title = Planet She-Hulk (2025-) #3
+   Format = eBook
+    Pages = 28
+   Issues = 1
+
+     Date = 2026-05-17
+Publisher = Marvel
+    Title = Planet She-Hulk (2025-) #4
+   Format = eBook
+    Pages = 28
+   Issues = 1
+
+     Date = 2026-05-20
+Publisher = Marvel
+    Title = Cyclops (2026) #1
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
