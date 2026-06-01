@@ -3058,3 +3058,21 @@ Publisher = O'Reilly Media
  Duration = 0m
    Rating = 4
 
+     Date = 2026-05-25
+Publisher = HarperCollins
+    Title = The Return of the King (The Lord of the Rings, Book 3)
+   Author = J. R. R. Tolkien
+   Format = Audiolivro
+    Pages = 0
+ Duration = 21h 52m
+   Rating = 5
+
+     Date = 2026-05-28
+Publisher = Recorded Books
+    Title = All Systems Red (The Murderbot Diaries #1)
+   Author = Martha Wells
+   Format = Audiolivro
+    Pages = 0
+ Duration = 3h 17m
+   Rating = 4
+
