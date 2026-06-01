@@ -11520,3 +11520,108 @@ Publisher = Marvel
     Pages = 32
    Issues = 1
 
+     Date = 2026-05-24
+Publisher = Marvel
+    Title = The Immortal Thor (2023-2025) #5
+   Format = eBook
+    Pages = 28
+   Issues = 1
+
+     Date = 2026-05-24
+Publisher = Marvel
+    Title = The Immortal Thor (2023-2025) #6
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-05-24
+Publisher = Marvel
+    Title = The Immortal Thor (2023-2025) #7
+   Format = eBook
+    Pages = 28
+   Issues = 1
+
+     Date = 2026-05-24
+Publisher = Marvel
+    Title = The Immortal Thor (2023-2025) #8
+   Format = eBook
+    Pages = 28
+   Issues = 1
+
+     Date = 2026-05-24
+Publisher = Marvel
+    Title = The Immortal Thor (2023-2025) #9
+   Format = eBook
+    Pages = 28
+   Issues = 1
+
+     Date = 2026-05-24
+Publisher = Marvel
+    Title = Roxxon Presents: Thor (2024) #1
+   Format = eBook
+    Pages = 28
+   Issues = 1
+
+     Date = 2026-05-24
+Publisher = Marvel
+    Title = The Immortal Thor (2023-2025) #10
+   Format = eBook
+    Pages = 28
+   Issues = 1
+
+     Date = 2026-05-24
+Publisher = Marvel
+    Title = The Immortal Thor (2023-2025) #11
+   Format = eBook
+    Pages = 28
+   Issues = 1
+
+     Date = 2026-05-24
+Publisher = Marvel
+    Title = The Immortal Thor (2023-2025) #12
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-05-25
+Publisher = Marvel
+    Title = Ultimate Spider-Man (2024-) #24
+   Format = eBook
+    Pages = 48
+   Issues = 1
+
+     Date = 2026-05-25
+Publisher = Marvel
+    Title = X-Men (2024-) #25
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-05-25
+Publisher = Marvel
+    Title = Uncanny X-Men (2024-) #24
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-05-25
+Publisher = Marvel
+    Title = Generation X-23 (2026-) #1
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-05-31
+Publisher = Edições Asa
+    Title = Final Cut
+   Format = Capa dura
+    Pages = 232
+   Issues = 1
+
+     Date = 2026-05-31
+Publisher = Edições Asa
+    Title = Os Filhos do Império 2
+   Format = Capa dura
+    Pages = 224
+   Issues = 1
+
