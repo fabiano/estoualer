@@ -11625,3 +11625,10 @@ Publisher = Edições Asa
     Pages = 224
    Issues = 1
 
+     Date = 2026-06-02
+Publisher = Marvel
+    Title = The Punisher (2026-) #1
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
