@@ -3076,3 +3076,12 @@ Publisher = Recorded Books
  Duration = 3h 17m
    Rating = 4
 
+     Date = 2026-06-02
+Publisher = Recorded Books
+    Title = Artificial Condition (The Murderbot Diaries #2)
+   Author = Martha Wells
+   Format = Audiolivro
+    Pages = 0
+ Duration = 3h 21m
+   Rating = 2
+
