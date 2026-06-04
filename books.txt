@@ -3085,3 +3085,12 @@ Publisher = Recorded Books
  Duration = 3h 21m
    Rating = 2
 
+     Date = 2026-06-04
+Publisher = Pipoca & Nanquim
+    Title = Conan, O Bárbaro - Livro 1
+   Author = Robert E. Howard
+   Format = Audiolivro
+    Pages = 304
+ Duration = 0m
+   Rating = 4
+
