@@ -3092,5 +3092,14 @@ Publisher = Pipoca & Nanquim
    Format = Audiolivro
     Pages = 304
  Duration = 0m
-   Rating = 4
+   Rating = 3
+
+     Date = 2026-06-04
+Publisher = Recorded Books
+    Title = Rogue Protocol (The Murderbot Diaries #3)
+   Author = Martha Wells
+   Format = Audiolivro
+    Pages = 0
+ Duration = 3h 46m
+   Rating = 2
 
