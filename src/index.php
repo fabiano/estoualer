@@ -81,6 +81,25 @@ $stats = generate_statistics($books, $comicbooks);
             <form method="get" class="search">
                 <input id="q" name="q" value="<?php echo $q ?>" placeholder="ano: 2025 ou autor: carla madeira ou titulo: a natureza da mordida ou formato: ebook" aria-label="Pesquisar">
             </form>
+            <div class="view-controls">
+                <button id="view-toggle" class="view-toggle" aria-label="Alternar visualização">
+                    <span class="for-cards">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                            <rect x="0" y="1" width="16" height="2"/>
+                            <rect x="0" y="7" width="16" height="2"/>
+                            <rect x="0" y="13" width="16" height="2"/>
+                        </svg>
+                    </span>
+                    <span class="for-list">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                            <rect x="0" y="0" width="7" height="7"/>
+                            <rect x="9" y="0" width="7" height="7"/>
+                            <rect x="0" y="9" width="7" height="7"/>
+                            <rect x="9" y="9" width="7" height="7"/>
+                        </svg>
+                    </span>
+                </button>
+            </div>
             <?php if ($stats["Books"] > 0) { ?>
                 <section>
                 <h2>Livros</h2>
