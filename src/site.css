@@ -250,7 +250,6 @@ body.is-loading .progress {
 
 .cards .card .number {
   font-size: 1rem;
-  margin-bottom: 5px;
 }
 
 .cards .card .date {
@@ -306,6 +305,113 @@ body.is-loading .progress {
 @media only screen and (min-width: 1440px) {
   .cards .card {
     width: calc(20% - 42px);
+  }
+}
+
+/* view controls */
+
+.view-controls {
+  float: right;
+  margin: 20px 0 0;
+}
+
+.view-toggle {
+  align-items: center;
+  background-color: var(--theme-bg-color);
+  border: 0;
+  color: var(--theme-fg-color);
+  cursor: pointer;
+  display: flex;
+  font-size: 1.4rem;
+  padding: 6px 8px;
+}
+
+.view-toggle .for-list {
+  display: none;
+}
+
+body.is-list-view .view-toggle .for-cards {
+  display: none;
+}
+
+body.is-list-view .view-toggle .for-list {
+  display: inline;
+}
+
+/* list view overrides */
+
+body.is-list-view .cards {
+  flex-direction: column;
+  margin: 0;
+}
+
+body.is-list-view .cards .card {
+  align-items: center;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  box-sizing: border-box;
+  flex-direction: row;
+  gap: 10px;
+  height: auto;
+  margin: 0;
+  padding: 8px 10px;
+  text-align: left;
+  width: 100%;
+}
+
+body.is-list-view .cards .card > header,
+body.is-list-view .cards .card > div,
+body.is-list-view .cards .card > footer {
+  display: contents;
+}
+
+body.is-list-view .cards .card .number {
+  flex: 0 0 20px;
+}
+
+body.is-list-view .cards .card .date {
+  flex: 0 0 70px;
+}
+
+body.is-list-view .cards .card .title {
+  flex: 1;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  margin: 0;
+}
+
+body.is-list-view .cards .card .publisher-and-format {
+  flex: 0 0 200px;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+}
+
+body.is-list-view .cards .card .length {
+  flex: 0 0 120px;
+  text-align: right;
+}
+
+@media (hover: hover) {
+  body.is-list-view .cards .card:hover {
+    transform: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body.is-list-view .cards .card .publisher-and-format,
+  body.is-list-view .cards .card .length {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  body.is-list-view .cards .card .publisher-and-format {
+    text-align: right;
+  }
+
+  body.is-list-view .cards .card .length {
+    display: none;
   }
 }
 
