@@ -7336,10 +7336,10 @@ Publisher = Marvel
 
      Date = 2023-02-12
 Publisher = Ala dos Livros
-    Title = A Adopção
+    Title = A Adopção: Qinaya & A Garva
    Format = Capa dura
     Pages = 144
-   Issues = 1
+   Issues = 2
 
      Date = 2023-02-14
 Publisher = BOOM! Studios
@@ -9849,10 +9849,10 @@ Publisher = Ala dos Livros
 
      Date = 2024-10-20
 Publisher = Ala dos Livros
-    Title = A Adopção - Ciclo 2 - Edição Integral
+    Title = A Adopção: Wadjia & Arrependimentos
    Format = Capa dura
     Pages = 144
-   Issues = 1
+   Issues = 2
 
      Date = 2024-10-20
 Publisher = G. Floy Studio
@@ -11630,5 +11630,12 @@ Publisher = Marvel
     Title = The Punisher (2026-) #1
    Format = eBook
     Pages = 32
+   Issues = 1
+
+     Date = 2026-06-07
+Publisher = Ala dos Livros
+    Title = A Adopção: O Rei dos Mares
+   Format = Capa dura
+    Pages = 72
    Issues = 1
 
