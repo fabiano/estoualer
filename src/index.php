@@ -42,9 +42,9 @@ $stats = generate_statistics($books, $comicbooks);
 </head>
 
 <body>
-    <div class="progress"></div>
+    <div class="progress" aria-hidden="true"></div>
     <div class="container">
-        <div class="header">
+        <header class="header">
             <h1>Estou a ler</h1>
             <div class="stats" id="stats">
                 <div class="item total">
@@ -73,29 +73,30 @@ $stats = generate_statistics($books, $comicbooks);
                     <p class="value"><?php echo $stats["eBook"] ?></p>
                 </div>
             </div>
-        </div>
+        </header>
     </div>
     <hr class="separator">
     <div class="container">
-        <div class="body">
+        <main class="body">
             <form method="get" class="search">
-                <input id="q" name="q" value="<?php echo $q ?>" placeholder="ano: 2025 ou autor: carla madeira ou titulo: a natureza da mordida">
+                <input id="q" name="q" value="<?php echo $q ?>" placeholder="ano: 2025 ou autor: carla madeira ou titulo: a natureza da mordida" aria-label="Pesquisar">
             </form>
             <?php if ($stats["Books"] > 0) { ?>
+                <section>
                 <h2>Livros</h2>
                 <div class="cards" id="books">
                     <?php while ($book = $books->fetchArray()) { ?>
-                        <div class="card">
+                        <article class="card">
+                            <header>
+                                <div class="number" aria-hidden="true"><?php echo $stats["Books"]-- ?></div>
+                                <time class="date" datetime="<?php echo $book['Date'] ?>"><?php echo DateTime::createFromFormat("Y-m-d", $book["Date"])->format("d/m/Y") ?></time>
+                            </header>
                             <div>
-                                <div class="number"><?php echo $stats["Books"]-- ?></div>
-                                <div class="date"><?php echo DateTime::createFromFormat("Y-m-d", $book["Date"])->format("d/m/Y") ?></div>
+                                <h3 class="title"><?php echo $book["Title"] ?></h3>
+                                <p class="publisher-and-format"><?php echo $book["Author"] ?> / <?php echo $book["Format"] ?></p>
                             </div>
-                            <div>
-                                <div class="title"><?php echo $book["Title"] ?></div>
-                                <div class="publisher-and-format"><?php echo $book["Author"] ?> / <?php echo $book["Format"] ?></div>
-                            </div>
-                            <div>
-                                <div class="length">
+                            <footer>
+                                <p class="length">
                                     <?php
 
                                         $pages = $book["Pages"];
@@ -120,27 +121,29 @@ $stats = generate_statistics($books, $comicbooks);
                                         }
 
                                     ?>
-                                </div>
-                            </div>
-                        </div>
+                                </p>
+                            </footer>
+                        </article>
                     <?php } ?>
                 </div>
+                </section>
             <?php } ?>
             <?php if ($stats["ComicBooks"] > 0) { ?>
+                <section>
                 <h2>Gibis</h2>
                 <div class="cards" id="comicbooks">
                     <?php while ($comicbook = $comicbooks->fetchArray()) { ?>
-                        <div class="card">
+                        <article class="card">
+                            <header>
+                                <div class="number" aria-hidden="true"><?php echo $stats["ComicBooks"]-- ?></div>
+                                <time class="date" datetime="<?php echo $comicbook['Date'] ?>"><?php echo DateTime::createFromFormat("Y-m-d", $comicbook["Date"])->format("d/m/Y") ?></time>
+                            </header>
                             <div>
-                                <div class="number"><?php echo $stats["ComicBooks"]-- ?></div>
-                                <div class="date"><?php echo DateTime::createFromFormat("Y-m-d", $comicbook["Date"])->format("d/m/Y") ?></div>
+                                <h3 class="title"><?php echo $comicbook["Title"] ?></h3>
+                                <p class="publisher-and-format"><?php echo $comicbook["Publisher"] ?> / <?php echo $comicbook["Format"] ?></p>
                             </div>
-                            <div>
-                                <div class="title"><?php echo $comicbook["Title"] ?></div>
-                                <div class="publisher-and-format"><?php echo $comicbook["Publisher"] ?> / <?php echo $comicbook["Format"] ?></div>
-                            </div>
-                            <div>
-                                <div class="length">
+                            <footer>
+                                <p class="length">
                                     <?php
 
                                         $pages = $comicbook["Pages"];
@@ -154,27 +157,31 @@ $stats = generate_statistics($books, $comicbooks);
                                         }
 
                                     ?>
-                                </div>
-                            </div>
-                        </div>
+                                </p>
+                            </footer>
+                        </article>
                     <?php } ?>
                 </div>
+                </section>
             <?php } ?>
-        </div>
+        </main>
     </div>
     <footer class="footer">
-        <div class="history">
-            o que li em
-            <ul>
-                <li><a href="?q=ano: 1970">1970</a></li>
-                <?php for ($i = 2013; $i <= $today["year"]; $i++) { ?>
-                    <li><a href="?q=ano: <?php echo $i ?>"><?php echo $i ?></a></li>
-                <?php } ?>
-            </ul>
-        </div>
-        <div class="credits">
+        <nav class="history" aria-label="Histórico">
+            <form method="get" class="history-form">
+                <label for="history-year">o que li em</label>
+                <select id="history-year" name="q" onchange="this.form.submit()">
+                    <option value="ano: 1970"<?php if ($q === 'ano: 1970') echo ' selected' ?>>1970</option>
+                    <?php for ($i = 2013; $i <= $today["year"]; $i++) { ?>
+                        <option value="ano: <?php echo $i ?>"<?php if ($q === 'ano: ' . $i) echo ' selected' ?>><?php echo $i ?></option>
+                    <?php } ?>
+                </select>
+                <noscript><button type="submit">ir</button></noscript>
+            </form>
+        </nav>
+        <p class="credits">
             ícone por <a href="https://www.iconfinder.com/sudheepb">sudheep b</a> em <a href="https://www.iconfinder.com/icons/4879874/book_education_learning_study_icon" title="Iconfinder">Iconfinder</a>
-        </div>
+        </p>
     </footer>
     <script type="text/javascript" src="site.js"></script>
 </body>
