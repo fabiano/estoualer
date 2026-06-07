@@ -79,7 +79,7 @@ $stats = generate_statistics($books, $comicbooks);
     <div class="container">
         <main class="body">
             <form method="get" class="search">
-                <input id="q" name="q" value="<?php echo $q ?>" placeholder="ano: 2025 ou autor: carla madeira ou titulo: a natureza da mordida" aria-label="Pesquisar">
+                <input id="q" name="q" value="<?php echo $q ?>" placeholder="ano: 2025 ou autor: carla madeira ou titulo: a natureza da mordida ou formato: ebook" aria-label="Pesquisar">
             </form>
             <?php if ($stats["Books"] > 0) { ?>
                 <section>
@@ -221,6 +221,12 @@ function get_books(SQLite3 $db, string $q): SQLite3Result {
 
             break;
 
+        case str_starts_with($q, "formato:") and strlen($q) > 8:
+            $conditions[] = "Format LIKE :format";
+            $parameters[":format"] = "%" . trim(substr($q, 8)) . "%";
+
+            break;
+
         default:
             $conditions[] = "Publisher LIKE :publisher";
             $conditions[] = "Title LIKE :title";
@@ -265,6 +271,12 @@ function get_comicbooks(SQLite3 $db, string $q): SQLite3Result {
         case str_starts_with($q, "titulo:") and strlen($q) > 7:
             $conditions[] = "Title LIKE :title";
             $parameters[":title"] = "%" . trim(substr($q, 7)) . "%";
+
+            break;
+
+        case str_starts_with($q, "formato:") and strlen($q) > 8:
+            $conditions[] = "Format LIKE :format";
+            $parameters[":format"] = "%" . trim(substr($q, 8)) . "%";
 
             break;
 
