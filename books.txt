@@ -3103,3 +3103,12 @@ Publisher = Recorded Books
  Duration = 3h 46m
    Rating = 2
 
+     Date = 2026-06-08
+Publisher = Recorded Books
+    Title = Exit Strategy (The Murderbot Diaries #4)
+   Author = Martha Wells
+   Format = Audiolivro
+    Pages = 0
+ Duration = 3h 46m
+   Rating = 2
+
