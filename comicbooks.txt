@@ -11639,3 +11639,24 @@ Publisher = Ala dos Livros
     Pages = 72
    Issues = 1
 
+     Date = 2026-06-14
+Publisher = Levoir
+    Title = A Dança das Andorinhas - Morrer, partir, regressar
+   Format = Capa dura
+    Pages = 192
+   Issues = 1
+
+     Date = 2026-04-14
+Publisher = Marvel
+    Title = Ultimates (2024-) #21
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-04-14
+Publisher = Marvel
+    Title = Captain America (2025-) #1
+   Format = eBook
+    Pages = 40
+   Issues = 1
+
