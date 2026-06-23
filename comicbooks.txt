@@ -11660,3 +11660,10 @@ Publisher = Marvel
     Pages = 40
    Issues = 1
 
+     Date = 2026-06-23
+Publisher = IDW Publishing
+    Title = Sonic the Hedgehog Vol. 1: Fallout
+   Format = eBook
+    Pages = 105
+   Issues = 4
+
