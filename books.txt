@@ -3112,3 +3112,21 @@ Publisher = Recorded Books
  Duration = 3h 46m
    Rating = 2
 
+     Date = 2026-06-20
+Publisher = Recorded Books
+    Title = Network Effect (The Murderbot Diaries #5)
+   Author = Martha Wells
+   Format = Audiolivro
+    Pages = 0
+ Duration = 12h 47m
+   Rating = 4
+
+     Date = 2026-06-21
+Publisher = Recorded Books
+    Title = Fugitive Telemetry (The Murderbot Diaries #6)
+   Author = Martha Wells
+   Format = Audiolivro
+    Pages = 0
+ Duration = 4h 24m
+   Rating = 4
+
