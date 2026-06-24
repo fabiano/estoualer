@@ -197,6 +197,7 @@ $stats = generate_statistics($books, $comicbooks);
                 </select>
                 <noscript><button type="submit">ir</button></noscript>
             </form>
+            <a href="stats.php">estatísticas</a>
         </nav>
         <p class="credits">
             ícone por <a href="https://www.iconfinder.com/sudheepb">sudheep b</a> em <a href="https://www.iconfinder.com/icons/4879874/book_education_learning_study_icon" title="Iconfinder">Iconfinder</a>

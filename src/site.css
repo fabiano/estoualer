@@ -418,9 +418,11 @@ body.is-list-view .cards .card .length {
 /* history */
 
 .history {
+  align-items: center;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 10px;
   justify-content: center;
   margin-bottom: 10px;
 }
@@ -431,6 +433,61 @@ body.is-list-view .cards .card .length {
   color: var(--theme-fg-color);
   font-size: 1.6rem;
   padding: 2px 4px;
+}
+
+/* stat lists */
+
+.stat-groups {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px 60px;
+  margin-bottom: 20px;
+}
+
+.stat-group {
+  flex: 1 1 300px;
+  max-width: 300px;
+  min-width: 0;
+}
+
+.stat-group h3 {
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+  margin: 0 0 10px 0;
+}
+
+.stat-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stat-list li {
+  display: flex;
+  align-items: baseline;
+  font-size: 1.4rem;
+  gap: 6px;
+  padding: 4px 0;
+}
+
+.stat-list .label {
+  text-transform: uppercase;
+  word-break: break-word;
+}
+
+.stat-list .leader {
+  border-bottom: 1px dotted var(--theme-border-color);
+  flex: 1;
+  transform: translateY(-4px);
+}
+
+.stat-list .count {
+  font-weight: 500;
+}
+
+.stat-group .empty {
+  font-size: 1.4rem;
 }
 
 /* offline */
