@@ -3130,3 +3130,12 @@ Publisher = Recorded Books
  Duration = 4h 24m
    Rating = 4
 
+     Date = 2026-06-26
+Publisher = Recorded Books
+    Title = System Collapse (The Murderbot Diaries #7)
+   Author = Martha Wells
+   Format = Audiolivro
+    Pages = 0
+ Duration = 6h 36m
+   Rating = 3
+
