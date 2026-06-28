@@ -11646,14 +11646,14 @@ Publisher = Levoir
     Pages = 192
    Issues = 1
 
-     Date = 2026-04-14
+     Date = 2026-06-14
 Publisher = Marvel
     Title = Ultimates (2024-) #21
    Format = eBook
     Pages = 32
    Issues = 1
 
-     Date = 2026-04-14
+     Date = 2026-06-14
 Publisher = Marvel
     Title = Captain America (2025-) #1
    Format = eBook
