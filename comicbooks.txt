@@ -11681,7 +11681,7 @@ Publisher = Marvel
     Pages = 32
    Issues = 1
 
-     Date = 2026-05-27
+     Date = 2026-06-27
 Publisher = Marvel
     Title = Ultimates (2024-) #22
    Format = eBook
