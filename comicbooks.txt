@@ -11667,3 +11667,24 @@ Publisher = IDW Publishing
     Pages = 105
    Issues = 4
 
+     Date = 2026-06-27
+Publisher = Marvel
+    Title = Infernal Hulk (2025-) #4
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-06-27
+Publisher = Marvel
+    Title = Infernal Hulk (2025-) #5
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-05-27
+Publisher = Marvel
+    Title = Ultimates (2024-) #22
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
