@@ -3139,3 +3139,12 @@ Publisher = Recorded Books
  Duration = 6h 36m
    Rating = 3
 
+     Date = 2026-07-03
+Publisher = Audible Originals
+    Title = Out of Spite, Out of Mind (Magic 2.0 #5)
+   Author = Scott Meyer
+   Format = Audiolivro
+    Pages = 0
+ Duration = 7h 34m
+   Rating = 5
+
