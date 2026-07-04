@@ -11688,3 +11688,80 @@ Publisher = Marvel
     Pages = 32
    Issues = 1
 
+     Date = 2026-06-28
+Publisher = Marvel
+    Title = X-Men United (2026-) #1
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-06-28
+Publisher = Marvel
+    Title = Planet She-Hulk (2025-) #5
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-06-28
+Publisher = Marvel
+    Title = Cyclops (2026) #2
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-06-28
+Publisher = Marvel
+    Title = Rogue (2026) #2
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-06-28
+Publisher = Marvel
+    Title = X-Men (2024-) #26
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-06-28
+Publisher = Marvel
+    Title = X-Men (2024-) #27
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-06-28
+Publisher = Marvel
+    Title = Captain America (2025-) #2
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-06-29
+Publisher = Marvel
+    Title = Ultimate Endgame (2025-2026) #3
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-07-01
+Publisher = Marvel
+    Title = Marvel Knights: Punisher (2025-2026) #1
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-07-01
+Publisher = Marvel
+    Title = Uncanny X-Men (2024-) #25
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-07-02
+Publisher = Marvel
+    Title = Generation X-23 (2026-) #2
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
