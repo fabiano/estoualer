@@ -3148,3 +3148,21 @@ Publisher = Audible Originals
  Duration = 7h 34m
    Rating = 5
 
+     Date = 2026-07-04
+Publisher = Leanpub
+    Title = Master Software Architecture - A Pragmatic Guide
+   Author = Maciej "MJ" Jedrzejewski
+   Format = eBook
+    Pages = 306
+ Duration = 0m
+   Rating = 4
+
+     Date = 2026-07-05
+Publisher = Editora Aleph
+    Title = Sonhos elétricos
+   Author = Philip K. Dick
+   Format = eBook
+    Pages = 266
+ Duration = 0m
+   Rating = 4
+
