@@ -68,7 +68,7 @@ Publisher = Rocco
    Format = Capa comum
     Pages = 264
  Duration = 0m
-   Rating = 5
+   Rating = 4
 
      Date = 1970-01-01
 Publisher = Rocco
@@ -77,7 +77,7 @@ Publisher = Rocco
    Format = Capa comum
     Pages = 288
  Duration = 0m
-   Rating = 5
+   Rating = 4
 
      Date = 1970-01-01
 Publisher = Rocco
@@ -86,7 +86,7 @@ Publisher = Rocco
    Format = Capa comum
     Pages = 348
  Duration = 0m
-   Rating = 5
+   Rating = 4
 
      Date = 1970-01-01
 Publisher = Rocco
@@ -95,7 +95,7 @@ Publisher = Rocco
    Format = Capa comum
     Pages = 0
  Duration = 0m
-   Rating = 5
+   Rating = 4
 
      Date = 1970-01-01
 Publisher = Rocco
@@ -104,7 +104,7 @@ Publisher = Rocco
    Format = Capa comum
     Pages = 704
  Duration = 0m
-   Rating = 5
+   Rating = 4
 
      Date = 1970-01-01
 Publisher = Rocco
@@ -113,7 +113,7 @@ Publisher = Rocco
    Format = Capa comum
     Pages = 512
  Duration = 0m
-   Rating = 5
+   Rating = 4
 
      Date = 1970-01-01
 Publisher = Rocco
@@ -122,7 +122,7 @@ Publisher = Rocco
    Format = Capa comum
     Pages = 592
  Duration = 0m
-   Rating = 5
+   Rating = 4
 
      Date = 1970-01-01
 Publisher = Pearson
@@ -3173,5 +3173,14 @@ Publisher = William Morrow Paperbacks
    Format = Audiolivro
     Pages = 0
  Duration = 8h 27m
+   Rating = 4
+
+     Date = 2026-07-12
+Publisher = Editora Arqueiro
+    Title = O Feiticeiro de Terramar (Ciclo Terramar #1)
+   Author = Ursula K. Le Guin
+   Format = eBook
+    Pages = 187
+ Duration = 0m
    Rating = 4
 
