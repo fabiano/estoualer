@@ -11765,3 +11765,10 @@ Publisher = Marvel
     Pages = 32
    Issues = 1
 
+     Date = 2026-07-12
+Publisher = A Seita
+    Title = Amore - Amor... à italiana!
+   Format = eBook
+    Pages = 128
+   Issues = 1
+
