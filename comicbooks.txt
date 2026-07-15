@@ -11772,3 +11772,17 @@ Publisher = A Seita
     Pages = 128
    Issues = 1
 
+     Date = 2026-07-14
+Publisher = Marvel
+    Title = X-Men (2024-) #28
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-07-14
+Publisher = Marvel
+    Title = Uncanny X-Men (2024-) #26
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
