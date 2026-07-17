@@ -3184,3 +3184,12 @@ Publisher = Editora Arqueiro
  Duration = 0m
    Rating = 4
 
+     Date = 2026-07-17
+Publisher = Editora Arqueiro
+    Title = As Tumbas de Atuan (Ciclo Terramar #2)
+   Author = Ursula K. Le Guin
+   Format = eBook
+    Pages = 188
+ Duration = 0m
+   Rating = 4
+
