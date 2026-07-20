@@ -3193,3 +3193,12 @@ Publisher = Editora Arqueiro
  Duration = 0m
    Rating = 4
 
+     Date = 2026-07-20
+Publisher = Audible Originals
+    Title = The Vexed Generation (Magic 2.0 #6)
+   Author = Scott Meyer
+   Format = Audiolivro
+    Pages = 0
+ Duration = 9h 55m
+   Rating = 4
+
