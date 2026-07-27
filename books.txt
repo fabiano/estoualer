@@ -3203,11 +3203,20 @@ Publisher = Audible Originals
    Rating = 4
 
      Date = 2026-07-24
-Publisher = Editora Arqueiro
+Publisher = Morro Branco
     Title = A última margem (Ciclo Terramar #3)
    Author = Ursula K. Le Guin
    Format = eBook
     Pages = 224
+ Duration = 0m
+   Rating = 4
+
+     Date = 2026-07-27
+Publisher = Morro Branco
+    Title = Tehanu (Ciclo Terramar #4)
+   Author = Ursula K. Le Guin
+   Format = eBook
+    Pages = 240
  Duration = 0m
    Rating = 4
 
