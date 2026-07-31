@@ -11786,3 +11786,65 @@ Publisher = Marvel
     Pages = 32
    Issues = 1
 
+     Date = 2026-07-28
+Publisher = Marvel
+    Title = Infernal Hulk (2025-) #6
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-07-28
+Publisher = Marvel
+    Title = Rogue (2026) #3
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-07-28
+Publisher = Marvel
+    Title = Rogue (2026) #4
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-07-28
+Publisher = Marvel
+    Title = Cyclops (2026) #3
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-07-28
+Publisher = Marvel
+    Title = Captain America (2025-) #3
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-07-30
+Publisher = Marvel
+    Title = Captain America (2025-) #4
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-07-30
+Publisher = Marvel
+    Title = Captain America (2025-) #5
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-07-30
+Publisher = Marvel
+    Title = Captain America (2025-) #6
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-07-30
+Publisher = Marvel
+    Title = Captain America (2025-) #7
+   Format = eBook
+    Pages = 32
+   Issues = 1
