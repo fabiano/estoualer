@@ -85,38 +85,38 @@ $stats = generate_statistics($books, $comicbooks);
                 <button id="view-toggle" class="view-toggle" aria-label="Alternar visualização">
                     <span class="for-cards">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-                            <rect x="0" y="1" width="16" height="2"/>
-                            <rect x="0" y="7" width="16" height="2"/>
-                            <rect x="0" y="13" width="16" height="2"/>
+                            <rect x="0" y="1" width="16" height="2" />
+                            <rect x="0" y="7" width="16" height="2" />
+                            <rect x="0" y="13" width="16" height="2" />
                         </svg>
                     </span>
                     <span class="for-list">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-                            <rect x="0" y="0" width="7" height="7"/>
-                            <rect x="9" y="0" width="7" height="7"/>
-                            <rect x="0" y="9" width="7" height="7"/>
-                            <rect x="9" y="9" width="7" height="7"/>
+                            <rect x="0" y="0" width="7" height="7" />
+                            <rect x="9" y="0" width="7" height="7" />
+                            <rect x="0" y="9" width="7" height="7" />
+                            <rect x="9" y="9" width="7" height="7" />
                         </svg>
                     </span>
                 </button>
             </div>
             <?php if ($stats["Books"] > 0) { ?>
                 <section>
-                <h2>Livros</h2>
-                <div class="cards" id="books">
-                    <?php while ($book = $books->fetchArray()) { ?>
-                        <article class="card">
-                            <header>
-                                <div class="number" aria-hidden="true"><?php echo $stats["Books"]-- ?></div>
-                                <time class="date" datetime="<?php echo $book['Date'] ?>"><?php echo DateTime::createFromFormat("Y-m-d", $book["Date"])->format("d/m/Y") ?></time>
-                            </header>
-                            <div>
-                                <h3 class="title"><?php echo $book["Title"] ?></h3>
-                                <p class="publisher-and-format"><?php echo $book["Author"] ?> / <?php echo $book["Format"] ?></p>
-                            </div>
-                            <footer>
-                                <p class="length">
-                                    <?php
+                    <h2>Livros</h2>
+                    <div class="cards" id="books">
+                        <?php while ($book = $books->fetchArray()) { ?>
+                            <article class="card">
+                                <header>
+                                    <div class="number" aria-hidden="true"><?php echo $stats["Books"]-- ?></div>
+                                    <time class="date" datetime="<?php echo $book['Date'] ?>"><?php echo DateTime::createFromFormat("Y-m-d", $book["Date"])->format("d/m/Y") ?></time>
+                                </header>
+                                <div>
+                                    <h3 class="title"><?php echo $book["Title"] ?></h3>
+                                    <p class="publisher-and-format"><?php echo $book["Author"] ?> / <?php echo $book["Format"] ?></p>
+                                </div>
+                                <footer>
+                                    <p class="length">
+                                        <?php
 
                                         $pages = $book["Pages"];
                                         $duration = $book["Duration"];
@@ -139,31 +139,31 @@ $stats = generate_statistics($books, $comicbooks);
                                             default => "",
                                         }
 
-                                    ?>
-                                </p>
-                            </footer>
-                        </article>
-                    <?php } ?>
-                </div>
+                                        ?>
+                                    </p>
+                                </footer>
+                            </article>
+                        <?php } ?>
+                    </div>
                 </section>
             <?php } ?>
             <?php if ($stats["ComicBooks"] > 0) { ?>
                 <section>
-                <h2>Gibis</h2>
-                <div class="cards" id="comicbooks">
-                    <?php while ($comicbook = $comicbooks->fetchArray()) { ?>
-                        <article class="card">
-                            <header>
-                                <div class="number" aria-hidden="true"><?php echo $stats["ComicBooks"]-- ?></div>
-                                <time class="date" datetime="<?php echo $comicbook['Date'] ?>"><?php echo DateTime::createFromFormat("Y-m-d", $comicbook["Date"])->format("d/m/Y") ?></time>
-                            </header>
-                            <div>
-                                <h3 class="title"><?php echo $comicbook["Title"] ?></h3>
-                                <p class="publisher-and-format"><?php echo $comicbook["Publisher"] ?> / <?php echo $comicbook["Format"] ?></p>
-                            </div>
-                            <footer>
-                                <p class="length">
-                                    <?php
+                    <h2>Gibis</h2>
+                    <div class="cards" id="comicbooks">
+                        <?php while ($comicbook = $comicbooks->fetchArray()) { ?>
+                            <article class="card">
+                                <header>
+                                    <div class="number" aria-hidden="true"><?php echo $stats["ComicBooks"]-- ?></div>
+                                    <time class="date" datetime="<?php echo $comicbook['Date'] ?>"><?php echo DateTime::createFromFormat("Y-m-d", $comicbook["Date"])->format("d/m/Y") ?></time>
+                                </header>
+                                <div>
+                                    <h3 class="title"><?php echo $comicbook["Title"] ?></h3>
+                                    <p class="publisher-and-format"><?php echo $comicbook["Publisher"] ?> / <?php echo $comicbook["Format"] ?></p>
+                                </div>
+                                <footer>
+                                    <p class="length">
+                                        <?php
 
                                         $pages = $comicbook["Pages"];
                                         $issues = $comicbook["Issues"];
@@ -175,12 +175,12 @@ $stats = generate_statistics($books, $comicbooks);
                                             default => "",
                                         }
 
-                                    ?>
-                                </p>
-                            </footer>
-                        </article>
-                    <?php } ?>
-                </div>
+                                        ?>
+                                    </p>
+                                </footer>
+                            </article>
+                        <?php } ?>
+                    </div>
                 </section>
             <?php } ?>
         </main>
@@ -190,9 +190,9 @@ $stats = generate_statistics($books, $comicbooks);
             <form method="get" class="history-form">
                 <label for="history-year">o que li em</label>
                 <select id="history-year" name="q" onchange="this.form.submit()">
-                    <option value="ano: 1970"<?php if ($q === 'ano: 1970') echo ' selected' ?>>1970</option>
+                    <option value="ano: 1970" <?php if ($q === 'ano: 1970') echo ' selected' ?>>1970</option>
                     <?php for ($i = 2013; $i <= $today["year"]; $i++) { ?>
-                        <option value="ano: <?php echo $i ?>"<?php if ($q === 'ano: ' . $i) echo ' selected' ?>><?php echo $i ?></option>
+                        <option value="ano: <?php echo $i ?>" <?php if ($q === 'ano: ' . $i) echo ' selected' ?>><?php echo $i ?></option>
                     <?php } ?>
                 </select>
                 <noscript><button type="submit">ir</button></noscript>
@@ -212,7 +212,8 @@ $stats = generate_statistics($books, $comicbooks);
 
 $db->close();
 
-function get_books(SQLite3 $db, string $q): SQLite3Result {
+function get_books(SQLite3 $db, string $q): SQLite3Result
+{
     $conditions = [];
     $parameters = [];
 
@@ -271,7 +272,8 @@ function get_books(SQLite3 $db, string $q): SQLite3Result {
     return $statement->execute();
 }
 
-function get_comicbooks(SQLite3 $db, string $q): SQLite3Result {
+function get_comicbooks(SQLite3 $db, string $q): SQLite3Result
+{
     $conditions = [];
     $parameters = [];
 
@@ -322,7 +324,8 @@ function get_comicbooks(SQLite3 $db, string $q): SQLite3Result {
     return $statement->execute();
 }
 
-function generate_statistics(SQLite3Result $books, SQLite3Result $comicbooks): array {
+function generate_statistics(SQLite3Result $books, SQLite3Result $comicbooks): array
+{
     $stats = [
         "Total" => 0,
         "Books" => 0,
@@ -354,7 +357,8 @@ function generate_statistics(SQLite3Result $books, SQLite3Result $comicbooks): a
     return $stats;
 }
 
-function get_key_for_format(string $format): string {
+function get_key_for_format(string $format): string
+{
     return match ($format) {
         "Capa comum", "Capa dura" => "Paper",
         "Audiolivro" => "Audio",
