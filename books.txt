@@ -3220,3 +3220,11 @@ Publisher = Morro Branco
  Duration = 0m
    Rating = 4
 
+     Date = 2026-08-04
+Publisher = Dragonsteel
+    Title = Tress of the Emerald Sea
+   Author = Brandon Sanderson
+   Format = Audiolivro
+    Pages = 0
+ Duration = 12h 27m
+   Rating = 3
