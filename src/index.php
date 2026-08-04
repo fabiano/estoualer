@@ -79,7 +79,7 @@ $stats = generate_statistics($books, $comicbooks);
     <div class="container">
         <main class="body">
             <form method="get" class="search">
-                <input id="q" name="q" value="<?php echo $q ?>" placeholder="ano: 2025 ou autor: carla madeira ou titulo: a natureza da mordida ou formato: ebook" aria-label="Pesquisar">
+                <input id="q" name="q" value="<?php echo $q ?>" placeholder="ano: <?php echo $today["year"] ?> ou autor: carla madeira ou titulo: a natureza da mordida ou formato: ebook" aria-label="Pesquisar">
             </form>
             <div class="view-controls">
                 <button id="view-toggle" class="view-toggle" aria-label="Alternar visualização">
