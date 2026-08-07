@@ -1,6 +1,4 @@
 const offlineClassName = "is-offline";
-const listViewClassName = "is-list-view";
-const viewStorageKey = "view";
 
 window.addEventListener('load', async () => {
   try {
@@ -14,16 +12,6 @@ window.addEventListener('load', async () => {
   if (!navigator.onLine) {
     document.body.classList.add(offlineClassName);
   }
-
-  if (localStorage.getItem(viewStorageKey) === 'list') {
-    document.body.classList.add(listViewClassName);
-  }
-
-  document.getElementById('view-toggle').addEventListener('click', () => {
-    const isList = document.body.classList.toggle(listViewClassName);
-
-    localStorage.setItem(viewStorageKey, isList ? 'list' : 'cards');
-  });
 });
 
 window.addEventListener('online', () => {
