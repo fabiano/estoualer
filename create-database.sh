@@ -11,7 +11,9 @@ database=$1
 sqlite3 $database <<EOF
 
 DROP TABLE IF EXISTS Book;
+DROP TABLE IF EXISTS BookFts;
 DROP TABLE IF EXISTS ComicBook;
+DROP TABLE IF EXISTS ComicBookFts;
 
 CREATE TABLE Book (
   Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
@@ -25,6 +27,18 @@ CREATE TABLE Book (
   Rating INTEGER NOT NULL DEFAULT 0
 );
 
+CREATE VIRTUAL TABLE BookFts USING fts5 (
+  Id UNINDEXED,
+  Date UNINDEXED,
+  Publisher,
+  Title,
+  Author,
+  Format,
+  Pages UNINDEXED,
+  Duration UNINDEXED,
+  Rating UNINDEXED
+);
+
 CREATE TABLE ComicBook (
   Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
   Date TEXT NOT NULL,
@@ -33,6 +47,16 @@ CREATE TABLE ComicBook (
   Format TEXT NOT NULL,
   Pages INTEGER NOT NULL DEFAULT 0,
   Issues INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE VIRTUAL TABLE ComicBookFts USING fts5 (
+  Id UNINDEXED,
+  Date UNINDEXED,
+  Publisher,
+  Title,
+  Format,
+  Pages UNINDEXED,
+  Issues UNINDEXED
 );
 
 EOF
@@ -73,6 +97,7 @@ sqlite3 $database <<EOF
 .mode csv
 .separator ";"
 .import $output Book
+.import $output BookFts
 
 EOF
 
@@ -110,6 +135,6 @@ sqlite3 $database <<EOF
 .mode csv
 .separator ";"
 .import $output ComicBook
+.import $output ComicBookFts
 
 EOF
-
