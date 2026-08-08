@@ -79,7 +79,10 @@ $stats = generate_statistics($books, $comicbooks);
     <div class="container">
         <main class="body">
             <form method="get" class="search">
-                <input id="q" name="q" value="<?php echo $q ?>" placeholder="ano: <?php echo $today["year"] ?> ou autor: carla madeira ou titulo: a natureza da mordida ou formato: ebook" aria-label="Pesquisar">
+                <input id="q"
+                    name="q"
+                    value="<?php echo htmlspecialchars($q) ?>"
+                    placeholder="ano: <?php echo $today["year"] ?> ou autor: carla madeira ou titulo: a natureza da mordida" aria-label="Pesquisar">
             </form>
             <?php if ($stats["Books"] > 0) { ?>
                 <section>
@@ -195,59 +198,59 @@ $db->close();
 
 function get_books(SQLite3 $db, string $q): SQLite3Result
 {
-    $conditions = [];
-    $parameters = [];
-
     switch (true) {
         case str_starts_with($q, "ano:") and strlen($q) > 4:
-            $conditions[] = "Date LIKE :year";
-            $parameters[":year"] = trim(substr($q, 4)) . "%";
+            $statement = $db->prepare("
+                SELECT *
+                FROM Book
+                WHERE Date LIKE :year
+                ORDER BY Id DESC");
+
+            $statement->bindValue(":year", trim(substr($q, 4)) . "%");
 
             break;
 
         case str_starts_with($q, "editora:") and strlen($q) > 8:
-            $conditions[] = "Publisher LIKE :publisher";
-            $parameters[":publisher"] = "%" . trim(substr($q, 8)) . "%";
+            $statement = $db->prepare("
+                SELECT *
+                FROM BookFts
+                WHERE Publisher MATCH :publisher
+                ORDER BY Rank");
+
+            $statement->bindValue(":publisher", escape_value(substr($q, 8)));
 
             break;
 
         case str_starts_with($q, "titulo:") and strlen($q) > 7:
-            $conditions[] = "Title LIKE :title";
-            $parameters[":title"] = "%" . trim(substr($q, 7)) . "%";
+            $statement = $db->prepare("
+                SELECT *
+                FROM BookFts
+                WHERE Title MATCH :title
+                ORDER BY Rank");
+
+            $statement->bindValue(":title", escape_value(substr($q, 7)));
 
             break;
 
         case str_starts_with($q, "autor:") and strlen($q) > 6:
-            $conditions[] = "Author LIKE :author";
-            $parameters[":author"] = "%" . trim(substr($q, 6)) . "%";
+            $statement = $db->prepare("
+                SELECT *
+                FROM BookFts
+                WHERE Author MATCH :author
+                ORDER BY Rank");
 
-            break;
-
-        case str_starts_with($q, "formato:") and strlen($q) > 8:
-            $conditions[] = "Format LIKE :format";
-            $parameters[":format"] = "%" . trim(substr($q, 8)) . "%";
+            $statement->bindValue(":author", escape_value(substr($q, 6)));
 
             break;
 
         default:
-            $conditions[] = "Publisher LIKE :publisher";
-            $conditions[] = "Title LIKE :title";
-            $conditions[] = "Author LIKE :author";
-            $parameters[":publisher"] = "%" . $q . "%";
-            $parameters[":title"] = "%" . $q . "%";
-            $parameters[":author"] = "%" . $q . "%";
-    }
+            $statement = $db->prepare("
+                SELECT *
+                FROM BookFts
+                WHERE BookFts MATCH :q
+                ORDER BY Rank");
 
-    $conditions = join(" OR ", $conditions);
-
-    $statement = $db->prepare("
-        SELECT Date, Publisher, Title, Author, Format, Pages, Duration
-        FROM Book
-        WHERE $conditions
-        ORDER BY Id DESC");
-
-    foreach ($parameters as $key => $value) {
-        $statement->bindValue($key, $value, SQLITE3_TEXT);
+            $statement->bindValue(":q", escape_value($q));
     }
 
     return $statement->execute();
@@ -255,54 +258,62 @@ function get_books(SQLite3 $db, string $q): SQLite3Result
 
 function get_comicbooks(SQLite3 $db, string $q): SQLite3Result
 {
-    $conditions = [];
-    $parameters = [];
-
     switch (true) {
         case str_starts_with($q, "ano:") and strlen($q) > 4:
-            $conditions[] = "Date LIKE :year";
-            $parameters[":year"] = trim(substr($q, 4)) . "%";
+            $statement = $db->prepare("
+                SELECT *
+                FROM ComicBook
+                WHERE Date LIKE :year
+                ORDER BY Id DESC");
+
+            $statement->bindValue(":year", trim(substr($q, 4)) . "%");
 
             break;
 
         case str_starts_with($q, "editora:") and strlen($q) > 8:
-            $conditions[] = "Publisher LIKE :publisher";
-            $parameters[":publisher"] = "%" . trim(substr($q, 8)) . "%";
+            $statement = $db->prepare("
+                SELECT *
+                FROM ComicBookFts
+                WHERE Publisher MATCH :publisher
+                ORDER BY Rank");
+
+            $statement->bindValue(":publisher", escape_value(substr($q, 8)));
 
             break;
 
         case str_starts_with($q, "titulo:") and strlen($q) > 7:
-            $conditions[] = "Title LIKE :title";
-            $parameters[":title"] = "%" . trim(substr($q, 7)) . "%";
+            $statement = $db->prepare("
+                SELECT *
+                FROM ComicBookFts
+                WHERE Title MATCH :title
+                ORDER BY Rank");
 
-            break;
-
-        case str_starts_with($q, "formato:") and strlen($q) > 8:
-            $conditions[] = "Format LIKE :format";
-            $parameters[":format"] = "%" . trim(substr($q, 8)) . "%";
+            $statement->bindValue(":title", escape_value(substr($q, 7)));
 
             break;
 
         default:
-            $conditions[] = "Publisher LIKE :publisher";
-            $conditions[] = "Title LIKE :title";
-            $parameters[":publisher"] = "%" . $q . "%";
-            $parameters[":title"] = "%" . $q . "%";
-    }
+            $statement = $db->prepare("
+                SELECT *
+                FROM ComicBookFts
+                WHERE ComicBookFts MATCH :q
+                ORDER BY Rank");
 
-    $conditions = join(" OR ", $conditions);
-
-    $statement = $db->prepare("
-        SELECT Date, Publisher, Title, Format, Pages, Issues
-        FROM ComicBook
-        WHERE $conditions
-        ORDER BY Id DESC");
-
-    foreach ($parameters as $key => $value) {
-        $statement->bindValue($key, $value, SQLITE3_TEXT);
+            $statement->bindValue(":q", escape_value($q));
     }
 
     return $statement->execute();
+}
+
+function escape_value(string $value): string
+{
+    $arr = explode(" ", trim($value));
+
+    foreach ($arr as &$v) {
+        $v = "\"" . str_replace("\"", "\"\"", $v) . "\"";
+    }
+
+    return join(" ", $arr);
 }
 
 function generate_statistics(SQLite3Result $books, SQLite3Result $comicbooks): array
