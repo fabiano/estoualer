@@ -3228,3 +3228,12 @@ Publisher = Dragonsteel
     Pages = 0
  Duration = 12h 27m
    Rating = 3
+
+     Date = 2026-08-16
+Publisher = Morro Branco
+    Title = Contos de Terramar (Ciclo Terramar #5)
+   Author = Ursula K. Le Guin
+   Format = eBook
+    Pages = 355
+ Duration = 0m
+   Rating = 4
