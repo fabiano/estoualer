@@ -8,7 +8,7 @@
 
 ## Working on the project
 
-- Create the database: `./create-database.sh src/Bookshelf.db`
-- Start the project: `php -S 0.0.0.0:4201 -t src -c php.ini-development` or `podman compose -f compose.development.yaml up`
+- Create the database: `./create-database.sh estoualer.db`
+- Start the project: `clojure -M:start`
 - Open http://localhost:4201
 
