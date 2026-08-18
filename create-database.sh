@@ -36,7 +36,9 @@ CREATE VIRTUAL TABLE BookFts USING fts5 (
   Format,
   Pages UNINDEXED,
   Duration UNINDEXED,
-  Rating UNINDEXED
+  Rating UNINDEXED,
+  content='Book',
+  content_rowid='Id'
 );
 
 CREATE TABLE ComicBook (
@@ -56,7 +58,9 @@ CREATE VIRTUAL TABLE ComicBookFts USING fts5 (
   Title,
   Format,
   Pages UNINDEXED,
-  Issues UNINDEXED
+  Issues UNINDEXED,
+  content='ComicBook',
+  content_rowid='Id'
 );
 
 EOF
