@@ -1,6 +1,5 @@
-vim.lsp.config('intelephense', {
-  cmd = { 'npx', 'intelephense', '--stdio' },
-})
+local MiniDeps = require('mini.deps')
 
-vim.lsp.enable('intelephense')
+MiniDeps.setup()
+MiniDeps.add('Olical/conjure')
 

@@ -1,33 +1,6 @@
-# User-specific files
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-
-# Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-.nupkgs
-
-# Visual Studio
-.vs/
-
-# Rider
-.idea/
-
-# Environment variable file
-.env
-
-# Ignore generated credentials from google-github-actions/auth
-gha-creds-*.json
-
-# Database files
+.clj-kondo
+.cpcache
+.lsp
+.nrepl-port
+target
 *.db
