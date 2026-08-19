@@ -12,18 +12,18 @@
  :aliases
  {
   ;; uberjar build via tools.build (clojure -T:build uber)
-  :build {:deps {io.github.clojure/tools.build {:mvn/version "0.10.14"}}
+  :build {:deps       {io.github.clojure/tools.build {:mvn/version "0.10.14"}}
           :ns-default build}
 
   ;; run the application (clojure -M:run)
   :run {:jvm-opts  ["--enable-native-access=ALL-UNNAMED"]
-        :main-opts ["--main" "estoualer.main"]}
+        :main-opts ["--main" "estoualer.main" "4201"]}
 
   ;; run the application with hotreload enabled (clojure -M:hotreload)
   :hotreload {:extra-paths ["dev"]
               :extra-deps  {ring/ring-devel {:mvn/version "1.15.5"}}
               :jvm-opts    ["--enable-native-access=ALL-UNNAMED"]
-              :main-opts   ["--main" "hotreload"]}
+              :main-opts   ["--main" "hotreload" "4201"]}
 
   ;; start conjure repl
   :repl/conjure {:extra-deps {nrepl/nrepl {:mvn/version "1.7.0"}

@@ -8,4 +8,5 @@
   (wrap-reload #'main/app))
 
 (defn -main [& args]
-  (run-jetty app {:port 4201}))
+  (let [port (if-let [p (first args)] (Integer/parseInt p) 80)]
+    (run-jetty app {:port port})))
