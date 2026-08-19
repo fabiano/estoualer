@@ -197,4 +197,5 @@
       (wrap-not-modified)))
 
 (defn -main [& args]
-  (run-jetty app {:port 80}))
+  (let [port (if-let [p (first args)] (Integer/parseInt p) 80)]
+    (run-jetty app {:port port})))
