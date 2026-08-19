@@ -181,11 +181,17 @@
       default
       value)))
 
+(defn add-doctype [content]
+  (list (hiccup/raw "<!DOCTYPE html>") content))
+
+(defn response-body [content]
+  (str (hiccup/html {:mode :html} content)))
+
 (defn handler [{:keys [params]}]
   (-> (get-or-default params "q" "ano: 2026")
       (render-page)
-      (hiccup/html)
-      (str)
+      (add-doctype)
+      (response-body)
       (response)
       (content-type "text/html; charset=UTF-8")))
 
