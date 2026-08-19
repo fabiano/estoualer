@@ -71,10 +71,10 @@
      :placeholder "ano: 2026 ou autor: carla madeira ou titulo: a natureza da mordida"
      :aria-label "Pesquisar"}]])
 
-(defn render-book [{:keys [date title author format pages hours minutes]}]
+(defn render-book [{:keys [number date title author format pages hours minutes]}]
   [:article.book.card
    [:header
-    [:div.number {:aria-hidden "true"} "00"]
+    [:div.number {:aria-hidden "true"} (str number)]
     [:time.date {:datetime date} (format-date date)]]
    [:div
     [:h3.title title]
@@ -88,10 +88,10 @@
      [:h2 "Livros"]
      [:div.cards (map render-book books-results)]]))
 
-(defn render-comic-book [{:keys [date title publisher format pages issues]}]
+(defn render-comic-book [{:keys [number date title publisher format pages issues]}]
   [:article.comic-book.card
    [:header
-    [:div.number {:aria-hidden "true"} "00"]
+    [:div.number {:aria-hidden "true"} (str number)]
     [:time.date {:datetime date} (format-date date)]]
    [:div
     [:h3.title title]
