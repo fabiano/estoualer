@@ -1,0 +1,11 @@
+# ignore all files by default
+*
+
+# include only the files required for the build
+!src/
+!resources/
+!books.txt
+!build.clj
+!comicbooks.txt
+!create-database.sh
+!deps.edn
