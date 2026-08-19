@@ -46,13 +46,22 @@
         minutes (or (some-> minutes Integer/parseInt) 0)]
     [hours minutes]))
 
-(defn extract-duration [book]
-  (let [[hours minutes] (parse-duration (:duration book))]
-    (-> book
+(defn append-duration [row]
+  (let [[hours minutes] (parse-duration (:duration row))]
+    (-> row
         (dissoc :duration)
         (assoc :hours hours)
         (assoc :minutes minutes))))
 
+(defn append-number [row number]
+  (assoc row :number number))
+
+(defn new-book [total index row]
+  (-> row
+      (append-number (- total index))
+      (append-duration)))
+
 (defn search! [{:keys [field value]}]
-  (let [rows (db/execute! (sql-params-for field value))]
-    (map extract-duration rows)))
+  (let [rows (db/execute! (sql-params-for field value))
+        total (count rows)]
+    (into [] (map-indexed #(new-book total %1 %2)) rows)))
