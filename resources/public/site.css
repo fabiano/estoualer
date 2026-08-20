@@ -362,6 +362,10 @@ body.is-loading .progress {
   margin-bottom: 10px;
 }
 
+.history label {
+  margin-right: 5px;
+}
+
 .history select {
   background-color: var(--theme-bg-color);
   border: 1px solid var(--theme-border-color);
