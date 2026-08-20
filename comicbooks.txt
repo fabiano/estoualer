@@ -11848,3 +11848,10 @@ Publisher = Marvel
    Format = eBook
     Pages = 32
    Issues = 1
+
+     Date = 2026-08-19
+Publisher = Marvel
+    Title = Ultimate Endgame (2025-2026) #4
+   Format = eBook
+    Pages = 32
+   Issues = 1
