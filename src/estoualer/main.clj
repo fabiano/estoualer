@@ -4,7 +4,7 @@
             [estoualer.comic-books :as comic-books]
             [estoualer.search-term :as search-term]
             [clojure.string :as str]
-            [hiccup2.core :as hiccup]
+            [replicant.string :as replicant]
             [ring.adapter.jetty :refer [run-jetty]]
             [ring.util.response :refer [content-type response]]
             [ring.middleware.content-type :refer [wrap-content-type]]
@@ -169,11 +169,11 @@
       [:link {:rel "icon" :sizes "4096x4096" :href "icon-4096.png"}]
       [:link {:rel "manifest" :href "site.webmanifest"}]
       [:link {:rel "stylesheet" :href "site.css"}]]
-     [:body]
-     (render-header books-results comic-books-results)
-     [:hr.separator]
-     (render-body q books-results comic-books-results)
-     (render-footer q)]))
+     [:body
+      (render-header books-results comic-books-results)
+      [:hr.separator]
+      (render-body q books-results comic-books-results)
+      (render-footer q)]]))
 
 (defn get-or-default [map key default]
   (let [value (get map key)]
@@ -181,17 +181,11 @@
       default
       value)))
 
-(defn add-doctype [content]
-  (list (hiccup/raw "<!DOCTYPE html>") content))
-
-(defn response-body [content]
-  (str (hiccup/html {:mode :html} content)))
-
 (defn handler [{:keys [params]}]
   (-> (get-or-default params "q" "ano: 2026")
       (render-page)
-      (add-doctype)
-      (response-body)
+      (replicant/render)
+      (str "<!DOCTYPE html>")
       (response)
       (content-type "text/html; charset=UTF-8")))
 
