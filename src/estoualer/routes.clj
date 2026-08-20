@@ -142,32 +142,35 @@
   (let [term (search-term/parse q)
         books-results (books/search! term)
         comic-books-results (comic-books/search! term)]
-    [:html {:lang "pt-BR"}
-     [:head
-      [:meta {:charset "utf-8"}]
-      [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
-      [:meta {:name "description" :content "Os livros e gibis que li."}]
-      [:title "Estou a ler"]
-      [:link {:rel "shortcut icon" :href "icon.ico"}]
-      [:link {:rel "icon" :sizes "16x16" :href "icon-16.png"}]
-      [:link {:rel "icon" :sizes "20x20" :href "icon-20.png"}]
-      [:link {:rel "icon" :sizes "24x24" :href "icon-24.png"}]
-      [:link {:rel "icon" :sizes "32x32" :href "icon-32.png"}]
-      [:link {:rel "icon" :sizes "48x48" :href "icon-48.png"}]
-      [:link {:rel "icon" :sizes "64x64" :href "icon-64.png"}]
-      [:link {:rel "icon" :sizes "128x128" :href "icon-128.png"}]
-      [:link {:rel "icon" :sizes "256x256" :href "icon-256.png"}]
-      [:link {:rel "icon" :sizes "512x512" :href "icon-512.png"}]
-      [:link {:rel "icon" :sizes "1024x1024" :href "icon-1024.png"}]
-      [:link {:rel "icon" :sizes "2048x2048" :href "icon-2048.png"}]
-      [:link {:rel "icon" :sizes "4096x4096" :href "icon-4096.png"}]
-      [:link {:rel "manifest" :href "site.webmanifest"}]
-      [:link {:rel "stylesheet" :href "site.css"}]]
-     [:body
-      (render-header books-results comic-books-results)
-      [:hr.separator]
-      (render-body q books-results comic-books-results)
-      (render-footer q)]]))
+    (str
+     "<!DOCTYPE html>"
+     (replicant/render
+      [:html {:lang "pt-BR"}
+       [:head
+        [:meta {:charset "utf-8"}]
+        [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
+        [:meta {:name "description" :content "Os livros e gibis que li."}]
+        [:title "Estou a ler"]
+        [:link {:rel "shortcut icon" :href "icon.ico"}]
+        [:link {:rel "icon" :sizes "16x16" :href "icon-16.png"}]
+        [:link {:rel "icon" :sizes "20x20" :href "icon-20.png"}]
+        [:link {:rel "icon" :sizes "24x24" :href "icon-24.png"}]
+        [:link {:rel "icon" :sizes "32x32" :href "icon-32.png"}]
+        [:link {:rel "icon" :sizes "48x48" :href "icon-48.png"}]
+        [:link {:rel "icon" :sizes "64x64" :href "icon-64.png"}]
+        [:link {:rel "icon" :sizes "128x128" :href "icon-128.png"}]
+        [:link {:rel "icon" :sizes "256x256" :href "icon-256.png"}]
+        [:link {:rel "icon" :sizes "512x512" :href "icon-512.png"}]
+        [:link {:rel "icon" :sizes "1024x1024" :href "icon-1024.png"}]
+        [:link {:rel "icon" :sizes "2048x2048" :href "icon-2048.png"}]
+        [:link {:rel "icon" :sizes "4096x4096" :href "icon-4096.png"}]
+        [:link {:rel "manifest" :href "site.webmanifest"}]
+        [:link {:rel "stylesheet" :href "site.css"}]]
+       [:body
+        (render-header books-results comic-books-results)
+        [:hr.separator]
+        (render-body q books-results comic-books-results)
+        (render-footer q)]]))))
 
 (defn get-or-default [map key default]
   (let [value (get map key)]
@@ -178,8 +181,6 @@
 (defn root [{:keys [params]}]
   (-> (get-or-default params "q" "ano: 2026")
       (render-page)
-      (replicant/render)
-      (str "<!DOCTYPE html>")
       (response/response)
       (response/content-type "text/html; charset=UTF-8")))
 
