@@ -122,9 +122,8 @@
     [:nav.history {:aria-label "Histórico"}
      [:form.history-form {:method "get"}
       [:label {:for "history-year"} "o que li em"]
-      [:select {:id "history-year" :name "q" :onchange "this.form.submit()"} options]
-      [:noscript
-       [:button {:type "submit"} "ir"]]]]))
+      [:select {:id "history-year" :name "q"} options]
+      [:button {:type "submit"} "ir"]]]))
 
 (defn render-credits []
   [:p.credits "ícone por "
