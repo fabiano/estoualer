@@ -374,6 +374,12 @@ body.is-loading .progress {
   padding: 2px 4px;
 }
 
+.history button {
+  font-size: 1.6rem;
+  margin-left: 5px;
+  width: 50px;
+}
+
 /* stat lists */
 
 .stat-groups {
