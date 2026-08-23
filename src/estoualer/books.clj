@@ -53,15 +53,10 @@
         (assoc :hours hours)
         (assoc :minutes minutes))))
 
-(defn append-number [row number]
-  (assoc row :number number))
-
-(defn new-book [total index row]
+(defn new-book [row]
   (-> row
-      (append-number (- total index))
       (append-duration)))
 
 (defn search! [{:keys [field value]}]
-  (let [rows (db/execute! (sql-params-for field value))
-        total (count rows)]
-    (into [] (map-indexed #(new-book total %1 %2)) rows)))
+  (let [rows (db/execute! (sql-params-for field value))]
+    (into [] (map new-book) rows)))

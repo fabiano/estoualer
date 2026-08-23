@@ -66,39 +66,49 @@
      :placeholder "ano: 2026 ou autor: carla madeira ou titulo: a natureza da mordida"
      :aria-label "Pesquisar"}]])
 
-(defn render-book [{:keys [number date title author format pages hours minutes]}]
-  [:article.book.card
-   [:header
-    [:div.number {:aria-hidden "true"} (str number)]
-    [:time.date {:datetime date} (format-date date)]]
-   [:div
-    [:h3.title title]
-    [:p.publisher-and-format (str author " / " format)]]
-   [:footer
-    [:p.length (format-length {:pages pages :hours hours :minutes minutes})]]])
+(defn render-book [{:keys [date title author format pages hours minutes]}]
+  [:li.card
+   [:h3.sr-only title]
+   [:dl
+    [:div
+     [:dt.sr-only "Lido em"]
+     [:dd.date (format-date date)]]
+    [:div
+     [:dt.sr-only "Título"]
+     [:dd.title title]
+     [:dt.sr-only "Autor e formato"]
+     [:dd.publisher-and-format (str author " / " format)]]
+    [:div
+     [:dt.sr-only "Número de páginas ou duração"]
+     [:dd.length (format-length {:pages pages :hours hours :minutes minutes})]]]])
 
 (defn render-books [books-results]
   (when (not-empty books-results)
-    [:section.books
+    [:section
      [:h2 "Livros"]
-     [:div.cards (map render-book books-results)]]))
+     [:ul.cards (map render-book books-results)]]))
 
-(defn render-comic-book [{:keys [number date title publisher format pages issues]}]
-  [:article.comic-book.card
-   [:header
-    [:div.number {:aria-hidden "true"} (str number)]
-    [:time.date {:datetime date} (format-date date)]]
-   [:div
-    [:h3.title title]
-    [:p.publisher-and-format (str publisher " / " format)]]
-   [:footer
-    [:p.length (format-length {:pages pages :issues issues})]]])
+(defn render-comic-book [{:keys [date title publisher format pages issues]}]
+  [:li.card
+   [:h3.sr-only title]
+   [:dl
+    [:div
+     [:dt.sr-only "Lido em"]
+     [:dd.date (format-date date)]]
+    [:div
+     [:dt.sr-only "Título"]
+     [:dd.title title]
+     [:dt.sr-only "Editora e formato"]
+     [:dd.publisher-and-format (str publisher " / " format)]]
+    [:div
+     [:dt.sr-only "Número de páginas e edições"]
+     [:dd.length (format-length {:pages pages :issues issues})]]]])
 
 (defn render-comic-books [comic-books-results]
   (when (not-empty comic-books-results)
-    [:section.comic-books
+    [:section
      [:h2 "Gibis"]
-     [:div.cards (map render-comic-book comic-books-results)]]))
+     [:ul.cards (map render-comic-book comic-books-results)]]))
 
 (defn render-header [books-results comic-books-results]
   [:div.container
