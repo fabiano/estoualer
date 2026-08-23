@@ -35,26 +35,27 @@
 
 (defn render-stats [books-results comic-books-results]
   (let [results (concat books-results comic-books-results)]
-    [:div.stats
-     [:div.item.total
-      [:p.heading "Total"]
-      [:p.value (count results)]]
-     [:div.item.books
-      [:p.heading "Livros"]
-      [:p.value (count books-results)]]
-     [:div.item.comicbooks
-      [:p.heading "Gibis"]
-      [:p.value (count comic-books-results)]]
-     [:hr.separator]
-     [:div.item.paper
-      [:p.heading "Em papel"]
-      [:p.value (count (filter is-paper? results))]]
-     [:div.item.audio
-      [:p.heading "Em áudio"]
-      [:p.value (count (filter is-audio-book? results))]]
-     [:div.item.ebook
-      [:p.heading "eBook"]
-      [:p.value (count (filter is-ebook? results))]]]))
+    [:section.stats
+     [:h2.sr-only "Resumo da busca"]
+     [:dl
+      [:div
+       [:dt "Total"]
+       [:dd (count results)]]
+      [:div
+       [:dt "Livros"]
+       [:dd (count books-results)]]
+      [:div
+       [:dt "Gibis"]
+       [:dd (count comic-books-results)]]
+      [:div
+       [:dt "Em papel"]
+       [:dd (count (filter is-paper? results))]]
+      [:div
+       [:dt "Em áudio"]
+       [:dd (count (filter is-audio-book? results))]]
+      [:div
+       [:dt "eBook"]
+       [:dd (count (filter is-ebook? results))]]]]))
 
 (defn render-search [q]
   [:form {:method "get" :class "search"}

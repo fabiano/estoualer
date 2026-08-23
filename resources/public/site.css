@@ -53,6 +53,18 @@ a {
   text-decoration: none;
 }
 
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .container {
   margin: auto;
   max-width: 1440px;
@@ -124,42 +136,39 @@ body.is-loading .progress {
 /* stats */
 
 .stats {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   height: 60px;
-  justify-content: space-evenly;
-  margin-top: 20px;
-  overflow: hidden;
   width: 100%;
 }
 
-.stats .item {
+.stats h2 {
+  display: none;
+}
+
+.stats dl {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 20px 0 0 0;
+  width: 100%;
+}
+
+.stats div {
   margin: 0 10px;
   text-align: center;
 }
 
-.stats .item .heading {
+.stats dt {
   font-size: 1.2rem;
   letter-spacing: 0.1rem;
   margin: 0 0 5px 0;
   text-transform: uppercase;
 }
 
-.stats .item .value {
+.stats dd {
   font-size: 3.5rem;
   font-weight: 500;
   margin: 0;
-}
-
-.stats .separator {
-  background-color: var(--theme-border-color);
-  border: 0;
-  height: 30px;
-  margin: 0;
-  padding: 0;
-  width: 1px;
 }
 
 @media only screen and (max-width: 768px) {
