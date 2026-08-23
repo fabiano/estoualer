@@ -206,17 +206,30 @@ body.is-loading .progress {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  list-style: none;
   margin: -10px;
+  padding: 0;
 }
 
 .cards .card {
   border: 1px solid var(--theme-border-color);
   display: flex;
-  flex-direction: column;
   height: 160px;
-  justify-content: space-between;
   margin: 10px;
   padding: 10px;
+  width: 100%;
+}
+
+.cards .card dl,
+.cards .card dt,
+.cards .card dd {
+  margin: 0;
+}
+
+.cards .card dl {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-align: center;
   width: 100%;
 }
@@ -285,10 +298,6 @@ body.is-loading .progress {
   font-size: 1.2rem;
 }
 
-.cards .card p {
-  margin: 0;
-}
-
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   .cards .card {
     width: calc(50% - 42px);
@@ -302,23 +311,23 @@ body.is-loading .progress {
   }
 
   .cards .card {
-    align-items: center;
     border-left: 0;
     border-right: 0;
     border-top: 0;
     box-sizing: border-box;
-    flex-direction: row;
-    gap: 10px;
     height: auto;
     margin: 0;
-    padding: 8px 10px;
-    text-align: left;
-    width: 100%;
+    padding: 8px 0;
   }
 
-  .cards .card > header,
-  .cards .card > div,
-  .cards .card > footer {
+  .cards .card dl {
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    text-align: left;
+  }
+
+  .cards .card dl div {
     display: contents;
   }
 
@@ -327,7 +336,7 @@ body.is-loading .progress {
   }
 
   .cards .card .date {
-    flex: 0 0 75px;
+    flex: 0 0 72px;
   }
 
   .cards .card .title {
