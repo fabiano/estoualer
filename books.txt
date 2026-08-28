@@ -3237,3 +3237,13 @@ Publisher = Morro Branco
     Pages = 355
  Duration = 0m
    Rating = 4
+
+     Date = 2026-08-28
+Publisher = Morro Branco
+    Title = O outro vento (Ciclo Terramar #6)
+   Author = Ursula K. Le Guin
+   Format = eBook
+    Pages = 355
+ Duration = 0m
+   Rating = 5
+
