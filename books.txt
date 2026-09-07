@@ -3247,3 +3247,20 @@ Publisher = Morro Branco
  Duration = 0m
    Rating = 5
 
+     Date = 2026-09-01
+Publisher = Hodderscape
+    Title = To Be Taught, If Fortunate
+   Author = Becky Chambers
+   Format = eBook
+    Pages = 136
+ Duration = 0m
+   Rating = 5
+
+     Date = 2026-09-02
+Publisher = Companhia das Letras
+    Title = O peso do pássaro morto
+   Author = Aline Bei
+   Format = eBook
+    Pages = 198
+ Duration = 0m
+   Rating = 5
