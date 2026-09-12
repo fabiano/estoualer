@@ -128,7 +128,7 @@
     [:option {:value value :selected (= value selected-value)} (str year)]))
 
 (defn render-history [q]
-  (let [years (cons 1970 (range 2013 2027))
+  (let [years (reverse (cons 1970 (range 2013 2027)))
         options (map #(render-history-option % q) years)]
     [:nav.history {:aria-label "Histórico"}
      [:form.history-form {:method "get"}
