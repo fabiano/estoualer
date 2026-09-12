@@ -176,7 +176,8 @@
         [:link {:rel "icon" :sizes "2048x2048" :href "icon-2048.png"}]
         [:link {:rel "icon" :sizes "4096x4096" :href "icon-4096.png"}]
         [:link {:rel "manifest" :href "site.webmanifest"}]
-        [:link {:rel "stylesheet" :href "site.css"}]]
+        [:link {:rel "stylesheet" :href "site.css"}]
+        [:script {:src "site.js" :defer true}]]
        [:body
         (render-header books-results comic-books-results)
         [:hr.separator]
