@@ -144,9 +144,10 @@
     "Iconfinder"]])
 
 (defn render-footer [q]
-  [:footer.footer
-   (render-history q)
-   (render-credits)])
+  [:div.container
+    [:footer.footer
+      (render-history q)
+      (render-credits)]])
 
 (defn render-page [q]
   (let [term (search-term/parse q)
