@@ -105,43 +105,11 @@ a {
   margin: 0;
 }
 
-/* progress */
-
-.progress {
-  animation-direction: alternate;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-name: progress;
-  animation-timing-function: ease;
-  background-color: var(--theme-primary-color);
-  display: none;
-  height: 5px;
-  width: 0;
-}
-
-@keyframes progress {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-body.is-loading .progress {
-  display: block;
-}
-
 /* stats */
 
 .stats {
   height: 60px;
   width: 100%;
-}
-
-.stats h2 {
-  display: none;
 }
 
 .stats dl {
@@ -396,61 +364,6 @@ body.is-loading .progress {
   font-size: 1.6rem;
   margin-left: 5px;
   width: 50px;
-}
-
-/* stat lists */
-
-.stat-groups {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 30px 60px;
-  margin-bottom: 20px;
-}
-
-.stat-group {
-  flex: 1 1 300px;
-  max-width: 300px;
-  min-width: 0;
-}
-
-.stat-group h3 {
-  font-size: 1.4rem;
-  letter-spacing: 0.1rem;
-  margin: 0 0 10px 0;
-}
-
-.stat-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.stat-list li {
-  display: flex;
-  align-items: baseline;
-  font-size: 1.4rem;
-  gap: 6px;
-  padding: 4px 0;
-}
-
-.stat-list .label {
-  text-transform: uppercase;
-  word-break: break-word;
-}
-
-.stat-list .leader {
-  border-bottom: 1px dotted var(--theme-border-color);
-  flex: 1;
-  transform: translateY(-4px);
-}
-
-.stat-list .count {
-  font-weight: 500;
-}
-
-.stat-group .empty {
-  font-size: 1.4rem;
 }
 
 /* offline */
