@@ -200,9 +200,9 @@ body.is-loading .progress {
   outline: none;
 }
 
-/* cards */
+/* entries */
 
-.cards {
+.entries {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -211,7 +211,7 @@ body.is-loading .progress {
   padding: 0;
 }
 
-.cards .card {
+.entries .entry {
   border: 1px solid var(--theme-border-color);
   display: flex;
   height: 160px;
@@ -220,13 +220,13 @@ body.is-loading .progress {
   width: 100%;
 }
 
-.cards .card dl,
-.cards .card dt,
-.cards .card dd {
+.entries .entry dl,
+.entries .entry dt,
+.entries .entry dd {
   margin: 0;
 }
 
-.cards .card dl {
+.entries .entry dl {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -234,12 +234,12 @@ body.is-loading .progress {
   width: 100%;
 }
 
-.cards .card.has-ribbon {
+.entries .entry.has-ribbon {
   position: relative;
   overflow: hidden;
 }
 
-.cards .card.has-ribbon .ribbon {
+.entries .entry.has-ribbon .ribbon {
   background-color: var(--theme-ribbon-bg-color);
   color: var(--theme-ribbon-fg-color);
   display: block;
@@ -256,19 +256,19 @@ body.is-loading .progress {
   width: 100px;
 }
 
-.cards .card .ribbon {
+.entries .entry .ribbon {
   display: none;
 }
 
-.cards .card .number {
+.entries .entry .number {
   font-size: 1rem;
 }
 
-.cards .card .date {
+.entries .entry .date {
   font-size: 1.2rem;
 }
 
-.cards .card .title {
+.entries .entry .title {
   box-orient: vertical;
   -webkit-box-orient: vertical;
   display: -webkit-box;
@@ -282,7 +282,7 @@ body.is-loading .progress {
   word-break: break-word;
 }
 
-.cards .card .publisher-and-format {
+.entries .entry .publisher-and-format {
   box-orient: vertical;
   -webkit-box-orient: vertical;
   display: -webkit-box;
@@ -294,23 +294,23 @@ body.is-loading .progress {
   word-break: break-word;
 }
 
-.cards .card .length {
+.entries .entry .length {
   font-size: 1.2rem;
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  .cards .card {
+  .entries .entry {
     width: calc(50% - 42px);
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .cards {
+  .entries {
     flex-direction: column;
     margin: 0;
   }
 
-  .cards .card {
+  .entries .entry {
     border-left: 0;
     border-right: 0;
     border-top: 0;
@@ -320,50 +320,50 @@ body.is-loading .progress {
     padding: 8px 0;
   }
 
-  .cards .card dl {
+  .entries .entry dl {
     align-items: center;
     flex-direction: row;
     gap: 10px;
     text-align: left;
   }
 
-  .cards .card dl div {
+  .entries .entry dl div {
     display: contents;
   }
 
-  .cards .card .number {
+  .entries .entry .number {
     flex: 0 0 20px;
   }
 
-  .cards .card .date {
+  .entries .entry .date {
     flex: 0 0 72px;
   }
 
-  .cards .card .title {
+  .entries .entry .title {
     flex: 1;
     line-clamp: 1;
     -webkit-line-clamp: 1;
     margin: 0;
   }
 
-  .cards .card .publisher-and-format {
+  .entries .entry .publisher-and-format {
     flex: 0 0 200px;
     line-clamp: 1;
     -webkit-line-clamp: 1;
   }
 
-  .cards .card .length {
+  .entries .entry .length {
     flex: 0 0 140px;
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1080px) {
-  .cards .card .publisher-and-format {
+  .entries .entry .publisher-and-format {
     text-align: right;
   }
 
-  .cards .card .length {
+  .entries .entry .length {
     display: none;
   }
 }
