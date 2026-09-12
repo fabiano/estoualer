@@ -11855,3 +11855,17 @@ Publisher = Marvel
    Format = eBook
     Pages = 32
    Issues = 1
+
+     Date = 2026-09-11
+Publisher = Marvel
+    Title = Ultimates (2024-) #23
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-09-11
+Publisher = Marvel
+    Title = Ultimates (2024-) #24
+   Format = eBook
+    Pages = 32
+   Issues = 1
