@@ -158,7 +158,7 @@
       [:html {:lang "pt-BR"}
        [:head
         [:meta {:charset "utf-8"}]
-        [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
+        [:meta {:name "viewport" :content "width=device-width"}]
         [:meta {:name "description" :content "Os livros e gibis que li."}]
         [:title "Estou a ler"]
         [:link {:rel "shortcut icon" :href "icon.ico"}]
