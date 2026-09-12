@@ -67,7 +67,7 @@
      :aria-label "Pesquisar"}]])
 
 (defn render-book [{:keys [date title author format pages hours minutes]}]
-  [:li.card
+  [:li.entry
    [:h3.sr-only title]
    [:dl
     [:div
@@ -86,10 +86,10 @@
   (when (not-empty books-results)
     [:section
      [:h2 "Livros"]
-     [:ul.cards (map render-book books-results)]]))
+     [:ul.entries (map render-book books-results)]]))
 
 (defn render-comic-book [{:keys [date title publisher format pages issues]}]
-  [:li.card
+  [:li.entry
    [:h3.sr-only title]
    [:dl
     [:div
@@ -108,7 +108,7 @@
   (when (not-empty comic-books-results)
     [:section
      [:h2 "Gibis"]
-     [:ul.cards (map render-comic-book comic-books-results)]]))
+     [:ul.entries (map render-comic-book comic-books-results)]]))
 
 (defn render-header [books-results comic-books-results]
   [:div.container
