@@ -6,8 +6,6 @@
   --theme-primary-color: #3273dc;
   --theme-border-color: #eee;
   --theme-focus-ring-color: #ccc;
-  --theme-ribbon-bg-color: #3273dc;
-  --theme-ribbon-fg-color: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,8 +15,6 @@
     --theme-primary-color: #133771;
     --theme-border-color: #1b1b1b;
     --theme-focus-ring-color: #2e2e2e;
-    --theme-ribbon-bg-color: #2e2e2e;
-    --theme-ribbon-fg-color: #7d7d7d;
   }
 }
 
@@ -200,32 +196,6 @@ a {
   justify-content: space-between;
   text-align: center;
   width: 100%;
-}
-
-.entries .entry.has-ribbon {
-  position: relative;
-  overflow: hidden;
-}
-
-.entries .entry.has-ribbon .ribbon {
-  background-color: var(--theme-ribbon-bg-color);
-  color: var(--theme-ribbon-fg-color);
-  display: block;
-  font-size: 1.2rem;
-  height: 20px;
-  left: -10px;
-  letter-spacing: 0.1rem;
-  line-height: 20px;
-  position: absolute;
-  text-transform: uppercase;
-  top: 50px;
-  transform-origin: left;
-  transform: rotate(-45deg);
-  width: 100px;
-}
-
-.entries .entry .ribbon {
-  display: none;
 }
 
 .entries .entry .number {
