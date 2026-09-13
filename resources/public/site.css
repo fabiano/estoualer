@@ -202,6 +202,20 @@ a {
   font-size: 1.2rem;
 }
 
+.entries .entry .author {
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  font-size: 1.2rem;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  margin: 0 0 5px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  word-break: break-word;
+}
+
 .entries .entry .title {
   box-orient: vertical;
   -webkit-box-orient: vertical;
@@ -221,8 +235,8 @@ a {
   -webkit-box-orient: vertical;
   display: -webkit-box;
   font-size: 1.2rem;
-  line-clamp: 2;
-  -webkit-line-clamp: 2;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-word;
