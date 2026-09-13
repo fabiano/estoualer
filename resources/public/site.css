@@ -178,7 +178,7 @@ a {
 .entries .entry {
   border: 1px solid var(--theme-border-color);
   display: flex;
-  height: 160px;
+  height: 140px;
   margin: 10px;
   padding: 10px;
   width: 100%;
@@ -198,10 +198,6 @@ a {
   width: 100%;
 }
 
-.entries .entry .number {
-  font-size: 1rem;
-}
-
 .entries .entry .date {
   font-size: 1.2rem;
 }
@@ -211,8 +207,8 @@ a {
   -webkit-box-orient: vertical;
   display: -webkit-box;
   font-size: inherit;
-  line-clamp: 3;
-  -webkit-line-clamp: 3;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
   margin: 0 0 5px 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -236,73 +232,29 @@ a {
   font-size: 1.2rem;
 }
 
-@media only screen and (min-width: 480px) and (max-width: 767px) {
+@media only screen and (min-width: 480px) {
   .entries .entry {
     width: calc(50% - 42px);
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .entries {
-    flex-direction: column;
-    margin: 0;
-  }
-
   .entries .entry {
-    border-left: 0;
-    border-right: 0;
-    border-top: 0;
-    box-sizing: border-box;
-    height: auto;
-    margin: 0;
-    padding: 8px 0;
-  }
-
-  .entries .entry dl {
-    align-items: center;
-    flex-direction: row;
-    gap: 10px;
-    text-align: left;
-  }
-
-  .entries .entry dl div {
-    display: contents;
-  }
-
-  .entries .entry .number {
-    flex: 0 0 20px;
-  }
-
-  .entries .entry .date {
-    flex: 0 0 72px;
-  }
-
-  .entries .entry .title {
-    flex: 1;
-    line-clamp: 1;
-    -webkit-line-clamp: 1;
-    margin: 0;
-  }
-
-  .entries .entry .publisher-and-format {
-    flex: 0 0 200px;
-    line-clamp: 1;
-    -webkit-line-clamp: 1;
-  }
-
-  .entries .entry .length {
-    flex: 0 0 140px;
-    text-align: right;
+    width: calc(33.33% - 42px);
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1080px) {
-  .entries .entry .publisher-and-format {
-    text-align: right;
-  }
 
-  .entries .entry .length {
-    display: none;
+@media only screen and (min-width: 1024px) {
+  .entries .entry {
+    width: calc(25% - 42px);
+
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .entries .entry {
+    width: calc(20% - 42px);
   }
 }
 
