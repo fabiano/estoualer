@@ -4,6 +4,7 @@
             [estoualer.comic-books :as comic-books]
             [estoualer.search-term :as search-term]
             [replicant.string :as replicant]
+            [ring.util.codec :as codec]
             [ring.util.response :as response]))
 
 (defn format-date [date]
@@ -66,6 +67,9 @@
      :placeholder "ano: 2026 ou autor: carla madeira ou titulo: a natureza da mordida"
      :aria-label "Pesquisar"}]])
 
+(defn generate-query-string [field value]
+  (str "?q=" (codec/url-encode (search-term/generate field value))))
+
 (defn render-book [{:keys [date title author format pages hours minutes]}]
   [:li.entry
    [:h3.sr-only title]
@@ -77,7 +81,9 @@
      [:dt.sr-only "Título"]
      [:dd.title title]
      [:dt.sr-only "Autor e formato"]
-     [:dd.publisher-and-format (str author " / " format)]]
+     [:dd.publisher-and-format
+      [:a {:href (generate-query-string :author author)} author]
+      (str " / " format)]]
     [:div
      [:dt.sr-only "Número de páginas ou duração"]
      [:dd.length (format-length {:pages pages :hours hours :minutes minutes})]]]])
@@ -99,7 +105,9 @@
      [:dt.sr-only "Título"]
      [:dd.title title]
      [:dt.sr-only "Editora e formato"]
-     [:dd.publisher-and-format (str publisher " / " format)]]
+     [:dd.publisher-and-format
+      [:a {:href (generate-query-string :publisher publisher)} publisher]
+      (str " / " format)]]
     [:div
      [:dt.sr-only "Número de páginas e edições"]
      [:dd.length (format-length {:pages pages :issues issues})]]]])
@@ -124,7 +132,7 @@
     (render-comic-books comic-books-results)]])
 
 (defn render-history-option [year selected-value]
-  (let [value (str "ano: " year)]
+  (let [value (search-term/generate :year year)]
     [:option {:value value :selected (= value selected-value)} (str year)]))
 
 (defn render-history [q]
