@@ -70,7 +70,7 @@
 (defn generate-query-string [field value]
   (str "?q=" (codec/url-encode (search-term/generate field value))))
 
-(defn render-book [{:keys [date title author format pages hours minutes]}]
+(defn render-book [{:keys [date publisher title author format pages hours minutes]}]
   [:li.entry
    [:h3.sr-only title]
    [:dl
@@ -78,11 +78,13 @@
      [:dt.sr-only "Lido em"]
      [:dd.date (format-date date)]]
     [:div
+     [:dt.sr-only "Autor"]
+     [:dd.author [:a {:href (generate-query-string :author author)} author]]
      [:dt.sr-only "Título"]
      [:dd.title title]
-     [:dt.sr-only "Autor e formato"]
+     [:dt.sr-only "Editora e formato"]
      [:dd.publisher-and-format
-      [:a {:href (generate-query-string :author author)} author]
+      [:a {:href (generate-query-string :publisher publisher)} publisher]
       (str " / " format)]]
     [:div
      [:dt.sr-only "Número de páginas ou duração"]
