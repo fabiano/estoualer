@@ -11869,3 +11869,11 @@ Publisher = Marvel
    Format = eBook
     Pages = 32
    Issues = 1
+
+     Date = 2026-09-13
+Publisher = Marvel
+    Title = Infernal Hulk (2025-) #7
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
