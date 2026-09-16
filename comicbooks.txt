@@ -11877,3 +11877,38 @@ Publisher = Marvel
     Pages = 32
    Issues = 1
 
+     Date = 2026-09-14
+Publisher = Marvel
+    Title = Captain America (2025-) #8
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-09-15
+Publisher = Marvel
+    Title = Planet She-Hulk (2025-) #6
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-09-15
+Publisher = Marvel
+    Title = Cyclops (2026) #4
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-09-15
+Publisher = Marvel
+    Title = Cyclops (2026) #5
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-09-15
+Publisher = Marvel
+    Title = Rogue (2026) #5
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
