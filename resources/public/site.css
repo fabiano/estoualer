@@ -1,7 +1,7 @@
 /* variables */
 
 :root {
-  --theme-bg-color: #fff;
+  --theme-bg-color: #fcfcfa;
   --theme-fg-color: #383838;
   --theme-primary-color: #3273dc;
   --theme-border-color: #eee;
@@ -167,21 +167,25 @@ a {
 /* entries */
 
 .entries {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  border-left: 1px solid var(--theme-border-color);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   list-style: none;
-  margin: -10px;
+  margin: 0;
   padding: 0;
 }
 
+.entries .entry:nth-child(-n + 2) {
+  border-top: 1px solid var(--theme-border-color);
+}
+
 .entries .entry {
-  border: 1px solid var(--theme-border-color);
+  border-bottom: 1px solid var(--theme-border-color);
+  border-right: 1px solid var(--theme-border-color);
   display: flex;
-  height: 140px;
-  margin: 10px;
-  padding: 10px;
-  width: 100%;
+  height: 130px;
+  margin: 0;
+  padding: 8px;
 }
 
 .entries .entry dl,
@@ -191,29 +195,25 @@ a {
 }
 
 .entries .entry dl {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
+  align-items: start;
+  column-gap: 5px;
+  display: grid;
+  grid-template:
+    "date    date"      auto
+    ".       ."         1fr
+    "title   title"     auto
+    "author  publisher" auto
+    ".       ."         1fr
+    "footer  footer"    auto
+    / minmax(0, auto) minmax(0, 1fr);
+  justify-items: start;
+  min-width: 0;
   width: 100%;
 }
 
 .entries .entry .date {
   font-size: 1.2rem;
-}
-
-.entries .entry .author {
-  box-orient: vertical;
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
-  font-size: 1.2rem;
-  line-clamp: 1;
-  -webkit-line-clamp: 1;
-  margin: 0 0 5px 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
-  word-break: break-word;
+  grid-area: date;
 }
 
 .entries .entry .title {
@@ -221,54 +221,100 @@ a {
   -webkit-box-orient: vertical;
   display: -webkit-box;
   font-size: inherit;
+  grid-area: title;
   line-clamp: 2;
   -webkit-line-clamp: 2;
   margin: 0 0 5px 0;
+  max-width: 100%;
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-transform: uppercase;
   word-break: break-word;
 }
 
-.entries .entry .publisher-and-format {
-  box-orient: vertical;
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
+.entries .entry .author,
+.entries .entry .publisher {
   font-size: 1.2rem;
-  line-clamp: 1;
-  -webkit-line-clamp: 1;
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
-  word-break: break-word;
+  white-space: nowrap;
+}
+
+.entries .entry .author,
+.entries .entry .publisher {
+  grid-area: author;
+}
+
+.entries .entry .author ~ .publisher {
+  grid-area: publisher;
+}
+
+.entries .entry .author ~ .publisher::before {
+  content: "·";
+  content: "·" / "";
+  margin-right: 5px;
+}
+
+.entries .entry .format {
+  border: 1px solid var(--theme-border-color);
+  font-size: 1.2rem;
+  grid-area: footer;
+  justify-self: start;
+  max-width: 7rem;
+  overflow: hidden;
+  padding: 2px 4px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .entries .entry .length {
+  border: 1px solid var(--theme-bg-color);
   font-size: 1.2rem;
+  grid-area: footer;
+  justify-self: end;
+  max-width: calc(100% - 7.5rem);
+  padding: 2px 4px;
+  text-align: right;
 }
 
 @media only screen and (min-width: 480px) {
-  .entries .entry {
-    width: calc(50% - 42px);
+  .entries {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .entries .entry:nth-child(-n + 3) {
+    border-top: 1px solid var(--theme-border-color);
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .entries .entry {
-    width: calc(33.33% - 42px);
+  .entries {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .entries .entry:nth-child(-n + 4) {
+    border-top: 1px solid var(--theme-border-color);
   }
 }
 
-
 @media only screen and (min-width: 1024px) {
-  .entries .entry {
-    width: calc(25% - 42px);
+  .entries {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
 
+  .entries .entry:nth-child(-n + 5) {
+    border-top: 1px solid var(--theme-border-color);
   }
 }
 
 @media only screen and (min-width: 1440px) {
-  .entries .entry {
-    width: calc(20% - 42px);
+  .entries {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .entries .entry:nth-child(-n + 6) {
+    border-top: 1px solid var(--theme-border-color);
   }
 }
 

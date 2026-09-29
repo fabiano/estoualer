@@ -74,21 +74,18 @@
   [:li.entry
    [:h3.sr-only title]
    [:dl
-    [:div
-     [:dt.sr-only "Lido em"]
-     [:dd.date (format-date date)]]
-    [:div
-     [:dt.sr-only "Autor"]
-     [:dd.author [:a {:href (generate-query-string :author author)} author]]
-     [:dt.sr-only "Título"]
-     [:dd.title title]
-     [:dt.sr-only "Editora e formato"]
-     [:dd.publisher-and-format
-      [:a {:href (generate-query-string :publisher publisher)} publisher]
-      (str " / " format)]]
-    [:div
-     [:dt.sr-only "Número de páginas ou duração"]
-     [:dd.length (format-length {:pages pages :hours hours :minutes minutes})]]]])
+    [:dt.sr-only "Lido em"]
+    [:dd.date (format-date date)]
+    [:dt.sr-only "Título"]
+    [:dd.title title]
+    [:dt.sr-only "Autor"]
+    [:dd.author [:a {:href (generate-query-string :author author)} author]]
+    [:dt.sr-only "Editora"]
+    [:dd.publisher [:a {:href (generate-query-string :publisher publisher)} publisher]]
+    [:dt.sr-only "Formato"]
+    [:dd.format format]
+    [:dt.sr-only "Número de páginas ou duração"]
+    [:dd.length (format-length {:pages pages :hours hours :minutes minutes})]]])
 
 (defn render-books [books-results]
   (when (not-empty books-results)
@@ -100,19 +97,16 @@
   [:li.entry
    [:h3.sr-only title]
    [:dl
-    [:div
-     [:dt.sr-only "Lido em"]
-     [:dd.date (format-date date)]]
-    [:div
-     [:dt.sr-only "Título"]
-     [:dd.title title]
-     [:dt.sr-only "Editora e formato"]
-     [:dd.publisher-and-format
-      [:a {:href (generate-query-string :publisher publisher)} publisher]
-      (str " / " format)]]
-    [:div
-     [:dt.sr-only "Número de páginas e edições"]
-     [:dd.length (format-length {:pages pages :issues issues})]]]])
+    [:dt.sr-only "Lido em"]
+    [:dd.date (format-date date)]
+    [:dt.sr-only "Título"]
+    [:dd.title title]
+    [:dt.sr-only "Editora"]
+    [:dd.publisher [:a {:href (generate-query-string :publisher publisher)} publisher]]
+    [:dt.sr-only "Formato"]
+    [:dd.format format]
+    [:dt.sr-only "Número de páginas e edições"]
+    [:dd.length (format-length {:pages pages :issues issues})]]])
 
 (defn render-comic-books [comic-books-results]
   (when (not-empty comic-books-results)
