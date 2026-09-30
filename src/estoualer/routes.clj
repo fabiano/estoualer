@@ -114,16 +114,16 @@
      [:h2 "Gibis"]
      [:ul.entries (map render-comic-book comic-books-results)]]))
 
-(defn render-header [books-results comic-books-results]
+(defn render-header [q]
   [:div.container
    [:header.header
     [:h1 "Estou a ler"]
-    (render-stats books-results comic-books-results)]])
+    (render-search q)]])
 
-(defn render-body [q books-results comic-books-results]
+(defn render-body [books-results comic-books-results]
   [:div.container
    [:main.body
-    (render-search q)
+    (render-stats books-results comic-books-results)
     (render-books books-results)
     (render-comic-books comic-books-results)]])
 
@@ -186,9 +186,9 @@
         [:link {:rel "stylesheet" :href "site.css"}]
         [:script {:src "site.js" :defer true}]]
        [:body
-        (render-header books-results comic-books-results)
+        (render-header q)
         [:hr.separator]
-        (render-body q books-results comic-books-results)
+        (render-body books-results comic-books-results)
         (render-footer q)]]))))
 
 (defn get-or-default [map key default]
