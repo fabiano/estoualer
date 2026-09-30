@@ -37,16 +37,6 @@
          (remove nil?)
          (str/join " e "))))
 
-(defn is-paper? [{:keys [format]}]
-  (or (= format "Capa dura")
-      (= format "Capa comum")))
-
-(defn is-audio-book? [{:keys [format]}]
-  (= format "Audiolivro"))
-
-(defn is-ebook? [{:keys [format]}]
-  (= format "eBook"))
-
 (defn is-book? [{:keys [kind]}]
   (= kind :book))
 
@@ -57,29 +47,6 @@
   (->> (concat books-results comic-books-results)
        (sort-by (juxt :date :id) #(compare %2 %1))
        (vec)))
-
-(defn render-stats [results]
-  [:section.stats
-   [:h2.sr-only "Resumo da busca"]
-   [:dl
-    [:div
-     [:dt "Total"]
-     [:dd (count results)]]
-    [:div
-     [:dt "Livros"]
-     [:dd (count (filter is-book? results))]]
-    [:div
-     [:dt "Gibis"]
-     [:dd (count (filter is-comic-book? results))]]
-    [:div
-     [:dt "Em papel"]
-     [:dd (count (filter is-paper? results))]]
-    [:div
-     [:dt "Em áudio"]
-     [:dd (count (filter is-audio-book? results))]]
-    [:div
-     [:dt "eBook"]
-     [:dd (count (filter is-ebook? results))]]]])
 
 (defn render-search [q]
   [:form {:method "get" :class "search"}
@@ -114,7 +81,7 @@
 (defn total-minutes [results]
   (reduce + (map #(+ (* 60 (:hours % 0)) (:minutes % 0)) results)))
 
-(defn format-month-stats [results]
+(defn format-stats [results]
   (let [parts [(pluralize (count results) "leitura" "leituras")
                (pluralize (count (filter is-book? results)) "livro" "livros")
                (pluralize (count (filter is-comic-book? results)) "gibi" "gibis")
@@ -124,11 +91,17 @@
          (remove nil?)
          (str/join " · "))))
 
+(defn render-stats [results]
+  (when (not-empty results)
+    [:section.stats
+     [:h2.sr-only "Resumo das leituras"]
+     [:p.stats-summary (format-stats results)]]))
+
 (defn render-month [results]
   [:section.month
    [:header.month-header
     [:h2 (format-month (:date (first results)))]
-    [:p.month-stats (format-month-stats results)]]
+    [:p.month-stats (format-stats results)]]
    [:ul.entries (map render-entry results)]])
 
 (defn render-months [results]
@@ -207,7 +180,6 @@
         [:script {:src "site.js" :defer true}]]
        [:body
         (render-header q)
-        [:hr.separator]
         (render-body results)
         (render-footer q)]]))))
 
