@@ -4,9 +4,10 @@
   "short_name": "Estou a ler",
   "start_url": "/?source=pwa",
   "theme_color": "#383838",
-  "background_color": "#ffffff",
+  "background_color": "#fcfcfa",
   "display": "standalone",
   "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" },
     { "src": "/icon-16.png", "sizes": "16x16", "type": "image/png" },
     { "src": "/icon-20.png", "sizes": "20x20", "type": "image/png" },
     { "src": "/icon-24.png", "sizes": "24x24", "type": "image/png" },
@@ -18,6 +19,7 @@
     { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
     { "src": "/icon-1024.png", "sizes": "1024x1024", "type": "image/png" },
     { "src": "/icon-2048.png", "sizes": "2048x2048", "type": "image/png" },
-    { "src": "/icon-4096.png", "sizes": "4096x4096", "type": "image/png" }
+    { "src": "/icon-4096.png", "sizes": "4096x4096", "type": "image/png" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ]
 }

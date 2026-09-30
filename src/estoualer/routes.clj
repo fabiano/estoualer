@@ -108,10 +108,18 @@
   (when (not-empty results)
     (map render-month (partition-by year-month results))))
 
+(defn render-logo []
+  [:svg.logo {:viewBox "12 12 40 40" :aria-hidden "true" :focusable "false"}
+   [:rect {:x 12 :y 12 :width 40 :height 8}]
+   [:rect {:x 12 :y 28 :width 40 :height 8}]
+   [:rect {:x 12 :y 44 :width 24 :height 8}]])
+
 (defn render-header [q]
   [:div.container
    [:header.header
-    [:h1 "Estou a ler"]
+    [:div.brand
+     (render-logo)
+     [:h1 "Estou a ler"]]
     (render-search q)]])
 
 (defn render-body [results]
@@ -133,18 +141,10 @@
       [:select {:id "history-year" :name "q"} options]
       [:button {:type "submit"} "ir"]]]))
 
-(defn render-credits []
-  [:p.credits "ícone por "
-   [:a {:href "https://www.iconfinder.com/sudheepb"} "sudheep b"]" em "
-   [:a {:href "https://www.iconfinder.com/icons/4879874/book_education_learning_study_icon"
-        :title "Iconfinder"}
-    "Iconfinder"]])
-
 (defn render-footer [q]
   [:div.container
     [:footer.footer
-      (render-history q)
-      (render-credits)]])
+      (render-history q)]])
 
 (defn render-page [q]
   (let [term (search-term/parse q)
@@ -158,8 +158,11 @@
         [:meta {:charset "utf-8"}]
         [:meta {:name "viewport" :content "width=device-width"}]
         [:meta {:name "description" :content "Os livros e gibis que li."}]
+        [:meta {:name "theme-color" :content "#383838"}]
         [:title "Estou a ler"]
         [:link {:rel "shortcut icon" :href "icon.ico"}]
+        [:link {:rel "icon" :type "image/svg+xml" :href "icon.svg"}]
+        [:link {:rel "apple-touch-icon" :sizes "180x180" :href "apple-touch-icon.png"}]
         [:link {:rel "icon" :sizes "16x16" :href "icon-16.png"}]
         [:link {:rel "icon" :sizes "20x20" :href "icon-20.png"}]
         [:link {:rel "icon" :sizes "24x24" :href "icon-24.png"}]
