@@ -65,6 +65,20 @@ a {
   margin: 20px;
 }
 
+.brand {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.logo {
+  fill: currentColor;
+  flex: none;
+  height: 2rem;
+  width: 2rem;
+}
+
 .header h1 {
   font-size: 2.4rem;
   font-weight: 400;
@@ -72,7 +86,6 @@ a {
   margin: 0;
   text-transform: lowercase;
   white-space: nowrap;
-  word-spacing: -0.25em;
 }
 
 .body {

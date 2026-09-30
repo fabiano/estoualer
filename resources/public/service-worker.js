@@ -1,4 +1,4 @@
-const cacheName = 'v1';
+const cacheName = 'v2';
 
 self.addEventListener('install', event => {
   const response = caches
@@ -19,10 +19,21 @@ self.addEventListener('install', event => {
       '/icon-1024.png',
       '/icon-2048.png',
       '/icon-4096.png',
-      '/icon.icns',
+      '/icon-maskable-512.png',
+      '/apple-touch-icon.png',
       '/icon.ico',
       '/icon.svg',
     ]));
+
+  event.waitUntil(response);
+});
+
+self.addEventListener('activate', event => {
+  const response = caches
+    .keys()
+    .then(keys => Promise.all(keys
+      .filter(key => key !== cacheName)
+      .map(key => caches.delete(key))));
 
   event.waitUntil(response);
 });
