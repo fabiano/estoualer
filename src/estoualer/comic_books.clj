@@ -5,25 +5,25 @@
   "SELECT *
    FROM ComicBook
    WHERE Date LIKE ?
-   ORDER BY Id DESC")
+   ORDER BY Date DESC, Id DESC")
 
 (def by-publisher
   "SELECT *
    FROM ComicBookFts
    WHERE Publisher MATCH ?
-   ORDER BY Rank")
+   ORDER BY Date DESC, Id DESC")
 
 (def by-title
   "SELECT *
    FROM ComicBookFts
    WHERE Title MATCH ?
-   ORDER BY Rank")
+   ORDER BY Date DESC, Id DESC")
 
 (def by-everything
   "SELECT *
    FROM ComicBookFts
    WHERE ComicBookFts MATCH ?
-   ORDER BY Rank")
+   ORDER BY Date DESC, Id DESC")
 
 (defn sql-params-for [field value]
   (case field
@@ -32,6 +32,10 @@
     :title     [by-title      (db/quote-fts-terms value)]
                [by-everything (db/quote-fts-terms value)]))
 
+(defn new-comic-book [row]
+  (-> row
+      (assoc :kind :comic-book)))
+
 (defn search! [{:keys [field value]}]
   (let [rows (db/execute! (sql-params-for field value))]
-    (into [] rows)))
+    (into [] (map new-comic-book) rows)))

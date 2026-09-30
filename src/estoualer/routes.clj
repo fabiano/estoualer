@@ -10,12 +10,25 @@
 (defn format-date [date]
   (str/join "-" (reverse (str/split date #"-"))))
 
-(defn pluralize [n singular plural]
-  (when (pos? n)
-    (str n " " (if (= n 1) singular plural))))
+(def month-names
+  ["Janeiro" "Fevereiro" "Março" "Abril" "Maio" "Junho"
+   "Julho" "Agosto" "Setembro" "Outubro" "Novembro" "Dezembro"])
 
-(defn format-length [{:keys [pages issues hours minutes]
-                      :or {pages 0 issues 0 hours 0 minutes 0}}]
+(defn format-month [date]
+  (let [[year month] (str/split date #"-")]
+    (str (nth month-names (dec (Integer/parseInt month))) " " year)))
+
+(defn year-month [{:keys [date]}]
+  (subs date 0 7))
+
+(defn format-number [n]
+  (str/replace (str n) #"(?<=\d)(?=(\d{3})+$)" "."))
+
+(defn pluralize [n singular plural]
+  (when (and (some? n) (pos? n))
+    (str (format-number n) " " (if (= n 1) singular plural))))
+
+(defn format-length [{:keys [pages issues hours minutes]}]
   (let [parts [(pluralize pages "página" "páginas")
                (pluralize issues "edição" "edições")
                (pluralize hours "hora" "horas")
@@ -34,29 +47,39 @@
 (defn is-ebook? [{:keys [format]}]
   (= format "eBook"))
 
-(defn render-stats [books-results comic-books-results]
-  (let [results (concat books-results comic-books-results)]
-    [:section.stats
-     [:h2.sr-only "Resumo da busca"]
-     [:dl
-      [:div
-       [:dt "Total"]
-       [:dd (count results)]]
-      [:div
-       [:dt "Livros"]
-       [:dd (count books-results)]]
-      [:div
-       [:dt "Gibis"]
-       [:dd (count comic-books-results)]]
-      [:div
-       [:dt "Em papel"]
-       [:dd (count (filter is-paper? results))]]
-      [:div
-       [:dt "Em áudio"]
-       [:dd (count (filter is-audio-book? results))]]
-      [:div
-       [:dt "eBook"]
-       [:dd (count (filter is-ebook? results))]]]]))
+(defn is-book? [{:keys [kind]}]
+  (= kind :book))
+
+(defn is-comic-book? [{:keys [kind]}]
+  (= kind :comic-book))
+
+(defn merge-results [books-results comic-books-results]
+  (->> (concat books-results comic-books-results)
+       (sort-by (juxt :date :id) #(compare %2 %1))
+       (vec)))
+
+(defn render-stats [results]
+  [:section.stats
+   [:h2.sr-only "Resumo da busca"]
+   [:dl
+    [:div
+     [:dt "Total"]
+     [:dd (count results)]]
+    [:div
+     [:dt "Livros"]
+     [:dd (count (filter is-book? results))]]
+    [:div
+     [:dt "Gibis"]
+     [:dd (count (filter is-comic-book? results))]]
+    [:div
+     [:dt "Em papel"]
+     [:dd (count (filter is-paper? results))]]
+    [:div
+     [:dt "Em áudio"]
+     [:dd (count (filter is-audio-book? results))]]
+    [:div
+     [:dt "eBook"]
+     [:dd (count (filter is-ebook? results))]]]])
 
 (defn render-search [q]
   [:form {:method "get" :class "search"}
@@ -70,7 +93,7 @@
 (defn generate-query-string [field value]
   (str "?q=" (codec/url-encode (search-term/generate field value))))
 
-(defn render-book [{:keys [date publisher title author format pages hours minutes]}]
+(defn render-entry [{:keys [date publisher title author format pages issues hours minutes]}]
   [:li.entry
    [:h3.sr-only title]
    [:dl
@@ -78,41 +101,39 @@
     [:dd.date (format-date date)]
     [:dt.sr-only "Título"]
     [:dd.title title]
-    [:dt.sr-only "Autor"]
-    [:dd.author [:a {:href (generate-query-string :author author)} author]]
+    (when author
+      (list [:dt.sr-only "Autor"]
+            [:dd.author [:a {:href (generate-query-string :author author)} author]]))
     [:dt.sr-only "Editora"]
     [:dd.publisher [:a {:href (generate-query-string :publisher publisher)} publisher]]
     [:dt.sr-only "Formato"]
     [:dd.format format]
-    [:dt.sr-only "Número de páginas ou duração"]
-    [:dd.length (format-length {:pages pages :hours hours :minutes minutes})]]])
+    [:dt.sr-only "Número de páginas, edições ou duração"]
+    [:dd.length (format-length {:pages pages :issues issues :hours hours :minutes minutes})]]])
 
-(defn render-books [books-results]
-  (when (not-empty books-results)
-    [:section
-     [:h2 "Livros"]
-     [:ul.entries (map render-book books-results)]]))
+(defn total-minutes [results]
+  (reduce + (map #(+ (* 60 (:hours % 0)) (:minutes % 0)) results)))
 
-(defn render-comic-book [{:keys [date title publisher format pages issues]}]
-  [:li.entry
-   [:h3.sr-only title]
-   [:dl
-    [:dt.sr-only "Lido em"]
-    [:dd.date (format-date date)]
-    [:dt.sr-only "Título"]
-    [:dd.title title]
-    [:dt.sr-only "Editora"]
-    [:dd.publisher [:a {:href (generate-query-string :publisher publisher)} publisher]]
-    [:dt.sr-only "Formato"]
-    [:dd.format format]
-    [:dt.sr-only "Número de páginas e edições"]
-    [:dd.length (format-length {:pages pages :issues issues})]]])
+(defn format-month-stats [results]
+  (let [parts [(pluralize (count results) "leitura" "leituras")
+               (pluralize (count (filter is-book? results)) "livro" "livros")
+               (pluralize (count (filter is-comic-book? results)) "gibi" "gibis")
+               (pluralize (reduce + (map #(:pages % 0) results)) "página" "páginas")
+               (pluralize (quot (total-minutes results) 60) "hora" "horas")]]
+    (->> parts
+         (remove nil?)
+         (str/join " · "))))
 
-(defn render-comic-books [comic-books-results]
-  (when (not-empty comic-books-results)
-    [:section
-     [:h2 "Gibis"]
-     [:ul.entries (map render-comic-book comic-books-results)]]))
+(defn render-month [results]
+  [:section.month
+   [:header.month-header
+    [:h2 (format-month (:date (first results)))]
+    [:p.month-stats (format-month-stats results)]]
+   [:ul.entries (map render-entry results)]])
+
+(defn render-months [results]
+  (when (not-empty results)
+    (map render-month (partition-by year-month results))))
 
 (defn render-header [q]
   [:div.container
@@ -120,12 +141,11 @@
     [:h1 "Estou a ler"]
     (render-search q)]])
 
-(defn render-body [books-results comic-books-results]
+(defn render-body [results]
   [:div.container
    [:main.body
-    (render-stats books-results comic-books-results)
-    (render-books books-results)
-    (render-comic-books comic-books-results)]])
+    (render-stats results)
+    (render-months results)]])
 
 (defn render-history-option [year selected-value]
   (let [value (search-term/generate :year year)]
@@ -155,8 +175,8 @@
 
 (defn render-page [q]
   (let [term (search-term/parse q)
-        books-results (books/search! term)
-        comic-books-results (comic-books/search! term)]
+        results (merge-results (books/search! term)
+                               (comic-books/search! term))]
     (str
      "<!DOCTYPE html>"
      (replicant/render
@@ -188,7 +208,7 @@
        [:body
         (render-header q)
         [:hr.separator]
-        (render-body books-results comic-books-results)
+        (render-body results)
         (render-footer q)]]))))
 
 (defn get-or-default [map key default]
