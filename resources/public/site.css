@@ -109,6 +109,7 @@ a {
 
 .stats {
   height: 60px;
+  margin-bottom: 20px;
   width: 100%;
 }
 
@@ -171,6 +172,37 @@ a {
 .search input:focus {
   border: 1px solid var(--theme-focus-ring-color);
   outline: none;
+}
+
+/* months */
+
+.month + .month {
+  margin-top: 30px;
+}
+
+.month-header {
+  align-items: baseline;
+  border-bottom: 1px solid var(--theme-border-color);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px 20px;
+  justify-content: space-between;
+  margin: 0 0 15px 0;
+  padding: 0 0 10px 0;
+}
+
+.month-header h2 {
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.month-stats {
+  font-size: 1.2rem;
+  margin: 0;
+  text-align: right;
 }
 
 /* entries */

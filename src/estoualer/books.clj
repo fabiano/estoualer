@@ -5,31 +5,31 @@
   "SELECT *
    FROM Book
    WHERE Date LIKE ?
-   ORDER BY Id DESC")
+   ORDER BY Date DESC, Id DESC")
 
 (def by-publisher
   "SELECT *
    FROM BookFts
    WHERE Publisher MATCH ?
-   ORDER BY Rank")
+   ORDER BY Date DESC, Id DESC")
 
 (def by-author
   "SELECT *
    FROM BookFts
    WHERE Author MATCH ?
-   ORDER BY Rank")
+   ORDER BY Date DESC, Id DESC")
 
 (def by-title
   "SELECT *
    FROM BookFts
    WHERE Title MATCH ?
-   ORDER BY Rank")
+   ORDER BY Date DESC, Id DESC")
 
 (def by-everything
   "SELECT *
    FROM BookFts
    WHERE BookFts MATCH ?
-   ORDER BY Rank")
+   ORDER BY Date DESC, Id DESC")
 
 (defn sql-params-for [field value]
   (case field
@@ -55,7 +55,8 @@
 
 (defn new-book [row]
   (-> row
-      (append-duration)))
+      (append-duration)
+      (assoc :kind :book)))
 
 (defn search! [{:keys [field value]}]
   (let [rows (db/execute! (sql-params-for field value))]
