@@ -176,9 +176,7 @@
         [:link {:rel "icon" :sizes "2048x2048" :href "icon-2048.png"}]
         [:link {:rel "icon" :sizes "4096x4096" :href "icon-4096.png"}]
         [:link {:rel "manifest" :href "site.webmanifest"}]
-        [:link {:rel "preconnect" :href "https://fonts.googleapis.com" }]
-        [:link {:rel "preconnect" :href "https://fonts.gstatic.com" :crossorigin true}]
-        [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap"}]
+        [:link {:rel "preload" :as "font" :type "font/woff2" :href "newsreader.woff2" :crossorigin true}]
         [:link {:rel "stylesheet" :href "site.css"}]
         [:script {:src "site.js" :defer true}]]
        [:body
