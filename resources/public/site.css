@@ -1,3 +1,13 @@
+/* fonts */
+
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url(newsreader.woff2) format("woff2");
+}
+
 /* variables */
 
 :root {
