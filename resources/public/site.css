@@ -317,7 +317,7 @@ a {
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1200px) {
   .entries {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
