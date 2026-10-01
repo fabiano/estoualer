@@ -159,13 +159,11 @@ a {
 }
 
 .month-header {
-  align-items: baseline;
+  align-items: start;
   border-bottom: 1px solid var(--theme-border-color);
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 5px 20px;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 5px;
   margin: 0 0 15px 0;
   padding: 0 0 10px 0;
 }
@@ -180,7 +178,20 @@ a {
 .month-stats {
   font-size: 0.875em;
   margin: 0;
-  text-align: right;
+}
+
+@media only screen and (min-width: 768px) {
+  .month-header {
+    align-items: baseline;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px 20px;
+    justify-content: space-between;
+  }
+
+  .month-stats {
+    text-align: right;
+  }
 }
 
 /* entries */
