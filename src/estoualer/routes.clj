@@ -5,18 +5,30 @@
             [estoualer.search-term :as search-term]
             [replicant.string :as replicant]
             [ring.util.codec :as codec]
-            [ring.util.response :as response]))
+            [ring.util.response :as response])
+  (:import [java.time LocalDate]))
 
-(defn format-date [date]
-  (str/join "-" (reverse (str/split date #"-"))))
+(defn undated? [date]
+  (str/starts-with? date "1970-"))
+
+(def weekday-names
+  ["seg" "ter" "qua" "qui" "sex" "sáb" "dom"])
+
+(defn format-day [date]
+  (let [local-date (LocalDate/parse date)]
+    (str (nth weekday-names (dec (.getValue (.getDayOfWeek local-date))))
+         ", "
+         (.getDayOfMonth local-date))))
 
 (def month-names
   ["Janeiro" "Fevereiro" "Março" "Abril" "Maio" "Junho"
    "Julho" "Agosto" "Setembro" "Outubro" "Novembro" "Dezembro"])
 
 (defn format-month [date]
-  (let [[year month] (str/split date #"-")]
-    (str (nth month-names (dec (Integer/parseInt month))) " " year)))
+  (if (undated? date)
+    "Sem data"
+    (let [[year month] (str/split date #"-")]
+      (str (nth month-names (dec (Integer/parseInt month))) " " year))))
 
 (defn year-month [{:keys [date]}]
   (subs date 0 7))
@@ -65,8 +77,9 @@
   [:li.entry
    [:h3.sr-only title]
    [:dl
-    [:dt.sr-only "Lido em"]
-    [:dd.date (format-date date)]
+    (when-not (undated? date)
+      (list [:dt.sr-only "Lido em"]
+            [:dd.date [:time {:datetime date} (format-day date)]]))
     [:dt.sr-only "Título"]
     [:dd.title title]
     (when author
@@ -131,7 +144,8 @@
 
 (defn render-history-option [year selected-value]
   (let [value (search-term/generate :year year)]
-    [:option {:value value :selected (= value selected-value)} (str year)]))
+    [:option {:value value :selected (= value selected-value)}
+     (if (= year 1970) "Sem data" (str year))]))
 
 (defn render-history [q]
   (let [years (reverse (cons 1970 (range 2013 2027)))
