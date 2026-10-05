@@ -70,7 +70,7 @@ a {
 
 .container {
   margin: auto;
-  max-width: 1440px;
+  max-width: 2560px;
 }
 
 .header {
@@ -197,24 +197,18 @@ a {
 /* entries */
 
 .entries {
-  border-left: 1px solid var(--theme-border-color);
   display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 13em), 1fr));
   list-style: none;
   margin: 0;
-  padding: 0;
-}
-
-.entries .entry:nth-child(-n + 1) {
-  border-top: 1px solid var(--theme-border-color);
+  padding: 1px 0 0 1px;
 }
 
 .entries .entry {
-  border-bottom: 1px solid var(--theme-border-color);
-  border-right: 1px solid var(--theme-border-color);
+  border: 1px solid var(--theme-border-color);
   display: flex;
   height: 8.125em;
-  margin: 0;
+  margin: -1px 0 0 -1px;
   padding: 8px;
 }
 
@@ -306,56 +300,6 @@ a {
   max-width: calc(100% - 6.25em);
   padding: 2px 4px;
   text-align: right;
-}
-
-@media only screen and (min-width: 480px) {
-  .entries {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .entries .entry:nth-child(-n + 2) {
-    border-top: 1px solid var(--theme-border-color);
-  }
-}
-
-@media only screen and (min-width: 640px) {
-  .entries {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .entries .entry:nth-child(-n + 3) {
-    border-top: 1px solid var(--theme-border-color);
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .entries {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .entries .entry:nth-child(-n + 4) {
-    border-top: 1px solid var(--theme-border-color);
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .entries {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-
-  .entries .entry:nth-child(-n + 5) {
-    border-top: 1px solid var(--theme-border-color);
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .entries {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-  }
-
-  .entries .entry:nth-child(-n + 6) {
-    border-top: 1px solid var(--theme-border-color);
-  }
 }
 
 /* history */
