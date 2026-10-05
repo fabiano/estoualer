@@ -30,7 +30,8 @@
 
 (defn format-length [{:keys [pages issues hours minutes]}]
   (let [parts [(pluralize pages "página" "páginas")
-               (pluralize issues "edição" "edições")
+               (when (and (some? issues) (> issues 1))
+                 (pluralize issues "edição" "edições"))
                (pluralize hours "hora" "horas")
                (pluralize minutes "minuto" "minutos")]]
     (->> parts
