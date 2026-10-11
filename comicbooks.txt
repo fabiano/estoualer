@@ -11926,3 +11926,10 @@ Publisher = Marvel
     Pages = 32
    Issues = 1
 
+     Date = 2026-10-11
+Publisher = Devir
+    Title = Frieren - Volume 1
+   Format = Capa comum
+    Pages = 192
+   Issues = 1
+
