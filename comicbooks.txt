@@ -11933,3 +11933,10 @@ Publisher = Devir
     Pages = 192
    Issues = 1
 
+     Date = 2026-10-14
+Publisher = Image
+    Title = Crave
+   Format = eBook
+    Pages = 176
+   Issues = 6
+
