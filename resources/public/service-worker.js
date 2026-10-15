@@ -1,4 +1,4 @@
-const cacheName = 'v3';
+const cacheName = 'v4';
 
 self.addEventListener('install', event => {
   const response = caches
@@ -6,7 +6,7 @@ self.addEventListener('install', event => {
     .then(cache => cache.addAll([
       '/',
       '/site.css',
-      '/newsreader.woff2',
+      '/crimson-pro.woff2',
       '/site.js',
       '/icon-16.png',
       '/icon-20.png',
