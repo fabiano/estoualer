@@ -191,7 +191,7 @@
         [:link {:rel "icon" :sizes "2048x2048" :href "icon-2048.png"}]
         [:link {:rel "icon" :sizes "4096x4096" :href "icon-4096.png"}]
         [:link {:rel "manifest" :href "site.webmanifest"}]
-        [:link {:rel "preload" :as "font" :type "font/woff2" :href "newsreader.woff2" :crossorigin true}]
+        [:link {:rel "preload" :as "font" :type "font/woff2" :href "crimson-pro.woff2" :crossorigin true}]
         [:link {:rel "stylesheet" :href "site.css"}]
         [:script {:src "site.js" :defer true}]]
        [:body

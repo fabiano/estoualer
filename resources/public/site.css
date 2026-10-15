@@ -1,11 +1,11 @@
 /* fonts */
 
 @font-face {
-  font-family: "Newsreader";
+  font-family: "Crimson Pro";
   font-style: normal;
-  font-weight: 200 800;
+  font-weight: 200 900;
   font-display: swap;
-  src: url(newsreader.woff2) format("woff2");
+  src: url(crimson-pro.woff2) format("woff2");
 }
 
 /* variables */
@@ -41,13 +41,13 @@ html {
 body {
   background-color: var(--theme-bg-color);
   color: var(--theme-fg-color);
-  font-family: "Newsreader", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.25rem;
+  font-family: "Crimson Pro", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
 }
 
 @media only screen and (min-width: 768px) {
   body {
-    font-size: 1.125rem;
+    font-size: 1.375rem;
   }
 }
 
