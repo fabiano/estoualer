@@ -11940,3 +11940,107 @@ Publisher = Image
     Pages = 176
    Issues = 6
 
+     Date = 2026-10-16
+Publisher = Marvel
+    Title = G.O.D.S. (2023-2024) #1
+   Format = eBook
+    Pages = 64
+   Issues = 1
+
+     Date = 2026-10-16
+Publisher = Marvel
+    Title = G.O.D.S. (2023-2024) #2
+   Format = eBook
+    Pages = 30
+   Issues = 1
+
+     Date = 2026-10-16
+Publisher = Marvel
+    Title = G.O.D.S. (2023-2024) #3
+   Format = eBook
+    Pages = 27
+   Issues = 1
+
+     Date = 2026-10-16
+Publisher = Marvel
+    Title = G.O.D.S. (2023-2024) #4
+   Format = eBook
+    Pages = 27
+   Issues = 1
+
+     Date = 2026-10-16
+Publisher = Marvel
+    Title = G.O.D.S. (2023-2024) #5
+   Format = eBook
+    Pages = 30
+   Issues = 1
+
+     Date = 2026-10-16
+Publisher = Marvel
+    Title = G.O.D.S. (2023-2024) #6
+   Format = eBook
+    Pages = 28
+   Issues = 1
+
+     Date = 2026-10-16
+Publisher = Marvel
+    Title = G.O.D.S. (2023-2024) #7
+   Format = eBook
+    Pages = 31
+   Issues = 1
+
+     Date = 2026-10-16
+Publisher = Marvel
+    Title = G.O.D.S. (2023-2024) #8
+   Format = eBook
+    Pages = 34
+   Issues = 1
+
+     Date = 2026-10-17
+Publisher = Marvel
+    Title = Imperial #1
+   Format = eBook
+    Pages = 56
+   Issues = 1
+
+     Date = 2026-10-17
+Publisher = Marvel
+    Title = Imperial #2
+   Format = eBook
+    Pages = 40
+   Issues = 1
+
+     Date = 2026-10-17
+Publisher = Marvel
+    Title = Imperial #3
+   Format = eBook
+    Pages = 40
+   Issues = 1
+
+     Date = 2026-10-17
+Publisher = Marvel
+    Title = Imperial #4
+   Format = eBook
+    Pages = 56
+   Issues = 1
+
+     Date = 2026-10-17
+Publisher = Marvel
+    Title = Captain America (2025-) #9
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-10-17
+Publisher = Marvel
+    Title = Captain America (2025-) #10
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-10-17
+Publisher = Marvel
+    Title = Moon Knight: Fist of Khonshu #0
+   Format = eBook
+    Pages = 32
+   Issues = 1
