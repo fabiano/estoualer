@@ -12044,3 +12044,52 @@ Publisher = Marvel
    Format = eBook
     Pages = 32
    Issues = 1
+
+     Date = 2026-10-20
+Publisher = Marvel
+    Title = Infernal Hulk (2025-) #9
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-10-20
+Publisher = Marvel
+    Title = Astonishing X-Men (2004-2013) #13
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-10-20
+Publisher = Marvel
+    Title = Astonishing X-Men (2004-2013) #14
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-10-20
+Publisher = Marvel
+    Title = Astonishing X-Men (2004-2013) #15
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-10-20
+Publisher = Marvel
+    Title = Astonishing X-Men (2004-2013) #16
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-10-20
+Publisher = Marvel
+    Title = Astonishing X-Men (2004-2013) #17
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-10-20
+Publisher = Marvel
+    Title = Astonishing X-Men (2004-2013) #18
+   Format = eBook
+    Pages = 32
+   Issues = 1
