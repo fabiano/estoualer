@@ -12093,3 +12093,66 @@ Publisher = Marvel
    Format = eBook
     Pages = 32
    Issues = 1
+
+     Date = 2026-10-20
+Publisher = Marvel
+    Title = Astonishing X-Men (2004-2013) #19
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-10-20
+Publisher = Marvel
+    Title = Astonishing X-Men (2004-2013) #20
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-10-20
+Publisher = Marvel
+    Title = Astonishing X-Men (2004-2013) #21
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-10-20
+Publisher = Marvel
+    Title = Astonishing X-Men (2004-2013) #22
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-10-20
+Publisher = Marvel
+    Title = Astonishing X-Men (2004-2013) #23
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-10-20
+Publisher = Marvel
+    Title = Astonishing X-Men (2004-2013) #24
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-10-20
+Publisher = Marvel
+    Title = Giant-Size Astonishing X-Men (2008) #1
+   Format = eBook
+    Pages = 64
+   Issues = 1
+
+     Date = 2026-10-21
+Publisher = Marvel
+    Title = Fantastic Four (2022-) #21
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-10-21
+Publisher = Marvel
+    Title = Fantastic Four (2022-) #22
+   Format = eBook
+    Pages = 32
+   Issues = 1
