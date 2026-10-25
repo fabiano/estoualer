@@ -305,6 +305,7 @@ a {
   font-family: inherit;
   font-size: 1em;
   padding: 2px 4px;
+  text-align: center;
 }
 
 .history button {
