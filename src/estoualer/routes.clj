@@ -122,18 +122,10 @@
   (when (not-empty results)
     (map render-month (partition-by year-month results))))
 
-(defn render-logo []
-  [:svg.logo {:viewBox "12 12 40 40" :aria-hidden "true" :focusable "false"}
-   [:rect {:x 12 :y 12 :width 40 :height 8}]
-   [:rect {:x 12 :y 28 :width 40 :height 8}]
-   [:rect {:x 12 :y 44 :width 24 :height 8}]])
-
 (defn render-header [q]
   [:div.container
    [:header.header
-    [:div.brand
-     (render-logo)
-     [:h1 "Estou a ler"]]
+    [:h1 "Estou a ler"]
     (render-search q)]])
 
 (defn render-body [results]
