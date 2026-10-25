@@ -12156,3 +12156,17 @@ Publisher = Marvel
    Format = eBook
     Pages = 32
    Issues = 1
+
+     Date = 2026-10-25
+Publisher = Marvel
+    Title = Avengers: Armageddon (2026) #1
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-10-25
+Publisher = Marvel
+    Title = Avengers: Armageddon (2026) #2
+   Format = eBook
+    Pages = 32
+   Issues = 1
