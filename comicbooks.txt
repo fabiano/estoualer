@@ -12170,3 +12170,10 @@ Publisher = Marvel
    Format = eBook
     Pages = 32
    Issues = 1
+
+     Date = 2026-10-29
+Publisher = Image
+    Title = Radiant Black Vol. 1
+   Format = eBook
+    Pages = 184
+   Issues = 6
