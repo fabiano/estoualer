@@ -311,29 +311,25 @@ function generate_statistics(array $entries): string
     }
 
     $arr = array(
-        pluralize($books + $comicbooks, "leitura", "leituras"),
-        pluralize($books, "livro", "livros"),
-        pluralize($comicbooks, "gibi", "gibis"),
-        pluralize($pages, "página", "páginas"),
-        pluralize(floor($hours), "hora", "horas"),
+        format_count("%s leitura", "%s leituras", $books + $comicbooks),
+        format_count("%s livro", "%s livros", $books),
+        format_count("%s gibi", "%s gibis", $comicbooks),
+        format_count("%s página", "%s páginas", $pages),
+        format_count("%s hora", "%s horas", floor($hours)),
     );
 
-    return join(" · ", array_filter($arr, fn($value) => $value != ""));
+    return implode(" · ", array_filter($arr));
 }
 
-function pluralize(int $n, string $singular, string $plural): string
+function format_count(string $singular, string $plural, int $count): string
 {
+    $formatted = number_format($count, decimal_separator: ",", thousands_separator: '.');
+
     return match (true) {
-        $n == 1 => $n . " " . $singular,
-        $n > 1  => format_number($n) . " " . $plural,
-
-        default => "",
+        $count < 1  => "",
+        $count == 1 => sprintf($singular, $formatted),
+        $count > 1  => sprintf($plural, $formatted),
     };
-}
-
-function format_number(int $n): string
-{
-    return number_format($n, decimal_separator: ",", thousands_separator: '.');
 }
 
 function format_date(array $entry): string
@@ -352,13 +348,13 @@ function format_length(array $entry): string
     $minutes = $entry["minutes"];
 
     $arr = array(
-        pluralize($pages, "página", "páginas"),
-        pluralize($issues, "edição", "edições"),
-        pluralize($hours, "hora", "horas"),
-        pluralize($minutes, "minuto", "minutos"),
+        format_count("%s página", "%s páginas", $pages),
+        format_count("%s edição", "%s edições", $issues > 1 ? $issues : 0),
+        format_count("%s hora", "%s horas", $hours),
+        format_count("%s minuto", "%s minutos", $minutes),
     );
 
-    return join(" e ", array_filter($arr, fn($value) => $value != ""));
+    return implode(" e ", array_filter($arr));
 }
 
 function escape_value(string $value): string
@@ -369,7 +365,7 @@ function escape_value(string $value): string
         $v = "\"" . str_replace("\"", "\"\"", $v) . "\"";
     }
 
-    return join(" ", $arr);
+    return implode(" ", $arr);
 }
 
 ?>
