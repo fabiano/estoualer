@@ -12177,3 +12177,10 @@ Publisher = Image
    Format = eBook
     Pages = 184
    Issues = 6
+
+     Date = 2026-10-30
+Publisher = Image
+    Title = Radiant Black Vol. 2
+   Format = eBook
+    Pages = 169
+   Issues = 6
