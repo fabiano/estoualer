@@ -85,7 +85,7 @@ $entries_by_month = group_entries_by_month($entries);
                                         <dt>Lido em</dt>
                                         <dd class="date">
                                             <time datetime="<?php echo $e['date']->format("Y-m-d") ?>">
-                                                <?php echo format_date($e) ?>
+                                                <?php echo format_entry_date($e) ?>
                                             </time>
                                         </dd>
                                         <dt>Título</dt>
@@ -99,7 +99,7 @@ $entries_by_month = group_entries_by_month($entries);
                                         <dt>Formato</dt>
                                         <dd class="format"><?php echo $e["format"] ?></dd>
                                         <dt>Número de páginas, edições ou duração</dt>
-                                        <dd class="length"><?php echo format_length($e) ?></dd>
+                                        <dd class="length"><?php echo format_entry_length($e) ?></dd>
                                     </dl>
                                 </li>
                             <?php } ?>
@@ -331,7 +331,7 @@ function format_count(string $singular, string $plural, int $count): string
     };
 }
 
-function format_date(array $e): string
+function format_entry_date(array $e): string
 {
     $weekday = $e["date"]->format("N");
     $day = $e["date"]->format("d");
@@ -339,7 +339,7 @@ function format_date(array $e): string
     return WEEKDAYS[$weekday] . ", " . $day;
 }
 
-function format_length(array $e): string
+function format_entry_length(array $e): string
 {
     $arr = array(
         format_count("%s página", "%s páginas", $e["pages"]),
