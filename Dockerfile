@@ -1,7 +1,7 @@
 FROM alpine:latest AS build
 WORKDIR /app
 
-# install sqlite
+# install dependencies
 RUN apk update \
  && apk add sqlite
 
@@ -14,12 +14,6 @@ RUN ./create-database.sh estoualer.db
 
 FROM php:8.5.12-apache
 WORKDIR /var/www/html
-
-# install and configure intl extension
-RUN apt-get -y update \
- && apt-get install -y libicu-dev \
- && docker-php-ext-configure intl \
- && docker-php-ext-install intl
 
 # use the default production configuration
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"

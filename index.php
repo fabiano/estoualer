@@ -1,5 +1,30 @@
 <?php
 
+const MONTHS = array(
+    "1" => "Janeiro",
+    "2" => "Fevereiro",
+    "3" => "Março",
+    "4" => "Abril",
+    "5" => "Maio",
+    "6" => "Junho",
+    "7" => "Julho",
+    "8" => "Agosto",
+    "9" => "Setembro",
+    "10" => "Outubro",
+    "11" => "Novembro",
+    "12" => "Dezembro",
+);
+
+const WEEKDAYS = array(
+    "1" => "seg",
+    "2" => "ter",
+    "3" => "qua",
+    "4" => "qui",
+    "5" => "sex",
+    "6" => "sáb",
+    "7" => "dom",
+);
+
 const DURATION_REGEX = "/^((?<hours>\d+?)h)?\s{0,1}((?<minutes>\d+?)m)?$/";
 
 $today = getdate();
@@ -60,7 +85,7 @@ $entries_by_month = group_entries_by_month($entries);
                                         <dt>Lido em</dt>
                                         <dd class="date">
                                             <time datetime="<?php echo $entry['date']->format("Y-m-d") ?>">
-                                                <?php echo format_date($entry["date"], "eee, d") ?>
+                                                <?php echo format_date($entry) ?>
                                             </time>
                                         </dd>
                                         <dt>Título</dt>
@@ -244,7 +269,7 @@ function group_entries_by_month(array $entries): array
     $groups = array();
 
     foreach ($entries as $entry) {
-        $key = format_date($entry["date"], "MMMM y");
+        $key = generate_group_key($entry);
 
         if (!array_key_exists($key, $groups)) {
             $groups[$key] = array();
@@ -256,18 +281,13 @@ function group_entries_by_month(array $entries): array
     return $groups;
 }
 
-function format_date(DateTimeInterface $date, string $pattern): string
+function generate_group_key(array $entry): string
 {
-    $formatter = datefmt_create(
-        "pt_PT",
-        IntlDateFormatter::LONG,
-        IntlDateFormatter::LONG,
-        "Europe/Lisbon",
-        IntlDateFormatter::GREGORIAN,
-        $pattern,
-    );
+    $date = $entry["date"];
+    $month = $date->format("n");
+    $year = $date->format("Y");
 
-    return datefmt_format($formatter, $date);
+    return MONTHS[$month] . " " . $year;
 }
 
 function generate_statistics(array $entries): string
@@ -313,12 +333,15 @@ function pluralize(int $n, string $singular, string $plural): string
 
 function format_number(int $n): string
 {
-    $formatter = numfmt_create(
-        "pt_PT",
-        NumberFormatter::DECIMAL,
-    );
+    return number_format($n, decimal_separator: ",", thousands_separator: '.');
+}
 
-    return numfmt_format($formatter, $n);
+function format_date(array $entry): string
+{
+    $weekday = $entry["date"]->format("N");
+    $day = $entry["date"]->format("d");
+
+    return WEEKDAYS[$weekday] . ", " . $day;
 }
 
 function format_length(array $entry): string
