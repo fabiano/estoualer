@@ -10,57 +10,57 @@ database=$1
 # recreate the tables
 sqlite3 $database <<EOF
 
-DROP TABLE IF EXISTS Book;
-DROP TABLE IF EXISTS BookFts;
-DROP TABLE IF EXISTS ComicBook;
-DROP TABLE IF EXISTS ComicBookFts;
+DROP TABLE IF EXISTS book;
+DROP TABLE IF EXISTS bookfts;
+DROP TABLE IF EXISTS comicbook;
+DROP TABLE IF EXISTS comicbookfts;
 
-CREATE TABLE Book (
-  Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  Date TEXT NOT NULL,
-  Publisher TEXT NOT NULL,
-  Title TEXT NOT NULL,
-  Author TEXT NOT NULL,
-  Format TEXT NOT NULL,
-  Pages INTEGER NOT NULL DEFAULT 0,
-  Duration TEXT NOT NULL DEFAULT '0m',
-  Rating INTEGER NOT NULL DEFAULT 0
+CREATE TABLE book (
+  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  date TEXT NOT NULL,
+  publisher TEXT NOT NULL,
+  title TEXT NOT NULL,
+  author TEXT NOT NULL,
+  format TEXT NOT NULL,
+  pages INTEGER NOT NULL DEFAULT 0,
+  duration TEXT NOT NULL DEFAULT '0m',
+  rating INTEGER NOT NULL DEFAULT 0
 );
 
-CREATE VIRTUAL TABLE BookFts USING fts5 (
-  Id UNINDEXED,
-  Date UNINDEXED,
-  Publisher,
-  Title,
-  Author,
-  Format,
-  Pages UNINDEXED,
-  Duration UNINDEXED,
-  Rating UNINDEXED,
-  content='Book',
-  content_rowid='Id'
+CREATE VIRTUAL TABLE bookfts USING fts5 (
+  id UNINDEXED,
+  date UNINDEXED,
+  publisher,
+  title,
+  author,
+  format,
+  pages UNINDEXED,
+  duration UNINDEXED,
+  rating UNINDEXED,
+  content='book',
+  content_rowid='id'
 );
 
-CREATE TABLE ComicBook (
-  Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  Date TEXT NOT NULL,
-  Publisher TEXT NOT NULL,
-  Title TEXT NOT NULL,
-  Format TEXT NOT NULL,
-  Pages INTEGER NOT NULL DEFAULT 0,
-  Issues INTEGER NOT NULL DEFAULT 0
+CREATE TABLE comicbook (
+  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  date TEXT NOT NULL,
+  publisher TEXT NOT NULL,
+  title TEXT NOT NULL,
+  format TEXT NOT NULL,
+  pages INTEGER NOT NULL DEFAULT 0,
+  issues INTEGER NOT NULL DEFAULT 0
 );
 
-CREATE VIRTUAL TABLE ComicBookFts USING fts5 (
-  Id UNINDEXED,
-  Date UNINDEXED,
-  Publisher,
-  Title,
-  Format,
-  Pages UNINDEXED,
-  Issues UNINDEXED,
-  content='ComicBook',
-  content_rowid='Id'
+CREATE VIRTUAL TABLE comicbookfts USING fts5 (
+  id UNINDEXED,
+  date UNINDEXED,
+  publisher,
+  title,
+  format,
+  pages UNINDEXED,
+  issues UNINDEXED,
+  content='comicbook',
+  content_rowid='id'
 );
 
 EOF
@@ -100,8 +100,8 @@ sqlite3 $database <<EOF
 
 .mode csv
 .separator ";"
-.import $output Book
-.import $output BookFts
+.import $output book
+.import $output bookfts
 
 EOF
 
@@ -138,7 +138,7 @@ sqlite3 $database <<EOF
 
 .mode csv
 .separator ";"
-.import $output ComicBook
-.import $output ComicBookFts
+.import $output comicbook
+.import $output comicbookfts
 
 EOF

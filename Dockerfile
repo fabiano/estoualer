@@ -1,38 +1,31 @@
-# stage: build
-FROM clojure:temurin-25-tools-deps-1.12.5.1654 AS build
-ENV DEBIAN_FRONTEND=noninteractive
-WORKDIR /src
+FROM alpine:latest AS build
+WORKDIR /app
 
-# install sqlite3 used by create-database.sh
-RUN apt-get update \
-  && apt-get install -y sqlite3 \
-  && apt-get autoremove -y \
-  && rm -rf /var/lib/apt/lists/*
-
-# restore the dependencies
-COPY deps.edn .
-COPY build.clj .
-RUN clojure -X:deps prep
-RUN clojure -P -T:build
-
-# build the uberjar
-COPY src/ ./src/
-COPY resources/ ./resources/
-RUN clojure -T:build uber
+# install sqlite
+RUN apk update \
+ && apk add sqlite
 
 # recreate the database with the latest changes
 COPY books.txt .
 COPY comicbooks.txt .
 COPY create-database.sh .
 RUN chmod +x create-database.sh
-RUN ./create-database.sh ./target/estoualer.db
+RUN ./create-database.sh estoualer.db
 
-# stage: run
-FROM eclipse-temurin:25
-WORKDIR /app
-COPY --from=build /src/target/estoualer-latest.jar .
-COPY --from=build /src/target/estoualer.db .
+FROM php:8.5.12-apache
+WORKDIR /var/www/html
 
-# run the application
-# --enable-native-access silences the sqlite-jdbc native library warning
-CMD ["java", "--enable-native-access=ALL-UNNAMED", "-jar", "estoualer-latest.jar"]
+# install and configure intl extension
+RUN apt-get -y update \
+ && apt-get install -y libicu-dev \
+ && docker-php-ext-configure intl \
+ && docker-php-ext-install intl
+
+# use the default production configuration
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+
+# copy the application code
+COPY index.php .
+
+# copy the database
+COPY --from=build /app/estoualer.db .

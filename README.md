@@ -4,42 +4,19 @@
 
 ## Prerequisites
 
-Java, SQLite, rlwrap and podman (Fedora):
+PHP:
 
 ```sh
-sudo dnf install java-25-openjdk-devel sqlite rlwrap podman
-```
-
-[Clojure CLI](https://clojure.org/guides/install_clojure):
-
-```sh
-curl -L -O https://github.com/clojure/brew-install/releases/latest/download/linux-install.sh
-chmod +x linux-install.sh
-sudo ./linux-install.sh
-```
-
-[clojure-lsp](https://clojure-lsp.io/) (bundles clj-kondo):
-
-```sh
-curl -sLO https://raw.githubusercontent.com/clojure-lsp/clojure-lsp/master/install
-chmod +x install
-sudo ./install
+sudo dnf install php php-intl
 ```
 
 ## Working on the project
 
-Run the commands from the repository root - the database is opened relative to the working
-directory.
+Run the commands from the repository root.
 
 - Create the database: `./create-database.sh estoualer.db`
-- Start the project: `clojure -M:run`
-- Start with hot reload: `clojure -M:hotreload`
+- Start the project: `php -S 0.0.0.0:4201 -t . -c php.ini-development`
 - Open http://localhost:4201
-
-## Building
-
-- Build the uberjar: `clojure -T:build uber`
-- Run it: `java --enable-native-access=ALL-UNNAMED -jar target/estoualer-latest.jar 4201`
 
 ## Container
 

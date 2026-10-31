@@ -2,10 +2,7 @@
 *
 
 # include only the files required for the build
-!src/
-!resources/
 !books.txt
-!build.clj
 !comicbooks.txt
 !create-database.sh
-!deps.edn
+!index.php
