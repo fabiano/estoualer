@@ -78,28 +78,28 @@ $entries_by_month = group_entries_by_month($entries);
                             <p><?php echo generate_statistics($entries) ?></p>
                         </header>
                         <ul>
-                            <?php foreach ($entries as $entry) { ?>
+                            <?php foreach ($entries as $e) { ?>
                                 <li class="entry">
-                                    <h3><?php echo $entry["title"] ?></h3>
+                                    <h3><?php echo $e["title"] ?></h3>
                                     <dl>
                                         <dt>Lido em</dt>
                                         <dd class="date">
-                                            <time datetime="<?php echo $entry['date']->format("Y-m-d") ?>">
-                                                <?php echo format_date($entry) ?>
+                                            <time datetime="<?php echo $e['date']->format("Y-m-d") ?>">
+                                                <?php echo format_date($e) ?>
                                             </time>
                                         </dd>
                                         <dt>Título</dt>
-                                        <dd class="title"><?php echo $entry["title"] ?></dd>
-                                        <?php if (array_key_exists("author", $entry)) { ?>
+                                        <dd class="title"><?php echo $e["title"] ?></dd>
+                                        <?php if (array_key_exists("author", $e)) { ?>
                                             <dt>Autor</dt>
-                                            <dd class="author"><?php echo $entry["author"] ?></dd>
+                                            <dd class="author"><?php echo $e["author"] ?></dd>
                                         <?php } ?>
                                         <dt>Editora</dt>
-                                        <dd class="publisher"><?php echo $entry["publisher"] ?></dd>
+                                        <dd class="publisher"><?php echo $e["publisher"] ?></dd>
                                         <dt>Formato</dt>
-                                        <dd class="format"><?php echo $entry["format"] ?></dd>
+                                        <dd class="format"><?php echo $e["format"] ?></dd>
                                         <dt>Número de páginas, edições ou duração</dt>
-                                        <dd class="length"><?php echo format_length($entry) ?></dd>
+                                        <dd class="length"><?php echo format_length($e) ?></dd>
                                     </dl>
                                 </li>
                             <?php } ?>
@@ -186,14 +186,14 @@ function get_books(SQLite3 $db, string $q): array
             $statement->bindValue(":q", escape_value($q));
     }
 
-    $r = $statement->execute();
-    $entries = array();
+    $result = $statement->execute();
+    $arr = array();
 
-    while ($row = $r->fetchArray()) {
-        array_push($entries, new_entry_from_row("book", $row));
+    while ($r = $result->fetchArray()) {
+        array_push($arr, new_entry_from_row("book", $r));
     }
 
-    return $entries;
+    return $arr;
 }
 
 function get_comicbooks(SQLite3 $db, string $q): array
@@ -222,70 +222,69 @@ function get_comicbooks(SQLite3 $db, string $q): array
             $statement->bindValue(":q", escape_value($q));
     }
 
-    $r = $statement->execute();
-    $entries = array();
+    $result = $statement->execute();
+    $arr = array();
 
-    while ($row = $r->fetchArray()) {
-        array_push($entries, new_entry_from_row("comicbook", $row));
+    while ($r = $result->fetchArray()) {
+        array_push($arr, new_entry_from_row("comicbook", $r));
     }
 
-    return $entries;
+    return $arr;
 }
 
-function new_entry_from_row(string $kind, array $row): array
+function new_entry_from_row(string $kind, array $r): array
 {
     $pages = 0;
     $issues = 0;
     $hours = 0;
     $minutes = 0;
 
-    if (array_key_exists("pages", $row)) {
-        $pages = intval($row["pages"] ?? 0);
+    if (array_key_exists("pages", $r)) {
+        $pages = intval($r["pages"] ?? 0);
     }
 
-    if (array_key_exists("issues", $row)) {
-        $issues = intval($row["issues"] ?? 0);
+    if (array_key_exists("issues", $r)) {
+        $issues = intval($r["issues"] ?? 0);
     }
 
-    if (array_key_exists("duration", $row)) {
-        if (preg_match(DURATION_REGEX, $row["duration"], $matches) == 1) {
+    if (array_key_exists("duration", $r)) {
+        if (preg_match(DURATION_REGEX, $r["duration"], $matches) == 1) {
             $hours = intval($matches["hours"] ?? 0);
             $minutes = intval($matches["minutes"] ?? 0);
         }
     }
 
-    $row["kind"] = $kind;
-    $row["date"] = DateTime::createFromFormat("Y-m-d", $row["date"]);
-    $row["pages"] = $pages;
-    $row["issues"] = $issues;
-    $row["hours"] = $hours;
-    $row["minutes"] = $minutes;
+    $r["kind"] = $kind;
+    $r["date"] = DateTime::createFromFormat("Y-m-d", $r["date"]);
+    $r["pages"] = $pages;
+    $r["issues"] = $issues;
+    $r["hours"] = $hours;
+    $r["minutes"] = $minutes;
 
-    return $row;
+    return $r;
 }
 
 function group_entries_by_month(array $entries): array
 {
     $groups = array();
 
-    foreach ($entries as $entry) {
-        $key = generate_group_key($entry);
+    foreach ($entries as $e) {
+        $key = generate_group_key($e);
 
         if (!array_key_exists($key, $groups)) {
             $groups[$key] = array();
         }
 
-        $groups[$key][] = $entry;
+        $groups[$key][] = $e;
     }
 
     return $groups;
 }
 
-function generate_group_key(array $entry): string
+function generate_group_key(array $e): string
 {
-    $date = $entry["date"];
-    $month = $date->format("n");
-    $year = $date->format("Y");
+    $month = $e["date"]->format("n");
+    $year = $e["date"]->format("Y");
 
     return MONTHS[$month] . " " . $year;
 }
@@ -297,17 +296,17 @@ function generate_statistics(array $entries): string
     $hours = 0;
     $pages = 0;
 
-    foreach ($entries as $entry) {
-        if ($entry["kind"] == "book") {
+    foreach ($entries as $e) {
+        if ($e["kind"] == "book") {
             $books += 1;
         }
 
-        if ($entry["kind"] == "comicbook") {
+        if ($e["kind"] == "comicbook") {
             $comicbooks += 1;
         }
 
-        $pages += $entry["pages"];
-        $hours += $entry["hours"] + $entry["minutes"] / 60;
+        $pages += $e["pages"];
+        $hours += $e["hours"] + $e["minutes"] / 60;
     }
 
     $arr = array(
@@ -323,35 +322,30 @@ function generate_statistics(array $entries): string
 
 function format_count(string $singular, string $plural, int $count): string
 {
-    $formatted = number_format($count, decimal_separator: ",", thousands_separator: '.');
+    $f = number_format($count, decimal_separator: ",", thousands_separator: '.');
 
     return match (true) {
         $count < 1  => "",
-        $count == 1 => sprintf($singular, $formatted),
-        $count > 1  => sprintf($plural, $formatted),
+        $count == 1 => sprintf($singular, $f),
+        $count > 1  => sprintf($plural, $f),
     };
 }
 
-function format_date(array $entry): string
+function format_date(array $e): string
 {
-    $weekday = $entry["date"]->format("N");
-    $day = $entry["date"]->format("d");
+    $weekday = $e["date"]->format("N");
+    $day = $e["date"]->format("d");
 
     return WEEKDAYS[$weekday] . ", " . $day;
 }
 
-function format_length(array $entry): string
+function format_length(array $e): string
 {
-    $pages = $entry["pages"];
-    $issues = $entry["issues"];
-    $hours = $entry["hours"];
-    $minutes = $entry["minutes"];
-
     $arr = array(
-        format_count("%s página", "%s páginas", $pages),
-        format_count("%s edição", "%s edições", $issues > 1 ? $issues : 0),
-        format_count("%s hora", "%s horas", $hours),
-        format_count("%s minuto", "%s minutos", $minutes),
+        format_count("%s página", "%s páginas", $e["pages"]),
+        format_count("%s edição", "%s edições", $e["issues"] > 1 ? $e["issues"] : 0),
+        format_count("%s hora", "%s horas", $e["hours"]),
+        format_count("%s minuto", "%s minutos", $e["minutes"]),
     );
 
     return implode(" e ", array_filter($arr));
