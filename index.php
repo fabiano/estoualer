@@ -28,12 +28,7 @@ const WEEKDAYS = array(
 const DURATION_REGEX = "/^((?<hours>\d+?)h)?\s{0,1}((?<minutes>\d+?)m)?$/";
 
 $today = getdate();
-$q = trim($_GET["q"] ?? "");
-
-if (strlen($q) == 0) {
-    $q = "ano: " . $today["year"];
-}
-
+$q = trim($_GET["q"] ?? "") ?: "ano: " . $today["year"];
 $db = new SQLite3("estoualer.db");
 $entries = get_entries($db, $q);
 $entries_by_month = group_entries_by_month($entries);
