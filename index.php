@@ -81,9 +81,13 @@ $entries_by_month = group_entries_by_month($entries);
                             <div class="entry-content">
                                 <div class="title"><?php echo $e["title"] ?></div>
                                 <?php if (array_key_exists("author", $e)) { ?>
-                                    <div class="author"><?php echo $e["author"] ?></div>
+                                    <div class="author">
+                                        <a href="/?q=<?php echo urlencode("autor: " . $e["author"]) ?>"><?php echo $e["author"] ?></a>
+                                    </div>
                                 <?php } ?>
-                                <div class="publisher"><?php echo $e["publisher"] ?></div>
+                                <div class="publisher">
+                                    <a href="/?q=<?php echo urlencode("editora: " . $e["publisher"]) ?>"><?php echo $e["publisher"] ?></a>
+                                </div>
                                 <div class="format"><?php echo $e["format"] ?></div>
                                 <div class="length"><?php echo format_entry_length($e) ?></div>
                             </div>
