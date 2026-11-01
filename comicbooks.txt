@@ -12184,3 +12184,10 @@ Publisher = Image
    Format = eBook
     Pages = 169
    Issues = 6
+
+     Date = 2026-11-01
+Publisher = Devir
+    Title = Showa - Volume 1
+   Format = Capa comum
+    Pages = 528
+   Issues = 1
