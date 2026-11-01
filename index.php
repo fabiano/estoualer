@@ -274,6 +274,10 @@ function generate_group_key(array $e): string
     $month = $e["date"]->format("n");
     $year = $e["date"]->format("Y");
 
+    if ($year == "1970") {
+        return "Sem data";
+    }
+
     return MONTHS[$month] . " " . $year;
 }
 
