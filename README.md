@@ -7,7 +7,7 @@
 PHP:
 
 ```sh
-sudo dnf install php php-intl
+sudo dnf install php
 ```
 
 ## Working on the project
