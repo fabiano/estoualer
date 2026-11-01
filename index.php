@@ -43,82 +43,71 @@ $entries_by_month = group_entries_by_month($entries);
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Os livros e gibis que li.">
     <title>Estou a ler</title>
+    <link rel="preload" as="font" type="font/woff2" href="crimson-pro.woff2" crossorigin>
+    <link rel="stylesheet" href="site.css">
 </head>
 
 <body>
-    <div id="app">
-        <div class="container">
-            <header class="header">
-                <h1>Estou a ler</h1>
-                <form method="get">
-                    <input id="q"
-                        name="q"
-                        value="<?php echo $q ?>"
-                        placeholder="ano: 2026 ou autor: carla madeira ou titulo: a natureza da mordida"
-                        aria-label="Pesquisar">
-                    <button type="submit">Pesquisar</button>
-                </form>
-            </header>
-        </div>
-        <div class="container">
-            <main class="body">
-                <section>
-                    <h2>Resumo das leituras</h2>
-                    <p><?php echo generate_statistics($entries) ?></p>
-                </section>
-                <?php foreach ($entries_by_month as $month => $entries) { ?>
-                    <section class="entries">
-                        <header>
-                            <h2><?php echo $month ?></h2>
-                            <p><?php echo generate_statistics($entries) ?></p>
-                        </header>
-                        <ul>
-                            <?php foreach ($entries as $e) { ?>
-                                <li class="entry">
-                                    <h3><?php echo $e["title"] ?></h3>
-                                    <dl>
-                                        <dt>Lido em</dt>
-                                        <dd class="date">
-                                            <time datetime="<?php echo $e['date']->format("Y-m-d") ?>">
-                                                <?php echo format_entry_date($e) ?>
-                                            </time>
-                                        </dd>
-                                        <dt>Título</dt>
-                                        <dd class="title"><?php echo $e["title"] ?></dd>
-                                        <?php if (array_key_exists("author", $e)) { ?>
-                                            <dt>Autor</dt>
-                                            <dd class="author"><?php echo $e["author"] ?></dd>
-                                        <?php } ?>
-                                        <dt>Editora</dt>
-                                        <dd class="publisher"><?php echo $e["publisher"] ?></dd>
-                                        <dt>Formato</dt>
-                                        <dd class="format"><?php echo $e["format"] ?></dd>
-                                        <dt>Número de páginas, edições ou duração</dt>
-                                        <dd class="length"><?php echo format_entry_length($e) ?></dd>
-                                    </dl>
-                                </li>
-                            <?php } ?>
-                        </ul>
-                    </section>
-                <?php } ?>
-            </main>
-        </div>
-        <div class="container">
-            <footer class="footer">
-                <nav aria-label="Histórico">
+    <div class="container">
+        <header class="header">
+            <h1>Estou a ler</h1>
+        </header>
+    </div>
+    <div class="container">
+        <main class="body">
+            <section class="search">
+                <header>
+                    <h2>Resultados da pesquisa por</h2>
                     <form method="get">
-                        <label for="history-year">O que li em</label>
-                        <select id="history-year" name="q">
-                            <?php for ($i = $today["year"]; $i > 2013; $i--) { ?>
-                                <option value="ano: <?php echo $i ?>" <?php if ($q === 'ano: ' . $i) echo ' selected' ?>><?php echo $i ?></option>
-                            <?php } ?>
-                            <option value="ano: 1970" <?php if ($q === 'ano: 1970') echo ' selected' ?>>Sem data</option>
-                        </select>
-                        <button type="submit">Ir</button>
+                        <input
+                            name="q"
+                            value="<?php echo $q ?>"
+                            placeholder="ano: 2026 ou autor: carla madeira ou titulo: a natureza da mordida">
                     </form>
-                </nav>
-            </footer>
-        </div>
+                </header>
+                <p><?php echo generate_statistics($entries) ?></p>
+            </section>
+            <?php foreach ($entries_by_month as $month => $entries) { ?>
+                <section class="entries">
+                    <header>
+                        <h2><?php echo $month ?></h2>
+                        <p><?php echo generate_statistics($entries) ?></p>
+                    </header>
+                    <?php foreach ($entries as $e) { ?>
+                        <div class="entry">
+                            <div class="entry-sidebar">
+                                <div class="date"><?php echo format_entry_date($e) ?></div>
+                            </div>
+                            <div class="entry-content">
+                                <div class="title"><?php echo $e["title"] ?></div>
+                                <?php if (array_key_exists("author", $e)) { ?>
+                                    <div class="author"><?php echo $e["author"] ?></div>
+                                <?php } ?>
+                                <div class="publisher"><?php echo $e["publisher"] ?></div>
+                                <div class="format"><?php echo $e["format"] ?></div>
+                                <div class="length"><?php echo format_entry_length($e) ?></div>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </section>
+            <?php } ?>
+        </main>
+    </div>
+    <div class="container">
+        <footer class="footer">
+            <div class="history">
+                <form method="get">
+                    <label for="history-year">O que li em</label>
+                    <select id="history-year" name="q">
+                        <?php for ($i = $today["year"]; $i > 2013; $i--) { ?>
+                            <option value="ano: <?php echo $i ?>" <?php if ($q === 'ano: ' . $i) echo ' selected' ?>><?php echo $i ?></option>
+                        <?php } ?>
+                        <option value="ano: 1970" <?php if ($q === 'ano: 1970') echo ' selected' ?>>Sem data</option>
+                    </select>
+                    <button type="submit">Ir</button>
+                </form>
+            </div>
+        </footer>
     </div>
 </body>
 

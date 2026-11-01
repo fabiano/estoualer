@@ -20,6 +20,9 @@ RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
 # copy the application code
 COPY index.php .
+COPY site.css .
+COPY crimson-pro.woff2 .
+COPY crimson-pro-OFL.txt .
 
 # copy the database
 COPY --from=build /app/estoualer.db .
