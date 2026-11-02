@@ -10969,7 +10969,7 @@ Publisher = Image
 
      Date = 2026-02-22
 Publisher = Image
-    Title = Norroway Book 2: The Queen on the High Mountain: The Queen of the High Mountain
+    Title = Norroway Book 2: The Queen on the High Mountain
    Format = eBook
     Pages = 232
    Issues = 1
