@@ -61,12 +61,16 @@ $entries_by_month = group_entries_by_month($entries);
                         value="<?php echo $q ?>"
                         placeholder="ano: 2026 ou autor: carla madeira ou titulo: a natureza da mordida">
                 </form>
-                <p><?php echo generate_statistics($entries) ?></p>
+                <p class="stats">
+                    <?php foreach (calculate_statistics($entries) as $stat) { ?><span><?php echo $stat ?></span><?php } ?>
+                </p>
             </div>
             <?php foreach ($entries_by_month as $month => $entries) { ?>
                 <div class="entries">
                     <h2><?php echo $month ?></h2>
-                    <p><?php echo generate_statistics($entries) ?></p>
+                    <p class="stats">
+                        <?php foreach (calculate_statistics($entries) as $stat) { ?><span><?php echo $stat ?></span><?php } ?>
+                    </p>
                     <ol>
                         <?php foreach ($entries as $e) { ?>
                             <li class="entry">
@@ -281,7 +285,7 @@ function generate_group_key(array $e): string
     return MONTHS[$month] . " " . $year;
 }
 
-function generate_statistics(array $entries): string
+function calculate_statistics(array $entries): array
 {
     $books = 0;
     $comicbooks = 0;
@@ -309,7 +313,7 @@ function generate_statistics(array $entries): string
         format_count("%s hora", "%s horas", floor($hours)),
     );
 
-    return implode(" · ", array_filter($arr));
+    return array_filter($arr);
 }
 
 function format_count(string $singular, string $plural, int $count): string

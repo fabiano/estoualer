@@ -177,6 +177,12 @@ h2 {
   }
 }
 
+/* stats */
+
+.stats span:nth-child(n+2):before {
+  content: "·" / "";
+  margin: 0 6px;
+}
 
 /* history */
 
