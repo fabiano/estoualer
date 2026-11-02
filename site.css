@@ -81,7 +81,7 @@ h2 {
 }
 
 .search form {
-  align-items: center;
+  align-items: baseline;
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
@@ -89,9 +89,12 @@ h2 {
 }
 
 .search input {
-  border-radius: 4px;
   border: none;
+  border-bottom-color: var(--theme-primary-color);
+  border-bottom-style: dotted;
+  border-bottom-width: 0.3rem;
   color: var(--theme-fg-color);
+  field-sizing: content;
   font-family: inherit;
   font-size: 1.5rem;
   padding: 0;
