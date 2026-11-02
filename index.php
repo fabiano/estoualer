@@ -52,65 +52,65 @@ $entries_by_month = group_entries_by_month($entries);
         <header class="header">
             <h1>Estou a ler</h1>
         </header>
-    </div>
-    <div class="container">
         <main class="body">
-            <section class="search">
-                <header>
+            <div class="search">
+                <form method="get">
                     <h2>Resultados da pesquisa por</h2>
-                    <form method="get">
-                        <input
-                            name="q"
-                            value="<?php echo $q ?>"
-                            placeholder="ano: 2026 ou autor: carla madeira ou titulo: a natureza da mordida">
-                    </form>
-                </header>
+                    <input
+                        name="q"
+                        value="<?php echo $q ?>"
+                        placeholder="ano: 2026 ou autor: carla madeira ou titulo: a natureza da mordida">
+                </form>
                 <p><?php echo generate_statistics($entries) ?></p>
-            </section>
+            </div>
             <?php foreach ($entries_by_month as $month => $entries) { ?>
-                <section class="entries">
-                    <header>
-                        <h2><?php echo $month ?></h2>
-                        <p><?php echo generate_statistics($entries) ?></p>
-                    </header>
-                    <?php foreach ($entries as $e) { ?>
-                        <div class="entry">
-                            <div class="entry-sidebar">
-                                <div class="date"><?php echo format_entry_date($e) ?></div>
-                            </div>
-                            <div class="entry-content">
-                                <div class="title"><?php echo $e["title"] ?></div>
-                                <?php if (array_key_exists("author", $e)) { ?>
-                                    <div class="author">
-                                        <a href="/?q=<?php echo urlencode("autor: " . $e["author"]) ?>"><?php echo $e["author"] ?></a>
+                <div class="entries">
+                    <h2><?php echo $month ?></h2>
+                    <p><?php echo generate_statistics($entries) ?></p>
+                    <ol>
+                        <?php foreach ($entries as $e) { ?>
+                            <li class="entry">
+                                <dl>
+                                    <div class="entry-date">
+                                        <dt>Lido em</dt>
+                                        <dd class="date"><?php echo format_entry_date($e) ?></dd>
                                     </div>
-                                <?php } ?>
-                                <div class="publisher">
-                                    <a href="/?q=<?php echo urlencode("editora: " . $e["publisher"]) ?>"><?php echo $e["publisher"] ?></a>
-                                </div>
-                                <div class="format"><?php echo $e["format"] ?></div>
-                                <div class="length"><?php echo format_entry_length($e) ?></div>
-                            </div>
-                        </div>
-                    <?php } ?>
-                </section>
+                                    <div class="entry-content">
+                                        <dt>Título</dt>
+                                        <dd class="title"><?php echo $e["title"] ?></dd>
+                                        <?php if (array_key_exists("author", $e)) { ?>
+                                            <dt>Autor</dt>
+                                            <dd class="author">
+                                                <a href="/?q=<?php echo urlencode("autor: " . $e["author"]) ?>"><?php echo $e["author"] ?></a>
+                                            </dd>
+                                        <?php } ?>
+                                        <dt>Editora</dt>
+                                        <dd class="publisher">
+                                            <a href="/?q=<?php echo urlencode("editora: " . $e["publisher"]) ?>"><?php echo $e["publisher"] ?></a>
+                                        </dd>
+                                        <dt>Formato</dt>
+                                        <dd class="format"><?php echo $e["format"] ?></dd>
+                                        <dt>Número de páginas, edições ou duração</dt>
+                                        <dd class="length"><?php echo format_entry_length($e) ?></dd>
+                                    </div>
+                                </dl>
+                            </li>
+                        <?php } ?>
+                    </ol>
+                </div>
             <?php } ?>
         </main>
-    </div>
-    <div class="container">
         <footer class="footer">
-            <div class="history">
-                <form method="get">
-                    <label for="history-year">O que li em</label>
-                    <select id="history-year" name="q">
-                        <?php for ($i = $today["year"]; $i > 2013; $i--) { ?>
-                            <option value="ano: <?php echo $i ?>" <?php if ($q === 'ano: ' . $i) echo ' selected' ?>><?php echo $i ?></option>
-                        <?php } ?>
-                        <option value="ano: 1970" <?php if ($q === 'ano: 1970') echo ' selected' ?>>Sem data</option>
-                    </select>
-                    <button type="submit">Ir</button>
-                </form>
-            </div>
+            <form class="history" method="get">
+                <label for="history-year">O que li em</label>
+                <select id="history-year" name="q">
+                    <?php for ($i = $today["year"]; $i > 2013; $i--) { ?>
+                        <option value="ano: <?php echo $i ?>" <?php if ($q === 'ano: ' . $i) echo ' selected' ?>><?php echo $i ?></option>
+                    <?php } ?>
+                    <option value="ano: 1970" <?php if ($q === 'ano: 1970') echo ' selected' ?>>Sem data</option>
+                </select>
+                <button type="submit">Ir</button>
+            </form>
         </footer>
     </div>
 </body>
