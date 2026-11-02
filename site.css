@@ -74,24 +74,17 @@ h2 {
   margin: 20px;
 }
 
-.footer p {
-  margin: 0;
-}
-
 /* search */
 
 .search {
   margin: 40px 0;
 }
 
-.search header {
+.search form {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   gap: 5px;
-}
-
-.search form {
   line-height: 1;
 }
 
@@ -114,19 +107,32 @@ h2 {
   margin-top: 20px;
 }
 
-.entries header {
-  margin-bottom: 20px;
+.entries ol {
+  list-style: none;
+  margin-top: 20px;
 }
 
 /* entry */
 
-.entry {
+.entry dl {
   align-items: stretch;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   gap: 4px;
   justify-content: flex-start;
+}
+
+.entry dt {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .entry + .entry {
@@ -144,7 +150,7 @@ h2 {
   font-size: 1.1rem;
 }
 
-.entry .entry-sidebar {
+.entry .entry-date {
   align-items: center;
   background-color: var(--theme-primary-color);
   display: flex;
@@ -161,12 +167,12 @@ h2 {
     flex-wrap: wrap;
   }
 
-  .entry .entry-content div:nth-child(1) {
+  .entry .entry-content dd:nth-child(2) {
     width: 100%;
   }
 
-  .entry .entry-content div:nth-child(n+3):before {
-    content: "·";
+  .entry .entry-content dd:nth-child(n+5):before {
+    content: "·" / "";
     margin: 0 6px;
   }
 }
