@@ -162,6 +162,7 @@ h2 {
   justify-content: center;
   margin-right: 5px;
   min-width: 65px;
+  text-transform: lowercase;
 }
 
 @media only screen and (min-width: 768px) {

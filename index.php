@@ -363,6 +363,12 @@ function format_count(string $singular, string $plural, int $count): string
 
 function format_entry_date(array $e): string
 {
+    $year = $e["date"]->format("Y");
+
+    if ($year == "1970") {
+        return "Sem data";
+    }
+
     $weekday = $e["date"]->format("N");
     $day = $e["date"]->format("d");
 
