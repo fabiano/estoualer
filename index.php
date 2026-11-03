@@ -59,7 +59,7 @@ $entries_by_month = group_entries_by_month($entries);
                     <h2>Resultados da pesquisa por</h2>
                     <input
                         name="q"
-                        value="<?php echo $q ?>"
+                        value="<?php echo htmlspecialchars($q) ?>"
                         placeholder="ano: 2026 ou autor: carla madeira ou titulo: a natureza da mordida">
                 </form>
                 <p class="stats">
