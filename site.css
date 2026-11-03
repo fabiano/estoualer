@@ -97,6 +97,7 @@ h2 {
   field-sizing: content;
   font-family: inherit;
   font-size: 1.5rem;
+  max-width: 100%;
   padding: 0;
 }
 
