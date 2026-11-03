@@ -26,6 +26,7 @@ const WEEKDAYS = array(
 );
 
 const DURATION_REGEX = "/^((?<hours>\d+?)h)?\s{0,1}((?<minutes>\d+?)m)?$/";
+const IS_COMIC_BOOK_SERIE_REGEX = "/^(?<serie_title>.*)(?<issue_number>#\d+)$/";
 
 $today = getdate();
 $q = trim($_GET["q"] ?? "") ?: "ano: " . $today["year"];
@@ -129,7 +130,7 @@ $db->close();
 function get_entries(SQLite3 $db, string $q): array
 {
     $books = get_books($db, $q);
-    $comicbooks = get_comicbooks($db, $q);
+    $comicbooks = group_comicbooks_by_serie(get_comicbooks($db, $q));
     $entries = array_merge($books, $comicbooks);
 
     usort($entries, function ($a, $b) {
@@ -144,6 +145,39 @@ function get_entries(SQLite3 $db, string $q): array
     });
 
     return $entries;
+}
+
+function group_comicbooks_by_serie(array $comicbooks): array
+{
+    $arr = array();
+
+    for ($i = count($comicbooks); $i > 0; $i--) {
+        $acc = $cur = $comicbooks[$i - 1];
+
+        for ($j = $i - 1; $j > 0; $j--) {
+            $next = $comicbooks[$j - 1] ?? null;
+
+            if (
+                isset($next) &&
+                $cur["date"] == $next["date"] &&
+                preg_match(IS_COMIC_BOOK_SERIE_REGEX, $cur["title"], $curMatches) &&
+                preg_match(IS_COMIC_BOOK_SERIE_REGEX, $next["title"], $nextMatches) &&
+                $curMatches["serie_title"] == $nextMatches["serie_title"]
+            ) {
+                $acc["title"] .= " " . $nextMatches["issue_number"];
+                $acc["pages"] += $next["pages"];
+                $acc["issues"] += $next["issues"];
+
+                $i--;
+            } else {
+                break;
+            }
+        }
+
+        $arr[] = $acc;
+    }
+
+    return array_reverse($arr);
 }
 
 function get_books(SQLite3 $db, string $q): array
