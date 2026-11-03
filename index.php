@@ -332,7 +332,7 @@ function calculate_statistics(array $entries): array
         }
 
         if ($e["kind"] == "comicbook") {
-            $comicbooks += 1;
+            $comicbooks += $e["issues"];
         }
 
         $pages += $e["pages"];
