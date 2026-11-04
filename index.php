@@ -46,12 +46,15 @@ $entries_by_month = group_entries_by_month($entries);
     <title>Estou a ler</title>
     <link rel="preload" as="font" type="font/woff2" href="crimson-pro.woff2" crossorigin>
     <link rel="stylesheet" href="site.css">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 
 <body>
     <div class="container">
         <header class="header">
-            <h1>Estou a ler</h1>
+            <h1><img src="/favicon.svg">Estou a ler</h1>
         </header>
         <main class="body">
             <div class="search">
