@@ -61,9 +61,21 @@ h2 {
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
   margin: 20px;
+}
+
+.header h1 {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  line-height: 1;
+}
+
+.header img {
+  height: 1lh;
+  position: relative;
+  top: 0.10em;
+  width: 1lh;
 }
 
 .body {
