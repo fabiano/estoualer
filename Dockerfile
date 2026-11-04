@@ -23,6 +23,9 @@ COPY index.php .
 COPY site.css .
 COPY crimson-pro.woff2 .
 COPY crimson-pro-OFL.txt .
+COPY apple-touch-icon.png .
+COPY favicon.ico .
+COPY favicon.svg .
 
 # copy the database
 COPY --from=build /app/estoualer.db .
