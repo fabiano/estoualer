@@ -12207,6 +12207,13 @@ Publisher = A Seita
    Issues = 1
 
      Date = 2026-11-07
+Publisher = Nuvem de Letras
+    Title = Tudo no Máximo
+   Format = Capa comum
+    Pages = 272
+   Issues = 1
+
+     Date = 2026-11-07
 Publisher = A Seita
     Title = Três Irmãs
    Format = Capa comum
