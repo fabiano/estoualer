@@ -12191,3 +12191,17 @@ Publisher = Devir
    Format = Capa comum
     Pages = 528
    Issues = 1
+
+     Date = 2026-11-06
+Publisher = Arte de Autor
+    Title = Jane nas Nuvens
+   Format = Capa comum
+    Pages = 32
+   Issues = 1
+
+     Date = 2026-11-06
+Publisher = A Seita
+    Title = Lunáticos
+   Format = Capa dura
+    Pages = 136
+   Issues = 1
