@@ -58,10 +58,7 @@ h2 {
 .container {
   margin: auto;
   max-width: 2560px;
-}
-
-.header {
-  margin: 20px;
+  padding: 20px;
 }
 
 .header h1 {
@@ -76,14 +73,6 @@ h2 {
   position: relative;
   top: 0.10em;
   width: 1lh;
-}
-
-.body {
-  margin: 20px;
-}
-
-.footer {
-  margin: 20px;
 }
 
 /* search */
@@ -120,7 +109,7 @@ h2 {
 /* entries */
 
 .entries {
-  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .entries ol {
