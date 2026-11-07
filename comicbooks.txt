@@ -12205,3 +12205,10 @@ Publisher = A Seita
    Format = Capa dura
     Pages = 136
    Issues = 1
+
+     Date = 2026-11-07
+Publisher = A Seita
+    Title = Três Irmãs
+   Format = Capa comum
+    Pages = 136
+   Issues = 1
