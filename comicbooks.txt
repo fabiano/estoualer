@@ -12219,3 +12219,10 @@ Publisher = A Seita
    Format = Capa comum
     Pages = 136
    Issues = 1
+
+     Date = 2026-11-08
+Publisher = Arte de Autor
+    Title = Apenas o silêncio
+   Format = Capa dura
+    Pages = 112
+   Issues = 1
