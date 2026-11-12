@@ -1,6 +1,6 @@
 # estoualer
 
-[https://estoualer.1983.run](https://estoualer.1983.run) website code.
+A self-hosted application that lets me browse the books and comic books that I have read over the years.
 
 ## Prerequisites
 
