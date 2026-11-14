@@ -14,8 +14,8 @@ sudo dnf install php
 
 Run the commands from the repository root.
 
-- Create the database: `./create-database.sh estoualer.db`
-- Start the project: `php -S 0.0.0.0:4201 -t . -c php.ini-development`
+- Create the database: `./create-database.sh src/estoualer.db`
+- Start the project: `php -S 0.0.0.0:4201 -t src -c php.ini-development`
 - Open http://localhost:4201
 
 ## Container
