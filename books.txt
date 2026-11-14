@@ -3283,3 +3283,20 @@ Publisher = Orbit
  Duration = 11h 3m
    Rating = 3
 
+     Date = 2026-11-13
+Publisher = Pragmatic Bookshelf
+    Title = Programming Clojure Fourth Edition
+   Author = Alex Miller
+   Format = eBook
+    Pages = 320
+ Duration = 0m
+   Rating = 3
+
+     Date = 2026-11-14
+Publisher = Audible Studios
+    Title = Project Hail Mary
+   Author = Andy Weir
+   Format = Audiolivro
+    Pages = 0
+ Duration = 16h 10m
+   Rating = 5
