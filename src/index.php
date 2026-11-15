@@ -75,28 +75,26 @@ $entries_by_month = group_entries_by_month($entries);
                     <p class="stats">
                         <?php foreach (calculate_statistics($entries) as $stat) { ?><span><?php echo $stat ?></span><?php } ?>
                     </p>
-                    <ol>
+                    <ol reversed>
                         <?php foreach ($entries as $e) { ?>
-                            <li class="entry">
+                            <li>
                                 <dl>
-                                    <div class="entry-date">
-                                        <dt>Lido em</dt>
-                                        <dd class="date"><?php echo format_entry_date($e) ?></dd>
-                                    </div>
-                                    <div class="entry-content">
-                                        <dt>Título</dt>
-                                        <dd class="title"><?php echo $e["title"] ?></dd>
+                                    <dt>Título</dt>
+                                    <dd class="title"><h3><?php echo $e["title"] ?></h3></dd>
+                                    <dt>Lido em</dt>
+                                    <dd class="date"><?php echo format_entry_date($e) ?></dd>
+                                    <?php if (count($e["author"]) > 0) { ?>
+                                        <dt>Autor(es)</dt>
                                         <?php foreach ($e["author"] as $i => $author) { ?>
-                                            <dt>Autor</dt>
                                             <dd class="author"><a href="/?q=<?php echo urlencode("autor: " . $author) ?>"><?php echo $author ?></a></dd>
                                         <?php } ?>
-                                        <dt>Editora</dt>
-                                        <dd class="publisher"><a href="/?q=<?php echo urlencode("editora: " . $e["publisher"]) ?>"><?php echo $e["publisher"] ?></a></dd>
-                                        <dt>Formato</dt>
-                                        <dd class="format"><?php echo $e["format"] ?></dd>
-                                        <dt>Número de páginas, edições ou duração</dt>
-                                        <dd class="length"><?php echo format_entry_length($e) ?></dd>
-                                    </div>
+                                    <?php } ?>
+                                    <dt>Editora</dt>
+                                    <dd class="publisher"><a href="/?q=<?php echo urlencode("editora: " . $e["publisher"]) ?>"><?php echo $e["publisher"] ?></a></dd>
+                                    <dt>Formato</dt>
+                                    <dd class="format"><?php echo $e["format"] ?></dd>
+                                    <dt>Número de páginas, edições ou duração</dt>
+                                    <dd class="length"><?php echo format_entry_length($e) ?></dd>
                                 </dl>
                             </li>
                         <?php } ?>
