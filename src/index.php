@@ -65,22 +65,28 @@ $entries_by_month = group_entries_by_month($entries);
                         value="<?php echo htmlspecialchars($q) ?>"
                         placeholder="ano: 2026 ou autor: carla madeira ou titulo: a natureza da mordida">
                 </form>
-                <p class="stats">
-                    <?php foreach (calculate_statistics($entries) as $stat) { ?><span><?php echo $stat ?></span><?php } ?>
-                </p>
+                <ul class="stats">
+                    <?php foreach (calculate_statistics($entries) as $stat) { ?>
+                        <li><?php echo $stat ?></li>
+                    <?php } ?>
+                </ul>
             </div>
             <?php foreach ($entries_by_month as $month => $entries) { ?>
                 <div class="entries">
                     <h2><?php echo $month ?></h2>
-                    <p class="stats">
-                        <?php foreach (calculate_statistics($entries) as $stat) { ?><span><?php echo $stat ?></span><?php } ?>
-                    </p>
+                    <ul class="stats">
+                        <?php foreach (calculate_statistics($entries) as $stat) { ?>
+                            <li><?php echo $stat ?></li>
+                        <?php } ?>
+                    </ul>
                     <ol reversed>
                         <?php foreach ($entries as $e) { ?>
                             <li>
                                 <dl>
                                     <dt>Título</dt>
-                                    <dd class="title"><h3><?php echo $e["title"] ?></h3></dd>
+                                    <dd class="title">
+                                        <h3><?php echo $e["title"] ?></h3>
+                                    </dd>
                                     <dt>Lido em</dt>
                                     <dd class="date"><?php echo format_entry_date($e) ?></dd>
                                     <?php if (count($e["author"]) > 0) { ?>

@@ -126,8 +126,6 @@ h3 {
   margin-top: 20px;
 }
 
-/* entry */
-
 .entries dl {
   column-gap: 5px;
   display: grid;
@@ -146,7 +144,7 @@ h3 {
   width: 1px;
 }
 
-.entries li + li {
+.entries ol li + li {
   margin-top: 10px;
 }
 
@@ -175,7 +173,13 @@ h3 {
 
 /* stats */
 
-.stats span:not(:last-of-type)::after {
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.stats li:not(:last-of-type)::after {
   content: "·" / "";
   margin-inline: 5px;
 }
