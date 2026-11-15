@@ -86,16 +86,12 @@ $entries_by_month = group_entries_by_month($entries);
                                     <div class="entry-content">
                                         <dt>Título</dt>
                                         <dd class="title"><?php echo $e["title"] ?></dd>
-                                        <?php if (array_key_exists("author", $e)) { ?>
+                                        <?php foreach ($e["author"] as $i => $author) { ?>
                                             <dt>Autor</dt>
-                                            <dd class="author">
-                                                <a href="/?q=<?php echo urlencode("autor: " . $e["author"]) ?>"><?php echo $e["author"] ?></a>
-                                            </dd>
+                                            <dd class="author"><a href="/?q=<?php echo urlencode("autor: " . $author) ?>"><?php echo $author ?></a></dd>
                                         <?php } ?>
                                         <dt>Editora</dt>
-                                        <dd class="publisher">
-                                            <a href="/?q=<?php echo urlencode("editora: " . $e["publisher"]) ?>"><?php echo $e["publisher"] ?></a>
-                                        </dd>
+                                        <dd class="publisher"><a href="/?q=<?php echo urlencode("editora: " . $e["publisher"]) ?>"><?php echo $e["publisher"] ?></a></dd>
                                         <dt>Formato</dt>
                                         <dd class="format"><?php echo $e["format"] ?></dd>
                                         <dt>Número de páginas, edições ou duração</dt>
@@ -246,6 +242,12 @@ function get_comicbooks(SQLite3 $db, string $q): array
 
             break;
 
+        case str_starts_with($q, "autor:") and strlen($q) > 6:
+            $statement = $db->prepare("select * from comicbookfts where author match :author order by date desc, id desc");
+            $statement->bindValue(":author", escape_value(substr($q, 6)));
+
+            break;
+
         default:
             $statement = $db->prepare("select * from comicbookfts where comicbookfts match :q order by date desc, id desc");
             $statement->bindValue(":q", escape_value($q));
@@ -285,6 +287,7 @@ function new_entry_from_row(string $kind, array $r): array
 
     $r["kind"] = $kind;
     $r["date"] = DateTime::createFromFormat("Y-m-d", $r["date"]);
+    $r["author"] = array_filter(explode(", ", $r["author"]));
     $r["pages"] = $pages;
     $r["issues"] = $issues;
     $r["hours"] = $hours;

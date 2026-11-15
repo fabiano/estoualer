@@ -46,6 +46,7 @@ CREATE TABLE comicbook (
   date TEXT NOT NULL,
   publisher TEXT NOT NULL,
   title TEXT NOT NULL,
+  author TEXT NOT NULL,
   format TEXT NOT NULL,
   pages INTEGER NOT NULL DEFAULT 0,
   issues INTEGER NOT NULL DEFAULT 0
@@ -56,6 +57,7 @@ CREATE VIRTUAL TABLE comicbookfts USING fts5 (
   date UNINDEXED,
   publisher,
   title,
+  author,
   format,
   pages UNINDEXED,
   issues UNINDEXED,
@@ -120,6 +122,7 @@ awk '
             row["date"],
             row["publisher"],
             row["title"],
+            row["author"],
             row["format"],
             row["pages"],
             row["issues"];
