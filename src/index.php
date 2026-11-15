@@ -90,7 +90,7 @@ $entries_by_month = group_entries_by_month($entries);
                                     <dt>Lido em</dt>
                                     <dd class="date"><?php echo format_entry_date($e) ?></dd>
                                     <?php if (count($e["author"]) > 0) { ?>
-                                        <dt>Autor(es)</dt>
+                                        <dt>Autor</dt>
                                         <?php foreach ($e["author"] as $i => $author) { ?>
                                             <dd class="author"><a href="/?q=<?php echo urlencode("autor: " . $author) ?>"><?php echo $author ?></a></dd>
                                         <?php } ?>
