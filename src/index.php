@@ -54,17 +54,22 @@ $entries_by_month = group_entries_by_month($entries);
 <body>
     <div class="container">
         <header class="header">
-            <h1><img src="/favicon.svg">Estou a ler</h1>
+            <img src="/favicon.svg" alt="">Estou a ler
         </header>
         <main class="body">
+            <h1 class="visually-hidden">Resultados da pesquisa por "<?php echo htmlspecialchars($q) ?>"</h1>
             <div class="search">
-                <form method="get">
-                    <h2>Resultados da pesquisa por</h2>
-                    <input
-                        name="q"
-                        value="<?php echo htmlspecialchars($q) ?>"
-                        placeholder="ano: 2026 ou autor: carla madeira ou titulo: a natureza da mordida">
-                </form>
+                <search>
+                    <form method="get">
+                        <label for="q">Resultados da pesquisa por</label>
+                        <input
+                            id="q"
+                            name="q"
+                            value="<?php echo htmlspecialchars($q) ?>"
+                            placeholder="ano: 2026 ou autor: carla madeira ou titulo: a natureza da mordida">
+                        <button type="submit" class="visually-hidden">Pesquisar</button>
+                    </form>
+                </search>
                 <ul class="stats">
                     <?php foreach (calculate_statistics($entries) as $stat) { ?>
                         <li><?php echo $stat ?></li>
@@ -72,7 +77,7 @@ $entries_by_month = group_entries_by_month($entries);
                 </ul>
             </div>
             <?php foreach ($entries_by_month as $month => $entries) { ?>
-                <div class="entries">
+                <section class="entries">
                     <h2><?php echo $month ?></h2>
                     <ul class="stats">
                         <?php foreach (calculate_statistics($entries) as $stat) { ?>
@@ -83,42 +88,44 @@ $entries_by_month = group_entries_by_month($entries);
                         <?php foreach ($entries as $e) { ?>
                             <li>
                                 <dl>
-                                    <dt>Título</dt>
+                                    <dt class="visually-hidden">Título</dt>
                                     <dd class="title">
                                         <h3><?php echo $e["title"] ?></h3>
                                     </dd>
-                                    <dt>Lido em</dt>
+                                    <dt class="visually-hidden">Lido em</dt>
                                     <dd class="date"><?php echo format_entry_date($e) ?></dd>
                                     <?php if (count($e["author"]) > 0) { ?>
-                                        <dt>Autor</dt>
+                                        <dt class="visually-hidden">Autor</dt>
                                         <?php foreach ($e["author"] as $i => $author) { ?>
                                             <dd class="author"><a href="/?q=<?php echo urlencode("autor: " . $author) ?>"><?php echo $author ?></a></dd>
                                         <?php } ?>
                                     <?php } ?>
-                                    <dt>Editora</dt>
+                                    <dt class="visually-hidden">Editora</dt>
                                     <dd class="publisher"><a href="/?q=<?php echo urlencode("editora: " . $e["publisher"]) ?>"><?php echo $e["publisher"] ?></a></dd>
-                                    <dt>Formato</dt>
+                                    <dt class="visually-hidden">Formato</dt>
                                     <dd class="format"><?php echo $e["format"] ?></dd>
-                                    <dt>Número de páginas, edições ou duração</dt>
+                                    <dt class="visually-hidden">Número de páginas, edições ou duração</dt>
                                     <dd class="length"><?php echo format_entry_length($e) ?></dd>
                                 </dl>
                             </li>
                         <?php } ?>
                     </ol>
-                </div>
+                </section>
             <?php } ?>
         </main>
         <footer class="footer">
-            <form class="history" method="get">
-                <label for="history-year">O que li em</label>
-                <select id="history-year" name="q">
-                    <?php for ($i = $today["year"]; $i > 2013; $i--) { ?>
-                        <option value="ano: <?php echo $i ?>" <?php if ($q === 'ano: ' . $i) echo ' selected' ?>><?php echo $i ?></option>
-                    <?php } ?>
-                    <option value="ano: 1970" <?php if ($q === 'ano: 1970') echo ' selected' ?>>Sem data</option>
-                </select>
-                <button type="submit">Ir</button>
-            </form>
+            <search>
+                <form class="history" method="get">
+                    <label for="history-year">O que li em</label>
+                    <select id="history-year" name="q">
+                        <?php for ($i = $today["year"]; $i > 2013; $i--) { ?>
+                            <option value="ano: <?php echo $i ?>" <?php if ($q === 'ano: ' . $i) echo ' selected' ?>><?php echo $i ?></option>
+                        <?php } ?>
+                        <option value="ano: 1970" <?php if ($q === 'ano: 1970') echo ' selected' ?>>Sem data</option>
+                    </select>
+                    <button type="submit">Ir</button>
+                </form>
+            </search>
         </footer>
     </div>
 </body>

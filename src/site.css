@@ -68,13 +68,28 @@ h3 {
   padding: 40px 20px;
 }
 
+.visually-hidden {
+  border: 0;
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 /* header */
 
-.header h1 {
+.header {
   align-items: center;
   display: flex;
+  font-size: 2rem;
+  font-weight: 700;
   gap: 5px;
   line-height: 1;
+  text-transform: lowercase;
 }
 
 .header img {
@@ -96,6 +111,13 @@ h3 {
   flex-wrap: wrap;
   gap: 5px;
   line-height: 1;
+}
+
+.search label {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: lowercase;
 }
 
 .search input {
@@ -130,18 +152,6 @@ h3 {
   column-gap: 5px;
   display: grid;
   grid-template-columns: 65px 1fr;
-}
-
-.entries dt {
-  border: 0;
-  clip-path: inset(50%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
 }
 
 .entries ol li + li {
