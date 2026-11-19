@@ -3300,3 +3300,12 @@ Publisher = Audible Studios
     Pages = 0
  Duration = 16h 10m
    Rating = 5
+
+     Date = 2026-11-18
+Publisher = Hodderscape
+    Title = The Galaxy, and the Ground Within (Wayfarers #4)
+   Author = Becky Chambers
+   Format = eBook
+    Pages = 264
+ Duration = 0m
+   Rating = 4
