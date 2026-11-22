@@ -3309,3 +3309,13 @@ Publisher = Hodderscape
     Pages = 264
  Duration = 0m
    Rating = 4
+
+     Date = 2026-11-21
+Publisher = Editora Record
+    Title = Assim na terra como embaixo da terra
+   Author = Ana Paula Maia
+   Format = eBook
+    Pages = 110
+ Duration = 0m
+   Rating = 5
+
