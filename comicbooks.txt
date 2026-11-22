@@ -12641,3 +12641,11 @@ Publisher = Ala dos Livros
    Format = Capa dura
     Pages = 328
    Issues = 1
+
+     Date = 2026-11-21
+Publisher = Marvel
+    Title = Infernal Hulk (2025-) #10
+   Format = eBook
+    Pages = 32
+   Issues = 1
+
