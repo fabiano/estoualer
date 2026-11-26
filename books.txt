@@ -3319,3 +3319,11 @@ Publisher = Editora Record
  Duration = 0m
    Rating = 5
 
+     Date = 2026-11-25
+Publisher = Antofágica
+    Title = O Alienista
+   Author = Machado de Assis
+   Format = eBook
+    Pages = 169
+ Duration = 0m
+   Rating = 3
